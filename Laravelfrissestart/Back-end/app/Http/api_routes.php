@@ -12,7 +12,7 @@ $api->version('v1', function ($api) {
 	// example of protected route
 	$api->get('protected', ['middleware' => ['api.auth'], function () {
 		return \App\User::all();
-    }]);
+	}]);
 
 	// example of free route
 	$api->get('free', function() {
@@ -22,10 +22,10 @@ $api->version('v1', function ($api) {
 	$api->group(['middleware' => 'api.auth'], function ($api) {
 		$api->get('projects/user', 'App\Api\V1\Controllers\ProjectController@indexuser');
 		$api->get('projects/user/{id}', 'App\Api\V1\Controllers\ProjectController@showuser');
-	$api->post('projects', 'App\Api\V1\Controllers\ProjectController@store');
-	$api->put('projects/{id}', 'App\Api\V1\Controllers\ProjectController@update');
-	$api->delete('projects/{id}', 'App\Api\V1\Controllers\ProjectController@destroy');
-});
-$api->get('projects', 'App\Api\V1\Controllers\ProjectController@index');
-$api->get('projects/{id}', 'App\Api\V1\Controllers\ProjectController@show');
+		$api->post('projects', 'App\Api\V1\Controllers\ProjectController@store');
+		$api->put('projects/{id}', 'App\Api\V1\Controllers\ProjectController@update');
+		$api->delete('projects/{id}', 'App\Api\V1\Controllers\ProjectController@destroy');
+	});
+	$api->get('projects', 'App\Api\V1\Controllers\ProjectController@index');
+	$api->get('projects/{id}', 'App\Api\V1\Controllers\ProjectController@show');
 });
