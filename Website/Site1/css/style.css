@@ -19,62 +19,35 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-
 }
 
 /* navigatie - begin */
 
-.navigatie {
-  background-color: #fff;
-
-
+#menulogo {
+  max-height: 2.5em;
+  margin-top: -10px;
 }
 
-.navigatie ul {
-  margin-top: 15px;
-}
-.navigatie li{
-  list-style-type: none;
-  display: inline-block;
-}
-
-.navControls{
-vertical-align: middle;
-
-}
-
-.nav-menu {
+#nav-menu {
   width: 1.7em;
 
 }
 
-.A-logo{
-  height: 80px;
-  margin-left: 20px;
+menu {
+  margin: 0px;
+  padding: 0px;
 }
 
-.title {
-  text-align: center;
-  font-family: AntwerpenFontRegular;
-  margin-top: 15px;
-
-}
-
-.title span{
-  color:#148e9c;
-}
-.userControls ul {
-  margin-left:-80px;
-  font-family: AntwerpenFontSmall;
-}
-.userControls li{
-  margin-left: -30px;
-  margin-left: 2%;
-  vertical-align: middle;
-}
-.placeholder {
-  height: 50px;
+@media (min-width: 768px) {
+  .navbar-left {
+    float: left !important;
+    height: 54px;
+  }
+  .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+    height: 54px;
+  }
 
 }
 
