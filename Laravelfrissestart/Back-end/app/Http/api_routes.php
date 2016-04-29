@@ -31,6 +31,14 @@ $api->version('v1', function ($api) {
 		$api->post('questions', 'App\Api\V1\Controllers\QuestionController@store');
 		$api->put('questions/{id}', 'App\Api\V1\Controllers\QuestionController@update');
 		$api->delete('questions/{id}', 'App\Api\V1\Controllers\QuestionController@destroy');
+
+		//answers routing api met auth
+
+		$api->get('answers/user', 'App\Api\V1\Controllers\AnswerController@indexuser');
+		$api->get('answers/user/{id}', 'App\Api\V1\Controllers\AnswerController@showuser');
+		$api->post('answers', 'App\Api\V1\Controllers\AnswerController@store');
+		$api->put('answers/{id}', 'App\Api\V1\Controllers\AnswerController@update');
+		$api->delete('answers/{id}', 'App\Api\V1\Controllers\AnswerController@destroy');
 	});
 	// projects routing api zonder auth
 	$api->get('projects', 'App\Api\V1\Controllers\ProjectController@index');
@@ -40,4 +48,8 @@ $api->version('v1', function ($api) {
 	$api->get('questions', 'App\Api\V1\Controllers\QuestionController@index');
 	$api->get('questions/{id}', 'App\Api\V1\Controllers\QuestionController@show');
 	$api->get('questions/project/{id}', 'App\Api\V1\Controllers\QuestionController@showperproject');
+
+		// Answers routing api zonder auth
+		$api->get('answers', 'App\Api\V1\Controllers\AnswerController@index');
+		$api->get('answers/{id}', 'App\Api\V1\Controllers\AnswerController@show');
 });
