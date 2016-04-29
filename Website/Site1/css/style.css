@@ -33,11 +33,15 @@ body {
 
 }
 
+#bs-example-navbar-collapse-1 {
+  background-color: white !important;
+}
+
 menu {
   margin: 0px;
   padding: 0px;
   height: 54px;
-  background-color: #fff;
+  background-color: #fff !important;
 }
 
 .navbar-default {
@@ -45,6 +49,7 @@ menu {
   color: #fff;
   border: none;
   width: 100%;
+  box-shadow: none !important;
 }
 
 @media (min-width: 768px) {
@@ -58,6 +63,10 @@ menu {
     height: 54px;
   }
 
+}
+
+body > menu > nav .container-fluid {
+  background-color: white !important;
 }
 
 /* navigatie - einde */
