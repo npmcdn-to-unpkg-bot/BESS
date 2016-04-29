@@ -1,0 +1,272 @@
+@font-face {
+  font-family: AntwerpenFontRegular;
+  src:url(fonts/Antwerpen-Regular.woff);
+}
+
+@font-face {
+  font-family: AntwerpenFontTall;
+  src:url(fonts/Antwerpen-Tall.woff);
+}
+
+@font-face {
+  font-family: AntwerpenFontSmall;
+  src:url(fonts/Antwerpen-Small.woff);
+}
+
+body {
+  background: url("../img/mas.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+}
+
+/* navigatie - begin */
+
+.navigatie {
+  background-color: #fff;
+
+
+}
+
+.navigatie ul {
+  margin-top: 15px;
+}
+.navigatie li{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.navControls{
+vertical-align: middle;
+
+}
+
+.nav-menu {
+  width: 1.7em;
+
+}
+
+.A-logo{
+  height: 80px;
+  margin-left: 20px;
+}
+
+.title {
+  text-align: center;
+  font-family: AntwerpenFontRegular;
+  margin-top: 15px;
+
+}
+
+.title span{
+  color:#148e9c;
+}
+.userControls ul {
+  margin-left:-80px;
+  font-family: AntwerpenFontSmall;
+}
+.userControls li{
+  margin-left: -30px;
+  margin-left: 2%;
+  vertical-align: middle;
+}
+.placeholder {
+  height: 50px;
+
+}
+
+/* navigatie - einde */
+
+/* homepage - begin */
+
+.container {
+  background-color: #fff;
+  margin-left: -100px;
+}
+
+a {
+	text-decoration: none;
+	color: #3498db;
+}
+	a:hover {
+		color: #2980b9;
+	}
+
+h2 {
+	line-height: 1.2;
+	margin-bottom: 1.6rem;
+}
+
+.ReadMore {
+  float:right;
+}
+
+
+.wrapper {
+	margin: 40px auto;
+	padding-left: 1em;
+	padding-right: 1em;
+  display: inline-block;
+
+}
+
+/**
+ * Box shadow
+ */
+.border-tlr-radius {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 10px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+   box-shadow:
+    	6px 6px 8px rgba(0,0,0, 0.24);
+}
+
+
+/**
+ * Card Styles
+ */
+
+.card {
+	background-color: #fff;
+	margin-bottom: 1.6rem;
+}
+
+.card__padding {
+	padding-left: 1.6em;
+  padding-right: 1.6em;
+  padding-bottom: 3em;
+}
+
+.card__image {
+	min-height: 100px;
+	background-color: #eee;
+}
+	.card__image img {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+
+.card__content {
+	position: relative;
+
+}
+
+/* card meta */
+.card__meta time {
+	font-size: 1.5rem;
+	color: #bbb;
+	margin-left: 0.8rem;
+}
+
+/* card article */
+.card__article a {
+	text-decoration: none;
+	color: #444;
+	transition: all 0.5s ease;
+}
+	.card__article a:hover {
+		color: #2980b9;
+	}
+.card__article h2{
+  font-family: AntwerpenFontTall;
+}
+
+
+  /* homepage - einde */
+
+/* single_page begin */
+.headerImg {
+  margin-top: 4%;
+}
+
+.headerTitle h1{
+  font-size: 3.7em;
+  margin-top: 6%;
+}
+
+.informatie {
+  font-size: 1.3em;
+}
+.einddatum, .locatie{
+  float:left;
+}
+
+.begindatum, .categorie {
+  float:left;
+}
+/* button layout */
+
+body .btn-bg.bg-2 {
+  margin-left: -30px;
+  margin-top: 30%;
+
+}
+body .btn-bg.bg-2 .btn-2 button {
+  color: #fff;
+  background: #008e9c;
+  border:none;
+  border-radius: 7px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  opacity: 0.5;
+}
+body .btn-bg.bg-2 .btn-2 button:hover {
+  background: transparent;
+  color: #008e9c;
+}
+body .btn-bg.bg-2 .btn-2 button:hover:before,
+body .btn-bg.bg-2 .btn-2 button:hover:after {
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  width: 100%;
+}
+body .btn-bg.bg-2 .btn-2 button:before,
+body .btn-bg.bg-2 .btn-2 button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 0px;
+  height: 3px;
+  background: #008e9c;
+  transition: all 0.4s ease;
+}
+body .btn-bg.bg-2 .btn-2 button:after {
+  top: inherit;
+  left: inherit;
+  bottom: 0;
+  right: 0;
+}
+
+.btn {
+  margin: 0 auto 30px auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #fff;
+  position: relative;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 1rem 3rem 1rem 3rem;
+  text-transform: uppercase;
+  font-family: "Lato";
+  font-size: 1em;
+}
