@@ -36,6 +36,15 @@ body {
 menu {
   margin: 0px;
   padding: 0px;
+  height: 54px;
+  background-color: #fff;
+}
+
+.navbar-default {
+  background-color: #fff;
+  color: #fff;
+  border: none;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
