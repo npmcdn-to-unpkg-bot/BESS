@@ -46,18 +46,22 @@ class ProjectController extends Controller
           return $project;
       }
     public function store(Request $request)
-    {
-        $project = new Project;
-        $project->name = $request->get('name');
-        $project->description = $request->get('description');
-        $project->startdate = $request->get('startdate');
-        $project->enddate = $request->get('enddate');
-        $project->category = $request->get('category');
-        $project->location = $request->get('location');
-        if($this->currentUser()->projects()->save($project))
-            return $this->response->created();
-        else
-            return $this->response->error('could_not_create_project', 500);
+    {   if ($this->currentUser()["isAdmin"]) {
+      $project = new Project;
+      $project->name = $request->get('name');
+      $project->description = $request->get('description');
+      $project->startdate = $request->get('startdate');
+      $project->enddate = $request->get('enddate');
+      $project->category = $request->get('category');
+      $project->location = $request->get('location');
+      if($this->currentUser()->projects()->save($project))
+          return $this->response->created();
+      else
+          return $this->response->error('could_not_create_project', 500);
+    }
+    else
+    return $this->response->error('could_not_create_project_only_admin', 500);
+
     }
     public function update(Request $request, $id)
     {

@@ -20,6 +20,8 @@ $api->version('v1', function ($api) {
 	});
 
 	$api->group(['middleware' => 'api.auth'], function ($api) {
+		$api->get('projects/user', 'App\Api\V1\Controllers\ProjectController@indexuser');
+		$api->get('projects/user/{id}', 'App\Api\V1\Controllers\ProjectController@showuser');
 	$api->post('projects', 'App\Api\V1\Controllers\ProjectController@store');
 	$api->put('projects/{id}', 'App\Api\V1\Controllers\ProjectController@update');
 	$api->delete('projects/{id}', 'App\Api\V1\Controllers\ProjectController@destroy');
