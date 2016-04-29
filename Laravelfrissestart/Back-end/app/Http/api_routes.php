@@ -20,12 +20,24 @@ $api->version('v1', function ($api) {
 	});
 
 	$api->group(['middleware' => 'api.auth'], function ($api) {
+		// projects routing api met auth
 		$api->get('projects/user', 'App\Api\V1\Controllers\ProjectController@indexuser');
 		$api->get('projects/user/{id}', 'App\Api\V1\Controllers\ProjectController@showuser');
 		$api->post('projects', 'App\Api\V1\Controllers\ProjectController@store');
 		$api->put('projects/{id}', 'App\Api\V1\Controllers\ProjectController@update');
 		$api->delete('projects/{id}', 'App\Api\V1\Controllers\ProjectController@destroy');
+
+		// question routing api met auth
+		$api->post('questions', 'App\Api\V1\Controllers\QuestionController@store');
+		$api->put('questions/{id}', 'App\Api\V1\Controllers\QuestionController@update');
+		$api->delete('questions/{id}', 'App\Api\V1\Controllers\QuestionController@destroy');
 	});
+	// projects routing api zonder auth
 	$api->get('projects', 'App\Api\V1\Controllers\ProjectController@index');
 	$api->get('projects/{id}', 'App\Api\V1\Controllers\ProjectController@show');
+
+	// question routing api zonder auth
+	$api->get('questions', 'App\Api\V1\Controllers\QuestionController@index');
+	$api->get('questions/{id}', 'App\Api\V1\Controllers\QuestionController@show');
+	$api->get('questions/project/{id}', 'App\Api\V1\Controllers\QuestionController@showperproject');
 });

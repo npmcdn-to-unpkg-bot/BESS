@@ -4,6 +4,7 @@ namespace App\Api\V1\Controllers;
 
 use JWTAuth;
 use App\Question;
+use App\Project;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Dingo\Api\Routing\Helpers;
@@ -15,7 +16,7 @@ class QuestionController extends Controller
     use Helpers;
     public function index()
     {
-        $questions = Question::orderBy('created_at', 'DESC')
+        $questions = Question::orderBy('project_id', 'DESC')
         ->get()
         ->toArray();
         return $questions;
@@ -32,24 +33,29 @@ class QuestionController extends Controller
 
       public function showperproject($project_id)
       {
-          $questions = Question::find($project_id);
+          $questions = Question::where('project_id', '=' ,$project_id)->get();
           if(!$questions)
               throw new NotFoundHttpException;
           return $questions;
       }
     public function store(Request $request)
     {   if ($this->currentUser()["isAdmin"]) {
-      $question = new Question;
-      $question->title = $request->get('title');
-      $question->description = $request->get('description');
-      // possible answers moet geserialized worden met php en dan als je het wilt gebruiken unserializen
-      $question->possible_answers = $request->get('possible_answers');
-      $question->kind = $request->get('kind');
-      $question->project_id = $request->get('project_id');
-      if($question->save())
-          return $this->response->created();
+      if (Project::find($request->get('project_id'))) {
+        $question = new Question;
+        $question->title = $request->get('title');
+        $question->description = $request->get('description');
+        // possible answers moet geserialized worden met php en dan als je het wilt gebruiken unserializen
+        $question->possible_answers = $request->get('possible_answers');
+        $question->kind = $request->get('kind');
+        $question->project_id = $request->get('project_id');
+        if($question->save())
+            return $this->response->created();
+        else
+            return $this->response->error('could_not_create_question', 500);
+      }
       else
-          return $this->response->error('could_not_create_question', 500);
+      return $this->response->error('could_not_create_question_unknown_project', 500);
+
     }
     else
     return $this->response->error('could_not_create_question_only_admin', 500);
@@ -80,7 +86,7 @@ class QuestionController extends Controller
           return $this->response->error('could_not_delete_question', 500);
     }
     else
-    return $this->response->error('could_not_delete_question_only_admin', 500);       
+    return $this->response->error('could_not_delete_question_only_admin', 500);
     }
     private function currentUser() {
         return JWTAuth::parseToken()->authenticate();
