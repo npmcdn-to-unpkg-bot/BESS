@@ -1,1 +1,16 @@
-/* Empty. Add your own CSS if you like */
+ont-face {
+  font-family: "Antwerpen";
+  src: url("fonts/Antwerpen-Regular.eot?v=2.0.1");
+  src: url("fonts/Antwerpen-Regular.eot?v=2.0.1#iefix") format("embedded-opentype"), url("fonts/Antwerpen-Regular.ttf?v=2.0.1") format("truetype"), url("fonts/Antwerpen-Regular.woff?v=2.0.1") format("woff"), url("fonts/Antwerpen-Regular.woff") format("woff"), url("fonts/Antwerpen-Regular?v=2.0.1#Ionicons") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+
+
+.title {
+    font-family: "Antwerpen" !important;
+    text-transform: uppercase;
+    
+}
+
+
