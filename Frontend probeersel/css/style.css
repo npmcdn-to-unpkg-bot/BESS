@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+}
+.full-bg-img {
+    background: url("../img/mas.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.top-nav-collapse {
+    background-color: #fff;
+}
+.top-nav-collapse .navbar-nav > li > a {
+  color: #008C95 !important;
+}
+.top-nav-collapse.navbar .navbar-form .form-control-wrapper .form-control, .navbar .navbar-form .form-control {
+  color: #008C95 !important;
+  border-color: #008C95 !important;
+}
+#menulogo {
+  max-height: 2.5em;
+  margin-top: -10px;
+}
+.btn-primary {
+  background: transparent !important;
+}
+.btn-primary:hover {
+  background: #008C95 !important;
+}

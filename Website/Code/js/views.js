@@ -7,4 +7,11 @@
       templateUrl: "templates/menu.html"
     };
   });
+
+  app.directive("home", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/home.html"
+    };
+  });
 })();
