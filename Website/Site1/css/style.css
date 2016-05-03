@@ -35,16 +35,18 @@ body {
   border-color: #008C95 !important;
 }
 #menulogo {
-  max-height: 2.5em;
+  max-height: 3em;
   margin-top: -10px;
 }
 .btn-primary {
   background: transparent !important;
 }
-.btn-primary:hover {
-  background: #008C95 !important;
+.btn-primary:hover, btn-primary:focus {
+  background-color: #008C95 !important;
 }
-
+.dropdown-menu li > a, .dropdown-menu li > span {
+  color: #008C95 !important;
+}
 menu {
   margin: 0px;
 }

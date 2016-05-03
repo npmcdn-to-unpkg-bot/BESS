@@ -26,7 +26,28 @@
   app.directive("menu", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/menu2.html"
+      templateUrl: "templates/menu.html"
+    };
+  });
+
+  app.directive("about", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/about.html"
+    };
+  });
+
+  app.directive("vierprojecten", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/vierprojecten.html"
+    };
+  });
+
+  app.directive("contact", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/contact.html"
     };
   });
 

@@ -3309,7 +3309,7 @@ button.btn-floating {
 }
 
 .btn-primary:hover, .btn-primary:focus {
-  background-color: #5a95f5 !important;
+  background-color: #5a95f5;
   color: #fff;
 }
 
