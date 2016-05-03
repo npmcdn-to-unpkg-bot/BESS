@@ -13,69 +13,46 @@
   src:url(fonts/Antwerpen-Small.woff);
 }
 
+html,
 body {
-  background: url("../img/mas.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  height: 100%;
 }
-
-/* navigatie - begin */
-
+.full-bg-img {
+    background: url("../img/mas.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.top-nav-collapse {
+    background-color: #fff !important;
+}
+.top-nav-collapse .navbar-nav > li > a {
+  color: #008C95 !important;
+}
+.top-nav-collapse.navbar .navbar-form .form-control-wrapper .form-control, .navbar .navbar-form .form-control {
+  color: #008C95 !important;
+  border-color: #008C95 !important;
+}
 #menulogo {
   max-height: 2.5em;
   margin-top: -10px;
 }
-
-#nav-menu {
-  width: 1.7em;
-
+.btn-primary {
+  background: transparent !important;
 }
-
-#bs-example-navbar-collapse-1 {
-  background-color: white !important;
+.btn-primary:hover {
+  background: #008C95 !important;
 }
 
 menu {
   margin: 0px;
-  padding: 0px;
-  height: 54px;
-  background-color: #fff !important;
 }
 
-.navbar-default {
-  background-color: #fff;
-  color: #fff;
-  border: none;
-  width: 100%;
-  box-shadow: none !important;
+.aTitle {
+  font-family: AntwerpenFontRegular;
 }
-
-@media (min-width: 768px) {
-  .navbar-left {
-    float: left !important;
-    height: 54px;
-  }
-  .navbar-right {
-    float: right !important;
-    margin-right: -15px;
-    height: 54px;
-  }
-
-}
-
-body > menu > nav .container-fluid {
-  background-color: white !important;
-}
-
-/* navigatie - einde */
-
 /* homepage - begin */
-
-.container {
-  background-color: #fff;
-}
 
 a {
 	text-decoration: none;

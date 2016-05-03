@@ -26,7 +26,7 @@
   app.directive("menu", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/menu.html"
+      templateUrl: "templates/menu2.html"
     };
   });
 
