@@ -5,58 +5,91 @@
 
 @font-face {
   font-family: AntwerpenFontTall;
-  src:url(fonts/Antwerpen-Tall.woff);
+  src:url(fonts/Antwerpen-Talls.woff);
 }
 
 @font-face {
   font-family: AntwerpenFontSmall;
-  src:url(fonts/Antwerpen-Small.woff);
+  src:url(fonts/sAntwerpenSmallCaps-regular.woff);
 }
 
-html,
 body {
-  height: 100%;
+  background: url("../img/mas.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+/* navigatie - begin */
 
-.full-bg-img {
-    background: url("../img/mas.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.top-nav-collapse {
-    background-color: #fff !important;
-}
-.top-nav-collapse .navbar-nav > li > a {
-  color: #008C95 !important;
-}
-.top-nav-collapse.navbar .navbar-form .form-control-wrapper .form-control, .navbar .navbar-form .form-control {
-  color: #008C95 !important;
-  border-color: #008C95 !important;
-}
 #menulogo {
-  max-height: 3em;
+  max-height: 2.5em;
   margin-top: -10px;
 }
-.btn-primary {
-  background: transparent !important;
+
+#nav-menu {
+  width: 1.7em;
+
 }
-.btn-primary:hover, btn-primary:focus {
-  background-color: #008C95 !important;
+
+#bs-example-navbar-collapse-1 {
+  background-color: white !important;
 }
-.dropdown-menu li > a, .dropdown-menu li > span {
-  color: #008C95 !important;
+.navbar-title {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   text-align: center;
+   margin:0 auto;
+   color: black;
+   font-family: AntwerpenFontRegular;
+}
+
+.navbar-title a:link, a:visited, a:hover{
+  text-decoration: none;
+  color: black;
+
 }
 menu {
   margin: 0px;
+  padding: 0px;
+  height: 54px;
+  background-color: #fff !important;
 }
 
-.aTitle {
-  font-family: AntwerpenFontRegular;
+.navbar-default {
+  background-color: #fff;
+  color: #fff;
+  border: none;
+  width: 100%;
+  box-shadow: none !important;
 }
+
+@media (min-width: 768px) {
+  .navbar-left {
+    float: left !important;
+    height: 54px;
+  }
+  .navbar-right {
+    float: right !important;
+    margin-right: -15px;
+    height: 54px;
+  }
+
+}
+
+body > menu > nav .container-fluid {
+  background-color: white !important;
+}
+
+/* navigatie - einde */
+
 /* homepage - begin */
+
+.container {
+  background-color: #fff;
+}
 
 a {
 	text-decoration: none;
@@ -165,7 +198,7 @@ h2 {
 }
 
 .headerTitle h1{
-  font-size: 3.7em;
+  font-family: AntwerpenFontRegular;
   margin-top: 6%;
 }
 
@@ -187,15 +220,30 @@ body .btn-bg.bg-2 {
 
 }
 body .btn-bg.bg-2 .btn-2 button {
-  color: #fff;
-  background: #008e9c;
-  border:none;
-  border-radius: 7px;
+  color: #008e9c;
+  background: white;
+  border: none;
   -webkit-transition: all 0.7s ease;
   transition: all 0.7s ease;
   opacity: 0.5;
+  border-top: solid 2px #008e9c;
+  border-bottom: solid 2px #008e9c;
 }
+
 body .btn-bg.bg-2 .btn-2 button:hover {
+  background: #008e9c;
+  color: #fff;
+  border-radius: 10px;
+}
+
+body .btn-bg.bg-2 .btn-2 button.active {
+  background: #008e9c;
+  color: #fff;
+  border-radius: 10px;
+}
+
+
+/*body .btn-bg.bg-2 .btn-2 button:hover {
   background: transparent;
   color: #008e9c;
 }
@@ -221,7 +269,7 @@ body .btn-bg.bg-2 .btn-2 button:after {
   left: inherit;
   bottom: 0;
   right: 0;
-}
+}*/
 
 .btn {
   margin: 0 auto 30px auto;
