@@ -16,10 +16,10 @@
     };
   });
 
-  app.directive("single_page", function() {
+  app.directive("singlepage", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/single_page.html"
+      templateUrl: "templates/singlepage.html"
     };
   });
 
