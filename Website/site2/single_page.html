@@ -43,144 +43,159 @@
     </div>
 
 
+    <div ng-controller="PanelController as panel">
+      <div class="row">
+        <div class="col-sm-2">
+          <!-- linkse witruimte container -->
+        </div>
+        <div class="col-sm-8">
+
+          <div class="col-sm-4">
+            <div class="btn-bg bg-2">
+              <div class="btn btn-2">
+                <button href="#" ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1)}">Informatie</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="btn-bg bg-2">
+              <div class="btn btn-2">
+                <button href="#" ng-click="panel.selectTab(2)" ng-class="{active:panel.isSelected(2)}">Vragenlijst</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="btn-bg bg-2">
+              <div class="btn btn-2">
+                <button href="#" ng-click="panel.selectTab(3)" ng-class="{active:panel.isSelected(3)}">Tijdlijn</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-sm-2">
+          <!-- Rechtse witruimte container -->
+          {{tab}}
+        </div>
+      </div>
+
+      <div class="panel" ng-show="panel.isSelected(1)">
+        <div class="row informatie">
+          <div class="col-sm-2">
+            <!-- Linkse witruimte container -->
+          </div>
+
+          <div class="col-sm-8">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+              <div class="begindatum">
+                <img src="" alt="" />
+                <p>
+                  Begindatum:
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+              <div class="einddatum">
+                <img src="" alt="" />
+                <p>
+                  Einddatum:
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+
+            </div>
+          </div>
+
+          <div class="col-sm-2">
+            <!-- Rechtse witruimte container -->
+          </div>
+        </div>
+
+        <div class="row informatie">
+          <div class="col-sm-2">
+            <!-- Linkse witruimte container -->
+          </div>
+
+          <div class="col-sm-8">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+              <div class="categorie">
+                <img src="" alt="" />
+                <p>
+                  Categorie:
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-2">
+              <div class="locatie">
+                <img src="" alt="" />
+                <p>
+                  Locatie:
+                </p>
+              </div>
+            </div>
+
+            <div class="col-sm-2">
+
+            </div>
+
+          </div>
+
+          <div class="col-sm-2">
+            <!-- Rechtse witruimte container -->
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" ng-show="panel.isSelected(2)">
+        dit is een test
+      </div>
+
+      <div class="panel" ng-show="panel.isSelected(3)">
+        dit is een test
+      </div>
+    </div>
+
+
+
 
     <div class="row">
       <div class="col-sm-2">
-        <!-- linkse witruimte container -->
-      </div>
-      <div class="col-sm-8">
-
-        <div class="col-sm-3">
-          <div class="btn-bg bg-2">
-            <div class="btn btn-2">
-              <button href="#">Informatie</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="btn-bg bg-2">
-            <div class="btn btn-2">
-              <button href="#">Vragenlijst</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-          <div class="btn-bg bg-2">
-            <div class="btn btn-2">
-              <button href="#">Tijdlijn</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-3">
-
-        </div>
-      </div>
-      <div class="col-sm-2">
-        <!-- Rechtse witruimte container -->
-      </div>
-    </div>
-
-    <div class="row informatie">
-      <div class="col-sm-2">
-        <!-- Linkse witruimte container -->
-      </div>
-
-      <div class="col-sm-8">
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-          <div class="begindatum">
-            <img src="" alt="" />
-            <p>
-              Begindatum:
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-          <div class="einddatum">
-            <img src="" alt="" />
-            <p>
-              Einddatum:
-            </p>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-
-        </div>
-      </div>
-
-      <div class="col-sm-2">
-        <!-- Rechtse witruimte container -->
-      </div>
-    </div>
-
-    <div class="row informatie">
-      <div class="col-sm-2">
-        <!-- Linkse witruimte container -->
-      </div>
-
-      <div class="col-sm-8">
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-          <div class="categorie">
-            <img src="" alt="" />
-            <p>
-              Categorie:
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-
-        </div>
-        <div class="col-sm-2">
-          <div class="locatie">
-            <img src="" alt="" />
-            <p>
-              Locatie:
-            </p>
-          </div>
-        </div>
-
-        <div class="col-sm-2">
-
-        </div>
-
-      </div>
-
-      <div class="col-sm-2">
-        <!-- Rechtse witruimte container -->
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-2">
 
       </div>
       <div class="col-sm-8">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <div class="btn-bg bg-2">
             <div class="btn btn-2">
               <button href="#">Beschrijving</button>
             </div>
           </div>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4">
 
         </div>
       </div>

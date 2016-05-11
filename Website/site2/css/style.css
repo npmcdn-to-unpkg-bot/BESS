@@ -32,6 +32,9 @@ body {
   width: 1.7em;
 
 }
+.navButtons {
+  font-size: 1.2em;
+}
 
 #bs-example-navbar-collapse-1 {
   background-color: white !important;
@@ -189,6 +192,10 @@ h2 {
   font-family: AntwerpenFontTall;
 }
 
+.card:hover {
+  transition: box-shadow .25s;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
   /* homepage - einde */
 
@@ -233,13 +240,13 @@ body .btn-bg.bg-2 .btn-2 button {
 body .btn-bg.bg-2 .btn-2 button:hover {
   background: #008e9c;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 body .btn-bg.bg-2 .btn-2 button.active {
   background: #008e9c;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 
