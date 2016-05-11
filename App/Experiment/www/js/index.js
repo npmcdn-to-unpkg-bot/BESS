@@ -1,5 +1,8 @@
 angular.module('ionicApp', ['ionic'])
 
+
+
+
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   $stateProvider
@@ -44,10 +47,36 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-.controller('MainCtrl', function($scope, $state) {
-  console.log('MainCtrl');
+.controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
+  
   
   $scope.toIntro = function(){
     $state.go('intro');
   }
+  
+  
+  //Loading
+  $ionicLoading.show({
+    template: 'Loading...'
+  });
+  //API Call voor alle projecten
+  HttpService.getProjects()
+    .then(function(response) {
+       $scope.projects = response;
+       $ionicLoading.hide();
+    });
+})
+
+.service('HttpService', function($http) {
+ return {
+   getProjects: function() {
+     return $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/projects")
+         .then(function (response) {
+         console.log('Get projects', response);
+         return response.data;
+       });
+   }
+ };
 });
+
+

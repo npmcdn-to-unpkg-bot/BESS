@@ -120,10 +120,17 @@
     </script>
 
     <script id="templates/main.html" type="text/ng-template">
-      <ion-view hide-back-button="true" view-title="Awesome">
-        <ion-content class="padding">
-          <h1>Main app here</h1>
-          <button class="button" ng-click="toIntro()">Do Tutorial Again</button>
+      <ion-view hide-back-button="true" view-title="Projecten">
+        <ion-content ng-controller="MainCtrl">
+          <ion-list>
+              <ion-item collection-repeat="project in projects" class="item-text-wrap">
+                 <h3>{{ project.category }}</h3><br>
+                 {{ project.location }}<br>
+                 {{ project.enddate }}<br>
+                 
+              </ion-item>
+          </ion-list>
+          <!--<button class="button" ng-click="toIntro()">Do Tutorial Again</button>-->
         </ion-content>
       </ion-view>
     </script>
