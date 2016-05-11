@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf']);
 
   app.controller("PanelController", function(){
 
