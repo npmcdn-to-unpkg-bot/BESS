@@ -150,7 +150,7 @@ a {
 	color: #3498db;
 }
 	a:hover {
-		color: #2980b9;
+		color: #008e9c;
 	}
 
 h2 {
@@ -237,7 +237,7 @@ h2 {
 	transition: all 0.5s ease;
 }
 	.card__article a:hover {
-		color: #2980b9;
+		color: #008e9c;
 	}
 .card__article h2{
   font-family: AntwerpenFontTall;

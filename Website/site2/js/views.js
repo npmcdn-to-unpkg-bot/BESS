@@ -5,7 +5,7 @@
   app.directive("homepage", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/homepage.html"
+      templateUrl: "templates/projectoverzicht.html"
     };
   });
 
