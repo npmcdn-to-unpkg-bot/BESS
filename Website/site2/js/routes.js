@@ -7,6 +7,12 @@
       $routeProvider
 
             .when('/', {
+                templateUrl : 'templates/homepage.html',
+                controller  : 'homepageController',
+                controllerAs: "homepage"
+            })
+
+            .when('/projecten', {
                 templateUrl : 'templates/projectoverzicht.html',
                 controller  : 'projectoverzichtController',
                 controllerAs: "projects"
@@ -71,7 +77,7 @@
     });
     });
 
-    app.controller('mainController', function($scope) {
+    app.controller('homepageController', function($scope, $http) {
         // create a message to display in our view
         $scope.message = 'Everyone come and see how good I look!';
     });
