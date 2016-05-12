@@ -29,5 +29,12 @@
       templateUrl: "templates/menu.html"
     };
   });
-
+  app.directive("login", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/login.html",
+      controller: 'userController',
+      controllerAs: 'user'
+    };
+  });
 })();
