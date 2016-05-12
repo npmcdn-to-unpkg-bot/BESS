@@ -1,0 +1,21 @@
+<div class="container" ng-controller="registerController as register">
+  <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="registermodal-container">
+        <h1>Maak een profiel aan</h1><br>
+        <form>
+          <input ng-model="voornaam" type="text" name="voornaam" placeholder="Voornaam">
+          <input ng-model="achternaam" type="text" name="achternaam" placeholder="Achternaam">
+
+          <input ng-model="email" type="text" name="user" placeholder="Email">
+          <input ng-model="password" type="password" name="pass" placeholder="Paswoord">
+
+          <input ng-click='register.login(voornaam, achternaam, email, password);' data-toggle="modal" type="submit" class="register registermodal-submit" value="Registreer mij">
+
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

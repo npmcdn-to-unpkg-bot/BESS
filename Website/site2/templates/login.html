@@ -1,21 +1,29 @@
 
-    <div class="container">
+<div class="container">
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="loginmodal-container">
+        <h1>Log in op jouw profiel</h1><br>
+        <form>
+          <input ng-model="email" type="text" name="user" placeholder="Email">
+          <input ng-model="password" type="password" name="pass" placeholder="Paswoord">
+
+          <div class="modalCheckbox">
+            <input id="remember" type="checkbox" />
+            <label for="remember">Onthoud mij</label>
+          </div>
 
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Log in op jouw profiel</h1><br>
-				  <form>
-					<input ng-model="email" type="text" name="user" placeholder="Email">
-					<input ng-model="password" type="password" name="pass" placeholder="Paswoord">
-					<input ng-click='user.login(email, password);' data-toggle="modal" type="submit" class="login loginmodal-submit" value="Login">
-				  </form>
+            <input ng-click='user.login(email, password);' data-toggle="modal" type="submit" class="login loginmodal-submit" value="Login">
 
-				  <div class="login-help">
-					<a href="">Registreren</a>
-				  </div>
-				</div>
-			</div>
-		  </div>
+            <p>
+              Geen lid?  <span><a href="#"> Registreer</a></span>
+            </p>
+
+
+        </form>
+
+      </div>
     </div>
+  </div>
+</div>

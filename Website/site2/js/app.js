@@ -35,4 +35,26 @@
     }
   });
 
+  app.controller("registerController", function($http){
+    var register = this;
+    register.login =  function(gvoornaam, gachternaam, gusername, gpassword){
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/signup",
+        data: {
+                        firstname: gvoornaam,
+                        name: gachternaam,
+                        email: gusername,
+                        password: gpassword,
+                    }
+    }).then(function mySucces(response) {
+        console.log("registratie succesvol token=" + response.data.token);
+        $('#register-modal').modal('hide');
+    }, function myError(response) {
+        console.log("register failed");
+    });
+    }
+  });
+
 })();

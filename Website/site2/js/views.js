@@ -29,6 +29,7 @@
       templateUrl: "templates/menu.html"
     };
   });
+
   app.directive("login", function() {
     return {
       restrict: 'E',
@@ -37,4 +38,21 @@
       controllerAs: 'user'
     };
   });
+
+  app.directive("register", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/register.html",
+      controller: 'userController',
+      controllerAs: 'user'
+    };
+  });
+
+  app.directive("footer", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/footer.html"
+    };
+  });
+
 })();
