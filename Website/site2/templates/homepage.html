@@ -27,4 +27,39 @@
     <div class="col-sm-2">
     </div>
   </div>
+
+  <div class="row section12">
+    <div class="col-xs-12 divider-new aTitle">
+      Laatste nieuwe projecten
+    </div>
+  </div>
+
+  <div class="row" ng-repeat="projecten in homepage.all  ">
+    <div class="col-sm-4" ng-repeat="project in projecten | limitTo: -3">
+      <div class="wrapper">
+
+        <div class="card radius shadowDepth1 hoverable">
+          <div class="card__image border-tlr-radius">
+            <img src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius">
+          </div>
+
+          <div class="card__content card__padding">
+
+            <article class="card__article">
+              <h2><a href="/#/project/{{project.id}}">{{project.name}}</a></h2>
+
+              <p>{{project.description | truncate: 100: '...': true}}</p>
+            </article>
+
+            <div class="ReadMore">
+              <a href="/#/project/{{project.id}}">Lees meer...</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
 </div>
