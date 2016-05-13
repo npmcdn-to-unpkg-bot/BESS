@@ -34,8 +34,8 @@
     </div>
   </div>
 
-  <div class="row" ng-repeat="projecten in homepage.all  ">
-    <div class="col-sm-4" ng-repeat="project in projecten | limitTo: -3">
+  <div class="row">
+    <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
       <div class="wrapper">
 
         <div class="card radius shadowDepth1 hoverable">
