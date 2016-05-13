@@ -49,15 +49,15 @@ angular.module('ionicApp', ['ionic'])
   };
 })
 
-<<<<<<< HEAD
+
 .controller('MainCtrl', function($scope, $state) {
   console.log('MainCtrl');
-  
+
   $scope.toIntro = function(){
     $state.go('intro');
   }
 });
-=======
+
 .controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
 
 
@@ -108,4 +108,3 @@ angular.module('ionicApp', ['ionic'])
    }
  };
 });
->>>>>>> parent of 6253042... 32

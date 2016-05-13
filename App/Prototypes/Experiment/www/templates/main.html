@@ -1,0 +1,13 @@
+<ion-view hide-back-button="true" view-title="Projecten">
+  <ion-content>
+    <ion-list>
+        <ion-item collection-repeat="project in projects" class="item-text-wrap" href="#/main/project/{{project.id}}">
+           <h3>{{ project.category }}</h3><br>
+           {{ project.location }}<br>
+           {{ project.enddate }}<br>
+
+        </ion-item>
+    </ion-list>
+    <!--<button class="button" ng-click="toIntro()">Do Tutorial Again</button>-->
+  </ion-content>
+</ion-view>
