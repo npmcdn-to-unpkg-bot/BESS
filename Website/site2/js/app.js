@@ -33,11 +33,9 @@
         console.log("login failed");
     });
     }
-  });
 
-  app.controller("registerController", function($http){
-    var register = this;
-    register.login =  function(gvoornaam, gachternaam, gusername, gpassword){
+
+    user.register = function(gvoornaam, gachternaam, gusername, gpassword){
 
       $http({
         method : "POST",
@@ -50,11 +48,26 @@
                     }
     }).then(function mySucces(response) {
         console.log("registratie succesvol token=" + response.data.token);
+        localStorage.setItem("token", response.data.token);
         $('#register-modal').modal('hide');
     }, function myError(response) {
         console.log("register failed");
     });
     }
   });
+
+    app.controller("timelineController", function($routeParams, $http, $scope){
+      var projectId = $scope.projectId = $routeParams.projectId;
+      console.log("projectID = " + projectId);
+      var timelines = this;
+      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
+  .then(function(response) {
+    console.log(response.data.timelines);
+    timelines.all = response.data.timelines;
+  });
+
+    });
+
+
 
 })();

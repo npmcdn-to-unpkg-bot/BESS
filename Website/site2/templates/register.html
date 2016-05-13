@@ -1,4 +1,4 @@
-<div ng-controller="registerController as register">
+<div>
   <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
       <div class="registermodal-container">
@@ -10,7 +10,7 @@
           <input ng-model="email" type="text" name="user" placeholder="Email">
           <input ng-model="password" type="password" name="pass" placeholder="Paswoord">
 
-          <input ng-click='register.login(voornaam, achternaam, email, password);' data-toggle="modal" type="submit" class="register registermodal-submit" value="Registreer mij">
+          <input ng-click='user.register(voornaam, achternaam, email, password);' data-toggle="modal" type="submit" class="register registermodal-submit" value="Registreer mij">
 
 
         </form>

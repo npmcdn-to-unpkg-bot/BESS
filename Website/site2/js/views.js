@@ -65,7 +65,9 @@
   app.directive("timeline", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/timeline.html"
+      templateUrl: "templates/timeline.html",
+      controller: 'timelineController',
+      controllerAs: 'timeline'
     };
   });
 
