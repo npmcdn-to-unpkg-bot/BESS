@@ -1,6 +1,8 @@
 (function() {
   var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter']);
 
+
+
   app.controller("PanelController", function(){
 
     this.tab = 1;
@@ -22,16 +24,17 @@
         method : "POST",
         url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/login",
         data: {
-                        email: gusername,
-                        password: gpassword,
-                    }
-    }).then(function mySucces(response) {
+          email: gusername,
+          password: gpassword,
+        }
+      }).then(function mySucces(response) {
         console.log("login succesvol token=" + response.data.token);
         $('#login-modal').modal('hide');
         localStorage.setItem("token", response.data.token);
-    }, function myError(response) {
+        user.getData();
+      }, function myError(response) {
         console.log("login failed");
-    });
+      });
     }
 
 
@@ -41,32 +44,51 @@
         method : "POST",
         url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/signup",
         data: {
-                        firstname: gvoornaam,
-                        name: gachternaam,
-                        email: gusername,
-                        password: gpassword,
-                    }
-    }).then(function mySucces(response) {
+          firstname: gvoornaam,
+          name: gachternaam,
+          email: gusername,
+          password: gpassword,
+        }
+      }).then(function mySucces(response) {
         console.log("registratie succesvol token=" + response.data.token);
         localStorage.setItem("token", response.data.token);
         $('#register-modal').modal('hide');
-    }, function myError(response) {
+      }, function myError(response) {
         console.log("register failed");
-    });
-    }
+      });
+    };
+
+    user.getData = function(){
+      if (localStorage.token) {
+        $http({
+          method: "GET",
+          url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user?token=" + localStorage.token
+        }).then(function mySucces(response) {
+          localStorage.setItem("firstname", response.data.user.firstname);
+          user.loggedin = true;
+          console.log(localStorage.firstname);
+          user.firstname = localStorage.firstname;
+          console.log(user.firstname);
+        }, function myError(response) {
+          console.log("User ophalen failed");
+        });
+      }
+    };
+
+
   });
 
-    app.controller("timelineController", function($routeParams, $http, $scope){
-      var projectId = $scope.projectId = $routeParams.projectId;
-      console.log("projectID = " + projectId);
-      var timelines = this;
-      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
-  .then(function(response) {
-    console.log(response.data.timelines);
-    timelines.all = response.data.timelines;
-  });
-
+  app.controller("timelineController", function($routeParams, $http, $scope){
+    var projectId = $scope.projectId = $routeParams.projectId;
+    console.log("projectID = " + projectId);
+    var timelines = this;
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
+    .then(function(response) {
+      console.log(response.data.timelines);
+      timelines.all = response.data.timelines;
     });
+
+  });
 
 
 
