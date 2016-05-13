@@ -50,9 +50,6 @@
       console.log(response.data.project);
       spproject.full = response.data.project;
       spproject.startdate = mysqlDate(response.data.project.startdate);
-
-
-
       spproject.enddate = mysqlDate(response.data.project.enddate);
       spproject.category = response.data.project.category;
       spproject.name = response.data.project.name;
