@@ -15,47 +15,44 @@
 
 body {
   background: linear-gradient(
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2)
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
     ),
     url("../img/mas.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
-/* navigatie - begin */
+  /* navigatie - begin */
 
-#menulogo {
-  max-height: 2.5em;
-  margin-top: -10px;
-}
+  #menulogo {
+    max-height: 2.5em;
+    margin-top: -10px;
+  }
 
-#nav-menu {
-  width: 1.7em;
+  #bs-example-navbar-collapse-1 {
+    background-color: #f9f9f9 !important;
+  }
+  .navbar-title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+    color: black;
+    font-family: AntwerpenFontRegular;
+  }
 
-}
-.navButtons {
-  font-size: 1.2em;
-}
+  #nav-menu {
+    width: 1.7em;
 
-#bs-example-navbar-collapse-1 {
-  background-color: #f9f9f9 !important;
-}
-.navbar-title {
-   position: absolute;
-   width: 100%;
-   left: 0;
-   text-align: center;
-   margin:0 auto;
-   color: black;
-   font-family: AntwerpenFontRegular;
-}
 
-.navbar-title a:link, a:visited, a:hover{
-  text-decoration: none;
-  color: black;
+  }
+  .navButtons {
+    font-size: 1.2em;
+  }
 
 }
 menu {
@@ -71,7 +68,39 @@ menu {
   width: 100%;
   box-shadow: none !important;
 }
+#bs-example-navbar-collapse-1 {
+  background-color: white !important;
+}
+.navbar-title {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin:0 auto;
+  color: black;
+  font-family: AntwerpenFontRegular;
+}
 
+.navbar-title a:link, a:visited, a:hover{
+  text-decoration: none;
+  color: black;
+}
+menu {
+  margin: 0px;
+  padding: 0px;
+  height: 54px;
+  background-color: #fff !important;
+}
+
+.navbar-default {
+  background-color: #fff;
+  color: #fff;
+  border: none;
+  width: 100%;
+  box-shadow: none !important;
+}
+
+/* navigatie - einde */
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
@@ -85,26 +114,35 @@ menu {
 
 }
 
-/* navigatie - einde */
-
-/* homepage - begin */
+body > menu > nav .container-fluid {
+  background-color: white !important;
+}
 
 .container {
   background-color: #f9f9f9;
   padding-bottom: 40px;
 }
 
-a {
-	text-decoration: none;
-	color: #3498db;
+/* navigatie - einde */
+
+/* homepage - begin */
+
+.container {
+  background-color: #fff;
+  padding-bottom: 40px;
 }
-	a:hover {
-		color: #008e9c;
-	}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+a:hover {
+  color: #008e9c;
+}
 
 h2 {
-	line-height: 1.2;
-	margin-bottom: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
 }
 
 .ReadMore {
@@ -115,22 +153,70 @@ h2 {
   color: #3498db;
 }
 
-
-
 .wrapper {
-	margin: 40px auto;
-	padding-left: 1em;
-	padding-right: 1em;
+  margin: 40px auto;
+  padding-left: 1em;
+  padding-right: 1em;
   display: inline-block;
-
 }
 
+.homepagelogo {
+  padding: 50px 0px;
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+.section1 {
+  height: 500px;
+  text-align: center;
+}
+.section12 {
+  text-align: center;
+  padding: 0px;
+}
+.section2 {
+  height: 50vh;
+  text-align: center;
+}
+.container.homepage {
+  width: 100%;
+}
+.divider-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: 300;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.divider-new::before {
+  content: '';
+  height: 1.5px;
+  background: #666;
+  flex: 1;
+  margin: 0 .45em 0 0;
+}
+
+.divider-new::after {
+  content: '';
+  height: 1.5px;
+  background: #666;
+  flex: 1;
+  margin: 0 0 0 .45em;
+}
+.aTitle {
+  font-family: AntwerpenFontRegular;
+}
+/* homepage - einde */
+
 /**
- * Box shadow
- */
+* Box shadow
+*/
 .border-tlr-radius {
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .text-center { text-align: center; }
@@ -142,57 +228,57 @@ h2 {
 .shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
 
 .shadowDepth1 {
-   box-shadow:
-    	0px 0px 4px rgba(0,0,0, 0.24);
+  box-shadow:
+  0px 0px 4px rgba(0,0,0, 0.24);
 }
 
 
 /**
- * Card Styles
- */
+* Card Styles
+*/
 
 .card {
-	background-color: #fff;
-	margin-bottom: 1.6rem;
+  background-color: #fff;
+  margin-bottom: 1.6rem;
 }
 
 .card__padding {
-	padding-left: 1.6em;
+  padding-left: 1.6em;
   padding-right: 1.6em;
   padding-bottom: 3em;
 }
 
 .card__image {
-	min-height: 100px;
-	background-color: #eee;
+  min-height: 100px;
+  background-color: #eee;
 }
-	.card__image img {
-		width: 100%;
-		max-width: 100%;
-		display: block;
-	}
+.card__image img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
 
 .card__content {
-	position: relative;
+  position: relative;
 
 }
 
 /* card meta */
 .card__meta time {
-	font-size: 1.5rem;
-	color: #bbb;
-	margin-left: 0.8rem;
+  font-size: 1.5rem;
+  color: #bbb;
+  margin-left: 0.8rem;
 }
 
 /* card article */
 .card__article a {
-	text-decoration: none;
-	color: #444;
-	transition: all 0.5s ease;
+  text-decoration: none;
+  color: #444;
+  transition: all 0.5s ease;
 }
-	.card__article a:hover {
-		color: #008e9c;
-	}
+.card__article a:hover {
+  color: #008e9c;
+}
 .card__article h2{
   font-family: AntwerpenFontTall;
 }
@@ -202,7 +288,7 @@ h2 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-  /* homepage - einde */
+/* homepage - einde */
 
 /* single_page begin */
 .headerImg {
@@ -230,6 +316,7 @@ body .btn-bg.bg-2 {
   margin-left: -30px;
   margin-top: 30%;
 
+  <<<<<<< Updated upstream
 }
 body .btn-bg.bg-2 .btn-2 button {
   color: #008C95;
@@ -252,34 +339,59 @@ body .btn-bg.bg-2 .btn-2 button.active {
   color: #fff;
   border-radius: 4px;
 }
+=======
+}
+body .btn-bg.bg-2 .btn-2 button {
+  color: #008e9c;
+  background: white;
+  border: none;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+  opacity: 0.5;
+  border-top: solid 2px #008e9c;
+  border-bottom: solid 2px #008e9c;
+}
+
+body .btn-bg.bg-2 .btn-2 button:hover {
+  background: #008e9c;
+  color: #fff;
+  border-radius: 4px;
+}
+
+body .btn-bg.bg-2 .btn-2 button.active {
+  background: #008e9c;
+  color: #fff;
+  border-radius: 4px;
+}
+>>>>>>> Stashed changes
 
 
 /*body .btn-bg.bg-2 .btn-2 button:hover {
-  background: transparent;
-  color: #008e9c;
+background: transparent;
+color: #008e9c;
 }
 body .btn-bg.bg-2 .btn-2 button:hover:before,
 body .btn-bg.bg-2 .btn-2 button:hover:after {
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-  width: 100%;
+-webkit-transition: all 0.7s ease;
+transition: all 0.7s ease;
+width: 100%;
 }
 body .btn-bg.bg-2 .btn-2 button:before,
 body .btn-bg.bg-2 .btn-2 button:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 0px;
-  height: 3px;
-  background: #008e9c;
-  transition: all 0.4s ease;
+content: '';
+position: absolute;
+top: 0;
+left: 0px;
+width: 0px;
+height: 3px;
+background: #008e9c;
+transition: all 0.4s ease;
 }
 body .btn-bg.bg-2 .btn-2 button:after {
-  top: inherit;
-  left: inherit;
-  bottom: 0;
-  right: 0;
+top: inherit;
+left: inherit;
+bottom: 0;
+right: 0;
 }*/
 
 .btn {
@@ -373,8 +485,8 @@ button {
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
+  /* border-radius: 3px; */
+  /* -webkit-user-select: none;
   user-select: none; */
 }
 
@@ -454,7 +566,7 @@ button {
 
 /*timeline begin*/
 
- #timeline .timeline-item:after, #timeline .timeline-item:before {
+#timeline .timeline-item:after, #timeline .timeline-item:before {
   content: '';
   display: block;
   width: 100%;
