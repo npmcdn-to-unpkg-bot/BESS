@@ -127,11 +127,6 @@ body > menu > nav .container-fluid {
 
 /* homepage - begin */
 
-.container {
-  background-color: #fff;
-  padding-bottom: 40px;
-}
-
 a {
   text-decoration: none;
   color: #3498db;
@@ -179,6 +174,9 @@ h2 {
 }
 .container.homepage {
   width: 100%;
+}
+.row.section1 {
+  margin-right: 0px;
 }
 .divider-new {
   display: flex;
