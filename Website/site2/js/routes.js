@@ -75,8 +75,14 @@
     });
 
     app.controller('homepageController', function($scope, $http) {
-        // create a message to display in our view
-        $scope.message = 'Everyone come and see how good I look!';
+      var projects = this;
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/projects")
+    .then(function(response) {
+      console.log(response.data);
+      projects.all = response.data;
+
+        //$scope.myWelcome = response.data;
+    });
     });
 
 function mysqlDate(dateToConvert){
