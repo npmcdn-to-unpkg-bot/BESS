@@ -37,6 +37,11 @@ $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 		$api->put('questions/{id}', 'App\Api\V1\Controllers\QuestionController@update');
 		$api->delete('questions/{id}', 'App\Api\V1\Controllers\QuestionController@destroy');
 
+		// timeline routing api met auth
+		$api->post('timelines', 'App\Api\V1\Controllers\TimelineController@store');
+		$api->put('timelines/{id}', 'App\Api\V1\Controllers\TimelineController@update');
+		$api->delete('timelines/{id}', 'App\Api\V1\Controllers\TimelineController@destroy');
+
 		//answers routing api met auth
 
 		$api->get('answers/user', 'App\Api\V1\Controllers\AnswerController@indexuser');
@@ -56,6 +61,11 @@ $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 			$api->get('questions', 'App\Api\V1\Controllers\QuestionController@index');
 			$api->get('questions/{id}', 'App\Api\V1\Controllers\QuestionController@show');
 			$api->get('questions/project/{id}', 'App\Api\V1\Controllers\QuestionController@showperproject');
+
+			// timeline routing api zonder auth
+			$api->get('timelines', 'App\Api\V1\Controllers\TimelineController@index');
+			$api->get('timelines/{id}', 'App\Api\V1\Controllers\TimelineController@show');
+			$api->get('timelines/project/{id}', 'App\Api\V1\Controllers\TimelineController@showperproject');
 
 				// Answers routing api zonder auth
 				$api->get('answers', 'App\Api\V1\Controllers\AnswerController@index');

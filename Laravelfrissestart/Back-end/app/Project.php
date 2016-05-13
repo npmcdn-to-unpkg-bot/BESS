@@ -17,4 +17,9 @@ public function answers()
 {
     return $this->hasMany('App\Answer');
 }
+
+public function timelines()
+{
+    return $this->hasMany('App\Timeline');
+}
 }
