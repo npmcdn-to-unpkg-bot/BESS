@@ -55,4 +55,25 @@
     };
   });
 
+  app.directive("vragenlijst", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/vragenlijst.html"
+    };
+  });
+
+  app.directive("timeline", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/timeline.html"
+    };
+  });
+
+  app.directive("informatie", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/informatie.html"
+    };
+  });
+
 })();
