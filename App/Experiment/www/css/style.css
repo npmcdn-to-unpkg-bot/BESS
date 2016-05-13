@@ -5,7 +5,7 @@ font-face {
   src: url("fonts/Antwerpen-Regular.eot?v=2.0.1");
   src: url("fonts/Antwerpen-Regular.eot?v=2.0.1#iefix") format("embedded-opentype"), url("fonts/Antwerpen-Regular.ttf?v=2.0.1") format("truetype"), url("fonts/Antwerpen-Regular.woff?v=2.0.1") format("woff"), url("fonts/Antwerpen-Regular.woff") format("woff"), url("fonts/Antwerpen-Regular?v=2.0.1#Ionicons") format("svg");
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
 }
 
 /* Antwerpen SUN - INFORMATIE */
@@ -14,7 +14,7 @@ font-face {
   src: url("fonts/SunAntwerpen_500.eot?v=2.0.1");
   src: url("fonts/SunAntwerpen_500.eot?v=2.0.1#iefix") format("embedded-opentype"), url("fonts/SunAntwerpen_500.ttf?v=2.0.1") format("truetype"), url("fonts/SunAntwerpen_500.woff?v=2.0.1") format("woff"), url("fonts/SunAntwerpen_500.woff") format("woff"), url("fonts/SunAntwerpen_500?v=2.0.1#Ionicons") format("svg");
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
 }
 
 
@@ -26,11 +26,11 @@ font-face {
     font-family: "SunAntwerpen" !important;
     text-transform: uppercase;
 }
-.navbuttons i{
+.navbuttons i, .navbuttons{
     color: #008C95;
 }
 h2 {
-    font-family: "SunAntwerpen" !important; 
+    font-family: "SunAntwerpen" !important;
 }
 h3 {
     font-family: "SunAntwerpen" !important;
@@ -38,7 +38,7 @@ h3 {
 }
 body {
     font-family: "Arial" !important;
-    
+
 }
 
 .slider-pager-page {
@@ -65,7 +65,7 @@ body {
   background-color: #fff;
   text-align: center;
 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
 
@@ -132,7 +132,7 @@ body {
 
 .below-buttons {
  margin-top: 60px;
-    
+
 }
 
 
@@ -152,8 +152,8 @@ body {
   -o-text-overflow: clip;
   text-overflow: clip;
   z-index: -5;
-    
-    
+
+
   /*-ms-transform: rotate(15deg); /* IE 9 */
   /*-webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
   /*transform: rotate(15deg);*/
@@ -186,20 +186,21 @@ body {
    top: 115px;
    left: 85px;
    font-size: 1.8em;
-   
+
 }
 
 .rotate {
  ms-transform: rotate(15deg); /* IE 9 */
    webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-   transform: rotate(15deg);   
+   transform: rotate(15deg);
 }
 
 #pentagondiv {
     position: relative;
-   top: -20px; 
+   top: -20px;
 }
+<<<<<<< HEAD
 
 
-
-
+=======
+>>>>>>> parent of 6253042... 32
