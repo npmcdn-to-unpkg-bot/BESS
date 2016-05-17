@@ -67,7 +67,7 @@ angular.module('ionicApp', ['ionic'])
     });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService) {
+.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
 
   HttpService.getProjectDetail(projectId)
@@ -75,6 +75,17 @@ angular.module('ionicApp', ['ionic'])
        $scope.projectDetail = response.project;
       console.log($scope.projectDetail);
     });
+
+
+    $ionicModal.fromTemplateUrl('templates/modal-tinder.html', {
+      scope: $scope
+        }).then(function(modal) {
+          $scope.modal = modal;
+        });
+
+    $scope.showSwipeTutorial = function() {
+          $scope.modal.show();
+    };
 })
 
 .service('HttpService', function($http) {
@@ -97,5 +108,3 @@ angular.module('ionicApp', ['ionic'])
    }
  };
 });
-
-

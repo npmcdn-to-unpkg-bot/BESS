@@ -1,8 +1,15 @@
 <ion-view>
   <ion-nav-title>
-      Project nummer: {{projectDetail.id}}
-    </ion-nav-title>
-  <ion-content>
-    <h3>Hallo {{projectDetail.id}} </h3>
-  </ion-content>
+      Project: {{projectDetail.id}}
+  </ion-nav-title>
+  <ion-content class="has-footer">
+        <h3>Hallo {{projectDetail.id}} </h3>
+    </ion-content>
+    <ion-footer-bar class="bar">
+	<div class="button-bar">
+    <button class="button button-full button-positive button-in-footer" ng-click="showSwipeTutorial()">
+      Wat moet ik hier doen?
+    </button>
+	</div>
+</ion-footer-bar>
 </ion-view>

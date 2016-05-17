@@ -199,8 +199,11 @@ body {
     position: relative;
    top: -20px;
 }
-<<<<<<< HEAD
 
+.button-in-footer {
 
-=======
->>>>>>> parent of 6253042... 32
+  margin-top: 0px !important;
+  margon-bottom: 0px !important;
+  background-color: #008C95 !important;
+
+}
