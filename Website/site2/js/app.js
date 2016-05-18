@@ -79,6 +79,7 @@
 
     user.logout = function() {
       user.loggedin = false;
+      user.isAdmin = "";
       localStorage.removeItem("token");
       localStorage.removeItem("firstname");
       localStorage.removeItem("lastname");
