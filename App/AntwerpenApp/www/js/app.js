@@ -90,7 +90,30 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
     HttpService.getQuestionsByProject(projectId)
       .then(function(response) {
          $scope.questions = response.questions;
-        console.log($scope.questions);
+        var cardTypes = $scope.questions;
+
+        $scope.cards = [];
+
+        $scope.addCard = function(i) {
+            var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+            newCard.id = Math.random();
+            $scope.cards.push(angular.extend({}, newCard));
+        }
+
+        for(var i = 0; i < cardTypes.length; i++) $scope.addCard();
+
+        $scope.cardSwipedLeft = function(index) {
+            console.log('Left swipe');
+        }
+
+        $scope.cardSwipedRight = function(index) {
+            console.log('Right swipe');
+        }
+
+        $scope.cardDestroyed = function(index) {
+            $scope.cards.splice(index, 1);
+            console.log('Card removed');
+        }
       });
 
 
@@ -106,34 +129,10 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
     /* CARD-SECTION*/
 
-    var cardTypes = [
-        { image: 'img/grote-markt.jpg', title: 'So much grass #hippster'},
-        { image: 'img/Antwerpen_MAS.jpg', title: 'Way too much Sand, right?'},
-        { image: 'img/A_Kaaipark_museum.jpg', title: 'Beautiful sky from wherever'},
-    ];
 
-    $scope.cards = [];
 
-    $scope.addCard = function(i) {
-        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-        newCard.id = Math.random();
-        $scope.cards.push(angular.extend({}, newCard));
-    }
 
-    for(var i = 0; i < 3; i++) $scope.addCard();
 
-    $scope.cardSwipedLeft = function(index) {
-        console.log('Left swipe');
-    }
-
-    $scope.cardSwipedRight = function(index) {
-        console.log('Right swipe');
-    }
-
-    $scope.cardDestroyed = function(index) {
-        $scope.cards.splice(index, 1);
-        console.log('Card removed');
-    }
 })
 
 
