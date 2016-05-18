@@ -1,31 +1,35 @@
 
 <div class="container">
-  <div class="row" ng-repeat="projecten in projects.all  | groupBy:3">
-    <div class="col-sm-4" ng-repeat="project in projecten">
-      <div class="wrapper">
+  <div class="row">
+    <div ng-repeat="project in projects.all">
+      <div ng-if="$index % 3 == 0" class="clearfix"></div>
+      <div class="col-sm-4">
+        <div class="wrapper">
 
-        <div class="card radius shadowDepth1 hoverable">
-          <div class="card__image border-tlr-radius">
-            <img src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius">
-          </div>
-
-          <div class="card__content card__padding">
-
-            <article class="card__article">
-              <h2><a href="/#/project/{{project.id}}">{{project.name}}</a></h2>
-
-              <p>{{project.description | truncate: 100: '...': true}}</p>
-            </article>
-
-            <div class="ReadMore">
-              <a href="/#/project/{{project.id}}">Lees meer...</a>
+          <div class="card radius shadowDepth1 hoverable">
+            <div class="card__image border-tlr-radius">
+              <img src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius">
             </div>
+
+            <div class="card__content card__padding">
+
+              <article class="card__article">
+                <h2><a href="/#/project/{{project.id}}">{{project.name}}</a></h2>
+
+                <p>{{project.description | truncate: 100: '...': true}}</p>
+              </article>
+
+              <div class="ReadMore">
+                <a href="/#/project/{{project.id}}">Lees meer...</a>
+              </div>
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </div>
+
 
   </div>
 </div>
