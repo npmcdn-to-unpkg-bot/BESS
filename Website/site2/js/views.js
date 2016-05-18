@@ -33,18 +33,14 @@
   app.directive("login", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/login.html",
-      controller: 'userController',
-      controllerAs: 'user'
+      templateUrl: "templates/login.html"
     };
   });
 
   app.directive("register", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/register.html",
-      controller: 'userController',
-      controllerAs: 'user'
+      templateUrl: "templates/register.html"
     };
   });
 
