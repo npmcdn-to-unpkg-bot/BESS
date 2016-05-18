@@ -1,8 +1,6 @@
 (function() {
   var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter']);
 
-
-
   app.controller("PanelController", function(){
 
     this.tab = 1;
@@ -66,7 +64,6 @@
         }).then(function mySucces(response) {
           localStorage.setItem("firstname", response.data.user.firstname);
           user.loggedin = true;
-          console.log(localStorage.firstname);
           user.firstname = localStorage.firstname;
           console.log(user.firstname);
         }, function myError(response) {
@@ -74,7 +71,7 @@
         });
       }
     };
-
+    
 
   });
 
