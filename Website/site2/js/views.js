@@ -77,7 +77,10 @@
   app.directive("createproject", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/createproject.html"
+      templateUrl: "templates/createproject.html",
+      controller: 'projectController',
+      controllerAs: 'project'
+
     };
   });
 

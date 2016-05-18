@@ -103,6 +103,32 @@
 
   });
 
+    app.controller("projectController", function($routeParams, $http, $scope){
+      var project = this;
+
+      project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation){
+
+        $http({
+          method : "POST",
+          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects?token=" + localStorage.token,
+          data: {
+            name: gname,
+            description: gdescription,
+            startdate: gstartdate,
+            enddate: genddate,
+            category: gcategory,
+            location: glocation,
+          }
+        }).then(function mySucces(response) {
+          console.log("project aanmaken succesvol");
+          $('#create-modal').modal('hide');
+        }, function myError(response) {
+          console.log("project aanmaken failed");
+        });
+      };
+
+    });
+
 
 
 })();

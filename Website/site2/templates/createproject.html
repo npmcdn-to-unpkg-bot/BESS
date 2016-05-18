@@ -8,7 +8,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h1>Maak een project aan</h1><br>
 
-      <form class="" action="index.html" method="post">
+      <form class="">
         <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
 
         <div class="file-upload">
@@ -38,13 +38,16 @@
         <div class="tab-content">
           <div class="tab-pane active" id="informatieTab">
 
-            <input ng-model="begindatum" type="text" name="begindatum" placeholder="Begindatum">
-            <input ng-model="einddatum" type="text" name="einddatum" placeholder="Einddatum">
+            <input ng-model="projectstartdate" type="text" name="begindatum" placeholder="Begindatum">
+            <input ng-model="projectenddate" type="text" name="einddatum" placeholder="Einddatum">
 
 
 
-            <input ng-model="categorie" type="text" name="categorie" placeholder="Categorie">
-            <input ng-model="locatie" type="text" name="locatie" placeholder="Locatie">
+            <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
+            <input ng-model="projectlocation" type="text" name="locatie" placeholder="Locatie">
+
+
+            <input ng-model="projectdescription" type="text" name="beschrijving" placeholder="Beschrijving">
           </div>
 
           <div class="tab-pane" id="vragenlijstTab">
@@ -59,19 +62,8 @@
 
 
 
-        <input data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
+        <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
       </form>
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
   </div>
