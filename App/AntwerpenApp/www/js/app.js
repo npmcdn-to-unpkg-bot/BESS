@@ -81,11 +81,17 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
 
-  HttpService.getQuestionsByProject(projectId)
+  HttpService.getProjectDetail(projectId)
     .then(function(response) {
-       $scope.questions = response;
-      console.log($scope.questions);
+       $scope.projectDetail = response.project;
+      console.log($scope.projectDetail);
     });
+
+    HttpService.getQuestionsByProject(projectId)
+      .then(function(response) {
+         $scope.questions = response.questions;
+        console.log($scope.questions);
+      });
 
 
     $ionicModal.fromTemplateUrl('templates/modal-tinder.html', {
@@ -101,9 +107,9 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
     /* CARD-SECTION*/
 
     var cardTypes = [
-        { image: 'img/pic2.png', title: 'So much grass #hippster'},
-        { image: 'img/pic3.png', title: 'Way too much Sand, right?'},
-        { image: 'img/pic4.png', title: 'Beautiful sky from wherever'},
+        { image: 'img/grote-markt.jpg', title: 'So much grass #hippster'},
+        { image: 'img/Antwerpen_MAS.jpg', title: 'Way too much Sand, right?'},
+        { image: 'img/A_Kaaipark_museum.jpg', title: 'Beautiful sky from wherever'},
     ];
 
     $scope.cards = [];
