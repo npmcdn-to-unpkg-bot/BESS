@@ -24,11 +24,13 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a href="#/">Home</a></li>
-            <li><a href="#/projecten">Projecten</a></li>
+            <li class="menu-item"><a href="#/">Home</a></li>
+            <li class="menu-item"><a href="#/projecten">Projecten</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="">Profiel</a></li>
-            <li><a href="">Locatie</a></li>
+            <li class="menu-item"><a href="" data-toggle="modal" data-target="#create-modal">Admin - maak project aan</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="menu-item"><a href="">Sorteer op - Thema</a></li>
+            <li class="menu-item"><a href="">Sorteer op - Locatie</a></li>
           </ul>
         </li>
       </ul>
@@ -36,6 +38,7 @@
       <ul class="nav navbar-nav navbar-right navButtons">
         <li><a href="" data-toggle="modal" data-target="#login-modal" ng-hide="user.loggedin">Login</a></li>
         <li><a href="" data-toggle="modal" data-target="#register-modal" ng-hide="user.loggedin">Registreer</a></li>
+<<<<<<< Updated upstream
         <li><a data-toggle="modal" ng-show="user.loggedin">Logged in as {{user.firstname}}</a></li>
         <li><a href="" data-toggle="modal" ng-show="user.loggedin" ng-click="user.logout()">(Logout)</a></li>
         <!-- <li>
@@ -49,6 +52,20 @@
   </form>
 </li> -->
 </ul>
+=======
+        <li><a href="" data-toggle="modal" ng-show="user.loggedin">Ingelogd als {{user.firstname}}</a></li>
+        <li>
+          <form class="navbar-form" role="search">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="q">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </li>
+      </ul>
+>>>>>>> Stashed changes
 
 
 

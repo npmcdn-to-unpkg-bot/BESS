@@ -1,0 +1,78 @@
+
+<div class="modal fade" id="create-modal" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="createmodal-container">
+
+
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h1>Maak een project aan</h1><br>
+
+      <form class="" action="index.html" method="post">
+        <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
+
+        <div class="file-upload">
+
+          <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+              <h3>Drag and drop it like it's hot</h3>
+            </div>
+          </div>
+
+          <div class="file-upload-content">
+            <img class="file-upload-image" src="#" alt="your image" />
+            <div class="image-title-wrap">
+              <button type="button" onclick="removeUpload()" class="remove-image">Remove</button>
+            </div>
+          </div>
+        </div>
+
+
+        <ul class="nav nav-tabs" id="tabContent">
+          <li class="active"><a href="#informatieTab" data-toggle="tab">Informatie</a></li>
+          <li><a href="#vragenlijstTab" data-toggle="tab">Vragenlijst</a></li>
+          <li><a href="#tijdlijnTab" data-toggle="tab">Tijdlijn</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="informatieTab">
+
+            <input ng-model="begindatum" type="text" name="begindatum" placeholder="Begindatum">
+            <input ng-model="einddatum" type="text" name="einddatum" placeholder="Einddatum">
+
+
+
+            <input ng-model="categorie" type="text" name="categorie" placeholder="Categorie">
+            <input ng-model="locatie" type="text" name="locatie" placeholder="Locatie">
+          </div>
+
+          <div class="tab-pane" id="vragenlijstTab">
+            vragenlijst tab
+          </div>
+
+
+          <div class="tab-pane" id="tijdlijnTab">
+            tijdlijn
+          </div>
+        </div>
+
+
+
+        <input data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</div>

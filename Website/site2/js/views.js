@@ -74,4 +74,11 @@
     };
   });
 
+  app.directive("createproject", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/createproject.html"
+    };
+  });
+
 })();

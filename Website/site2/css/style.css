@@ -98,6 +98,10 @@ menu {
   box-shadow: none !important;
 }
 
+
+
+
+
 /* navigatie - einde */
 @media (min-width: 768px) {
   .navbar-left {
@@ -418,11 +422,11 @@ button {
 
 
 
-/*login start*/
+/******  MODALS ******/
 
 
-/****** LOGIN MODAL ******/
-.loginmodal-container, .registermodal-container {
+
+.loginmodal-container, .registermodal-container, .createmodal-container {
   padding: 30px;
   max-width: 350px;
   width: 100% !important;
@@ -434,11 +438,13 @@ button {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   color: #666;
-
-
 }
 
-.loginmodal-container h1, .registermodal-container h1 {
+.createmodal-container{
+  max-width: 550px !important;
+}
+
+.loginmodal-container h1, .registermodal-container h1, .createmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
 
@@ -451,14 +457,17 @@ button {
   position: relative;
 }
 
-.registermodal-container input[type=submit] {
+.registermodal-container input[type=submit], .createmodal-container input[type=submit] {
   width: 100%;
   display: block;
   margin-bottom: 10px;
   position: relative;
 }
 
-.loginmodal-container input[type=text], input[type=password], .registermodal-container input[type=text], input[type=password] {
+
+.loginmodal-container input[type=text], input[type=password],
+.registermodal-container input[type=text], input[type=password],
+.createmodal-container input[type=text] {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -473,7 +482,9 @@ button {
   -moz-box-sizing: border-box;
 }
 
-.loginmodal-container input[type=text]:hover, input[type=password]:hover, .registermodal-container input[type=text]:hover, input[type=password]:hover {
+.loginmodal-container input[type=text]:hover, input[type=password]:hover,
+.registermodal-container input[type=text]:hover, input[type=password]:hover,
+.createmodal-container input[type=text]:hover {
   border: 1px solid #b9b9b9;
   border-top: 1px solid #a0a0a0;
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -542,7 +553,109 @@ button {
 }
 
 
-/*login end*/
+
+
+/******** add project modal begin ********/
+
+
+
+.file-upload {
+  background-color: #F7F7F7;
+  width: 490px;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 5px;
+  border: 2px dashed #7fc1c8;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #7fc1c8;
+  border: 2px dashed #F7F7F7;
+}
+
+.image-upload-wrap:hover h3 {
+  color: #fff;
+}
+
+
+.image-title-wrap {
+
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #7fc1c8;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-width: 490px;
+  max-height: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 2px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+
+ 
+
+/******** add project modal end ********/
+
+/******** modals end ********/
 
 /*footer begin*/
 
