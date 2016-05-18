@@ -62,12 +62,12 @@
           method: "GET",
           url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user?token=" + localStorage.token
         }).then(function mySucces(response) {
+          user.loggedin = true;
           localStorage.setItem("firstname", response.data.user.firstname);
           localStorage.setItem("lastname", response.data.user);
           localStorage.setItem("email", response.data.email);
           localStorage.setItem("isAdmin", response.data.isAdmin);
           localStorage.setItem("residence", response.data.residence);
-          user.loggedin = true;
           user.firstname = localStorage.firstname;
           console.log(user.firstname);
         }, function myError(response) {
@@ -77,13 +77,13 @@
     };
 
     user.logout = function() {
+      user.loggedin = false;
+      localStorage.removeItem("token");
       localStorage.removeItem("firstname");
       localStorage.removeItem("lastname");
       localStorage.removeItem("email");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("residence");
-      console.log(localStorage.firstname);
-      user.loggedin = false;
     };
 
 
