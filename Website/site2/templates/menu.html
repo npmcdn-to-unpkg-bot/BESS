@@ -37,7 +37,7 @@
         <li><a href="" data-toggle="modal" data-target="#login-modal" ng-hide="user.loggedin">Login</a></li>
         <li><a href="" data-toggle="modal" data-target="#register-modal" ng-hide="user.loggedin">Registreer</a></li>
         <li><a href="" data-toggle="modal" ng-show="user.loggedin">Logged in as {{user.firstname}}</a></li>
-        <li><a href="" data-toggle="modal" ng-show="user.loggedin">(Logout)</a></li>
+        <li><a href="" data-toggle="modal" ng-show="user.loggedin" ng-click="user.logout()">(Logout)</a></li>
         <!-- <li>
         <form class="navbar-form" role="search">
         <div class="input-group">
