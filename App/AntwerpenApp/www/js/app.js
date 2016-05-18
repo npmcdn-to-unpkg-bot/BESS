@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic'])
+angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -26,6 +26,17 @@ angular.module('ionicApp', ['ionic'])
   $ionicConfigProvider.navBar.alignTitle('center')
 
 
+})
+
+.directive('noScroll', function() {
+    return {
+        restrict: 'A',
+        link: function($scope, $element, $attr) {
+            $element.on('touchmove', function(e) {
+                e.preventDefault();
+            });
+        }
+    }
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
@@ -70,10 +81,10 @@ angular.module('ionicApp', ['ionic'])
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
 
-  HttpService.getProjectDetail(projectId)
+  HttpService.getQuestionsByProject(projectId)
     .then(function(response) {
-       $scope.projectDetail = response.project;
-      console.log($scope.projectDetail);
+       $scope.questions = response;
+      console.log($scope.questions);
     });
 
 
@@ -86,7 +97,40 @@ angular.module('ionicApp', ['ionic'])
     $scope.showSwipeTutorial = function() {
           $scope.modal.show();
     };
+
+    /* CARD-SECTION*/
+
+    var cardTypes = [
+        { image: 'img/pic2.png', title: 'So much grass #hippster'},
+        { image: 'img/pic3.png', title: 'Way too much Sand, right?'},
+        { image: 'img/pic4.png', title: 'Beautiful sky from wherever'},
+    ];
+
+    $scope.cards = [];
+
+    $scope.addCard = function(i) {
+        var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+        newCard.id = Math.random();
+        $scope.cards.push(angular.extend({}, newCard));
+    }
+
+    for(var i = 0; i < 3; i++) $scope.addCard();
+
+    $scope.cardSwipedLeft = function(index) {
+        console.log('Left swipe');
+    }
+
+    $scope.cardSwipedRight = function(index) {
+        console.log('Right swipe');
+    }
+
+    $scope.cardDestroyed = function(index) {
+        $scope.cards.splice(index, 1);
+        console.log('Card removed');
+    }
 })
+
+
 
 .service('HttpService', function($http) {
  return {
@@ -103,6 +147,15 @@ angular.module('ionicApp', ['ionic'])
        .then(function(response) {
          // In the response, resp.data contains the result. Check the console to see all of the data returned.
          console.log('Get Project detail', response);
+         return response.data;
+      });
+   },
+   getQuestionsByProject: function(id) {
+     // $http returns a promise, which has a then function, which also returns a promise.
+     return $http.get(' http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/' + id)
+       .then(function(response) {
+         // In the response, resp.data contains the result. Check the console to see all of the data returned.
+         console.log('Get questions by project', response);
          return response.data;
       });
    }
