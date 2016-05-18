@@ -64,12 +64,12 @@
         }).then(function mySucces(response) {
           user.loggedin = true;
           localStorage.setItem("firstname", response.data.user.firstname);
-          localStorage.setItem("lastname", response.data.user);
-          localStorage.setItem("email", response.data.email);
-          localStorage.setItem("isAdmin", response.data.isAdmin);
-          localStorage.setItem("residence", response.data.residence);
-          user.isAdmin = localStorage.isAdmin;
+          localStorage.setItem("lastname", response.data.user.name);
+          localStorage.setItem("email", response.data.user.email);
+          localStorage.setItem("isAdmin", response.data.user.isAdmin);
+          localStorage.setItem("residence", response.data.user.residence);
           user.firstname = localStorage.firstname;
+          user.isAdmin = localStorage.isAdmin;
           console.log(user.firstname);
         }, function myError(response) {
           console.log("User ophalen failed");
