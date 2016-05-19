@@ -94,14 +94,14 @@
   app.controller("timelineController", function($routeParams, $http, $scope){
     var projectId = $scope.projectId = $routeParams.projectId;
     console.log("projectID = " + projectId);
-    var timelines = this;
+    var timeline = this;
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
     .then(function(response) {
       console.log(response.data.timelines);
       timelines.all = response.data.timelines;
     });
 
-    timelines.addtimelineitem = function(){
+    timeline.addtimelineitem = function(){
       console.log("er gaat een nieuw tijlijn item toegevoegd worden");
     }
 
