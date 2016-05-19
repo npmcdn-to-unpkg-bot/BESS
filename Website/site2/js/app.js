@@ -98,7 +98,7 @@
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
     .then(function(response) {
       console.log(response.data.timelines);
-      timelines.all = response.data.timelines;
+      timeline.all = response.data.timelines;
     });
 
     timeline.addtimelineitem = function(){
