@@ -1,6 +1,9 @@
 (function() {
   var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter']);
 
+
+
+
   app.controller("PanelController", function(){
 
     this.tab = 1;
@@ -120,9 +123,20 @@
       }).then(function mySucces(response) {
         console.log("tijdlijnitem toevoegen gelukt");
         $('#addtimelineitem-modal').modal('hide');
+
+
+        // auto refresh
+
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
+        .then(function(response) {
+          console.log(response.data.timelines);
+          timeline.all = response.data.timelines;
+        });
+        
       }, function myError(response) {
         console.log("tijdlijnitem toevoegen mislukt");
       });
+
 
     };
 
