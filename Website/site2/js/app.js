@@ -101,37 +101,58 @@
       timeline.all = response.data.timelines;
     });
 
-    timeline.addtimelineitem = function(){
+    timeline.addtimelineitem = function(gtitle, gdescription, gdate){
+
       console.log("er gaat een nieuw tijlijn item toegevoegd worden");
-    }
+
+      var projectId = $scope.projectId = $routeParams.projectId;
+      console.log("projectID = " + projectId + gtitle + gdescription + gdate);
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines?token=" + localStorage.token,
+        data: {
+          title: gtitle,
+          description: gdescription,
+          project_id: projectId,
+          date: gdate,
+        }
+      }).then(function mySucces(response) {
+        console.log("tijdlijnitem toevoegen gelukt");
+        $('#addtimelineitem-modal').modal('hide');
+      }, function myError(response) {
+        console.log("tijdlijnitem toevoegen mislukt");
+      });
+
+    };
 
   });
 
-    app.controller("projectController", function($routeParams, $http, $scope){
-      var project = this;
+  app.controller("projectController", function($routeParams, $http, $scope){
+    var project = this;
 
-      project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation){
+    project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation){
 
-        $http({
-          method : "POST",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects?token=" + localStorage.token,
-          data: {
-            name: gname,
-            description: gdescription,
-            startdate: gstartdate,
-            enddate: genddate,
-            category: gcategory,
-            location: glocation,
-          }
-        }).then(function mySucces(response) {
-          console.log("project aanmaken succesvol");
-          $('#create-modal').modal('hide');
-        }, function myError(response) {
-          console.log("project aanmaken failed");
-        });
-      };
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects?token=" + localStorage.token,
+        data: {
+          name: gname,
+          description: gdescription,
+          startdate: gstartdate,
+          enddate: genddate,
+          category: gcategory,
+          location: glocation,
+        }
+      }).then(function mySucces(response) {
+        console.log("project aanmaken succesvol");
+        $('#create-modal').modal('hide');
+      }, function myError(response) {
+        console.log("project aanmaken failed");
+      });
+    };
 
-    });
+  });
 
 
 
