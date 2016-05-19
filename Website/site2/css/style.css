@@ -25,7 +25,17 @@ body {
     background-size: cover;
   }
 
-  /* navigatie - begin */
+  .container {
+    background-color: #f9f9f9;
+    padding-bottom: 40px;
+  }
+
+
+
+
+  /***** navigatie - begin *****/
+
+
 
   #menulogo {
     max-height: 2.5em;
@@ -98,11 +108,6 @@ menu {
   box-shadow: none !important;
 }
 
-
-
-
-
-/* navigatie - einde */
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
@@ -120,14 +125,13 @@ body > menu > nav .container-fluid {
   background-color: #f9f9f9;
 }
 
-.container {
-  background-color: #f9f9f9;
-  padding-bottom: 40px;
-}
 
-/* navigatie - einde */
 
-/* homepage - begin */
+/***** navigatie - einde *****/
+
+
+
+/***** homepage - begin *****/
 
 a {
   text-decoration: none;
@@ -209,33 +213,15 @@ h2 {
 .aTitle {
   font-family: AntwerpenFontRegular;
 }
-/* homepage - einde */
-
-/**
-* Box shadow
-*/
-.border-tlr-radius {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.text-center { text-align: center; }
-
-.radius { border-radius: 4px; }
-
-.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
-
-.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
-
-.shadowDepth1 {
-  box-shadow:
-  0px 0px 4px rgba(0,0,0, 0.24);
-}
 
 
-/**
-* Card Styles
-*/
+
+
+/***** homepage - einde *****/
+
+
+/***** Card styles begin *****/
+
 
 .card {
   background-color: #fff;
@@ -263,14 +249,14 @@ h2 {
 
 }
 
-/* card meta */
+/***** card meta *****/
 .card__meta time {
   font-size: 1.5rem;
   color: #bbb;
   margin-left: 0.8rem;
 }
 
-/* card article */
+/***** card article *****/
 .card__article a {
   text-decoration: none;
   color: #444;
@@ -288,9 +274,34 @@ h2 {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* homepage - einde */
 
-/* single_page begin */
+.border-tlr-radius {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 4px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+  box-shadow:
+  0px 0px 4px rgba(0,0,0, 0.24);
+}
+
+
+
+/***** Card styles einde *****/
+
+/***** single_page begin */
+
+
+
+
 .headerImg {
   margin-top: 4%;
 }
@@ -316,6 +327,8 @@ h2 {
 .begindatum, .categorie {
   float:left;
 }
+
+
 /* button layout */
 
 body .btn-bg.bg-2 {
@@ -646,6 +659,10 @@ button {
 .remove-image:active {
   border: 0;
   transition: all .2s ease;
+}
+
+.tab-content {
+  margin-top: 20px;
 }
 
 
