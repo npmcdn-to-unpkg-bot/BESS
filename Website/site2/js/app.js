@@ -101,6 +101,10 @@
       timelines.all = response.data.timelines;
     });
 
+    timelines.addtimelineitem = function(){
+      console.log("er gaat een nieuw tijlijn item toegevoegd worden");
+    }
+
   });
 
     app.controller("projectController", function($routeParams, $http, $scope){

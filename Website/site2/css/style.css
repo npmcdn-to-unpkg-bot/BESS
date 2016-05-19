@@ -853,5 +853,14 @@ button {
   }
 }
 
+.addTimelinItem .btn-circle.btn-lg {
+  width: 40px;
+  height: 40px;
+  line-height: 1.33;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #008C95;
+}
+
 
 /*timeline end*/
