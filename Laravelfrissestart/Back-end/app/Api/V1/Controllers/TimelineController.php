@@ -33,7 +33,7 @@ class TimelineController extends Controller
 
           public function showperproject($project_id)
           {
-              $timelines = Timeline::where('project_id', '=' ,$project_id)->get();
+              $timelines = Timeline::where('project_id', '=' ,$project_id)->orderBy('date', 'ASC')->get();
               if(!$timelines)
                   throw new NotFoundHttpException;
               return $timelines;

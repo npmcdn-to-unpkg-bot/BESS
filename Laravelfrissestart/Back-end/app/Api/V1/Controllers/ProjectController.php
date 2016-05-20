@@ -54,14 +54,16 @@ class ProjectController extends Controller
       $project->enddate = $request->get('enddate');
       $project->category = $request->get('category');
       $project->location = $request->get('location');
-      if($this->currentUser()->projects()->save($project))
+      if($this->currentUser()->projects()->save($project)){
           return $this->response->created();
+        }
       else
           return $this->response->error('could_not_create_project', 500);
     }
     else
+    {
     return $this->response->error('could_not_create_project_only_admin', 500);
-
+    }
     }
     public function update(Request $request, $id)
     {   if ($this->currentUser()["isAdmin"]) {
@@ -70,23 +72,34 @@ class ProjectController extends Controller
             throw new NotFoundHttpException;
         $project->fill($request->all());
         if($project->save())
+        {
             return $this->response->noContent();
+            }
         else
+        {
             return $this->response->error('could_not_update_project', 500);
+          }
             }
             else
-            return $this->response->error('could_not_create_project_only_admin', 500);
+            {
+            return $this->response->error('could_not_update_project_only_admin', 500);
+            }
     }
     public function destroy($id)
     {
-        $project = $this->currentUser()->projects()->find($id);
+        if ($this->currentUser()["isAdmin"]) {
+            $project = Project::find($id);
         if(!$project)
             throw new NotFoundHttpException;
         if($project->delete())
             return $this->response->noContent();
         else
             return $this->response->error('could_not_delete_project', 500);
-    }
+            }
+            else
+            return $this->response->error('could_not_delete_project_only_admin', 500);
+
+  }
     private function currentUser() {
         return JWTAuth::parseToken()->authenticate();
     }

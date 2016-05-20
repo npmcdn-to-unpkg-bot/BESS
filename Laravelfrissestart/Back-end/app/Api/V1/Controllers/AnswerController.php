@@ -16,11 +16,14 @@ class AnswerController extends Controller
 {
     use Helpers;
     public function index()
-    {
+    {   if ($this->currentUser()["isAdmin"]) {
         $answers = Answer::orderBy('project_id', 'DESC')
         ->get()
         ->toArray();
         return $answers;
+        }
+        else
+        return $this->response->error('could_not_get_answers_only_admin', 500);
     }
 
         public function indexuser()
@@ -33,13 +36,25 @@ class AnswerController extends Controller
         }
 
     public function show($id)
-    {
+    {   if ($this->currentUser()["isAdmin"]) {
         $answer = Answer::find($id);
         if(!$answer)
             throw new NotFoundHttpException;
         return $answer;
+        }
+        else
+        return $this->response->error('could_not_get_answer_only_admin', 500);
     }
-
+public function showperproject($project_id)
+{   if ($this->currentUser()["isAdmin"]) {
+    $answers = Answer::where('project_id', '=' ,$project_id)->get();
+    if(!$answers)
+        throw new NotFoundHttpException;
+    return $answers;
+    }
+    else
+    return $this->response->error('could_not_get_answers_per_project_only_admin', 500);
+}
       public function showuser($id)
       {
           $answer = $this->currentUser()->answers()->find($id);
