@@ -132,7 +132,7 @@
           console.log(response.data.timelines);
           timeline.all = response.data.timelines;
         });
-        
+
       }, function myError(response) {
         console.log("tijdlijnitem toevoegen mislukt");
       });
@@ -142,7 +142,7 @@
 
   });
 
-  app.controller("projectController", function($routeParams, $http, $scope){
+  app.controller("projectController", function($routeParams, $http, $scope, $location){
     var project = this;
 
     project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation){
@@ -161,6 +161,7 @@
       }).then(function mySucces(response) {
         console.log("project aanmaken succesvol");
         $('#create-modal').modal('hide');
+        $location.path('/projecten');
       }, function myError(response) {
         console.log("project aanmaken failed");
       });
