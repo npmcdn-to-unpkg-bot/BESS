@@ -14,7 +14,7 @@
             <div class="card__content card__padding">
 
               <article class="card__article">
-                <h2><a href="/#/project/{{project.id}}">{{project.name}}</a></h2>
+                <h2><a href="/#/project/{{project.id}}">{{project.name | truncate: 40: '...': true}}</a></h2>
 
                 <p>{{project.description | truncate: 100: '...': true}}</p>
               </article>
