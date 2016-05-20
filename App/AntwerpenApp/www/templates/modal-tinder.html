@@ -2,7 +2,7 @@
         <ion-header-bar class="bar bar-header bar-positive bar-antwerpen">
           <h1 class="title">HELP</h1>
         </ion-header-bar>
-        <ion-content class="padding">
+        <ion-content class="padding" scroll="false">
           <div class = "row row-center responsive-sm swipeTutorialGrid">
 
             <div class = "col">
@@ -20,8 +20,16 @@
               <p>Swipe rechts als je wél akkoord gaat</p>
             </div>
           </div>
+
+
+        </ion-content>
+        <div class="fixed-button-bottom">
           <button class="button button-block button-positive button-antwerpen" ng-click="modal.hide();">
             Begrepen!
           </button>
-        </ion-content>
+        </div>
+
+
+
+
 </ion-modal-view>
