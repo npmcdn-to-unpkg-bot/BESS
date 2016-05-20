@@ -30,12 +30,12 @@
 
   <div ng-controller="PanelController as panel">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-xs-2">
         <!-- linkse witruimte container -->
       </div>
-      <div class="col-sm-8">
+      <div class="col-xs-8">
 
-        <div class="col-sm-4">
+        <div class="col-sm-4 aTitle">
           <div class="btn-bg bg-2">
             <div class="btn btn-2">
               <button href="#" ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1)}">Informatie</button>
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="col-sm-4 btn-right">
+        <div class="col-sm-4 aTitle">
           <div class="btn-bg bg-2">
             <div class="btn btn-2">
               <button href="#" ng-click="panel.selectTab(2)" ng-class="{active:panel.isSelected(2)}">Vragenlijst</button>
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <div class="col-sm-4 btn-right">
+        <div class="col-sm-4 aTitle">
           <div class="btn-bg bg-2">
             <div class="btn btn-2">
               <button href="#" ng-click="panel.selectTab(3)" ng-class="{active:panel.isSelected(3)}">Tijdlijn</button>
@@ -60,9 +60,8 @@
         </div>
 
       </div>
-      <div class="col-sm-2">
+      <div class="col-xs-2">
         <!-- Rechtse witruimte container -->
-        <!-- {{tab}} -->
       </div>
     </div>
 

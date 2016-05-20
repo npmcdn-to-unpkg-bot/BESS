@@ -30,7 +30,9 @@ body {
     padding-bottom: 40px;
   }
 
-
+  .aSmallTitle {
+    font-family: AntwerpenFontTall;
+  }
 
 
   /***** navigatie - begin *****/
@@ -225,7 +227,7 @@ h2 {
 
 .card {
   background-color: #fff;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.6em;
 }
 
 .card__padding {
@@ -251,9 +253,9 @@ h2 {
 
 /***** card meta *****/
 .card__meta time {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   color: #bbb;
-  margin-left: 0.8rem;
+  margin-left: 0.8em;
 }
 
 /***** card article *****/
@@ -284,7 +286,7 @@ h2 {
 
 .radius { border-radius: 4px; }
 
-.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+.padding-tb { padding-top: 1.6em; padding-bottom: 1.6em;}
 
 .shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
 
@@ -298,9 +300,6 @@ h2 {
 /***** Card styles einde *****/
 
 /***** single_page begin */
-
-
-
 
 .headerImg {
   margin-top: 4%;
@@ -335,9 +334,9 @@ h2 {
 /* button layout */
 
 body .btn-bg.bg-2 {
-  margin-left: -30px;
   margin-top: 30%;
 }
+
 body .btn-bg.bg-2 .btn-2 button {
   color: #008C95;
   background: #f9f9f9;
@@ -346,6 +345,9 @@ body .btn-bg.bg-2 .btn-2 button {
   transition: all 0.7s ease;
   border-top: solid 2px #008C95;
   border-bottom: solid 2px #008C95;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 body .btn-bg.bg-2 .btn-2 button:hover {
@@ -359,65 +361,11 @@ body .btn-bg.bg-2 .btn-2 button.active {
   color: #fff;
   border-radius: 4px;
 }
-
-}
-body .btn-bg.bg-2 .btn-2 button {
-  color: #008e9c;
-  background: white;
-  border: none;
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-  opacity: 0.5;
-  border-top: solid 2px #008e9c;
-  border-bottom: solid 2px #008e9c;
-}
-
-body .btn-bg.bg-2 .btn-2 button:hover {
-  background: #008e9c;
-  color: #fff;
-  border-radius: 4px;
-}
-
-body .btn-bg.bg-2 .btn-2 button.active {
-  background: #008e9c;
-  color: #fff;
-  border-radius: 4px;
-}
-
-
-
-
-/*body .btn-bg.bg-2 .btn-2 button:hover {
-background: transparent;
-color: #008e9c;
-}
-body .btn-bg.bg-2 .btn-2 button:hover:before,
-body .btn-bg.bg-2 .btn-2 button:hover:after {
--webkit-transition: all 0.7s ease;
-transition: all 0.7s ease;
-width: 100%;
-}
-body .btn-bg.bg-2 .btn-2 button:before,
-body .btn-bg.bg-2 .btn-2 button:after {
-content: '';
-position: absolute;
-top: 0;
-left: 0px;
-width: 0px;
-height: 3px;
-background: #008e9c;
-transition: all 0.4s ease;
-}
-body .btn-bg.bg-2 .btn-2 button:after {
-top: inherit;
-left: inherit;
-bottom: 0;
-right: 0;
-}*/
 
 .btn {
   margin: 0 auto 30px auto;
   display: block;
+  padding: 0px;
 }
 
 button {
@@ -428,7 +376,7 @@ button {
   position: relative;
   letter-spacing: 0.1em;
   font-weight: 400;
-  padding: 1rem 3rem 1rem 3rem;
+  padding: 1em 3em 1em 3em;
   text-transform: uppercase;
   font-size: 1em;
 }
@@ -866,3 +814,9 @@ button {
 
 
 /*timeline end*/
+
+/* vragenlijst begin */
+#ex1Slider .slider-selection {
+  background: #BABABA;
+}
+/* vragelijst einde */
