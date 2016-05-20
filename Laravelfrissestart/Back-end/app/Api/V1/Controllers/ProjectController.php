@@ -64,8 +64,8 @@ class ProjectController extends Controller
 
     }
     public function update(Request $request, $id)
-    {
-        $project = $this->currentUser()->projects()->find($id);
+    {   if ($this->currentUser()["isAdmin"]) {
+        $project = Project::find($id);
         if(!$project)
             throw new NotFoundHttpException;
         $project->fill($request->all());
@@ -73,6 +73,9 @@ class ProjectController extends Controller
             return $this->response->noContent();
         else
             return $this->response->error('could_not_update_project', 500);
+            }
+            else
+            return $this->response->error('could_not_create_project_only_admin', 500);
     }
     public function destroy($id)
     {
