@@ -263,6 +263,33 @@ body {
 
 }
 
+.projectCard {
+  padding-bottom: 10px !important;
+
+}
+
+.projectCard-button {
+  font-family: 'Antwerpen';
+  text-transform: uppercase;
+}
+
+.projectCard h4 {
+  font-size: 1em !important;
+  font-family: 'SunAntwerpen Regular';
+}
+
+.projectCard h2 {
+  font-family: 'Antwerpen' !important;
+}
+
+a.projectCard, .projectCard-button a {
+
+  text-decoration: none;
+}
+
+
+
+
 /* Card styling */
 
 td-cards {
