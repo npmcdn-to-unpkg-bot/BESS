@@ -224,6 +224,34 @@ body {
 
 }
 
+.bar-antwerpen, .button-antwerpen {
+    background-color:#008C95 !important;
+    border-color: #008C95 !important;
+    background-image: none !important;
+}
+
+.button.button-antwerpen.active, .button.button-antwerpen.activated {
+  background-color: #03737a  !important;
+}
+
+
+
+.swipeTutorialGrid {
+  text-align: center;
+}
+
+.swipeTutorialGrid i {
+  font-size: 7em;
+  color: #008C95;
+}
+
+.swipeTutorialGrid p {
+  font-family: "SunAntwerpen Regular";
+  font-size: 1.7em;
+  line-height: 50px;
+  color: #008C95;
+}
+
 /* Card styling */
 
 td-cards {
