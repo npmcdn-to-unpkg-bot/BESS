@@ -327,7 +327,10 @@ h2 {
 .begindatum, .categorie {
   float:left;
 }
-
+#projectimage {
+  width: 100%;
+  object-fit: cover;
+}
 
 /* button layout */
 
