@@ -49,6 +49,9 @@ $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 		$api->post('answers', 'App\Api\V1\Controllers\AnswerController@store');
 		$api->post('answers/{id}', 'App\Api\V1\Controllers\AnswerController@update');
 		$api->delete('answers/{id}', 'App\Api\V1\Controllers\AnswerController@destroy');
+
+		//image routing met auth
+		$api->post('image/add/{id}', 'App\Api\V1\Controllers\ImageController@add');
 	});
 
 		$api->group(['middleware' => ['cors']], function ($api) {
@@ -70,6 +73,11 @@ $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 				// Answers routing api zonder auth
 				$api->get('answers', 'App\Api\V1\Controllers\AnswerController@index');
 				$api->get('answers/{id}', 'App\Api\V1\Controllers\AnswerController@show');
+
+				//images routing zonder auth
+				$api->get('image', 'App\Api\V1\Controllers\ImageController@index');
+				$api->get('image/project/{id}', 'App\Api\V1\Controllers\ImageController@get');
+
 		});
 
 });
