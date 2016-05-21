@@ -94,6 +94,15 @@
     };
   });
 
+  app.directive("imageupload", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/imageupload.html",
+      controller: 'imageController',
+      controllerAs: 'images'
+
+    };
+  });
 
 
 

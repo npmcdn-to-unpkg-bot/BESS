@@ -1,3 +1,5 @@
+
+var imageToUpload;
 function readURL(input) {
   if (input.files && input.files[0]) {
 
@@ -13,6 +15,8 @@ function readURL(input) {
     };
 
     reader.readAsDataURL(input.files[0]);
+    console.log(input.files);
+    imageToUpload = input.files[0];
 
   } else {
     removeUpload();
@@ -25,8 +29,77 @@ function removeUpload() {
   $('.image-upload-wrap').show();
 }
 $('.image-upload-wrap').bind('dragover', function () {
-		$('.image-upload-wrap').addClass('image-dropping');
-	});
-	$('.image-upload-wrap').bind('dragleave', function () {
-		$('.image-upload-wrap').removeClass('image-dropping');
+  $('.image-upload-wrap').addClass('image-dropping');
 });
+$('.image-upload-wrap').bind('dragleave', function () {
+  $('.image-upload-wrap').removeClass('image-dropping');
+});
+
+(function($){
+
+  var app = angular.module('image-upload-module', []);
+
+  app.controller("imageController", function($routeParams, $http, $scope, $location){
+    var images = this;
+    var projectId = $scope.projectId = $routeParams.projectId;
+
+    images.upload = function(){
+      console.log("click");
+      console.log(imageToUpload);
+      console.log("projectId = " + projectId);
+
+      var form = new FormData();
+      form.append("image", imageToUpload);
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/" + projectId + "?token="+localStorage.token,
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "3f85b7cf-a66b-f68b-1f82-59b0b24b36e6"
+        },
+        "processData": false,
+        "contentType": false,
+        "mimeType": "multipart/form-data",
+        "data": form
+      }
+
+      $.ajax(settings).then(function mySucces(response) {
+        console.log("foto uploaden succesvol");
+        removeUpload();
+        $('#imageupload-modal').modal('hide');
+        $location.path('/projecten/' + projectId);
+      }, function myError(response) {
+        console.log("foto uploaden failed");
+      });
+
+      // $http({
+      //   async: true,
+      //   crossDomain: true,
+      //   method : "POST",
+      //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/"+ projectId +"?token=" + localStorage.token,
+      //   processData: false,
+      //   contentType: false,
+      //   mimeType: 'multipart/form-data',
+      //   headers: {
+      //     'cache-control': "no-cache",
+      //   },
+      //   data: {
+      //     image: imageToUpload
+      //   }
+      // }).then(function mySucces(response) {
+      //   console.log("foto uploaden succesvol");
+      //   $('#imageupload-modal').modal('hide');
+      //   $location.path('/projecten/' + projectId);
+      // }, function myError(response) {
+      //   console.log("foto uploaden failed");
+      // });
+    };
+
+  });
+
+
+
+})(jQuery);

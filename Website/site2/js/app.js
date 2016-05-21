@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module']);
 
 
 
@@ -168,7 +168,6 @@
     };
 
   });
-
 
 
 })();
