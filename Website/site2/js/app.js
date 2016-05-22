@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar']);
 
 
 
@@ -95,7 +95,7 @@
 
   });
 
-  app.controller("timelineController", function($routeParams, $http, $scope){
+  app.controller("timelineController", function($routeParams, $http, $scope, $route){
     var projectId = $scope.projectId = $routeParams.projectId;
     console.log("projectID = " + projectId);
     var timeline = this;
@@ -124,17 +124,8 @@
       }).then(function mySucces(response) {
         console.log("tijdlijnitem toevoegen gelukt");
         $('#addtimelineitem-modal').modal('hide');
-
-
-        // auto refresh
-
-        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
-        .then(function(response) {
-          console.log(response.data.timelines);
-          timeline.all = response.data.timelines;
-        });
-
-      }, function myError(response) {
+        $route.reload();},
+         function myError(response) {
         console.log("tijdlijnitem toevoegen mislukt");
       });
 

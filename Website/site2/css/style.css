@@ -815,3 +815,27 @@ button {
   background: #BABABA;
 }
 /* vragelijst einde */
+
+
+/*loading bar start*/
+
+#loading-bar .bar {
+  background: #008C95;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  -moz-box-shadow: #008C95 1px 0 6px 1px;
+  -ms-box-shadow: #008C95 1px 0 6px 1px;
+  -webkit-box-shadow: #008C95 1px 0 6px 1px;
+  box-shadow: #008C95 1px 0 6px 1px;
+}
+
+
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  #008C95;
+  border-left-color: #008C95;
+}
+
+
+/*loading bar end */

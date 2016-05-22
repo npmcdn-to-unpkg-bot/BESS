@@ -39,7 +39,7 @@ $('.image-upload-wrap').bind('dragleave', function () {
 
   var app = angular.module('image-upload-module', []);
 
-  app.controller("imageController", function($routeParams, $http, $scope, $location){
+  app.controller("imageController", function($routeParams, $http, $scope, $location, $route){
     var images = this;
     var projectId = $scope.projectId = $routeParams.projectId;
 
@@ -70,7 +70,7 @@ $('.image-upload-wrap').bind('dragleave', function () {
         console.log("foto uploaden succesvol");
         removeUpload();
         $('#imageupload-modal').modal('hide');
-        $location.path('/projecten/' + projectId);
+        $route.reload();
       }, function myError(response) {
         console.log("foto uploaden failed");
       });
@@ -103,7 +103,7 @@ $('.image-upload-wrap').bind('dragleave', function () {
       .then(function mySucces(response) {
         console.log(response.data.images);
         images.all = response.data.images;
-        images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+        images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
       }, function myError(response) {
         console.log("image fetch failed probably because image does not exist yet.");
         images.all = null;
@@ -120,10 +120,10 @@ $('.image-upload-wrap').bind('dragleave', function () {
         images.firstonebyid = [];
         $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
         .then(function mySucces(response) {
-      
+
           if (response.data.images) {
 
-            images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+            images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
             console.log("gid adres image = "+ images.getfirstbyid[gid]);
           }
           else {

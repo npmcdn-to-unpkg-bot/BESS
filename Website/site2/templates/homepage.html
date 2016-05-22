@@ -34,13 +34,14 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" ng-controller="imageController as images">
     <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
-      <div class="wrapper">
+      <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
 
         <div class="card radius shadowDepth1 hoverable">
           <div class="card__image border-tlr-radius">
-            <img src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius">
+            <img ng-hide="images.firstonebyid[project.id];" src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius"/>
+            <img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" style="width: 400px, height: 200px" alt="image" class="border-tlr-radius"/>
           </div>
 
           <div class="card__content card__padding">
