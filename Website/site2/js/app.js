@@ -76,6 +76,7 @@
           console.log(user.firstname);
         }, function myError(response) {
           console.log("User ophalen failed");
+          user.logout();
         });
       }
     };

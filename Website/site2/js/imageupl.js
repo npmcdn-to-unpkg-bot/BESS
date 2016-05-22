@@ -98,6 +98,49 @@ $('.image-upload-wrap').bind('dragleave', function () {
       // });
     };
 
+    images.get = function() {
+      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ projectId)
+      .then(function mySucces(response) {
+        console.log(response.data.images);
+        images.all = response.data.images;
+        images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+      }, function myError(response) {
+        console.log("image fetch failed probably because image does not exist yet.");
+        images.all = null;
+        images.firstone = null;
+      });
+      // .then(function(response) {
+      //   console.log(response.data.images);
+      //   images.all = response.data.images;
+      //   images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+      // });
+    };
+
+    images.getfirstbyid = function(gid) {
+        images.firstonebyid = [];
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
+        .then(function mySucces(response) {
+      
+          if (response.data.images) {
+
+            images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+            console.log("gid adres image = "+ images.getfirstbyid[gid]);
+          }
+          else {
+            console.log("image fetch failed probably because image does not exist yet.");
+            images.firstonebyid[gid] = null;
+          }
+
+        }, function myError(response) {
+          console.log("sever error.");
+          images.firstonebyid[gid] = null;
+
+
+        });
+
+
+    };
+
   });
 
 
