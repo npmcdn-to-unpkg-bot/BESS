@@ -47,15 +47,6 @@ body {
   #bs-example-navbar-collapse-1 {
     background-color: #f9f9f9 !important;
   }
-  .navbar-title {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto;
-    color: black;
-    font-family: AntwerpenFontRegular;
-  }
 
   #nav-menu {
     width: 1.7em;
@@ -82,13 +73,17 @@ menu {
 }
 
 .navbar-title {
-  position: absolute;
+  /*position: absolute;
   width: 100%;
   left: 0;
   text-align: center;
-  margin:0 auto;
+  margin:0 auto;*/
   color: black;
   font-family: AntwerpenFontRegular;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
 }
 
 .navbar-title a:link, a:visited, a:hover{
