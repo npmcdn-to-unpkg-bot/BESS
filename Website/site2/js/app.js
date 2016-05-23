@@ -161,5 +161,20 @@
 
   });
 
+  app.controller ( "questioncontroller", function( $routeParams, $http, $scope, $location ){
+    var projectId = $scope.projectId = $routeParams.projectId;
+    console.log("projectID = " + projectId);
+    var questions = this;
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/"+ projectId)
+    .then(function(response) {
+      console.log(response.data);
+      console.log(response.data.questions);
+      questions.getAnswers = function(questionindex) {
+        console.log(response.data.questions.object[questionindex].possible_answers)
+      }
+      questions.all = response.data.questions;
+    });
+  });
+
 
 })();
