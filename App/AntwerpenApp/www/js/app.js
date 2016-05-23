@@ -95,12 +95,12 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
         $scope.cards = [];
 
         $scope.addCard = function(i) {
-            var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
-            newCard.id = Math.random();
+            var newCard = cardTypes[i];
+            newCard.id = i;
             $scope.cards.push(angular.extend({}, newCard));
         }
 
-        for(var i = 0; i < cardTypes.length; i++) $scope.addCard();
+        for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
 
         $scope.cardSwipedLeft = function(index) {
             console.log('Left swipe');
