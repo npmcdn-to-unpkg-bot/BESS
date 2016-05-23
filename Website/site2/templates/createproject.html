@@ -52,7 +52,7 @@
           </div>
 
           <div class="tab-pane" id="vragenlijstTab">
-            <div class="map" id="mapcreate"></div>
+            <div class="map" id="spmap"></div>
           </div>
 
 
@@ -63,7 +63,7 @@
 
 
 
-        <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
+        <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation, mapslogic.lat, mapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
       </form>
 
     </div>

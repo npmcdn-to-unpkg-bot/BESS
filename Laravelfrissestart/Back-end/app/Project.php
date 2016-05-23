@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable = ['name', 'description', 'startdate', 'enddate', 'category', 'location'];
+    protected $fillable = ['name', 'description', 'startdate', 'enddate', 'category', 'location', 'latitude', 'longitude'];
 
 
     public function questions()
@@ -22,7 +22,7 @@ public function timelines()
 {
     return $this->hasMany('App\Timeline');
 }
-public function timelines()
+public function images()
 {
     return $this->hasMany('App\Image');
 }

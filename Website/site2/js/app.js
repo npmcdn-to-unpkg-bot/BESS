@@ -137,7 +137,7 @@
   app.controller("projectController", function($routeParams, $http, $scope, $location){
     var project = this;
 
-    project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation){
+    project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
 
       $http({
         method : "POST",
@@ -149,6 +149,8 @@
           enddate: genddate,
           category: gcategory,
           location: glocation,
+          latitude: glat,
+          longitude: glng
         }
       }).then(function mySucces(response) {
         console.log("project aanmaken succesvol");

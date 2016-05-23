@@ -1,11 +1,12 @@
-<div class="row informatie">
+<div class="row informatie" ng-controller="mapsController as mapslogic">
   <div class="col-sm-2">
     <!-- Linkse witruimte container -->
   </div>
 
   <div class="col-sm-8">
+    <button type="button" name="button" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude)">Map laden</button>
+    <div ng-show="spproject.latitude" class="map" id="spmap"></div>
     <div class="col-sm-1">
-
     </div>
     <div class="col-sm-2">
       <div class="begindatum">

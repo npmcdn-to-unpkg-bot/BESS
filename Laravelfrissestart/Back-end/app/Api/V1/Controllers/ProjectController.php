@@ -54,6 +54,8 @@ class ProjectController extends Controller
       $project->enddate = $request->get('enddate');
       $project->category = $request->get('category');
       $project->location = $request->get('location');
+      $project->latitude = $request->get('latitude');
+      $project->longitude = $request->get('longitude');
       if($this->currentUser()->projects()->save($project)){
           return $this->response->created();
         }
