@@ -22,4 +22,8 @@ public function timelines()
 {
     return $this->hasMany('App\Timeline');
 }
+public function timelines()
+{
+    return $this->hasMany('App\Image');
+}
 }
