@@ -232,18 +232,23 @@ h2 {
 }
 
 .card__image {
-  min-height: 100px;
-  background-color: #eee;
+  height: 200px;
+  background-color: #fff;
 }
 .card__image img {
+  object-fit: cover;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   display: block;
 }
 
 .card__content {
   position: relative;
+}
 
+.card__content p{
+  position: relative;
+  min-height: 70px;
 }
 
 /***** card meta *****/
@@ -262,8 +267,10 @@ h2 {
 .card__article a:hover {
   color: #008e9c;
 }
-.card__article h2{
+.card__article h4{
   font-family: AntwerpenFontTall;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .card:hover {

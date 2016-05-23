@@ -10,13 +10,13 @@
             <div class="card__image border-tlr-radius" ng-init="images.getfirstbyid(project.id)">
               <!-- <img src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius"> -->
               <img ng-hide="images.firstonebyid[project.id];" src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius"/>
-              <img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" style="width: 400px, height: 200px" alt="image" class="border-tlr-radius"/>
+              <img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius"/>
             </div>
 
             <div class="card__content card__padding">
 
               <article class="card__article">
-                <h2><a href="/#/project/{{project.id}}">{{project.name | truncate: 40: '...': true}}</a></h2>
+                <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 25: '...'}}</a></h4>
 
                 <p>{{project.description | truncate: 100: '...': true}}</p>
               </article>
