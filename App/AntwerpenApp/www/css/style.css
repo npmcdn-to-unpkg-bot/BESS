@@ -287,7 +287,21 @@ a.projectCard, .projectCard-button a {
   text-decoration: none;
 }
 
+.a-bar {
+  background-color: black !important;
+}
 
+.loginCard {
+  overflow: hidden !important;
+  margin: 20px 0px !important;
+  border-radius: 2px !important;
+  background-color: #fff !important;
+
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+
+}
 
 
 /* Card styling */
@@ -372,4 +386,87 @@ td-card img {
     -webkit-transition: 0.2s opacity linear;
     transition: 0.2s opacity linear;
     opacity: 0;
+}
+
+
+
+/*LOGIN */
+.loginBackground {
+  background-color: white;
+  height: 100%;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:0;
+  z-index: 0;
+}
+
+.loginLogo img {
+
+  display: block;
+  position: relative;
+  margin-left: 18%;
+  top: -50px;
+}
+
+.login-page {
+  width: 340px;
+  padding: 20% 0 0;
+  margin: auto;
+  z-index: 5;
+
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "SunAntwerpen-Regular", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 0px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  padding-left: 5px !important;
+  box-sizing: border-box;
+  font-size: 18px !important;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #008C95;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
 }

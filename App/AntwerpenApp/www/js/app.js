@@ -3,6 +3,11 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   $stateProvider
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginCtrl'
+  })
   .state('intro', {
     url: '/',
     templateUrl: 'templates/intro.html',
@@ -19,7 +24,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
     controller: 'ProjectDetailCtrl'
   });
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/login");
 
   //Conformiteiten rond IOS vs Android
   $ionicConfigProvider.tabs.position('bottom');
@@ -37,6 +42,15 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
             });
         }
     }
+})
+
+
+.controller('LoginCtrl', function($scope, $state) {
+
+  // Called to navigate to the main app
+  $scope.login = function() {
+    $state.go('intro');
+  };
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
