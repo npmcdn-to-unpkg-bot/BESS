@@ -8,7 +8,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h1>Maak een project aan</h1><br>
 
-      <form class="">
+      <form class="" ng-controller="mapsController as mapslogic">
         <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
 
         <!-- <div class="file-upload">
@@ -31,13 +31,12 @@
 
         <ul class="nav nav-tabs" id="tabContent">
           <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
-          <li><a data-target="#vragenlijstTab" data-toggle="tab">Vragenlijst</a></li>
+          <li><a data-target="#vragenlijstTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Vragenlijst</a></li>
           <li><a data-target="#tijdlijnTab" data-toggle="tab">Tijdlijn</a></li>
         </ul>
 
         <div class="tab-content">
           <div class="tab-pane active" id="informatieTab">
-
             <div class="infoShort">
 
 
@@ -53,7 +52,7 @@
           </div>
 
           <div class="tab-pane" id="vragenlijstTab">
-            vragenlijst tab
+            <div class="map" id="mapcreate"></div>
           </div>
 
 
