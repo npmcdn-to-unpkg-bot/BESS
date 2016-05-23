@@ -58,7 +58,6 @@
       spproject.location = response.data.project.location;
       spproject.longitude = response.data.project.longitude;
       spproject.latitude = response.data.project.latitude;
-
       //$scope.myWelcome = response.data;
     });
 

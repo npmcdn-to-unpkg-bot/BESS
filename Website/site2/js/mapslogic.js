@@ -1,8 +1,5 @@
 
 (function($){
-
-
-
   var app = angular.module('maps-logic-module', []);
 
   app.controller("mapsController", function($routeParams, $http, $scope, $location, $route){

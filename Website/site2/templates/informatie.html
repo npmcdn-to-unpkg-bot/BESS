@@ -4,8 +4,9 @@
   </div>
 
   <div class="col-sm-8">
-    <button type="button" name="button" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude)">Map laden</button>
-    <div ng-show="spproject.latitude" class="map" id="spmap"></div>
+    <div ng-show="spproject.longitude" class="map" id="spmap" style="height: 200px" ng-init="showmap = false">
+      <a style=" margin-top:50px; position: absolute; left: 50%; margin-left: -44px !important; display: block;" ng-hide="showmap" href="" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude); showmap = true;">Map laden</a>
+    </div>
     <div class="col-sm-1">
     </div>
     <div class="col-sm-2">
