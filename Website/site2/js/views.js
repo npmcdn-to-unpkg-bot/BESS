@@ -104,6 +104,13 @@
     };
   });
 
+    app.directive("map", function() {
+      return {
+        restrict: 'E',
+        templateUrl: "templates/maps.html",
+      };
+    });
+
 
 
 
