@@ -25,9 +25,9 @@
   </fieldset> -->
   <div ng-repeat="question in questions.all">
     <fieldset>
-      <label for="">{{$index + 1}}. {{question.title}}</label>
-      <div ng-repeat="data in question">
-        <label for="">{{$index + 1}}. {{question.getAnswers($index)}}</label>
+      <label for="">{{$index + 1}}. {{question.title}}</label> <br>
+      <div ng-repeat="answer in question.possible_answers track by $index">
+        <label for="">{{$index + 1}}. {{answer}}</label>
       </div>
     </fieldset>
   </div>

@@ -171,9 +171,6 @@
     .then(function(response) {
       console.log(response.data);
       console.log(response.data.questions);
-      questions.getAnswers = function(questionindex) {
-        console.log(response.data.questions.object[questionindex].possible_answers)
-      }
       questions.all = response.data.questions;
     });
   });
