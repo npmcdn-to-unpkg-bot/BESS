@@ -343,7 +343,7 @@ h2 {
 .begindatum, .categorie {
   float:left;
 }
-#projectimage {
+.projectimage {
   width: 100%;
   object-fit: cover;
 }
@@ -883,3 +883,24 @@ vertical-align: baseline;
 }
 
 /*maps end*/
+
+
+/*slick carrousel begin*/
+
+.slick-dots li button:before
+{
+    color: #008C95;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: #008C95;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+
+    color: #008C95;
+
+}

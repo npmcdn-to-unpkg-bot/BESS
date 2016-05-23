@@ -19,8 +19,11 @@
       <!-- linkse witruimte container -->
     </div>
     <div class="col-sm-8" ng-init="images.get();">
-      <img ng-hide="images.all;" src="http://lorempixel.com/800/400/city/" alt="image" class="border-tlr-radius" id="projectimage"/>
-      <img ng-show="images.all;" src="{{images.firstone}}" alt="image" class="border-tlr-radius" id="projectimage"/>
+
+        <img ng-hide="images.all;" src="http://lorempixel.com/800/400/city/" alt="image" class="border-tlr-radius projectimage"/>
+        <div class="slickimages" ng-show="images.all;">
+      </div>
+
       <a href="" data-toggle="modal" data-target="#imageupload-modal" ng-show="user.isAdmin == '1'">Afbeelding uploaden</a>
       <!-- <p>
         {{images.firstone}}
