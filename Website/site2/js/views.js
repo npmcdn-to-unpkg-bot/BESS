@@ -108,6 +108,8 @@
       return {
         restrict: 'E',
         templateUrl: "templates/maps.html",
+        controller  : 'mapsController',
+        controllerAs: "mapslogic"
       };
     });
 

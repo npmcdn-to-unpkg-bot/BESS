@@ -29,6 +29,8 @@
     // route for the contact page
     .when('/map', {
       templateUrl : 'templates/maps.html',
+      controller  : 'mapsController',
+      controllerAs: "mapslogic"
     })
     .otherwise(
       {redirectTo : "/"}
