@@ -64,7 +64,7 @@ public function showperproject($project_id)
       }
     public function store(Request $request)
     {
-      $answer = new Answer;
+      $answer = Answer::firstOrCreate(['question_id' => $request->get('question_id'), 'user_id' => $this->currentUser()["id"]]);
       $answer->answer = $request->get('answer');
       $answer->project_id = $request->get('project_id');
       $answer->question_id = $request->get('question_id');
