@@ -34,8 +34,10 @@
 
           <div class="card radius shadowDepth1 hoverable">
             <div class="card__image border-tlr-radius">
-              <img ng-hide="images.firstonebyid[project.id];" src="http://lorempixel.com/400/200/city/" alt="image" class="border-tlr-radius"/>
-              <img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" style="width: 400px, height: 200px" alt="image" class="border-tlr-radius"/>
+              <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
+                <h2 class="navbar-title">Antwerpen</h2>
+              </div>
+              <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" style="width: 400px, height: 200px" alt="image" class="border-tlr-radius"/></a>
             </div>
 
             <div class="card__content card__padding">

@@ -835,7 +835,16 @@ button {
 
 /* vragenlijst begin */
 
-
+.question {
+  margin-bottom: 10px;
+}
+.answer label{
+  margin-left: 10px;
+  font-weight: normal !important;
+}
+.answer:last-child {
+  margin-bottom: 10px;
+}
 /* vragenlijst einde */
 
 
