@@ -53,6 +53,7 @@
       }).then(function mySucces(response) {
         console.log("registratie succesvol token=" + response.data.token);
         localStorage.setItem("token", response.data.token);
+        user.getData();
         $('#register-modal').modal('hide');
       }, function myError(response) {
         console.log("register failed");
