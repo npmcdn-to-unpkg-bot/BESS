@@ -3,11 +3,17 @@
     <div class="loginmodal-container">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h1>Voeg een vraag toe</h1><br>
-      <form>
-        <input ng-model="mijlpaaltitel" type="text" name="mijlpaaltitel" placeholder="Vraag">
-        <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="Beschrijving"></textarea>
-
-        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, mijlpaaldatum);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
+      <form id="addnewquestion">
+        <input ng-model="questionTitle" type="text" name="questionTitle" placeholder="Vraag">
+        <select ng-model="sortofquestion" name="sortofquestion" form="addnewquestion">
+          <option value="" disabled selected>-- Kies een optie --</option>
+          <option value="yesno">Ja/Nee vraag</option>
+          <option value="multiplechoice">Meerkeuzevraag</option>
+        </select>
+        <br>
+          Scheidt de antwoorden mbv een komma.
+        <input ng-model="questionAnswers" type="text" name="questionAnswers" placeholder="Wat zijn de mogelijke antwoorden?">
+        <input  ng-click="questions.addQuestion(questionTitle, sortofquestion, questionAnswers);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
 
       </form>
 
