@@ -436,10 +436,11 @@ button {
 }
 
 .loginmodal-container input[type=submit] {
-  width: 45%;
-  display: block;
+  width: 49%;
+  display: inline-block;
   margin-bottom: 10px;
   position: relative;
+  margin-right: 0 !important;
 }
 
 .registermodal-container input[type=submit], .createmodal-container input[type=submit] {
@@ -516,6 +517,7 @@ button {
 .loginmodal-container p, .registermodal-container p {
   width: 45%;
   float: right;
+  margin-top:25px;
 
 }
 
@@ -837,6 +839,13 @@ textarea.form-control {
   border-radius: 25px;
   color: #fff;
   background-color: #008C95;
+}
+
+.addSubmit {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 

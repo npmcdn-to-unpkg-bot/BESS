@@ -1,6 +1,6 @@
 <div class="modal fade" id="addtimelineitem-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
-    <div class="loginmodal-container">
+    <div class="registermodal-container">
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h1>Voeg een mijlpaal toe</h1><br>
       <form>
@@ -8,7 +8,7 @@
         <input ng-model="mijlpaaldatum" type="text" name="mijlpaaldatum" placeholder="Datum">
         <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="Beschrijving"></textarea>
 
-        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, mijlpaaldatum);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
+        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, mijlpaaldatum);" data-toggle="modal" type="submit" class="register registermodal-submit" value="Bevestig">
 
       </form>
 

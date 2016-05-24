@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>JolubrokerV2</title>
+
+
+
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700'>
+<link rel='stylesheet prefetch' href='http://v2.joulebroker.com/Content/cropper/cropper.min.css'>
+<link rel='stylesheet prefetch' href='http://v2.joulebroker.com/bundles/css/font-awesome?v=DWzYKC0jd6clsSeB4EkEn6OEx9vHam-xVWrDW9id9NI1'>
+<link rel='stylesheet prefetch' href='http://v2.joulebroker.com/Content/bootstrap.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+
+
+
+
+  </head>
+
+  <body>
+
+    <body class="pace-done">
+
+<div id="wrapper" class="Index">
+        <!-- Navigation -->
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <span>
+
+                            </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="clear">
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold"><b class="caret"></b></strong>
+                                    </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="/Account">Profile</a></li>
+
+                                <li class="divider"></li>
+                                <li><a href="/Account/Logout">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);" style="background:none;background-color:none;"><b class="caret"></b></a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs" style="color:#676A6C;margin-top:-12px;">
+                                <li><a href="/Account">Profile</a></li>
+
+                                <li class="divider"></li>
+                                <li><a href="/Account/Logout">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <i class="fa fa-flag"></i>
+                            <span class="nav-label">Processes</span><span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li class=""><a href="/Deposit">Manage Deposits</a></li>
+                            <li class=""><a href="/PayReport/Manage">Manage Pay Reports</a></li>
+                            <li class=""><a href="/File/Upload"> Upload File</a></li>
+                            <li class=""><a href="/Deposit/PayReportToDeposit">Assign Pay Reports To Deposit</a> </li>
+                            <li class=""><a href="/Deposit/PaymentToSale"> Assign Payment To Sale</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <i class="fa fa-flag"></i>
+                            <span class="nav-label">Exception Reports</span><span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li class="">
+                                <a href="#">Deposits<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li class=""><a href="/Report/View/ExceptionsDepositsByBank">By Bank</a></li>
+                                    <li class=""><a href="/Report/View/ExceptionsDepositsByTeam">By Team</a></li>
+                                    <li class=""><a href="/Report/View/ExceptionsDepositUnAssigned">Unassigned</a></li>
+                                    <li class=""><a href="/Report/View/ExceptionsDepositAssigned">Assigned</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#">Pay Reports<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li class=""><a href="/Report/View/ExceptionsPayReportAmountToSum">Amount to Sum</a></li>
+                                    <li class=""><a href="/Report/View/ExceptionsPayReportAmountToDetails">Amount to Details</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#">
+                            <i class="fa fa-flag"></i>
+                            <span class="nav-label">Admin Tools</span><span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li class=""><a href="/AccountNumber"> Manage Account Number</a></li>
+                            <li class=""><a href="/ProcessOrders"> Manage Processed Orders</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg">
+            <!-- Top Navbar -->
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Welcome to JouleBroker</span>
+                        </li>
+
+
+                        <li>
+                            <a href="/Account/Logout">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Main view  -->
+
+
+
+
+
+
+
+            <!-- Footer -->
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> JouleBroker &copy; 2015
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+    <script src='http://v2.joulebroker.com/bundles/script/jquery?v=gkWyJthHPtwkFjvHuNinBjchIfwLwc_KbE-H26J2kAI1'></script>
+<script src='http://v2.joulebroker.com/bundles/script/jqueryval?v=nsOwUc2j3GMqgidS30eLgZVJeHn83Wqmm2vMD4cUlKA1'></script>
+<script src='http://v2.joulebroker.com/bundles/script/bootstrap?v=6F69ePQjyYoTsSTMs9YCaATNBbN2mbcwXjrwYRFN_Ys1'></script>
+<script src='http://v2.joulebroker.com/bundles/script/slimScroll?v=Uin95EwzswHK3MjnPYJT0IIu_sfIoxGwdr5n_SnamSE1'></script>
+<script src='http://v2.joulebroker.com/bundles/script/inspinia?v=d8UsZ7F9oKSU0c_p26VLBfFLxyrfTSsMIQj0nxwWAn81'></script>
+<script src='http://v2.joulebroker.com/bundles/script/skinConfig?v=tYvxpxgSSkzurVHKSil6C2XiPDRNyvudGSqZoF4DhoM1'></script>
+<script src='http://v2.joulebroker.com/Scripts/Views/Common.js'></script>
+<script src='http://v2.joulebroker.com/Scripts/cropper/cropper.min.js'></script>
+<script src='http://v2.joulebroker.com/Scripts/Views/Account/UserProfile.js'></script>
+
+
+
+
+
+  </body>
+</html>
