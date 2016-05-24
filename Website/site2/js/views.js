@@ -144,8 +144,7 @@
       restrict: 'E',
       templateUrl: "templates/addquestion.html",
       controller: 'questionController',
-      controllerAs: 'question'
-
+      controllerAs: 'questions'
     };
   });
 

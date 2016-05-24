@@ -261,7 +261,7 @@
 
   });
 
-  app.controller ( "questioncontroller", function( $routeParams, $http, $scope, $location ){
+  app.controller ( "questionController", function( $routeParams, $http, $scope, $location ){
     var projectId = $scope.projectId = $routeParams.projectId;
     console.log("projectID = " + projectId);
     var questions = this;
