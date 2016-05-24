@@ -101,6 +101,40 @@
       });
     };
 
+        var mapupdate;
+        mapslogic.getMapUpdate = function() {
+          if (mapupdate) {
+            mapupdate.refresh;
+            console.log("mapupdate bestaat al");
+            $(window).trigger('resize');
+          } else {
+            console.log("mapupdate word gemaakt");
+            mapupdate = new GMaps({
+              el: '#mapupdate',
+              lat: 51.2194475,
+              lng: 4.4024643,
+              zoom: 12,
+              width: '100%' ,
+              height: '400px',
+              click: function(e) {
+                mapslogic.latupdate = e.latLng.lat();
+                mapslogic.lngupdate = e.latLng.lng();
+                console.log("lng = " + mapslogic.latupdate);
+                console.log("lng = " + mapslogic.lngupdate);
+                mapupdate.removeMarkers();
+                mapupdate.addMarker({
+                  lat: e.latLng.lat(),
+                  lng: e.latLng.lng(),
+                  title: 'Gekozen locatie',
+                  icon: icon
+                });
+              }
+            });
+            $(window).trigger('resize');
+          }
+
+        };
+
   });
 
 

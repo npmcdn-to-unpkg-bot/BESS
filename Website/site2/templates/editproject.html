@@ -13,7 +13,7 @@
 
         <ul class="nav nav-tabs" id="tabContent">
           <li class="active"><a data-target="#editinformatieTab" data-toggle="tab">Informatie</a></li>
-          <li><a data-target="#editmapsTab" data-toggle="tab">Vragenlijst</a></li>
+          <li><a data-target="#editmapsTab" data-toggle="tab" ng-click="mapslogic.getMapUpdate();">Map</a></li>
         </ul>
 
         <div class="tab-content">
@@ -33,7 +33,7 @@
           </div>
 
           <div class="tab-pane" id="editmapsTab">
-            <div class="map" id="editmapcreate"></div>
+            <div class="map" id="mapupdate"></div>
           </div>
 
 
@@ -42,8 +42,8 @@
 
 
 
-        <input ng-click="project.edit(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, editmapslogic.lat, editmapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
-        <input ng-click="project.delete(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, editmapslogic.lat, editmapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete">
+        <input ng-click="project.edit(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
+        <input ng-click="project.delete(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete">
 
       </form>
 
