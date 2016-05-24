@@ -6,7 +6,8 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
-    controller: 'LoginCtrl'
+    controller: 'LoginCtrl',
+    controllerAs: 'user'
   })
   .state('intro', {
     url: '/',
@@ -45,7 +46,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 })
 
 
-.controller('LoginCtrl', function($scope, $state) {
+.controller('LoginCtrl', function($scope, $state, $http, $ionicHistory) {
 
   // Called to navigate to the main app
   $scope.login = function() {
@@ -54,9 +55,29 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.formToggle = function() {
        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
   }
+  //Disable back button after login $state.go
+  $ionicHistory.nextViewOptions({
+    disableBack: true
+  });
 
   var user = this;
-  
+  user.login = function(email, password){
+    $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/login",
+        data: {
+          email: email,
+          password: password,
+        }
+      }).then(function mySucces(response) {
+        $state.go('intro');
+        console.log("succesvol");
+      }, function myError(response) {
+        console.log("login failed");
+      });
+  }
+
+
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
