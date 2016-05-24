@@ -26,7 +26,7 @@
 
     })
 
-    // route for the contact page
+    // route for the map page
     .when('/map', {
       templateUrl : 'templates/maps.html',
       controller  : 'mapsController',

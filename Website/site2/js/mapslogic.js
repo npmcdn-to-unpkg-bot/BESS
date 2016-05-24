@@ -15,6 +15,7 @@
       if (mapcreate) {
         mapcreate.refresh;
         console.log("mapcreate bestaat al");
+         $(window).trigger('resize');
       } else {
         console.log("mapcreate word gemaakt");
         mapcreate = new GMaps({
@@ -38,25 +39,34 @@
             });
           }
         });
+         $(window).trigger('resize');
       }
 
     };
-
+      var map;
     mapslogic.getMapOverview = function() {
-      var map = new GMaps({
+       map = new GMaps({
         el: '#map',
         lat: 51.2194475,
         lng: 4.4024643,
         zoom: 12
       });
     };
-    mapslogic.addMarkerToMapOverview = function(glatitude, glongtitude) {
-      map.addMarker({
-        lat: latitude,
-        lng: longitude,
-        title: 'Project locatie',
-        icon: icon
-      });
+    mapslogic.addMarkerToMapOverview = function(glatitude, glongtitude, gprojectid) {
+      if (glatitude, glongtitude) {
+        map.addMarker({
+          lat: glatitude,
+          lng: glongtitude,
+          title: 'Project locatie',
+          icon: icon,
+          infoWindow: {
+  content: '<a href="#/project/'+gprojectid+'">projectId = '+gprojectid+'</a>'
+},
+        });
+      } else {
+        console.log("nog geen locatie ingesteld");
+      }
+
     };
 
     mapslogic.getMapSinglePage = function(latitude, longitude) {
