@@ -322,6 +322,23 @@ td-card {
     background-color: rgb(255,255,255);
 }
 
+.projectDetailTitle {
+    position: absolute;
+    margin: auto;
+    top: 475px;
+    left: 20%;
+}
+
+.projectDetailTitle h1 {
+  font-family: 'Antwerpen';
+  font-size: 3.5em;
+}
+
+span.a-color {
+  color: #008C95;
+}
+
+
 .td-card .title {
     height: 40px;
     font-size: 15px;
