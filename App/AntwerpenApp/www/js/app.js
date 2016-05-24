@@ -200,12 +200,14 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
         for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
 
-        $scope.cardSwipedLeft = function(index) {
+        $scope.cardSwipedLeft = function(index,projectid, questionid) {
             console.log('Left swipe');
+            console.log('project id = ' +projectid +" question id= "+questionid);
         }
 
-        $scope.cardSwipedRight = function(index) {
+        $scope.cardSwipedRight = function(index,projectid, questionid) {
             console.log('Right swipe');
+            console.log('project id = ' +projectid +" question id= "+questionid);
         }
 
         $scope.cardDestroyed = function(index) {

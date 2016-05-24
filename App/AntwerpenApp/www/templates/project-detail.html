@@ -5,7 +5,7 @@
   <ion-pane  class="has-footer">
           <td-cards>
               <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+              on-swipe-left="cardSwipedLeft($index, projectDetail.id, card.id)" on-swipe-right="cardSwipedRight($index, projectDetail.id, card.id)"
               on-partial-swipe="cardPartialSwipe(amt)">
                   <div class="title">
                       Vraag {{$index + 1}}
