@@ -322,6 +322,18 @@ td-card {
     background-color: rgb(255,255,255);
 }
 
+.noQuestions {
+  font-size: 19em;
+  position: absolute;
+  top: 80px;
+  line-height: 100px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  left: 21%;
+  color: rgba(212, 212, 212, 0.87);
+}
+
 .projectDetailTitle {
     position: absolute;
     margin: auto;
@@ -341,8 +353,11 @@ span.a-color {
 
 .td-card .title {
     height: 40px;
-    font-size: 15px;
+    font-size: 20px;
     padding: 15px;
+    text-align: center;
+
+
 }
 
 td-card .image {
@@ -352,9 +367,18 @@ td-card .image {
 }
 
 td-card img {
-    height: 258px;
+    height: 280px;
     width: 100%;
     border-radius: 6px;
+}
+
+.cardQuestion {
+  padding-left: 30px;
+  padding-right: 30px;
+  top: 50px;
+  position: relative;
+  font-family: 'SunAntwerpen Regular';
+  font-size:18px;
 }
 
 /* Overlay styling*/
@@ -362,7 +386,7 @@ td-card img {
 .overlayBox {
     position: absolute;
     left: 50%;
-    height: 98%;
+    height: 100%;
     width: 100%;
     top: -80px;
     opacity: 0;

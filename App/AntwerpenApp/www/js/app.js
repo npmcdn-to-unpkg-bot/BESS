@@ -168,6 +168,9 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
 
+
+
+
   HttpService.getProjectDetail(projectId)
     .then(function(response) {
        $scope.projectDetail = response.project;
@@ -178,8 +181,10 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
       .then(function(response) {
          $scope.questions = response.questions;
         var cardTypes = $scope.questions;
+        $scope.remainingQuestions = false;
 
         $scope.cards = [];
+
 
         $scope.addCard = function(i) {
             var newCard = cardTypes[i];
@@ -199,8 +204,13 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
         $scope.cardDestroyed = function(index) {
             $scope.cards.splice(index, 1);
+            if ($scope.cards.length == 0) {
+              $scope.remainingQuestions = true;
+            }
             console.log('Card removed');
         }
+      }, function myError(response) {
+        $scope.remainingQuestions = true;
       });
 
 
