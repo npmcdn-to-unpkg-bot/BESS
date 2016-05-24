@@ -96,21 +96,25 @@
   });
 
   app.controller("timelineController", function($routeParams, $http, $scope, $route){
+
+    var timeline = this;
+
     var projectId = $scope.projectId = $routeParams.projectId;
     console.log("projectID = " + projectId);
-    var timeline = this;
+
+
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
     .then(function(response) {
       console.log(response.data.timelines);
       timeline.all = response.data.timelines;
     });
 
+
+//timelineitem add
+
     timeline.addtimelineitem = function(gtitle, gdescription, gdate){
 
-      console.log("er gaat een nieuw tijlijn item toegevoegd worden");
-
       var projectId = $scope.projectId = $routeParams.projectId;
-      console.log("projectID = " + projectId + gtitle + gdescription + gdate);
 
       $http({
         method : "POST",
@@ -122,15 +126,58 @@
           date: gdate,
         }
       }).then(function mySucces(response) {
-        console.log("tijdlijnitem toevoegen gelukt");
+        console.log("add timelineitem succeed");
         $('#addtimelineitem-modal').modal('hide');
         $route.reload();},
          function myError(response) {
-        console.log("tijdlijnitem toevoegen mislukt");
+        console.log("add timelineitem failed");
       });
 
 
     };
+
+
+
+//timeline getID
+
+      timeline.getId = function(event){
+        console.log(event.target.id);
+      };
+
+
+
+// edit timelineitem
+
+    timeline.edittimelineitem = function(gId){
+
+      console.log("er gaat geedit worden");
+      console.log(gId);
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=" + localStorage.token,
+      });
+    };
+
+
+
+
+// delete timelineitem
+
+    timeline.deletetimelineitem = function(){
+      console.log("er gaat gedelete worden");
+
+      // $http({
+      //   method : "POST",
+      //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=XXX" + localStorage.token,
+      // }.then(function mySucces(response){
+      //   console.log("tijdlijnitem werd succesvol verwijderd");
+      //   $('#edittimelineitem-modal').modal('hide');
+      // }, function myError(response){
+      //   console.log("er ging iets mis bij het verwijderen");
+      // }));
+    };
+
 
   });
 
@@ -180,7 +227,7 @@
         var tijdelijk = tijdelijk.split(",");
         questions.possibleanswers[questions.all[i].id] = tijdelijk;
       }
-      console.log(questions.possibleanswers);
+      // console.log(questions.possibleanswers);
     });
   });
 

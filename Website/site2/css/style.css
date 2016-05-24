@@ -762,6 +762,11 @@ button {
   -ms-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
 }
+
+#timeline .timeline-item .timeline-content h3:hover {
+  cursor: pointer;
+}
+
 #timeline .timeline-item .timeline-content:before {
   content: '';
   position: absolute;
@@ -829,6 +834,7 @@ button {
   color: #fff;
   background-color: #008C95;
 }
+
 
 
 /*timeline end*/

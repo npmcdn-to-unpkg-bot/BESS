@@ -58,14 +58,7 @@
     };
   });
 
-  app.directive("timeline", function() {
-    return {
-      restrict: 'E',
-      templateUrl: "templates/timeline.html",
-      controller: 'timelineController',
-      controllerAs: 'timeline'
-    };
-  });
+
 
   app.directive("informatie", function() {
     return {
@@ -84,16 +77,6 @@
     };
   });
 
-  app.directive("addtimelineitem", function() {
-    return {
-      restrict: 'E',
-      templateUrl: "templates/addtimelineitem.html",
-      controller: 'timelineController',
-      controllerAs: 'timeline'
-
-    };
-  });
-
   app.directive("imageupload", function() {
     return {
       restrict: 'E',
@@ -104,7 +87,7 @@
     };
   });
 
-    app.directive("map", function() {
+  app.directive("map", function() {
       return {
         restrict: 'E',
         templateUrl: "templates/maps.html",
@@ -112,6 +95,43 @@
         controllerAs: "mapslogic"
       };
     });
+
+
+
+
+
+  app.directive("timeline", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/timeline.html",
+      controller: 'timelineController',
+      controllerAs: 'timeline'
+    };
+  });
+
+  app.directive("addtimelineitem", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/addtimelineitem.html",
+      controller: 'timelineController',
+      controllerAs: 'timeline'
+
+    };
+  });
+
+  app.directive("edittimelineitem", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/edittimelineitem.html",
+      controller: 'timelineController',
+      controllerAs: 'timeline'
+
+    };
+  });
+
+
+
+
 
 
 

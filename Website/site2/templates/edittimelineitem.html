@@ -1,0 +1,19 @@
+<div class="modal fade" id="edittimelineitem-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h1>Bewerk deze mijlpaal</h1><br>
+      <form>
+        {{timeline.id}}
+        <input ng-model="mijlpaaltitel" type="text" name="mijlpaaltitel" placeholder="{{timeline.title}}">
+        <input ng-model="mijlpaaldatum" type="text" name="mijlpaaldatum" placeholder="{{timeline.date}}">
+        <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="{{timeline.description}}"></textarea>
+
+        <input  ng-click="timeline.edittimelineitem(timeline.id);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Edit">
+        <input  ng-click="timeline.deletetimelineitem(timeline.id);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Delete">
+
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -10,9 +10,8 @@
       </svg>
 
     </div>
-    <div class="timeline-content" ng-class-even="'right'">
-      <h3>{{timeline.title}}</h3>
-
+    <div class="timeline-content" id="{{timeline.id}}" ng-class-even="'right'">
+      <h3 data-toggle="modal" data-target="#edittimelineitem-modal">{{timeline.title}}</h3>
       <p>
         {{timeline.description}}
       </p>
