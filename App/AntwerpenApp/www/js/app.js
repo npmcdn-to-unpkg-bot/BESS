@@ -54,6 +54,9 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
   $scope.formToggle = function() {
        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
   }
+
+  var user = this;
+  
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {

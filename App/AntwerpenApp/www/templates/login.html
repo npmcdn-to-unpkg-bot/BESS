@@ -12,16 +12,16 @@
       <div class="form">
         <h1>INSPRAAK</h1>
         <form class="register-form">
-          <input class="inputName" type="text" placeholder="voornaam"/>
-          <input class="inputName" type="text" placeholder="achternaam"/>
+          <input name="voornaam" ng-model="user.firstName" class="inputName" type="text" placeholder="voornaam" required/>
+          <input name="achternaam" ng-model="user.firstName" class="inputName" type="text" placeholder="achternaam" required/>
           <input type="password" placeholder="paswoord"/>
           <input type="text" placeholder="email"/>
           <button>REGISTREER</button>
           <p class="message">Al geregistreerd? <a href="#" ng-click="formToggle()">Log in</a></p>
         </form>
         <form class="login-form">
-          <input type="text" placeholder="e-mail"/>
-          <input type="password" placeholder="paswoord"/>
+          <input name="email" ng-model="user.email" type="email" placeholder="e-mail" required/>
+          <input name="password" ng-model="user.password" type="password" placeholder="paswoord" required/>
       <button>login</button>
       <p class="message">Geen account? <a href="#" ng-click="formToggle()">Registreer nu</a></p>
     </form>

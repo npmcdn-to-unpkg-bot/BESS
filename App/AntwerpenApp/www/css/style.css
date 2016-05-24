@@ -497,3 +497,13 @@ td-card img {
 .form .register-form {
   display: none;
 }
+
+/*FORM VALIDATION */
+input.ng-dirty.ng-invalid {
+  border-color: #e9322d;
+  background:rgba(242, 139, 135, 0.47)
+}
+
+input.ng-dirty {
+  background: #f2f2f2;
+}
