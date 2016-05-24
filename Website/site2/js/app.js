@@ -294,6 +294,7 @@
           }
         }).then(function mySucces(response) {
           console.log("Nieuwe vraag is toegevoegd!");
+          console.log(questions);
           $('#addquestionmodal').modal('hide');
         }, function myError(response) {
           console.log("Nieuwe vraag toevoegen failed!");

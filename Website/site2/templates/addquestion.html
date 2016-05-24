@@ -5,7 +5,8 @@
       <h1>Voeg een vraag toe</h1><br>
       <form id="addnewquestion">
         <input ng-model="questionTitle" type="text" name="questionTitle" placeholder="Vraag">
-        <select ng-model="sortofquestion" name="sortofquestion" form="addnewquestion">
+
+        <select id="sortofquestion" ng-model="sortofquestion" name="sortofquestion" form="addnewquestion">
           <option value="" disabled selected>-- Kies een optie --</option>
           <option value="yesno">Ja/Nee vraag</option>
           <option value="multiplechoice">Meerkeuzevraag</option>
@@ -13,6 +14,7 @@
         <br>
           Scheidt de antwoorden mbv een komma.
         <input ng-model="questionAnswers" type="text" name="questionAnswers" placeholder="Wat zijn de mogelijke antwoorden?">
+
         <input  ng-click="questions.addQuestion(questionTitle, sortofquestion, questionAnswers);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
 
       </form>
