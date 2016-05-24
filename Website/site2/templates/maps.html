@@ -1,15 +1,14 @@
 
 <div class="container" ng-controller="projectoverzichtController as projects">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <div class="map" id="map" ng-init="mapslogic.getMapOverview();"></div>
 
     </div>
-    <div class="col-sm-6" ng-init="projects.get()">
-      hey
-        <div ng-repeat="project in projects.all" ng-init="mapslogic.addMarkerToMapOverview(project.latitude, project.longitude, project.id)">
-          {{project.latitude}}
-          {{project.longitude}}
+    <div ng-init="projects.get()">
+
+        <div ng-repeat="project in projects.all" ng-init="mapslogic.addMarkerToMapOverview(project.latitude, project.longitude, project.id, project.name, project.description)">
+        
 
         </div>
     </div>

@@ -3,19 +3,19 @@
   var app = angular.module('maps-logic-module', []);
 
   app.controller("mapsController", function($routeParams, $http, $scope, $location, $route){
-      var icon = {
-        url: '/img/A-logo.png', // url
-        scaledSize: new google.maps.Size(50, 50), // scaled size
-        origin: new google.maps.Point(0,0), // origin
-        anchor: new google.maps.Point(26, 26) // anchor
-      };
+    var icon = {
+      url: '/img/A-logo.png', // url
+      scaledSize: new google.maps.Size(50, 50), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(26, 26) // anchor
+    };
     var mapslogic = this;
     var mapcreate;
     mapslogic.getMapCreate = function() {
       if (mapcreate) {
         mapcreate.refresh;
         console.log("mapcreate bestaat al");
-         $(window).trigger('resize');
+        $(window).trigger('resize');
       } else {
         console.log("mapcreate word gemaakt");
         mapcreate = new GMaps({
@@ -39,20 +39,35 @@
             });
           }
         });
-         $(window).trigger('resize');
+        $(window).trigger('resize');
       }
 
     };
-      var map;
+    var map;
     mapslogic.getMapOverview = function() {
-       map = new GMaps({
+      map = new GMaps({
         el: '#map',
         lat: 51.2194475,
         lng: 4.4024643,
-        zoom: 12
+        zoom: 12,
+        height: '90vh',
       });
     };
-    mapslogic.addMarkerToMapOverview = function(glatitude, glongtitude, gprojectid) {
+    mapslogic.addMarkerToMapOverview = function(glatitude, glongtitude, gprojectid, gprojectname, gprojectdescription) {
+      var gprojectdescription = gprojectdescription.substring(0, 200);
+      var gprojectname = gprojectname.substring(0, 40);
+      var htmlcontent =        '<div>' +
+      '<div class="card__content card__padding">' +
+      '  <article class="card__article">' +
+      '<h4><a href="/#/project/'+gprojectid+'">'+gprojectname+' ...</a></h4>' +
+
+      '<p>'+gprojectdescription+' ...</p>' +
+      '</article>' +
+
+      '<div class="ReadMore">' +
+      '<a href="/#/project/'+gprojectid+'">Lees meer...</a>' +
+      '</div> </div> </div>' ;
+
       if (glatitude, glongtitude) {
         map.addMarker({
           lat: glatitude,
@@ -60,8 +75,8 @@
           title: 'Project locatie',
           icon: icon,
           infoWindow: {
-  content: '<a href="#/project/'+gprojectid+'">projectId = '+gprojectid+'</a>'
-},
+            content: htmlcontent
+          },
         });
       } else {
         console.log("nog geen locatie ingesteld");
