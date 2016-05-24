@@ -239,6 +239,26 @@
       });
     };
 
+
+
+
+//delete project
+    project.delete = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
+
+      var projectId = $scope.projectId = $routeParams.projectId;
+
+      $http({
+        method : "DELETE",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token
+      }).then(function mySucces(response) {
+        console.log("project delete succeed");
+        $('#edit-modal').modal('hide');
+        $location.path('/projecten');
+      }, function myError(response) {
+        console.log("project delete failed");
+      });
+    };
+
   });
 
   app.controller ( "questioncontroller", function( $routeParams, $http, $scope, $location ){
