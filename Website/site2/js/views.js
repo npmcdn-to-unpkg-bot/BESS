@@ -77,6 +77,16 @@
     };
   });
 
+  app.directive("editproject", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/editproject.html",
+      controller: 'projectController',
+      controllerAs: 'project'
+
+    };
+  });
+
   app.directive("imageupload", function() {
     return {
       restrict: 'E',

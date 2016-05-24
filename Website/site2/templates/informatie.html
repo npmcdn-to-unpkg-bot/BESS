@@ -115,8 +115,10 @@
       <p>
         {{spproject.description}}
 
-        <img src="img/editblue.png" width="30" height="30" />
+
       </p>
+
+      <img data-toggle="modal" data-target="#edit-modal" ng-show="user.isAdmin == '1'" src="img/editblue.png" width="30" height="30" class="editproject"/>
     </div>
 
   </div>

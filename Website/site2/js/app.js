@@ -185,6 +185,8 @@
   app.controller("projectController", function($routeParams, $http, $scope, $location){
     var project = this;
 
+
+//create project
     project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
 
       $http({
@@ -206,6 +208,34 @@
         $location.path('/projecten');
       }, function myError(response) {
         console.log("project aanmaken failed");
+      });
+    };
+
+
+//edit project
+    project.edit = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
+
+      var projectId = $scope.projectId = $routeParams.projectId;
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token,
+        data: {
+          name: gname,
+          description: gdescription,
+          startdate: gstartdate,
+          enddate: genddate,
+          category: gcategory,
+          location: glocation,
+          latitude: glat,
+          longitude: glng
+        }
+      }).then(function mySucces(response) {
+        console.log("project aanpassen succesvol");
+        $('#edit-modal').modal('hide');
+        $location.path('/projecten');
+      }, function myError(response) {
+        console.log("project aanpassen failed");
       });
     };
 

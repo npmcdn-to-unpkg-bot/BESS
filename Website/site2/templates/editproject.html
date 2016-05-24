@@ -1,0 +1,50 @@
+
+<div class="modal fade" id="edit-modal" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="createmodal-container">
+
+
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h1>Pas dit project aan</h1><br>
+
+      <form class="" ng-controller="mapsController as mapslogic">
+        <input ng-model="editprojectname" type="text" name="editprojectname" placeholder="Projectnaam">
+
+        <ul class="nav nav-tabs" id="tabContent">
+          <li class="active"><a data-target="#editinformatieTab" data-toggle="tab">Informatie</a></li>
+          <li><a data-target="#editmapsTab" data-toggle="tab">Vragenlijst</a></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="editinformatieTab">
+            <div class="infoShort">
+
+
+
+              <input ng-model="editprojectstartdate" type="text" name="editbegindatum" id="datepicker" placeholder="Begindatum">
+              <input ng-model="editprojectenddate" type="text" name="editeinddatum" placeholder="Einddatum">
+              <input ng-model="editprojectcategory" type="text" name="editcategorie" placeholder="Categorie">
+              <input ng-model="editprojectlocation" type="text" name="editlocatie" placeholder="Locatie">
+            </div>
+
+            <textarea ng-model="editprojectdescription" class="form-control" rows="6" type="text" name="editbeschrijving" placeholder="Beschrijving"></textarea>
+
+          </div>
+
+          <div class="tab-pane" id="editmapsTab">
+            <div class="map" id="editmapcreate"></div>
+          </div>
+
+
+
+        </div>
+
+
+
+        <input ng-click="project.edit(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, editmapslogic.lat, editmapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
+      </form>
+
+    </div>
+  </div>
+</div>
