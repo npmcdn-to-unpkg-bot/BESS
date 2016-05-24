@@ -71,11 +71,57 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
         }
       }).then(function mySucces(response) {
         $state.go('intro');
-        console.log("succesvol");
+        localStorage.setItem("token", response.data.token);
+        user.getData();
       }, function myError(response) {
         console.log("login failed");
       });
   }
+
+  user.register = function(firstName, lastName, email, password){
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/signup",
+        data: {
+          firstname: firstName,
+          name: lastName,
+          email: email,
+          password: password,
+        }
+      }).then(function mySucces(response) {
+        console.log("registratie succesvol token=" + response.data.token);
+        localStorage.setItem("token", response.data.token);
+        user.getData();
+        $state.go('intro');
+      }, function myError(response) {
+        console.log("register failed");
+      });
+    };
+
+
+
+  user.getData = function(){
+      if (localStorage.token) {
+        $http({
+          method: "GET",
+          url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user?token=" + localStorage.token
+        }).then(function mySucces(response) {
+          user.loggedin = true;
+          localStorage.setItem("firstname", response.data.user.firstname);
+          localStorage.setItem("lastname", response.data.user.name);
+          localStorage.setItem("email", response.data.user.email);
+          localStorage.setItem("isAdmin", response.data.user.isAdmin);
+          localStorage.setItem("residence", response.data.user.residence);
+          user.firstname = localStorage.firstname;
+          user.isAdmin = localStorage.isAdmin;
+          console.log(user.firstname);
+        }, function myError(response) {
+          console.log("User ophalen failed");
+          user.logout();
+        });
+      }
+    };
 
 
 })
