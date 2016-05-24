@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
+angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.filter'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -187,9 +187,15 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 
         $scope.addCard = function(i) {
+
+          if (cardTypes[i].kind ==='yesno') {
             var newCard = cardTypes[i];
             newCard.id = i;
             $scope.cards.push(angular.extend({}, newCard));
+          } else {
+
+          }
+
         }
 
         for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
@@ -232,7 +238,33 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 })
 
+.controller('ImageCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $http) {
+  var projectId = $stateParams.projectId;
+  var images = this;
 
+      images.getfirstbyid = function(gid) {
+      images.firstonebyid = [];
+      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
+      .then(function mySucces(response) {
+
+        if (response.data.images) {
+
+          images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
+          console.log("gid adres image = "+ images.getfirstbyid[gid]);
+        }
+        else {
+          console.log("image fetch failed probably because image does not exist yet.");
+          images.firstonebyid[gid] = null;
+        }
+
+      }, function myError(response) {
+        console.log("sever error.");
+        images.firstonebyid[gid] = null;
+      });
+    };
+
+
+})
 
 .service('HttpService', function($http) {
  return {

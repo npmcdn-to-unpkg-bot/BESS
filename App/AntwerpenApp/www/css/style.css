@@ -548,3 +548,8 @@ input.ng-dirty.ng-invalid {
 input.ng-dirty {
   background: #f2f2f2;
 }
+
+.full-image{
+  max-height: 250px !important;
+  object-fit: cover;
+}

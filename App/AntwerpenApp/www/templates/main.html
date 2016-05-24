@@ -1,7 +1,7 @@
-<ion-view hide-back-button="true" view-title="Projecten">
-  <ion-content>
+<ion-view hide-back-button="true" view-title="Projecten" >
+  <ion-content ng-controller="ImageCtrl as images">
 
-    <div class="projectCard" collection-repeat="project in projects">
+    <div class="projectCard" ng-repeat="project in projects">
     <a class="projectCard" href="#/main/project/{{project.id}}">
     <div class="list card projectCard" >
       <div class="item item-avatar">
@@ -14,9 +14,11 @@
 
       </div>
 
-      <div class="item item-body">
+      <div class="item item-body" ng-init="images.getfirstbyid(project.id)">
 
-          <img class="full-image" src="http://placehold.it/500x500">
+          <img ng-hide="images.firstonebyid[project.id]" class="full-image" src="http://placehold.it/500x500">
+          <img ng-show="images.firstonebyid[project.id]" class="full-image" src="{{images.firstonebyid[project.id]}}">
+
           <div class="row">
             <div class="col">
               <h4>Locatie: {{project.location}}</h4>
@@ -33,6 +35,8 @@
           </p>
 
       </div>
+    </div>
+  </div>
       <!--
       <div class="item projectCard-button">
         <a href="#/main/project/{{project.id}}">
