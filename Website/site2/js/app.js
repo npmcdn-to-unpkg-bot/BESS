@@ -175,7 +175,7 @@
       questions.all = response.data.questions;
       for (var i = 0; i < questions.all.length; i++) {
       //  console.log(questions.all[i].possible_answers);
-        console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
+        //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
         var tijdelijk = questions.all[i].possible_answers;
         var tijdelijk = tijdelijk.split(",");
         questions.possibleanswers[questions.all[i].id] = tijdelijk;
