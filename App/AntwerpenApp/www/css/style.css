@@ -391,9 +391,23 @@ td-card img {
 
 
 /*LOGIN */
+
+.blur {
+
+
+}
 .loginBackground {
   background-color: white;
   height: 100%;
+  background-color: #000;
+    background-image: url(/img/Antwerpen_MAS_m.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
   position: fixed;
   left: 0;
@@ -407,7 +421,7 @@ td-card img {
   display: block;
   position: relative;
   margin-left: 18%;
-  top: -50px;
+  top: -75px;
 }
 
 .login-page {
@@ -417,7 +431,14 @@ td-card img {
   z-index: 5;
 
 }
+.form h1 {
+  font-family: "Antwerpen", sans-serif;
+  margin-bottom: 20px;
+  color: #008C95;
+}
+
 .form {
+  top: -75px;
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -431,6 +452,7 @@ td-card img {
   font-family: "SunAntwerpen-Regular", sans-serif;
   outline: 0;
   background: #f2f2f2;
+  color: #008C95;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -442,21 +464,21 @@ td-card img {
   font-size: 18px !important;
 }
 .form button {
-  font-family: "Roboto", sans-serif;
+  font-family: "Antwerpen", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #008C95;
   width: 100%;
   border: 0;
   padding: 15px;
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 18px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #00a2ad;
 }
 .form .message {
   margin: 15px 0 0;
