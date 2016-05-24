@@ -139,11 +139,14 @@
     };
   });
 
+  app.directive("addquestion", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/addquestion.html",
+      controller: 'questionController',
+      controllerAs: 'question'
 
-
-
-
-
-
+    };
+  });
 
 })();

@@ -3,6 +3,9 @@
     <!-- Linkse witruimte container -->
   </div>
   <div class="col-sm-8">
+    <div class="addItem"  ng-show="user.isAdmin == '1'">
+      <button data-toggle="modal" data-target="#addquestionmodal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+    </div>
     <form class="" action="index.html" method="post">
       <!-- <fieldset>
       <label for="">1. Vindt u dat het project correct wordt behandeld?</label><br>
@@ -45,3 +48,4 @@
 </div>
 
 </div>
+<addquestion></addquestion>

@@ -9,7 +9,7 @@
           <div class="card radius shadowDepth1 hoverable">
             <div class="card__image border-tlr-radius" ng-init="images.getfirstbyid(project.id)">
               <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
-                <h2 class="navbar-title">Antwerpen</h2>
+                <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
               </div>
               <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius"/></a>
             </div>
