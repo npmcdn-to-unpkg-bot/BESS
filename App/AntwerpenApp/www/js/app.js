@@ -172,9 +172,10 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
-
+  $scope.projectId = projectId;
   $scope.goTinder = function () {
-    $state.go('/main/project/tinder/:projectId',{projectId:projectId});
+
+    $state.go('/main/project/tinder/'+projectId);
   }
 
 
