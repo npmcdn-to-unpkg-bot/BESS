@@ -305,24 +305,31 @@
     questions.addQuestion = function(title, kindofQuestion, answers) {
       if(kindofQuestion == 'yesno') {
         answers = 'Ja, Nee';
+      } else if (kindofQuestion == 'multiplechoice' && answers == undefined) {
+        toastr.error('Vul alsjebieft enkele antwoordmogelijkheden in!', 'Mislukt!');
+      } else {
+        $http({
+          method : "POST",
+          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions?token=" + localStorage.token,
+          data: {
+            title: title,
+            kind: kindofQuestion,
+            project_id: projectId,
+            possible_answers: answers
+          }
+        }).then(function mySucces(response) {
+          console.log("Nieuwe vraag is toegevoegd!");
+          console.log(questions);
+          location.reload();
+        }, function myError(response) {
+          console.log("Nieuwe vraag toevoegen failed!");
+          if (title == undefined) {
+            toastr.error('Vul een vraag in!', 'Mislukt!');
+          } else if (kindofQuestion == undefined) {
+            toastr.error('Kies alsjeblieft een soort vraag!', 'Mislukt!');
+          }
+        });
       }
-      $http({
-        method : "POST",
-        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions?token=" + localStorage.token,
-        data: {
-          title: title,
-          kind: kindofQuestion,
-          project_id: projectId,
-          possible_answers: answers
-        }
-      }).then(function mySucces(response) {
-        console.log("Nieuwe vraag is toegevoegd!");
-        console.log(questions);
-        location.reload();
-      }, function myError(response) {
-        console.log("Nieuwe vraag toevoegen failed!");
-        toastr.success('Er is iets misgelopen, uw vraag is niet toegevoegd.', 'Mislukt!');
-      });
     };
 
     questions.getQuestionId = function(questionId) {
@@ -349,10 +356,11 @@
         location.reload();
       }, function myError(response) {
         console.log("Vraag updaten failed!");
-        toastr.success('Er is iets misgelopen, uw vraag is niet toegevoegd.', 'Mislukt!');
+        if (title == undefined) {}
+        toastr.error('Er is iets misgelopen, uw vraag is niet toegevoegd.', 'Mislukt!');
       });
     };
-    
+
     questions.deleteQuestion = function(){
       $http({
         method : "DELETE",
@@ -362,7 +370,7 @@
         location.reload();
       }, function myError(response) {
         console.log("Vraag verwijderen failed!");
-        toastr.success('Er is iets misgelopen, uw vraag is niet verwijderd.', 'Mislukt!');
+        toastr.error('Er is iets misgelopen, uw vraag is niet verwijderd.', 'Mislukt!');
       });
     };
 
