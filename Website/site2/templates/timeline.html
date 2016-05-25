@@ -1,7 +1,9 @@
 <div class="Timelinecontainer">
 
   <div id="timeline" class="timeline" >
-
+    <div class="addItem"  ng-show="user.isAdmin == '1'">
+      <button data-toggle="modal" data-target="#addtimelineitem-modal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+    </div>
     <div class="timeline-item" ng-repeat="timeline in timeline.all">
       <div class="timeline-icon">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -20,10 +22,6 @@
       </p>
 
     </div>
-  </div>
-
-  <div class="addItem"  ng-show="user.isAdmin == '1'">
-    <button data-toggle="modal" data-target="#addtimelineitem-modal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
   </div>
 
 </div>

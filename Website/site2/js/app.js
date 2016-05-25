@@ -2,18 +2,18 @@
   var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate', 'toastr', 'ngAnimate']);
 
   app.config(function(toastrConfig) {
-  angular.extend(toastrConfig, {
-    closeButton: true,
-    extendedTimeOut: 1000,
-    progressBar: true,
-    tapToDismiss: true,
-    autoDismiss: true,
-    maxOpened: 3,
-    newestOnTop: true,
-    positionClass: 'toast-bottom-center',
-    preventOpenDuplicates: true,
+    angular.extend(toastrConfig, {
+      closeButton: true,
+      extendedTimeOut: 1000,
+      progressBar: true,
+      tapToDismiss: true,
+      autoDismiss: true,
+      maxOpened: 3,
+      newestOnTop: true,
+      positionClass: 'toast-bottom-center',
+      preventOpenDuplicates: true,
+    });
   });
-});
 
 
   app.controller("PanelController", function(){
@@ -147,178 +147,226 @@
         $route.reload();
         toastr.info('mijlpaal toegevoegd', 'Joepie');
       },
-        function myError(response) {
-          console.log("add timelineitem failed");
-          toastr.error('Er is iets misgelopen bij het toevoegen van een mijlpaal, alle velden ingevuld?', 'Error');
-        });
-
-
-      };
-
-
-
-      //timeline getID
-
-      timeline.getId = function(event){
-        console.log(event.target.id);
-      };
-
-
-
-      // edit timelineitem
-
-      timeline.edittimelineitem = function(gId){
-
-        console.log("er gaat geedit worden");
-        console.log(gId);
-
-        $http({
-          method : "POST",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=" + localStorage.token,
-        });
-      };
-
-
-
-
-      // delete timelineitem
-
-      timeline.deletetimelineitem = function(){
-        console.log("er gaat gedeletet worden");
-
-        // $http({
-        //   method : "POST",
-        //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=XXX" + localStorage.token,
-        // }.then(function mySucces(response){
-        //   console.log("tijdlijnitem werd succesvol verwijderd");
-        //   $('#edittimelineitem-modal').modal('hide');
-        // }, function myError(response){
-        //   console.log("er ging iets mis bij het verwijderen");
-        // }));
-      };
-
-
-    });
-
-    app.controller("projectController", function($routeParams, $http, $scope, $location, toastr){
-      var project = this;
-
-
-      //create project
-      project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
-
-        $http({
-          method : "POST",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects?token=" + localStorage.token,
-          data: {
-            name: gname,
-            description: gdescription,
-            startdate: gstartdate,
-            enddate: genddate,
-            category: gcategory,
-            location: glocation,
-            latitude: glat,
-            longitude: glng
-          }
-        }).then(function mySucces(response) {
-          console.log("project aanmaken succesvol");
-          $('#create-modal').modal('hide');
-          $location.path('/projecten');
-        }, function myError(response) {
-          console.log("project aanmaken failed");
-        });
-      };
-
-
-      //edit project
-      project.edit = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
-
-        var projectId = $scope.projectId = $routeParams.projectId;
-
-        $http({
-          method : "POST",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token,
-          data: {
-            name: gname,
-            description: gdescription,
-            startdate: gstartdate,
-            enddate: genddate,
-            category: gcategory,
-            location: glocation,
-            latitude: glat,
-            longitude: glng
-          }
-        }).then(function mySucces(response) {
-          console.log("project aanpassen succesvol");
-          $('#edit-modal').modal('hide');
-          location.reload();
-        }, function myError(response) {
-          console.log("project aanpassen failed");
-        });
-      };
-
-
-
-
-      //delete project
-      project.delete = function(){
-
-        var projectId = $scope.projectId = $routeParams.projectId;
-
-        $http({
-          method : "DELETE",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token
-        }).then(function mySucces(response) {
-          console.log("project delete succeed");
-          $('#edit-modal').modal('hide');
-          $location.path('/projecten');
-        }, function myError(response) {
-          console.log("project delete failed");
-        });
-      };
-
-    });
-
-    app.controller ( "questionController", function( $routeParams, $http, $scope, $location ){
-      var projectId = $scope.projectId = $routeParams.projectId;
-      console.log("projectID = " + projectId);
-      var questions = this;
-      questions.possibleanswers = [];
-
-      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/"+ projectId)
-      .then(function(response) {
-        //console.log(response.data);
-        //console.log(response.data.questions);
-        questions.all = response.data.questions;
-        for (var i = 0; i < questions.all.length; i++) {
-          //  console.log(questions.all[i].possible_answers);
-          //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
-          var tijdelijk = questions.all[i].possible_answers;
-          var tijdelijk = tijdelijk.split(",");
-          questions.possibleanswers[questions.all[i].id] = tijdelijk;
-        }
-        // console.log(questions.possibleanswers);
+      function myError(response) {
+        console.log("add timelineitem failed");
+        toastr.error('Er is iets misgelopen bij het toevoegen van een mijlpaal, alle velden ingevuld?', 'Error');
       });
 
-      questions.addQuestion = function(title, kindofQuestion, answers) {
-        $http({
-          method : "POST",
-          url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions?token=" + localStorage.token,
-          data: {
-            title: title,
-            kind: kindofQuestion,
-            project_id: projectId,
-            possible_answers: answers
-          }
-        }).then(function mySucces(response) {
-          console.log("Nieuwe vraag is toegevoegd!");
-          console.log(questions);
-          $('#addquestionmodal').modal('hide');
-        }, function myError(response) {
-          console.log("Nieuwe vraag toevoegen failed!");
-        });
-      };
+
+    };
+
+
+
+    //timeline getID
+
+    timeline.getId = function(event){
+      console.log(event.target.id);
+    };
+
+
+
+    // edit timelineitem
+
+    timeline.edittimelineitem = function(gId){
+
+      console.log("er gaat geedit worden");
+      console.log(gId);
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=" + localStorage.token,
+      });
+    };
+
+
+
+
+    // delete timelineitem
+
+    timeline.deletetimelineitem = function(){
+      console.log("er gaat gedeletet worden");
+
+      // $http({
+      //   method : "POST",
+      //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=XXX" + localStorage.token,
+      // }.then(function mySucces(response){
+      //   console.log("tijdlijnitem werd succesvol verwijderd");
+      //   $('#edittimelineitem-modal').modal('hide');
+      // }, function myError(response){
+      //   console.log("er ging iets mis bij het verwijderen");
+      // }));
+    };
+
+
+  });
+
+  app.controller("projectController", function($routeParams, $http, $scope, $location, toastr){
+    var project = this;
+
+
+    //create project
+    project.create = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects?token=" + localStorage.token,
+        data: {
+          name: gname,
+          description: gdescription,
+          startdate: gstartdate,
+          enddate: genddate,
+          category: gcategory,
+          location: glocation,
+          latitude: glat,
+          longitude: glng
+        }
+      }).then(function mySucces(response) {
+        console.log("project aanmaken succesvol");
+        $('#create-modal').modal('hide');
+        $location.path('/projecten');
+      }, function myError(response) {
+        console.log("project aanmaken failed");
+      });
+    };
+
+
+    //edit project
+    project.edit = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
+
+      var projectId = $scope.projectId = $routeParams.projectId;
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token,
+        data: {
+          name: gname,
+          description: gdescription,
+          startdate: gstartdate,
+          enddate: genddate,
+          category: gcategory,
+          location: glocation,
+          latitude: glat,
+          longitude: glng
+        }
+      }).then(function mySucces(response) {
+        console.log("project aanpassen succesvol");
+        $('#edit-modal').modal('hide');
+        location.reload();
+      }, function myError(response) {
+        console.log("project aanpassen failed");
+      });
+    };
+
+
+
+
+    //delete project
+    project.delete = function(){
+
+      var projectId = $scope.projectId = $routeParams.projectId;
+
+      $http({
+        method : "DELETE",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectId + "?token=" + localStorage.token
+      }).then(function mySucces(response) {
+        console.log("project delete succeed");
+        $('#edit-modal').modal('hide');
+        $location.path('/projecten');
+      }, function myError(response) {
+        console.log("project delete failed");
+      });
+    };
+
+  });
+
+  app.controller ( "questionController", function( $routeParams, $http, $scope, $location, toastr ){
+    var projectId = $scope.projectId = $routeParams.projectId;
+    var questionEditId;
+
+    console.log("projectID = " + projectId);
+    var questions = this;
+    questions.possibleanswers = [];
+
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/"+ projectId)
+    .then(function(response) {
+      //console.log(response.data);
+      //console.log(response.data.questions);
+      questions.all = response.data.questions;
+      for (var i = 0; i < questions.all.length; i++) {
+        //  console.log(questions.all[i].possible_answers);
+        //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
+        var tijdelijk = questions.all[i].possible_answers;
+        var tijdelijk = tijdelijk.split(",");
+        questions.possibleanswers[questions.all[i].id] = tijdelijk;
+      }
+      // console.log(questions.possibleanswers);
     });
 
+    questions.addQuestion = function(title, kindofQuestion, answers) {
+      if(kindofQuestion == 'yesno') {
+        answers = 'Ja, Nee';
+      }
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions?token=" + localStorage.token,
+        data: {
+          title: title,
+          kind: kindofQuestion,
+          project_id: projectId,
+          possible_answers: answers
+        }
+      }).then(function mySucces(response) {
+        console.log("Nieuwe vraag is toegevoegd!");
+        console.log(questions);
+        location.reload();
+      }, function myError(response) {
+        console.log("Nieuwe vraag toevoegen failed!");
+        toastr.success('Er is iets misgelopen, uw vraag is niet toegevoegd.', 'Mislukt!');
+      });
+    };
 
-  })();
+    questions.getQuestionId = function(questionId) {
+      questionEditId = questionId;
+      console.log(questionEditId);
+      $('#editquestionmodal').modal('show');
+    };
+
+    questions.editQuestion = function(title, kindofQuestion, answers) {
+      if(kindofQuestion == 'yesno') {
+        answers = 'Ja, Nee';
+      }
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions/"+ questionEditId +"?token=" + localStorage.token,
+        data: {
+          title: title,
+          kind: kindofQuestion,
+          possible_answers: answers
+        }
+      }).then(function mySucces(response) {
+        console.log("Vraag is geupdatet!");
+        console.log(questions);
+        location.reload();
+      }, function myError(response) {
+        console.log("Vraag updaten failed!");
+        toastr.success('Er is iets misgelopen, uw vraag is niet toegevoegd.', 'Mislukt!');
+      });
+    };
+    
+    questions.deleteQuestion = function(){
+      $http({
+        method : "DELETE",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions/" + questionEditId + "?token=" + localStorage.token
+      }).then(function mySucces(response) {
+        console.log("Vraag deleten succeed");
+        location.reload();
+      }, function myError(response) {
+        console.log("Vraag verwijderen failed!");
+        toastr.success('Er is iets misgelopen, uw vraag is niet verwijderd.', 'Mislukt!');
+      });
+    };
+
+  }); //End of questionController
+
+
+})();

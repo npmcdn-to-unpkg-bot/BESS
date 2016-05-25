@@ -545,7 +545,10 @@ textarea.form-control {
   padding-left: 8px;
 }
 
-
+select {
+  width: 100%;
+  border-radius: 0px;
+}
 /******** add project modal begin ********/
 
 
