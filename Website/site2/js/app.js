@@ -141,7 +141,7 @@
       }).then(function mySucces(response) {
         console.log("add timelineitem succeed");
         $('#addtimelineitem-modal').modal('hide');
-        $route.reload();
+        location.reload();
         toastr.info('mijlpaal toegevoegd', 'Joepie');
       },
       function myError(response) {
@@ -187,7 +187,16 @@
     // delete timelineitem
 
     timelines.deletetimelineitem = function(){
-      //nog niks
+      $http({
+        method : "DELETE",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + timelineEditId + "?token=" + localStorage.token
+      }).then(function mySucces(response) {
+        console.log("Timeline deel deleten succeed");
+        location.reload();
+      }, function myError(response) {
+        console.log("Timeline deel verwijderen failed!");
+        toastr.error('Er is iets misgelopen, uw vraag is niet verwijderd.', 'Mislukt!');
+      });
     };
 
 
