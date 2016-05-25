@@ -40,9 +40,10 @@
             <div class="infoShort">
 
 
-
-              <input ng-model="projectstartdate" type="text" name="begindatum" id="datepicker" placeholder="Begindatum">
-              <input ng-model="projectenddate" type="text" name="einddatum" placeholder="Einddatum">
+              <label for="begindatecreate">Begindatum</label>
+              <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
+              <label for="enddatecreate">Einddatum</label>
+              <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
               <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
               <input ng-model="projectlocation" type="text" name="locatie" placeholder="Locatie">
             </div>

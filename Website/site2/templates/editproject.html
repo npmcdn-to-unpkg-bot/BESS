@@ -21,9 +21,12 @@
             <div class="infoShort">
 
 
-
-              <input ng-model="editprojectstartdate" type="text" name="editbegindatum" id="datepicker" placeholder="Begindatum">
-              <input ng-model="editprojectenddate" type="text" name="editeinddatum" placeholder="Einddatum">
+              <label for="begindateedit">Begindatum</label>
+              <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="editprojectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindateedit" style="margin-bottom: 15px"></div>
+              <label for="enddateedit">Einddatum</label>
+              <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="editprojectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddateedit" style="margin-bottom: 15px"></div>
+              <!-- <input ng-model="editprojectstartdate" type="text" name="editbegindatum" id="datepicker" placeholder="Begindatum"> -->
+              <!-- <input ng-model="editprojectenddate" type="text" name="editeinddatum" placeholder="Einddatum"> -->
               <input ng-model="editprojectcategory" type="text" name="editcategorie" placeholder="Categorie">
               <input ng-model="editprojectlocation" type="text" name="editlocatie" placeholder="Locatie">
             </div>
@@ -43,7 +46,7 @@
 
 
         <input ng-click="project.edit(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
-        <input ng-click="project.delete(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete">
+        <input ng-click="project.delete();" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete" style="background-color:red">
 
       </form>
 

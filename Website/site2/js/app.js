@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate']);
 
 
 
@@ -243,7 +243,7 @@
 
 
       //delete project
-      project.delete = function(gname, gdescription, gstartdate, genddate, gcategory, glocation, glat, glng){
+      project.delete = function(){
 
         var projectId = $scope.projectId = $routeParams.projectId;
 
