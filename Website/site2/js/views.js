@@ -135,7 +135,6 @@
       templateUrl: "templates/edittimelineitem.html",
       controller: 'timelineController',
       controllerAs: 'timeline'
-
     };
   });
 

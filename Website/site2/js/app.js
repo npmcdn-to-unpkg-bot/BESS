@@ -114,10 +114,8 @@
   app.controller("timelineController", function($routeParams, $http, $scope, $route, toastr){
 
     var timeline = this;
-
     var projectId = $scope.projectId = $routeParams.projectId;
-    console.log("projectID = " + projectId);
-
+    var timelineEditId;
 
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
     .then(function(response) {
@@ -159,18 +157,15 @@
 
     //timeline getID
 
-    timeline.getId = function(event){
-      console.log(event.target.id);
+    timeline.getTimelineId = function(timelineId){
+      timelineEditId = timelineId;
+      console.log(timelineEditId);
+      $('#edittimelineitem-modal').modal('show');
     };
-
-
 
     // edit timelineitem
 
     timeline.edittimelineitem = function(gId){
-
-      console.log("er gaat geedit worden");
-      console.log(gId);
 
       $http({
         method : "POST",

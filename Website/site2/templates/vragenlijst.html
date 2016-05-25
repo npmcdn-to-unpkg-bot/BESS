@@ -7,46 +7,28 @@
       <button data-toggle="modal" data-target="#addquestionmodal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
     </div>
     <form class="" action="index.html" method="post">
-      <!-- <fieldset>
-      <label for="">1. Vindt u dat het project correct wordt behandeld?</label><br>
-      <input type="radio" id="r1" name="correct" value="yes" >
-      <label for="r1">Ja</label><br>
-      <input type="radio" id="r2" name="correct" value="no">
-      <label for="r2">Neen</label><br>
-      <input type="radio" id="r3" name="correct" value="noopinion">
-      <label for="r3">Geen mening</label><br>
-    </fieldset>
-
-    <fieldset>
-    <label for="">2. Het budget voor dit project is 1 miljoen euro, vindt u dat te veel?</label><br>
-    <input type="radio" id="r4" name="correct" value="yes">
-    <label for="r1">Ja</label><br>
-    <input type="radio" id="r5" name="correct" value="no">
-    <label for="r2">Neen</label><br>
-    <input type="radio" id="r6" name="correct" value="noopinion">
-    <label for="r3">Geen mening</label><br>
-  </fieldset> -->
-  <div ng-repeat="question in questions.all">
-    <fieldset>
-      <label for="r{{$index}}" class="question">{{$index + 1}}. {{question.title}}</label>
-      <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="questions.getQuestionId(question.id)"></i></a><br>
-      <div ng-repeat="answer in questions.possibleanswers[question.id]" class="answer">
-        <input type="radio" id="r{{$index+question.id}}" name="correct" value="{{answer}}">
-        <label for="r{{$index+question.id}}">{{answer}}</label>
+      
+      <div ng-repeat="question in questions.all">
+        <fieldset>
+          <label for="r{{$index}}" class="question">{{$index + 1}}. {{question.title}}</label>
+          <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="questions.getQuestionId(question.id)"></i></a><br>
+          <div ng-repeat="answer in questions.possibleanswers[question.id]" class="answer">
+            <input type="radio" id="r{{$index+question.id}}" name="correct" value="{{answer}}">
+            <label for="r{{$index+question.id}}">{{answer}}</label>
+          </div>
+        </fieldset>
       </div>
-    </fieldset>
-  </div>
 
-  <div class="btn-bg bg-2">
-    <div class="btn btn-2">
-      <button type="submit" value="Insturen">Insturen</button>
-    </div>
+      <div class="btn-bg bg-2">
+        <div class="btn btn-2">
+          <button type="submit" value="Insturen">Insturen</button>
+        </div>
+      </div>
+    </form>
   </div>
-</form>
-</div>
-<div class="col-sm-2">
-  <!-- Rechtse witruimte container -->
-</div>
+  <div class="col-sm-2">
+    <!-- Rechtse witruimte container -->
+  </div>
 
 </div>
 <addquestion></addquestion>
