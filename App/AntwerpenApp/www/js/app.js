@@ -23,6 +23,11 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     url: '/main/project/:projectId',
     templateUrl: 'templates/project-detail.html',
     controller: 'ProjectDetailCtrl'
+  })
+  .state('project-detail-tinder', {
+    url: '/main/project/tinder/:projectId',
+    templateUrl: 'templates/project-detail-tinder.html',
+    controller: 'ProjectDetailTinderCtrl'
   });
 
   $urlRouterProvider.otherwise("/login");
@@ -166,6 +171,18 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 })
 
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
+  var projectId = $stateParams.projectId;
+
+  $scope.goTinder = function () {
+    $state.go('/main/project/tinder/:projectId',{projectId:projectId});
+  }
+
+
+
+})
+
+
+.controller('ProjectDetailTinderCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal) {
   var projectId = $stateParams.projectId;
 
 

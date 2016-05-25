@@ -1,33 +1,7 @@
-<ion-view noScroll>
-  <ion-nav-title>
-      Project: {{projectDetail.id}}
-  </ion-nav-title>
-  <ion-pane  class="has-footer">
-          <td-cards>
-              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index, projectDetail.id, card.id)" on-swipe-right="cardSwipedRight($index, projectDetail.id, card.id)"
-              on-partial-swipe="cardPartialSwipe(amt)">
-                  <div class="title">
-                      Vraag {{$index + 1}}
-                  </div>
-                  <div class="cardContent">
+<ion-view>
+<ion-content>
 
-                      <div class="no-text overlayBox"><div class="noBox boxed">Nee</div></div>
-                      <div class="cardQuestion">{{card.title}}</div>
-                      <div class="yes-text overlayBox"><div class="yesBox boxed" id="centerMe">Leuk</div></div>
-                  </div>
-              </td-card>
-          </td-cards>
-          <div class="noQuestions" ng-show="remainingQuestions"><i class="icon ion-close-round"></i></div>
-          <div class="projectDetailTitle">
-            <h1><span class="a-color">STEM</span> NU</h1>
-          </div>
-      </ion-pane>
-  <ion-footer-bar class="bar">
-	<div class="button-bar">
-    <button class="button button-full button-positive button-in-footer" ng-click="showSwipeTutorial()">
-      Wat moet ik hier doen?
-    </button>
-	</div>
-</ion-footer-bar>
+    <a  ng-click="goTinder()">Ga tinderen</a>
+
+  </ion-content>
 </ion-view>
