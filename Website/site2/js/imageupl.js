@@ -88,8 +88,8 @@ function activateslick() {
       $.ajax(settings).then(function mySucces(response) {
         console.log("foto uploaden succesvol");
         removeUpload();
-        $('#imageupload-modal').modal('hide');
-        $route.reload();
+        //$('#imageupload-modal').modal('hide');
+        location.reload();
       }, function myError(response) {
         console.log("foto uploaden failed");
       });

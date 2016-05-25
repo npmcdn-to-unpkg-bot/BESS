@@ -9,6 +9,7 @@
       origin: new google.maps.Point(0,0), // origin
       anchor: new google.maps.Point(26, 26) // anchor
     };
+
     var mapslogic = this;
     var mapcreate;
     mapslogic.getMapCreate = function() {
@@ -25,6 +26,7 @@
           zoom: 12,
           width: '100%' ,
           height: '400px',
+          streetViewControl: false,
           click: function(e) {
             mapslogic.lat = e.latLng.lat();
             mapslogic.lng = e.latLng.lng();
@@ -50,6 +52,7 @@
         lat: 51.2194475,
         lng: 4.4024643,
         zoom: 12,
+        streetViewControl: false,
         height: '90vh',
       });
     };
@@ -89,6 +92,7 @@
         el: '#spmap',
         lat: latitude,
         lng: longitude,
+        streetViewControl: false,
         zoom: 15
       });
 
@@ -101,39 +105,40 @@
       });
     };
 
-        var mapupdate;
-        mapslogic.getMapUpdate = function() {
-          if (mapupdate) {
-            mapupdate.refresh;
-            console.log("mapupdate bestaat al");
-            $(window).trigger('resize');
-          } else {
-            console.log("mapupdate word gemaakt");
-            mapupdate = new GMaps({
-              el: '#mapupdate',
-              lat: 51.2194475,
-              lng: 4.4024643,
-              zoom: 12,
-              width: '100%' ,
-              height: '400px',
-              click: function(e) {
-                mapslogic.latupdate = e.latLng.lat();
-                mapslogic.lngupdate = e.latLng.lng();
-                console.log("lng = " + mapslogic.latupdate);
-                console.log("lng = " + mapslogic.lngupdate);
-                mapupdate.removeMarkers();
-                mapupdate.addMarker({
-                  lat: e.latLng.lat(),
-                  lng: e.latLng.lng(),
-                  title: 'Gekozen locatie',
-                  icon: icon
-                });
-              }
+    var mapupdate;
+    mapslogic.getMapUpdate = function() {
+      if (mapupdate) {
+        mapupdate.refresh;
+        console.log("mapupdate bestaat al");
+        $(window).trigger('resize');
+      } else {
+        console.log("mapupdate word gemaakt");
+        mapupdate = new GMaps({
+          el: '#mapupdate',
+          lat: 51.2194475,
+          lng: 4.4024643,
+          zoom: 12,
+          width: '100%' ,
+          height: '400px',
+          streetViewControl: false,
+          click: function(e) {
+            mapslogic.latupdate = e.latLng.lat();
+            mapslogic.lngupdate = e.latLng.lng();
+            console.log("lng = " + mapslogic.latupdate);
+            console.log("lng = " + mapslogic.lngupdate);
+            mapupdate.removeMarkers();
+            mapupdate.addMarker({
+              lat: e.latLng.lat(),
+              lng: e.latLng.lng(),
+              title: 'Gekozen locatie',
+              icon: icon
             });
-            $(window).trigger('resize');
           }
+        });
+        $(window).trigger('resize');
+      }
 
-        };
+    };
 
   });
 

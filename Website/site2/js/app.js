@@ -233,7 +233,7 @@
         }).then(function mySucces(response) {
           console.log("project aanpassen succesvol");
           $('#edit-modal').modal('hide');
-          $location.path('/projecten');
+          location.reload();
         }, function myError(response) {
           console.log("project aanpassen failed");
         });
