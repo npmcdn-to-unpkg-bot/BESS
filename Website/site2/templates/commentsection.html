@@ -44,27 +44,6 @@
 </div>
 
 
-<div class="row commentsection">
-  <div class="col-sm-2">
-
-  </div>
-  <div class="col-sm-8">
-
-    <div class="col-sm-12">
-          <blockquote>
-            <b>Bram De Baerdemaeker</b>
-            <p>
-              Dit is de tijdelijke derde comment.
-            </p>
-            <cite> - 25 mei 2016</cite>
-          </blockquote>
-    </div>
-
-  </div>
-  <div class="col-sm-2">
-
-  </div>
-</div>
 
 <div class="row commentsection">
   <div class="col-sm-2">
@@ -74,8 +53,8 @@
 
     <div class="col-sm-12">
           <form class="">
-            <input type="text" name="name" value="" placeholder="Naam"> </br>
-            <textarea name="name" class="form-control" rows="6" placeholder="Plaats hier u reactie"></textarea>
+            <input type="text" name="name" value="" placeholder="Naam" ng-model="comment.author"> </br>
+            <textarea name="name" class="form-control" rows="6" placeholder="Plaats hier u reactie" ng-model="comment.body"></textarea>
             <input type="submit" class="login loginmodal-submit" value="Plaats">
 
           </form>
