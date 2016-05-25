@@ -97,6 +97,16 @@
     };
   });
 
+  app.directive("commentsection", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/commentsection.html",
+      controller: 'commentsectionController',
+      controllerAs: 'commentsection'
+
+    };
+  });
+
   app.directive("map", function() {
       return {
         restrict: 'E',

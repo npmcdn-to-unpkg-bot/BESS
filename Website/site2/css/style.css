@@ -404,6 +404,15 @@ button {
   font-size: 1em;
 }
 
+.commentsection b,
+.commentsection p,
+.commentsection cite {
+  font-size: 0.9em;
+}
+
+.commentsection input[type=submit] {
+  float: right;
+}
 
 
 
@@ -453,7 +462,9 @@ button {
 
 .loginmodal-container input[type=text], input[type=password],
 .registermodal-container input[type=text], input[type=password],
-.createmodal-container input[type=text] {
+.createmodal-container input[type=text],
+.commentsection input[type=text],
+.commentsection textarea[type=text] {
   height: 44px;
   font-size: 16px;
   width: 100%;
