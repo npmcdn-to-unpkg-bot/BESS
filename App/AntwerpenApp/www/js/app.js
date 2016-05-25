@@ -200,12 +200,13 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
         for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
 
-        $scope.cardSwipedLeft = function(index,projectid, questionid) {
+        $scope.cardSwipedLeft = function(index, projectid, questionid) {
+            HttpService.answerYes(index, projectid, questionid);
             console.log('Left swipe');
             console.log('project id = ' +projectid +" question id= "+questionid);
         }
 
-        $scope.cardSwipedRight = function(index,projectid, questionid) {
+        $scope.cardSwipedRight = function(index, projectid, questionid) {
             console.log('Right swipe');
             console.log('project id = ' +projectid +" question id= "+questionid);
         }
@@ -264,9 +265,9 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
         images.firstonebyid[gid] = null;
       });
     };
-
-
 })
+
+
 
 .service('HttpService', function($http) {
  return {
@@ -294,6 +295,22 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
          console.log('Get questions by project', response);
          return response.data;
       });
-   }
+   },
+   answerYes: function(index, projectId, questionId) {
+
+       $http({
+         method : "POST",
+         url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
+         data: {
+           answer: "yes",
+           question_id: questionId,
+           project_id: projectId,
+         }
+       }).then(function mySucces(response) {
+          console.log("Antwoorden gelukt");
+       }, function myError(response) {
+         console.log("Antwoorden niet gelukt.");
+       });
+     }
  };
 });
