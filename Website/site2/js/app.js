@@ -113,20 +113,19 @@
 
   app.controller("timelineController", function($routeParams, $http, $scope, $route, toastr){
 
-    var timeline = this;
+    var timelines = this;
     var projectId = $scope.projectId = $routeParams.projectId;
     var timelineEditId;
 
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
     .then(function(response) {
       console.log(response.data.timelines);
-      timeline.all = response.data.timelines;
+      timelines.all = response.data.timelines;
     });
-
 
     //timelineitem add
 
-    timeline.addtimelineitem = function(gtitle, gdescription, gdate){
+    timelines.addtimelineitem = function(gtitle, gdescription, gdate){
 
       var projectId = $scope.projectId = $routeParams.projectId;
 
@@ -153,24 +152,18 @@
 
     };
 
-
-
     //timeline getID
 
-    timeline.getTimelineId = function(timelineId){
+    timelines.getTimelineId = function(timelineId){
       timelineEditId = timelineId;
       console.log(timelineEditId);
-      $('#edittimelineitem-modal').modal('show');
+      $('#edittimelinemodal').modal('show');
     };
 
     // edit timelineitem
 
-    timeline.edittimelineitem = function(gId){
-
-      $http({
-        method : "POST",
-        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=" + localStorage.token,
-      });
+    timelines.edittimelineitem = function(){
+      //nog niks
     };
 
 
@@ -178,18 +171,8 @@
 
     // delete timelineitem
 
-    timeline.deletetimelineitem = function(){
-      console.log("er gaat gedeletet worden");
-
-      // $http({
-      //   method : "POST",
-      //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/" + {timeline_ID} + "?token=XXX" + localStorage.token,
-      // }.then(function mySucces(response){
-      //   console.log("tijdlijnitem werd succesvol verwijderd");
-      //   $('#edittimelineitem-modal').modal('hide');
-      // }, function myError(response){
-      //   console.log("er ging iets mis bij het verwijderen");
-      // }));
+    timelines.deletetimelineitem = function(){
+      //nog niks
     };
 
 

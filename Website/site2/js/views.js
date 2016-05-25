@@ -124,7 +124,7 @@
       restrict: 'E',
       templateUrl: "templates/addtimelineitem.html",
       controller: 'timelineController',
-      controllerAs: 'timeline'
+      controllerAs: 'timelines'
 
     };
   });
@@ -134,7 +134,7 @@
       restrict: 'E',
       templateUrl: "templates/edittimelineitem.html",
       controller: 'timelineController',
-      controllerAs: 'timeline'
+      controllerAs: 'timelines'
     };
   });
 
