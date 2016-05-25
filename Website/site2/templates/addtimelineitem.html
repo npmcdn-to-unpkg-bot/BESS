@@ -5,10 +5,11 @@
       <h1>Voeg een mijlpaal toe</h1><br>
       <form>
         <input ng-model="mijlpaaltitel" type="text" name="mijlpaaltitel" placeholder="Titel">
-        <input ng-model="mijlpaaldatum" type="text" name="mijlpaaldatum" placeholder="Datum">
+        <label for="datenew">Datum</label>
+        <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="milestonedate" type="text" name="date" placeholder="Datum" id="datenew" style="margin-bottom: 15px"></div>
         <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="Beschrijving"></textarea>
 
-        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, mijlpaaldatum);" data-toggle="modal" type="submit" class="register registermodal-submit" value="Bevestig">
+        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, milestonedate);" data-toggle="modal" type="submit" class="register registermodal-submit" value="Bevestig">
 
       </form>
 

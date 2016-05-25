@@ -162,8 +162,23 @@
 
     // edit timelineitem
 
-    timelines.edittimelineitem = function(){
-      //nog niks
+    timelines.edittimelineitem = function(nTitle, date, description){
+      console.log(nTitle);
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/"+ timelineEditId +"?token=" + localStorage.token,
+        data: {
+          date: date,
+          description: description,
+          title: nTitle
+        }
+      }).then(function mySucces(response) {
+        console.log("Timeline item is geupdatet!");
+        location.reload();
+        console.log(timelines.all);
+      }, function myError(response) {
+        console.log("Timeline item updaten failed!");
+      });
     };
 
 

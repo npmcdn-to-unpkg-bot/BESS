@@ -9,7 +9,8 @@
         width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve"></svg>
       </div>
       <div class="timeline-content" id="{{timeline.id}}" ng-class-even="'right'">
-        <h3>{{timeline.title}} <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="timelines.getTimelineId(timeline.id)"></i></a></h3>
+        <h3>{{timeline.title}}</h3>
+        <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="timelines.getTimelineId(timeline.id)"></i></a>
         <p>
           {{timeline.description}}
         </p>
