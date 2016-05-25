@@ -45,6 +45,7 @@
         $('#login-modal').modal('hide');
         localStorage.setItem("token", response.data.token);
         user.getData();
+        toastr.success('Login gelukt', 'Welkom');
       }, function myError(response) {
         console.log("login failed");
         toastr.error('Inloggegevens incorrect', 'Error');
@@ -88,7 +89,6 @@
           localStorage.setItem("residence", response.data.user.residence);
           user.firstname = localStorage.firstname;
           user.isAdmin = localStorage.isAdmin;
-          toastr.success('Login gelukt welkom '+user.firstname, 'Welkom');
           console.log(user.firstname);
         }, function myError(response) {
           console.log("User ophalen failed");
