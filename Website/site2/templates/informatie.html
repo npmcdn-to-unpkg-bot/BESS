@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="col-sm-3">
-       {{spproject.startdate | date:'dd-MM-yyyy'}}
+      {{spproject.startdate | date:'dd-MM-yyyy'}}
     </div>
     <div class="col-sm-1">
 
@@ -117,12 +117,14 @@
 
 
       </p>
+      <a href="" data-toggle="modal" data-target="#edit-modal"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true" ng-show="user.isAdmin == '1'" style="margin-top:15px;"></i></a>
 
-      <img data-toggle="modal" data-target="#edit-modal" ng-show="user.isAdmin == '1'" src="img/editblue.png" width="30" height="30" class="editproject"/>
     </div>
 
   </div>
+
   <div class="col-sm-2">
 
   </div>
+
 </div>

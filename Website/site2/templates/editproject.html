@@ -13,6 +13,7 @@
 
         <ul class="nav nav-tabs" id="tabContent">
           <li class="active"><a data-target="#editinformatieTab" data-toggle="tab">Informatie</a></li>
+          <li><a data-target="#editdateTab" data-toggle="tab">Datums</a></li>
           <li><a data-target="#editmapsTab" data-toggle="tab" ng-click="mapslogic.getMapUpdate();">Map</a></li>
         </ul>
 
@@ -21,10 +22,6 @@
             <div class="infoShort">
 
 
-              <label for="begindateedit">Begindatum</label>
-              <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="editprojectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindateedit" style="margin-bottom: 15px"></div>
-              <label for="enddateedit">Einddatum</label>
-              <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="editprojectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddateedit" style="margin-bottom: 15px"></div>
               <!-- <input ng-model="editprojectstartdate" type="text" name="editbegindatum" id="datepicker" placeholder="Begindatum"> -->
               <!-- <input ng-model="editprojectenddate" type="text" name="editeinddatum" placeholder="Einddatum"> -->
               <input ng-model="editprojectcategory" type="text" name="editcategorie" placeholder="Categorie">
@@ -33,6 +30,14 @@
 
             <textarea ng-model="editprojectdescription" class="form-control" rows="6" type="text" name="editbeschrijving" placeholder="Beschrijving"></textarea>
 
+          </div>
+
+          <div class="tab-pane" id="editdateTab">
+            <label for="begindateedit">Begindatum</label>
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="editprojectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindateedit" style="margin-bottom: 15px"></div>
+            <label for="enddateedit">Einddatum</label>
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="editprojectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddateedit" style="margin-bottom: 15px"></div>
+            
           </div>
 
           <div class="tab-pane" id="editmapsTab">
