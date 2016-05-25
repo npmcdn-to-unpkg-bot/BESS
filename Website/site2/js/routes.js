@@ -18,6 +18,12 @@
       controllerAs: "projects"
     })
 
+    .when('/leaderboard', {
+      templateUrl : 'templates/leaderboard.html',
+      controller  : 'leaderboardController',
+      controllerAs: "leaderboard"
+    })
+
     // route for the about page
     .when('/project/:projectId', {
       templateUrl : 'templates/singlepage.html',
