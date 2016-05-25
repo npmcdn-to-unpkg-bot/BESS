@@ -1,7 +1,19 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate', 'toastr', 'ngAnimate']);
 
-
+  app.config(function(toastrConfig) {
+  angular.extend(toastrConfig, {
+    closeButton: true,
+    extendedTimeOut: 1000,
+    progressBar: true,
+    tapToDismiss: true,
+    autoDismiss: true,
+    maxOpened: 3,
+    newestOnTop: true,
+    positionClass: 'toast-bottom-center',
+    preventOpenDuplicates: true,
+  });
+});
 
 
   app.controller("PanelController", function(){
@@ -17,7 +29,7 @@
     };
   });
 
-  app.controller("userController", function($http){
+  app.controller("userController", function($http, toastr){
     var user = this;
     user.login =  function(gusername, gpassword){
 
@@ -35,6 +47,7 @@
         user.getData();
       }, function myError(response) {
         console.log("login failed");
+        toastr.error('Inloggegevens incorrect', 'Error');
       });
     }
 
@@ -57,6 +70,7 @@
         $('#register-modal').modal('hide');
       }, function myError(response) {
         console.log("register failed");
+        toastr.error('Email en passwoord zijn verplicht', 'Error');
       });
     };
 
@@ -74,6 +88,7 @@
           localStorage.setItem("residence", response.data.user.residence);
           user.firstname = localStorage.firstname;
           user.isAdmin = localStorage.isAdmin;
+          toastr.success('Login gelukt welkom '+user.firstname, 'Welkom');
           console.log(user.firstname);
         }, function myError(response) {
           console.log("User ophalen failed");
@@ -96,7 +111,7 @@
 
   });
 
-  app.controller("timelineController", function($routeParams, $http, $scope, $route){
+  app.controller("timelineController", function($routeParams, $http, $scope, $route, toastr){
 
     var timeline = this;
 
@@ -129,9 +144,12 @@
       }).then(function mySucces(response) {
         console.log("add timelineitem succeed");
         $('#addtimelineitem-modal').modal('hide');
-        $route.reload();},
+        $route.reload();
+        toastr.info('mijlpaal toegevoegd', 'Joepie');
+      },
         function myError(response) {
           console.log("add timelineitem failed");
+          toastr.error('Er is iets misgelopen bij het toevoegen van een mijlpaal, alle velden ingevuld?', 'Error');
         });
 
 
@@ -182,7 +200,7 @@
 
     });
 
-    app.controller("projectController", function($routeParams, $http, $scope, $location){
+    app.controller("projectController", function($routeParams, $http, $scope, $location, toastr){
       var project = this;
 
 
