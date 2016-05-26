@@ -136,6 +136,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   // Called to navigate to the main app
   $scope.startApp = function() {
     $state.go('main');
+
   };
   $scope.next = function() {
     $ionicSlideBoxDelegate.next();
@@ -149,7 +150,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $scope.slideIndex = index;
   };
 
-  
+
 })
 
 .controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
@@ -176,6 +177,11 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   var projectId = $stateParams.projectId;
   $scope.projectId = projectId;
 
+  HttpService.getProjectDetail(projectId)
+    .then(function(response) {
+       $scope.projectDetail = response.project;
+      console.log($scope.projectDetail);
+    });
 
 
 

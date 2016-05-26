@@ -1,7 +1,17 @@
 <ion-view>
-<ion-content>
-
+<ion-nav-title>
+    Project: {{projectId}}
+</ion-nav-title>
+<ion-content ng-controller="ImageCtrl as images">
+  <div ng-init="images.getfirstbyid(projectId)">
+      <img ng-hide="images.firstonebyid[projectId]" class="full-image" src="http://placehold.it/500x500">
+      <img ng-show="images.firstonebyid[projectId]" class="full-image" src="{{images.firstonebyid[projectId]}}">
+  </div>
+  <div class="padding-10px projectDetail-info">
+    <h4>{{projectDetail.name}}</h4>
     <a  href="#/main/project/tinder/{{projectId}}">Ga tinderen</a>
+  </div>
+
 
   </ion-content>
 </ion-view>

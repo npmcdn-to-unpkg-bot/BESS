@@ -1,6 +1,8 @@
-<ion-view hide-back-button="true" view-title="Projecten" >
+<ion-view hide-back-button="true">
   <ion-content ng-controller="ImageCtrl as images">
-
+    <ion-nav-title>
+        projecten
+    </ion-nav-title>
     <div class="projectCard" ng-repeat="project in projects">
     <a class="projectCard" href="#/main/project/{{project.id}}">
     <div class="list card projectCard" >
