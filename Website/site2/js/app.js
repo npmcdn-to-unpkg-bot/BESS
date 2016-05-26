@@ -12,11 +12,11 @@
       newestOnTop: true,
       positionClass: 'toast-bottom-center',
       iconClasses: {
-      error: 'toast-error',
-      info: 'toast-info',
-      success: 'toast-success',
-      warning: 'toast-warning'
-    },
+        error: 'toast-error',
+        info: 'toast-info',
+        success: 'toast-success',
+        warning: 'toast-warning'
+      },
       //preventOpenDuplicates: true,
     });
   });
@@ -128,11 +128,11 @@
 
 
 
-        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
-        .then(function(response) {
-          console.log(response.data.timelines);
-          timelines.all = response.data.timelines;
-        });
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
+    .then(function(response) {
+      console.log(response.data.timelines);
+      timelines.all = response.data.timelines;
+    });
 
 
 
@@ -312,13 +312,13 @@
       //console.log(response.data.questions);
       questions.all = response.data.questions;
       if (questions.all) {
-          for (var i = 0; i < questions.all.length; i++) {
-            //  console.log(questions.all[i].possible_answers);
-            //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
-            var temporary = questions.all[i].possible_answers;
-            var temporary = temporary.split(",");
-            questions.possibleanswers[questions.all[i].id] = temporary;
-          }
+        for (var i = 0; i < questions.all.length; i++) {
+          //  console.log(questions.all[i].possible_answers);
+          //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
+          var temporary = questions.all[i].possible_answers;
+          var temporary = temporary.split(",");
+          questions.possibleanswers[questions.all[i].id] = temporary;
+        }
       }
 
       // console.log(questions.possibleanswers);
@@ -333,7 +333,7 @@
         for (var i = 0; i < questions.answersFromServer.length; i++) {
 
           // questions.answers[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
-                    questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
+          questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
 
         }
       });
@@ -459,6 +459,20 @@
       }, function myError(response) {
         console.log("Comment toevoegen failed!");
         toastr.error('Er is iets misgelopen, uw comment is niet toegevoegd.', 'Mislukt!');
+      });
+    };
+
+    comments.deleteComment = function(cId) {
+      console.log("komt ie in");
+      $http({
+        method: "DELETE",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/comments/" +  cId + "?token=" + localStorage.token
+      }).then(function mySucces(response) {
+        console.log("Comment deleten succeed");
+        location.reload();
+      }, function myError(response) {
+        console.log("Comment deleten failed!");
+        toastr.error('Er is iets misgelopen, uw comment is niet verwijderd.', 'Mislukt!');
       });
     };
 

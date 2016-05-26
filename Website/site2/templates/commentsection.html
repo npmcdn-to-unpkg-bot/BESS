@@ -1,25 +1,14 @@
-<div class="row commentsection" ng-repeat="comment in comments.all">
+<div class="row commentsection">
   <div class="col-sm-2">
 
   </div>
   <div class="col-sm-8">
     <hr style="border-color:#008C95; border-style:solid;">
-    <div class="col-sm-12">
-      <blockquote>
-        <b>{{comment.username}}</b>
-        <p>
-          {{comment.comment}}
-        </p>
-        <cite> - {{comment.created_at.substr(0,11)}}</cite>
-      </blockquote>
-    </div>
-
   </div>
   <div class="col-sm-2">
 
   </div>
 </div>
-
 <div class="row commentsection">
   <div class="col-sm-2">
 
@@ -34,6 +23,26 @@
     </div>
   </div>
 
+  <div class="col-sm-2">
+
+  </div>
+</div>
+<div class="row commentsection" ng-repeat="comment in comments.all">
+  <div class="col-sm-2">
+
+  </div>
+  <div class="col-sm-8">
+    <div class="col-sm-12">
+      <blockquote>
+        <b>{{comment.username}}</b>
+        <a href=""<i class="fa fa-trash-o" aria-hidden="true" ng-show="user.isAdmin == 1" ng-click="comments.deleteComment(comment.id)"></i></a>
+        <p>
+          {{comment.comment}}
+        </p>
+        <cite> - {{comment.created_at.substr(0,11)}}</cite>
+      </blockquote>
+    </div>
+  </div>
   <div class="col-sm-2">
 
   </div>
