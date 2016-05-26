@@ -376,6 +376,11 @@
       });
     };
 
+    questions.getAnswer = function(answer){
+      console.log("het werkt");
+      console.log(answer);
+    }
+
   }); //End of questionController
 
 
