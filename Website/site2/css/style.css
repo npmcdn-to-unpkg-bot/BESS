@@ -448,7 +448,7 @@ button {
 .loginmodal-container h1, .registermodal-container h1, .createmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
-
+  font-family: SunAntwerpen_500;
 }
 
 .loginmodal-container input[type=submit] {
@@ -484,6 +484,7 @@ button {
   padding: 0 8px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  font-family: SunAntwerpen_500;
 }
 
 .loginmodal-container input[type=text]:hover, input[type=password]:hover,
@@ -525,8 +526,8 @@ button {
   text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #008C95;
   padding: 10px 20px;
-  font-family: roboto;
-  font-size: 14px;
+  font-family: SunAntwerpen_500;;
+  font-size: 18px;
   margin-top: 15px;
 
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
