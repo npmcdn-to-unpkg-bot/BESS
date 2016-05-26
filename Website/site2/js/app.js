@@ -1,5 +1,9 @@
 (function() {
-  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate', 'toastr', 'ngAnimate']);
+  var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate', 'toastr', 'ngAnimate', 'xeditable']);
+  //for inline editing xeditable
+  app.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+});
 
   app.config(function(toastrConfig) {
     angular.extend(toastrConfig, {
@@ -96,7 +100,12 @@
           user.firstname = localStorage.firstname;
           user.lastname = localStorage.lastname;
           user.email = localStorage.email;
-          user.residence = localStorage.residence;
+          if (localStorage.residence) {
+            user.residence = 'Onbekend';
+          } else {
+            user.residence = localStorage.residence;
+          }
+
           user.isAdmin = localStorage.isAdmin;
           console.log(user.firstname);
         }, function myError(response) {

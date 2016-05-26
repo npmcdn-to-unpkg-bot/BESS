@@ -51,7 +51,7 @@
         el: '#map',
         lat: 51.2194475,
         lng: 4.4024643,
-        zoom: 12,
+        zoom: 13,
         streetViewControl: false,
         height: '90vh',
       });
@@ -78,7 +78,8 @@
           title: 'Project locatie',
           icon: icon,
           infoWindow: {
-            content: htmlcontent
+            content: htmlcontent,
+            maxWidth: 300
           },
         });
       } else {

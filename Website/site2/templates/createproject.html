@@ -36,7 +36,7 @@
 </ul>
 
 <div class="tab-content">
-  
+
   <div class="tab-pane active" id="informatieTab">
     <div class="infoShort">
 
@@ -52,9 +52,9 @@
 
   <div class="tab-pane" id="dateTab">
     <label for="begindatecreate">Begindatum</label>
-    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
+    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" max-date="projectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
     <label for="enddatecreate">Einddatum</label>
-    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
+    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" min-date="projectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
 
   </div>
 

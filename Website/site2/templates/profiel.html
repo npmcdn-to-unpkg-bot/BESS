@@ -28,18 +28,18 @@
               </li>
               <li>
                 <a data-target="#emailpreferencesTab" data-toggle="tab">
-                  <i class="glyphicon glyphicon-user"></i>
+                  <i class="fa fa-envelope"></i>
                   Emailvoorkeuren </a>
                 </li>
                 <li>
                   <a data-target="#leaderboardTab" data-toggle="tab">
-                    <i class="glyphicon glyphicon-ok"></i>
+                    <i class="fa fa-trophy"></i>
                     Leaderboard </a>
                   </li>
                   <li>
                     <a data-target="#helpTab" data-toggle="tab">
-                      <i class="glyphicon glyphicon-flag"></i>
-                      Help </a>
+                      <i class="fa fa-exchange"></i>
+                      A-punten </a>
                     </li>
                   </ul>
                 </div>
@@ -62,23 +62,23 @@
                     <tbody>
                       <tr>
                         <th scope="row">Naam</th>
-                        <td>{{user.firstname}} {{user.lastname}}</td>
-                        <td><a href="#">edit</a></td>
+                        <td><span editable-text="user.firstname" buttons="no">{{user.firstname}}</span> <span editable-text="user.lastname" buttons="no">{{user.lastname}}</span></td>
+                        <!-- <td><a href="">edit</a></td> -->
                       </tr>
                       <tr>
                         <th scope="row">Email</th>
-                        <td>{{user.email}}</td>
-                        <td><a href="#">edit</a></td>
+                        <td><span editable-text="user.email" buttons="no">{{user.email}}</span></td>
+                        <!-- <td><a href="#">edit</a></td> -->
                       </tr>
                       <tr>
                         <th scope="row">Wachtwoord</th>
                         <td>*********</td>
-                        <td><a href="#">edit</a></td>
+                        <!-- <td><a href="#">edit</a></td> -->
                       </tr>
                       <tr>
                         <th scope="row">Woonplaats</th>
-                        <td>{{user.residence}}</td>
-                        <td><a href="#">edit</a></td>
+                        <td><span editable-text="user.residence" buttons="no">{{user.residence}}</span></td>
+                        <!-- <td><a href="#">edit</a></td> -->
                       </tr>
                     </tbody>
                   </table>
@@ -140,7 +140,7 @@
               </div>
 
               <div class="tab-pane" id="helpTab">
-                help tab
+                Wissel hier je a-punten in.
               </div>
 
             </div>

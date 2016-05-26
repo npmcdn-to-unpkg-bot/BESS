@@ -9,7 +9,7 @@
       <h1>Pas dit project aan</h1><br>
 
       <form class="" ng-controller="mapsController as mapslogic">
-        <input ng-model="editprojectname" type="text" name="editprojectname" placeholder="Projectnaam">
+        <input ng-model="spproject.name" type="text" name="editprojectname" placeholder="Projectnaam">
 
         <ul class="nav nav-tabs" id="tabContent">
           <li class="active"><a data-target="#editinformatieTab" data-toggle="tab">Informatie</a></li>
@@ -24,20 +24,20 @@
 
               <!-- <input ng-model="editprojectstartdate" type="text" name="editbegindatum" id="datepicker" placeholder="Begindatum"> -->
               <!-- <input ng-model="editprojectenddate" type="text" name="editeinddatum" placeholder="Einddatum"> -->
-              <input ng-model="editprojectcategory" type="text" name="editcategorie" placeholder="Categorie">
-              <input ng-model="editprojectlocation" type="text" name="editlocatie" placeholder="Locatie">
+              <input ng-model="spproject.category" type="text" name="editcategorie" placeholder="Categorie">
+              <input ng-model="spproject.location" type="text" name="editlocatie" placeholder="Locatie">
             </div>
 
-            <textarea ng-model="editprojectdescription" class="form-control" rows="6" type="text" name="editbeschrijving" placeholder="Beschrijving"></textarea>
+            <textarea ng-model="spproject.description" class="form-control" rows="6" type="text" name="editbeschrijving" placeholder="Beschrijving"></textarea>
 
           </div>
 
           <div class="tab-pane" id="editdateTab">
             <label for="begindateedit">Begindatum</label>
-            <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="editprojectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindateedit" style="margin-bottom: 15px"></div>
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="editprojectstartdate" max-date="editprojectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindateedit" style="margin-bottom: 15px"></div>
             <label for="enddateedit">Einddatum</label>
-            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="editprojectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddateedit" style="margin-bottom: 15px"></div>
-            
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="editprojectenddate" min-date="editprojectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddateedit" style="margin-bottom: 15px"></div>
+
           </div>
 
           <div class="tab-pane" id="editmapsTab">
@@ -50,7 +50,7 @@
 
 
 
-        <input ng-click="project.edit(editprojectname, editprojectdescription, editprojectstartdate, editprojectenddate, editprojectcategory, editprojectlocation, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
+        <input ng-click="project.edit(spproject.name, spproject.description, editprojectstartdate, editprojectenddate, spproject.category, spproject.location, mapslogic.latupdate, mapslogic.lngupdate);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Pas aan">
         <input ng-click="project.delete();" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete" style="background-color:red">
 
       </form>
