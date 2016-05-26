@@ -539,6 +539,11 @@ td-card img {
   display: none;
 }
 
+.AntwerpenFont {
+  font-family: "Antwerpen" !important;
+  color: #008C95;
+}
+
 /*PROJECT DETAIL */
 .navbuttonarrow {
   color: #008C95 !important;
