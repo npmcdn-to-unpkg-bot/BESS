@@ -20,8 +20,8 @@
 
     .when('/profiel', {
       templateUrl : 'templates/profiel.html',
-      controller  : 'profielController',
-      controllerAs: "profiel"
+      controller  : 'userController',
+      controllerAs: "user"
     })
 
 
