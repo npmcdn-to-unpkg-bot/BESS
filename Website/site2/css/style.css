@@ -14,12 +14,12 @@
 }
 
 @font-face {
-  font-family: SunAntwerpenCd_500;
-  src:url(fonts/SunAntwerpenCd_500.woff);
+  font-family: SunAntwerpen_500;
+  src:url(fonts/SunAntwerpen_500.woff);
 }
 
 body {
-  font-family: SunAntwerpenCd_500, Arial;
+  font-family: SunAntwerpen_500, Arial;
   font-size: 16px;
   background: linear-gradient(
     rgba(0, 0, 0, 0.2),
