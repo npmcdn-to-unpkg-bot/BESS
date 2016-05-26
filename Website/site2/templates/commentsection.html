@@ -1,17 +1,17 @@
-<div class="row commentsection">
+<div class="row commentsection" ng-repeat="comment in comments.all">
   <div class="col-sm-2">
 
   </div>
   <div class="col-sm-8">
     <hr style="border-color:#008C95; border-style:solid;">
     <div class="col-sm-12">
-          <blockquote>
-            <b> Bram De Baerdemaeker</b>
-            <p>
-              Dit is de tijdelijke eerste comment
-            </p>
-            <cite> - 25 mei 2016</cite>
-          </blockquote>
+      <blockquote>
+        <b>{{comment.username}}</b>
+        <p>
+          {{comment.comment}}
+        </p>
+        <cite> - {{comment.created_at.substr(0,11)}}</cite>
+      </blockquote>
     </div>
 
   </div>
@@ -20,47 +20,20 @@
   </div>
 </div>
 
-
 <div class="row commentsection">
   <div class="col-sm-2">
 
   </div>
+
   <div class="col-sm-8">
-
     <div class="col-sm-12">
-          <blockquote>
-            <b>Bram De Baerdemaeker</b>
-            <p>
-              Dit is de tijdelijke tweede comment die werd ingevoerd om het effect te zien
-            </p>
-            <cite> - 25 mei 2016</cite>
-          </blockquote>
+      <form class="commentForm">
+        <textarea name="name" class="form-control" rows="6" placeholder="Plaats hier uw reactie" ng-model="reactionfield"></textarea>
+        <input type="submit" class="login loginmodal-submit" value="Plaats" ng-click="comments.placeReaction(reactionfield)">
+      </form>
     </div>
-
   </div>
-  <div class="col-sm-2">
 
-  </div>
-</div>
-
-
-
-<div class="row commentsection">
-  <div class="col-sm-2">
-
-  </div>
-  <div class="col-sm-8">
-
-    <div class="col-sm-12">
-          <form class="commentForm">
-            <input ng-model="comment.author" type="text" name="name" value="" placeholder="Naam" ng-model="comment.author"> </br>
-            <textarea name="name" class="form-control" rows="6" placeholder="Plaats hier u reactie" ng-model="comment.body"></textarea>
-            <input type="submit" class="login loginmodal-submit" value="Plaats">
-
-          </form>
-    </div>
-
-  </div>
   <div class="col-sm-2">
 
   </div>

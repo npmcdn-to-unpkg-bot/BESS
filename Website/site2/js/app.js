@@ -432,5 +432,33 @@
 
   }); //End of questionController
 
+  app.controller ( "commentController", function( $routeParams, $http, $scope, $location, toastr ){
+    var comments = this;
+    var projectId = $scope.projectId = $routeParams.projectId;
+
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/comments/project/" + projectId)
+    .then(function(response){
+      comments.all = response.data.comments;
+      console.log(comments.all);
+    });
+
+    comments.placeReaction = function(reaction){
+      $http({
+        method: "POST",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/comments?token=" + localStorage.token,
+        data: {
+          comment: reaction,
+          project_id: projectId
+        }
+      }).then(function mySucces(response) {
+        console.log("Comment toevoegen succeed");
+        location.reload();
+      }, function myError(response) {
+        console.log("Comment toevoegen failed!");
+        toastr.error('Er is iets misgelopen, uw comment is niet toegevoegd.', 'Mislukt!');
+      });
+    };
+
+  }); // End of commentcontroller
 
 })();
