@@ -297,12 +297,22 @@
       for (var i = 0; i < questions.all.length; i++) {
         //  console.log(questions.all[i].possible_answers);
         //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
-        var tijdelijk = questions.all[i].possible_answers;
-        var tijdelijk = tijdelijk.split(",");
-        questions.possibleanswers[questions.all[i].id] = tijdelijk;
+        var temporary = questions.all[i].possible_answers;
+        var temporary = temporary.split(",");
+        questions.possibleanswers[questions.all[i].id] = temporary;
       }
       // console.log(questions.possibleanswers);
     });
+
+    if (localStorage.token) {
+
+      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/answers/user?token=" + localStorage.token)
+      .then(function(response){
+        questions.answers = response.data
+        console.log(questions.answers);
+      });
+
+    }
 
     questions.addQuestion = function(title, kindofQuestion, answers) {
       if(kindofQuestion == 'yesno') {
