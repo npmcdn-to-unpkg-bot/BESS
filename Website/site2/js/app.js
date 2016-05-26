@@ -334,7 +334,7 @@
 
           // questions.answers[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
           questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
-
+            console.log('aantal opgeloste vragen van deze gebruiker =' + questions.answersFromServer.length);
         }
       });
 
@@ -427,6 +427,7 @@
       }).then(function mySucces(response) {
         console.log("antwoord toevoegen lukte!");
         toastr.success('Antwoord opgeslagen.');
+
       }, function myError(response) {
         console.log("Antwoord toevoegen failed!");
         toastr.error('Er is iets misgelopen, uw antwoord is niet toegevoegd.', 'Mislukt!');
