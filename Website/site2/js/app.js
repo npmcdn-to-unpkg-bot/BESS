@@ -376,10 +376,24 @@
       });
     };
 
-    questions.getAnswer = function(answer){
-      console.log("het werkt");
-      console.log(answer);
-    }
+    questions.getAnswer = function(answer, qId){
+      console.log(answer, qId);
+
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
+        data: {
+          question_id: qId,
+          project_id: projectId,
+          answer: answer
+        }
+      }).then(function mySucces(response) {
+        console.log("antwoord toevoegen lukte!");
+      }, function myError(response) {
+        console.log("Antwoord toevoegen failed!");
+        toastr.error('Er is iets misgelopen, uw antwoord is niet toegevoegd.', 'Mislukt!');
+      });
+    };
 
   }); //End of questionController
 
