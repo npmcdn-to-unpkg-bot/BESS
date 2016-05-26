@@ -36,6 +36,7 @@
 </ul>
 
 <div class="tab-content">
+  
   <div class="tab-pane active" id="informatieTab">
     <div class="infoShort">
 
@@ -47,6 +48,8 @@
     <textarea ng-model="projectdescription" class="form-control" rows="6" type="text" name="beschrijving" placeholder="Beschrijving"></textarea>
 
   </div>
+
+
   <div class="tab-pane" id="dateTab">
     <label for="begindatecreate">Begindatum</label>
     <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
@@ -54,6 +57,8 @@
     <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
 
   </div>
+
+
   <div class="tab-pane" id="mapTab">
     <div class="map" id="mapcreate"></div>
   </div>

@@ -18,11 +18,12 @@
       controllerAs: "projects"
     })
 
-    .when('/leaderboard', {
-      templateUrl : 'templates/leaderboard.html',
-      controller  : 'leaderboardController',
-      controllerAs: "leaderboard"
+    .when('/profiel', {
+      templateUrl : 'templates/profiel.html',
+      controller  : 'profielController',
+      controllerAs: "profiel"
     })
+
 
     // route for the about page
     .when('/project/:projectId', {

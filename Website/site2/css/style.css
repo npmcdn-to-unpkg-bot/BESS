@@ -975,6 +975,134 @@ select {
   }
 }
 
+
+/***** leaderboard *****/
+
+table {
+  margin-top: 30px;
+}
+
 table h4{
   color: #008C95;
+}
+
+table th, td {
+  text-align: center;
+}
+
+.textAlignLeft {
+  text-align: left;
+}
+
+
+/***** profile *****/
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  margin-top: 20px;
+  padding: 20px 0 10px 0;
+  background: #fff;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-userpic i {
+  margin-left:40%;
+
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #008C95;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #008C95;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #008C95;
+  background-color: #f6f9fb;
+  border-left: 2px solid #008C95;
+  margin-left: -2px;
+}
+
+.profile-content {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0;
+}
+/***** Profile Content *****/
+
+#overviewTab,
+#emailpreferencesTab,
+#leaderboardTab,
+#helpTab {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+.tableOverview td,
+.tableOverview th {
+  text-align: left;
+}
+
+.preferences,
+.checkbox {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.checkboxes {
+  padding: 15px;
 }

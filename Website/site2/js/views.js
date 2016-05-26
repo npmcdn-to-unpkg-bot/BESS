@@ -166,6 +166,15 @@
     };
   });
 
+  app.directive("leaderboard", function() {
+    return {
+      restrict: 'E',
+      templateUrl: "templates/leaderboard.html",
+      controller: 'leaderboardController',
+      controllerAs: 'leaderboard'
+    };
+  });
+
 
 
 

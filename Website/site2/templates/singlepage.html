@@ -1,6 +1,6 @@
 
 <div class="container">
-<div class="clearfix"></div>
+  <div class="clearfix"></div>
   <div class="row headerTitle">
     <div class="col-sm-2">
       <!-- linkse witruimte container -->
@@ -19,7 +19,7 @@
       <!-- linkse witruimte container -->
     </div>
     <div class="col-sm-8" ng-init="images.get();">
-        <div class="slickimages" ng-show="images.all;">
+      <div class="slickimages" ng-show="images.all;">
       </div>
 
       <a href="" data-toggle="modal" data-target="#imageupload-modal" ng-show="user.isAdmin == '1'">Afbeelding uploaden</a>
@@ -82,8 +82,9 @@
     <div class="panelTab" ng-show="panel.isSelected(3)">
       <timeline></timeline>
     </div>
+    
   </div>
 
-<commentsection></commentsection>  
-<imageupload></imageupload>
+  <commentsection></commentsection>
+  <imageupload></imageupload>
 </div>
