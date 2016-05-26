@@ -160,8 +160,8 @@
     return {
       restrict: 'E',
       templateUrl: "templates/leaderboard.html",
-      controller: 'leaderboardController',
-      controllerAs: 'leaderboard'
+      // controller: 'leaderboardController',
+      // controllerAs: 'leaderboard'
     };
   });
 

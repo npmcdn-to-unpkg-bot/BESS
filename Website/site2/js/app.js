@@ -94,6 +94,9 @@
           localStorage.setItem("isAdmin", response.data.user.isAdmin);
           localStorage.setItem("residence", response.data.user.residence);
           user.firstname = localStorage.firstname;
+          user.lastname = localStorage.lastname;
+          user.email = localStorage.email;
+          user.residence = localStorage.residence;
           user.isAdmin = localStorage.isAdmin;
           console.log(user.firstname);
         }, function myError(response) {
