@@ -177,12 +177,16 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory) {
+.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory, $ionicNavBarDelegate) {
   var projectId = $stateParams.projectId;
   $scope.projectId = projectId;
 
   $scope.toMain = function() {
+    $ionicHistory.nextViewOptions({
+      disableBack: true
+    });
     $ionicHistory.goBack();
+    $ionicNavBarDelegate.title("Projecten");
   }
   HttpService.getProjectDetail(projectId)
   .then(function(response) {
