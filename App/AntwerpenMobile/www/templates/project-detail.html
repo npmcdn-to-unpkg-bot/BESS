@@ -1,16 +1,34 @@
 <ion-view>
-<ion-nav-title>
+  <ion-nav-title>
     Project: {{projectId}}
-</ion-nav-title>
-<ion-content ng-controller="ImageCtrl as images">
-  <div ng-init="images.getfirstbyid(projectId)">
+  </ion-nav-title>
+  <ion-content ng-controller="ImageCtrl as images">
+    <div ng-init="images.getfirstbyid(projectId)">
       <img ng-hide="images.firstonebyid[projectId]" class="full-image" src="http://placehold.it/500x500">
       <img ng-show="images.firstonebyid[projectId]" class="full-image" src="{{images.firstonebyid[projectId]}}">
-  </div>
-  <div class="padding-10px projectDetail-info">
-    <h4>{{projectDetail.name}}</h4>
-    <a  href="#/main/project/tinder/{{projectId}}">Ga tinderen</a>
-  </div>
+    </div>
+    <div class="padding-10px projectDetail-info">
+      <h4>{{projectDetail.name}}</h4>
+      <div class="descriptioncard">
+        <div class="row title">
+          <div class="col">Omschrijving project</div>
+        </div>
+      <div class="row">
+        <div class="col">{{projectDetail.description}}</div>
+      </div>
+      <div class="row title">
+        <div class="col">Locatie</div>
+        <div class="col">Categorie</div>
+      </div>
+      <div class="row">
+        <div class="col">{{projectDetail.location}}</div>
+        <div class="col">{{projectDetail.category}}</div>
+      </div>
+    </div>
+    <a href="#/main/project/tinder/{{projectId}}">
+    <button  type="button" name="button">STEMMEN</button>
+    </a>
+    </div>
 
 
   </ion-content>

@@ -544,17 +544,72 @@ td-card img {
   color:#fff;
 }
 
+.projectDetail-info {
+  font-size: 18px;
+
+}
+.descriptioncard .row {
+  padding: 0px !important;
+}
+
+.projectDetail-info .col {
+
+  margin-left: 10px;
+}
+
+.projectDetail-info .col:first-child {
+  margin-left: 0px;
+}
+
 .padding-10px {
   padding: 10px;
 }
 
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col{
+  font-size: 15px;
+
+}
+
+.row.title {
+  border-top: 2px solid #008C95;
+  border-bottom: 2px solid #008C95;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  text-align: center;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+
+  font-size: 15px !important;
+}
+
+
+
 .projectDetail-info h4{
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: "Antwerpen", sans-serif !important;
   color: #008C95;
   text-align: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid  #008C95;
+
+}
+
+.projectDetail-info button {
+  font-family: "Antwerpen", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #008C95;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.projectDetail-info button:hover,.projectDetail-info button:active,.projectDetail-info button:focus {
+  background: #00a2ad;
 }
 
 
