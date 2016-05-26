@@ -6,8 +6,8 @@ $api->version('v1', function ($api) {
 	$api->group(['middleware' => ['cors']], function ($api) {
 $api->post('auth/login', 'App\Api\V1\Controllers\AuthController@login');
 $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
-//$api->post('auth/recovery', 'App\Api\V1\Controllers\AuthController@recovery');
-//$api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
+$api->post('auth/recovery', 'App\Api\V1\Controllers\AuthController@recovery');
+$api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
 
 	});
 
@@ -25,6 +25,7 @@ $api->post('auth/signup', 'App\Api\V1\Controllers\AuthController@signup');
 	// });
 
 	$api->group(['middleware' => ['api.auth', 'cors']], function ($api) {
+		$api->post('user/changepassword', 'App\Api\V1\Controllers\UserController@changePassword');
 		// projects routing api met auth
 		$api->get('projects/user', 'App\Api\V1\Controllers\ProjectController@indexuser');
 		$api->get('projects/user/{id}', 'App\Api\V1\Controllers\ProjectController@showuser');
