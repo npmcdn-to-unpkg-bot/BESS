@@ -540,6 +540,10 @@ td-card img {
 }
 
 /*PROJECT DETAIL */
+.navbuttonarrow {
+  color: #008C95 !important;
+}
+
 .text-white{
   color:#fff;
 }
@@ -556,6 +560,8 @@ td-card img {
 
   margin-left: 10px;
 }
+
+
 
 .projectDetail-info .col:first-child {
   margin-left: 0px;
