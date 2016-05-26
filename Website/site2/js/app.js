@@ -11,7 +11,13 @@
       maxOpened: 3,
       newestOnTop: true,
       positionClass: 'toast-bottom-center',
-      preventOpenDuplicates: true,
+      iconClasses: {
+      error: 'toast-error',
+      info: 'toast-info',
+      success: 'toast-success',
+      warning: 'toast-warning'
+    },
+      //preventOpenDuplicates: true,
     });
   });
 
@@ -117,11 +123,15 @@
     var projectId = $scope.projectId = $routeParams.projectId;
     var timelineEditId;
 
-    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
-    .then(function(response) {
-      console.log(response.data.timelines);
-      timelines.all = response.data.timelines;
-    });
+
+
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/timelines/project/"+ projectId)
+        .then(function(response) {
+          console.log(response.data.timelines);
+          timelines.all = response.data.timelines;
+        });
+
+
 
     //timelineitem add
 
@@ -281,26 +291,33 @@
 
   });
 
-  app.controller ( "questionController", function( $routeParams, $http, $scope, $location, toastr ){
+  app.controller ( "questionController", function( $routeParams, $http, $scope, $location, toastr){
     var projectId = $scope.projectId = $routeParams.projectId;
     var questionEditId;
+
 
     console.log("projectID = " + projectId);
     var questions = this;
     questions.possibleanswers = [];
+    questions.answers = [];
+    questions.temp = [];
+
 
     $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/"+ projectId)
     .then(function(response) {
       //console.log(response.data);
       //console.log(response.data.questions);
       questions.all = response.data.questions;
-      for (var i = 0; i < questions.all.length; i++) {
-        //  console.log(questions.all[i].possible_answers);
-        //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
-        var temporary = questions.all[i].possible_answers;
-        var temporary = temporary.split(",");
-        questions.possibleanswers[questions.all[i].id] = temporary;
+      if (questions.all) {
+          for (var i = 0; i < questions.all.length; i++) {
+            //  console.log(questions.all[i].possible_answers);
+            //console.log(JSON.parse('"'+questions.all[i].possible_answers+'"'));
+            var temporary = questions.all[i].possible_answers;
+            var temporary = temporary.split(",");
+            questions.possibleanswers[questions.all[i].id] = temporary;
+          }
       }
+
       // console.log(questions.possibleanswers);
     });
 
@@ -308,8 +325,14 @@
 
       $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/answers/user?token=" + localStorage.token)
       .then(function(response){
-        questions.answers = response.data
-        console.log(questions.answers);
+        questions.answersFromServer = response.data
+        //console.log(questions.answersFromServer);
+        for (var i = 0; i < questions.answersFromServer.length; i++) {
+
+          // questions.answers[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
+                    questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
+
+        }
       });
 
     }
@@ -400,6 +423,7 @@
         }
       }).then(function mySucces(response) {
         console.log("antwoord toevoegen lukte!");
+        toastr.success('Antwoord opgeslagen.');
       }, function myError(response) {
         console.log("Antwoord toevoegen failed!");
         toastr.error('Er is iets misgelopen, uw antwoord is niet toegevoegd.', 'Mislukt!');

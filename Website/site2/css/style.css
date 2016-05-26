@@ -1106,3 +1106,10 @@ table th, td {
 .checkboxes {
   padding: 15px;
 }
+
+/*profile end*/
+
+/*toastr notifications start*/
+.toast-success{
+  background-color: #008C95;
+}

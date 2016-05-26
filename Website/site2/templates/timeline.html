@@ -1,4 +1,4 @@
-<div class="timelinecontainer">
+<div class="timelinecontainer" ng-init="timelines.getAll()">
   <div id="timeline" class="timeline" >
     <div class="addItem" ng-show="user.isAdmin == '1'">
       <button data-toggle="modal" data-target="#addtimelineitem-modal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
