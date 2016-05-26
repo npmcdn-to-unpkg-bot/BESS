@@ -315,11 +315,12 @@
     }
 
     questions.addQuestion = function(title, kindofQuestion, answers) {
-      if(kindofQuestion == 'yesno') {
-        answers = 'Ja, Nee';
-      } else if (kindofQuestion == 'multiplechoice' && answers == undefined) {
+      if (kindofQuestion == 'multiplechoice' && answers == undefined) {
         toastr.error('Vul alsjebieft enkele antwoordmogelijkheden in!', 'Mislukt!');
       } else {
+        if(kindofQuestion == 'yesno') {
+          answers = 'Ja, Nee';
+        }
         $http({
           method : "POST",
           url : "http://edwardvereertbrugghen.multimediatechnology.be/api/questions?token=" + localStorage.token,
