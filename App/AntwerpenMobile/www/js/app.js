@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.filter'])
+angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.filter', 'ngAnimate'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -68,6 +68,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   });
 
   var user = this;
+  $scope.loginFailed = false;
   user.login = function(email, password){
     $http({
       method : "POST",
@@ -77,11 +78,12 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
         password: password,
       }
     }).then(function mySucces(response) {
+      $scope.loginFailed = false;
       $state.go('intro');
       localStorage.setItem("token", response.data.token);
       user.getData();
     }, function myError(response) {
-      console.log("login failed");
+      $scope.loginFailed = true;
     });
   }
 

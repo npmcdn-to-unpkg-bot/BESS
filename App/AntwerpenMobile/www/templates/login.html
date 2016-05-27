@@ -16,14 +16,16 @@
           <input name="achternaam" ng-model="lastName" class="inputName" type="text" placeholder="achternaam" required/>
           <input name="password" ng-model="password" type="password" placeholder="paswoord"/>
           <input name="email" ng-model="email" type="text" placeholder="email"/>
+
           <button ng-click="user.register(firstname,lastname, email, password)">REGISTREER</button>
           <p class="message">Al geregistreerd? <a href="#" ng-click="formToggle()">Log in</a></p>
         </form>
         <form class="login-form">
           <input name="email" ng-model="email" type="email" placeholder="e-mail" required/>
           <input name="password" ng-model="password" type="password" placeholder="paswoord" required/>
+          <p class="login-failed" ng-hide="!loginFailed">Email of paswoord was fout.</p>
       <button ng-click='user.login(email, password);'>login</button>
-      <p class="message">Geen account? <a href="#" ng-click="formToggle()">Registreer nu</a></p>
+      <p class="message" >Geen account? <a href="#" ng-click="formToggle()">Registreer nu</a></p>
     </form>
   </div>
   </div>
