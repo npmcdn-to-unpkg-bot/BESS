@@ -296,6 +296,7 @@
         console.log("project delete succeed");
         $('#edit-modal').modal('hide');
         $location.path('/projecten');
+        location.reload();
       }, function myError(response) {
         console.log("project delete failed");
       });
