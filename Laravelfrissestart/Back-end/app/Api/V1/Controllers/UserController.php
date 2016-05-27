@@ -75,7 +75,7 @@ class UserController extends Controller
             if(!$user)
             throw new NotFoundHttpException;
             if ($request->get('email')) {
-            $user->firstname = $request->get('email');
+            $user->email = $request->get('email');
             }
             if($user->save())
             {
@@ -83,7 +83,7 @@ class UserController extends Controller
             }
             else
             {
-              return $this->response->error('could_not_change_name', 500);
+              return $this->response->error('could_not_change_email', 500);
             }
           }
 

@@ -2,8 +2,8 @@
   var app = angular.module('inspraakStad', ['view-templates', 'routesSelf', 'angular.filter', 'image-upload-module', 'angular-loading-bar', 'maps-logic-module', 'pickadate', 'toastr', 'ngAnimate', 'xeditable']);
   //for inline editing xeditable
   app.run(function(editableOptions) {
-  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-});
+    editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+  });
 
   app.config(function(toastrConfig) {
     angular.extend(toastrConfig, {
@@ -101,9 +101,10 @@
           user.lastname = localStorage.lastname;
           user.email = localStorage.email;
           if (localStorage.residence) {
-            user.residence = 'Onbekend';
-          } else {
             user.residence = localStorage.residence;
+
+          } else {
+            user.residence = 'Onbekend';
           }
 
           user.isAdmin = localStorage.isAdmin;
@@ -124,9 +125,54 @@
       localStorage.removeItem("email");
       localStorage.removeItem("isAdmin");
       localStorage.removeItem("residence");
+      location.reload();
+
     };
 
+    user.changename =  function(gfirstname, glastname){
 
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/user/changename?token="+localStorage.token,
+        data: {
+          firstname: gfirstname,
+          name: glastname,
+        }
+      }).then(function mySucces(response) {
+        toastr.success('Naam veranderd');
+      }, function myError(response) {
+        toastr.error('Naam veranderen mislukt', 'Error');
+      });
+    }
+
+    user.changeresidence =  function(gresidence){
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/user/changeresidence?token="+localStorage.token,
+        data: {
+          residence: gresidence
+        }
+      }).then(function mySucces(response) {
+        toastr.success('District Veranderd');
+      }, function myError(response) {
+        toastr.error('District veranderen mislukt', 'Error');
+      });
+
+    }
+    user.changeemail =  function(gemail){
+      $http({
+        method : "POST",
+        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/user/changeemail?token="+localStorage.token,
+        data: {
+          email: gemail
+        }
+      }).then(function mySucces(response) {
+        toastr.success('Email Veranderd');
+      }, function myError(response) {
+        toastr.error('Email veranderen mislukt', 'Error');
+      });
+
+    }
   });
 
   app.controller("timelineController", function($routeParams, $http, $scope, $route, toastr){
@@ -344,7 +390,7 @@
 
           // questions.answers[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
           questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
-            console.log('aantal opgeloste vragen van deze gebruiker =' + questions.answersFromServer.length);
+          console.log('aantal opgeloste vragen van deze gebruiker =' + questions.answersFromServer.length);
         }
       });
 
