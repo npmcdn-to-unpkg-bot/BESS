@@ -528,6 +528,10 @@ td-card img {
   box-sizing: border-box;
   font-size: 18px !important;
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f2f2f2 inset !important;
+}
 .form button {
   font-family: "Antwerpen", sans-serif;
   text-transform: uppercase;
