@@ -35,6 +35,7 @@ body {
   .container {
     background-color: #f9f9f9;
     padding-bottom: 40px;
+    min-height: 100% !important;
   }
 
   .aSmallTitle {
