@@ -11,64 +11,46 @@
       <form class="" ng-controller="mapsController as mapslogic">
         <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
 
-        <!-- <div class="file-upload">
+        <ul class="nav nav-tabs" id="tabContent">
+          <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
+          <li><a data-target="#dateTab" data-toggle="tab">Datums</a></li>
+          <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Map</a></li>
+        </ul>
 
-        <div class="image-upload-wrap">
-        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-        <div class="drag-text">
-        <h3>Drag and drop it like it's hot</h3>
-      </div>
+        <div class="tab-content">
+
+          <div class="tab-pane active" id="informatieTab">
+            <div class="infoShort">
+
+
+              <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
+              <input ng-model="projectlocation" type="text" name="locatie" placeholder="District">
+            </div>
+
+            <textarea ng-model="projectdescription" class="form-control" rows="6" type="text" name="beschrijving" placeholder="Beschrijving"></textarea>
+
+          </div>
+
+
+          <div class="tab-pane" id="dateTab">
+            <label for="begindatecreate">Begindatum</label>
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" max-date="projectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
+            <label for="enddatecreate">Einddatum</label>
+            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" min-date="projectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
+
+          </div>
+
+
+          <div class="tab-pane" id="mapTab">
+            <div class="map" id="mapcreate"></div>
+          </div>
+        </div>
+
+
+
+        <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation, mapslogic.lat, mapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
+      </form>
+
     </div>
-
-    <div class="file-upload-content">
-    <img class="file-upload-image" src="#" alt="your image" />
-    <div class="image-title-wrap">
-    <button type="button" onclick="removeUpload()" class="remove-image">Remove</button>
   </div>
-</div>
-</div> -->
-
-
-<ul class="nav nav-tabs" id="tabContent">
-  <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
-  <li><a data-target="#dateTab" data-toggle="tab">Datums</a></li>
-  <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Map</a></li>
-</ul>
-
-<div class="tab-content">
-
-  <div class="tab-pane active" id="informatieTab">
-    <div class="infoShort">
-
-
-      <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
-      <input ng-model="projectlocation" type="text" name="locatie" placeholder="Locatie">
-    </div>
-
-    <textarea ng-model="projectdescription" class="form-control" rows="6" type="text" name="beschrijving" placeholder="Beschrijving"></textarea>
-
-  </div>
-
-
-  <div class="tab-pane" id="dateTab">
-    <label for="begindatecreate">Begindatum</label>
-    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" max-date="projectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
-    <label for="enddatecreate">Einddatum</label>
-    <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" min-date="projectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
-
-  </div>
-
-
-  <div class="tab-pane" id="mapTab">
-    <div class="map" id="mapcreate"></div>
-  </div>
-</div>
-
-
-
-<input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation, mapslogic.lat, mapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
-</form>
-
-</div>
-</div>
 </div>
