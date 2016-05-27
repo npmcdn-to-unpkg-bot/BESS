@@ -393,6 +393,7 @@
 
           // questions.answers[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
           questions.temp[questions.answersFromServer[i].question_id] = questions.answersFromServer[i].answer;
+          questions.totalAnswers = questions.answersFromServer.length;
           console.log('aantal opgeloste vragen van deze gebruiker =' + questions.answersFromServer.length);
         }
       });
@@ -486,12 +487,29 @@
       }).then(function mySucces(response) {
         console.log("antwoord toevoegen lukte!");
         toastr.success('Antwoord opgeslagen.');
-
+        questions.updatescore();
       }, function myError(response) {
         console.log("Antwoord toevoegen failed!");
         toastr.error('Er is iets misgelopen, uw antwoord is niet toegevoegd.', 'Mislukt!');
       });
     };
+
+        questions.updatescore = function(){
+          questions.totalAnswers = questions.totalAnswers + 1;
+          var totalAnswers = questions.totalAnswers;
+          $http({
+            method : "POST",
+            url : "http://edwardvereertbrugghen.multimediatechnology.be/api/user/changescore?token=" + localStorage.token,
+            data: {
+              questiontotal: totalAnswers,
+            }
+          }).then(function mySucces(response) {
+            toastr.success('score geupdate =' + totalAnswers);
+
+          }, function myError(response) {
+            toastr.error('Er is iets misgelopen, uw score is niet geupdate.', 'Mislukt!');
+          });
+        };
 
   }); //End of questionController
 
@@ -536,7 +554,7 @@
 
   app.controller ( "filterdistrictController", function( $routeParams, $http, $scope, $location, toastr ){
 
-    
+
 
   }); // End of filterdistrictController
 
