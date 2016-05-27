@@ -23,6 +23,9 @@
   src:url(fonts/SunAntwerpen_700.woff);
 }
 
+.ng-scope {
+  height: 100%;
+}
 body {
   font-family: SunAntwerpen_500, Arial;
   font-size: 16px;
@@ -41,6 +44,7 @@ body {
     background-color: #f9f9f9;
     padding-bottom: 40px;
     min-height: 100% !important;
+    height: 100%;
   }
 
   .aSmallTitle {
@@ -67,7 +71,8 @@ body {
 
   }
   .navButtons {
-    font-size: 1.2em;
+    font-size: 1em;
+
   }
 
 }
