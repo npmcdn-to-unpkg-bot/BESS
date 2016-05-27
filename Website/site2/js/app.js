@@ -24,6 +24,9 @@
       //preventOpenDuplicates: true,
     });
   });
+    app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.includeSpinner = false;
+  }]);
 
 
   app.controller("PanelController", function(){
