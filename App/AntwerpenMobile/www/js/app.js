@@ -227,7 +227,8 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
       if (cardTypes[i].kind ==='yesno') {
         var newCard = cardTypes[i];
-        newCard.id = i;
+        //newCard.id = i;
+        //newCard.qId = cardTypes[i].id;
         $scope.cards.push(angular.extend({}, newCard));
       } else {
 
@@ -340,7 +341,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
         method : "POST",
         url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
         data: {
-          answer: "yes",
+          answer: "Ja",
           question_id: questionId,
           project_id: projectId,
         }
@@ -356,7 +357,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
         method : "POST",
         url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
         data: {
-          answer: "no",
+          answer: " Nee",
           question_id: questionId,
           project_id: projectId,
         }
