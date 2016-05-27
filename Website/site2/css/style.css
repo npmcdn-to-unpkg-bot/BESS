@@ -190,7 +190,7 @@ h2 {
   -o-object-fit: cover;
 }
 .section1 {
-  height: 93vh;
+  height: 75vh;
   text-align: center;
 }
 .section12 {
@@ -594,6 +594,9 @@ textarea.form-control {
   padding-left: 8px;
 }
 
+#selectDistrict select {
+  margin-top: 30px;
+}
 select {
   width: 100%;
   border-radius: 0px;

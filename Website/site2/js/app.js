@@ -514,10 +514,8 @@
           project_id: projectId
         }
       }).then(function mySucces(response) {
-        console.log("Comment toevoegen succeed");
         location.reload();
       }, function myError(response) {
-        console.log("Comment toevoegen failed!");
         toastr.error('Er is iets misgelopen, uw comment is niet toegevoegd.', 'Mislukt!');
       });
     };
@@ -528,14 +526,18 @@
         method: "DELETE",
         url: "http://edwardvereertbrugghen.multimediatechnology.be/api/comments/" +  cId + "?token=" + localStorage.token
       }).then(function mySucces(response) {
-        console.log("Comment deleten succeed");
         location.reload();
       }, function myError(response) {
-        console.log("Comment deleten failed!");
         toastr.error('Er is iets misgelopen, uw comment is niet verwijderd.', 'Mislukt!');
       });
     };
 
   }); // End of commentcontroller
+
+  app.controller ( "filterdistrictController", function( $routeParams, $http, $scope, $location, toastr ){
+    var filterDistrict = this;
+
+
+  }); // End of filterdistrictController
 
 })();

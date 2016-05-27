@@ -16,7 +16,7 @@
         <input ng-show="sortofquestion=='multiplechoice'" ng-model="questionAnswers" type="text" name="questionAnswers" placeholder="Wat zijn de mogelijke antwoorden?">
 
         <input ng-click="questions.editQuestion(questionTitle, sortofquestion, questionAnswers);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
-        <input ng-click="questions.deleteQuestion()" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Delete" style="background-color:red">
+        <input ng-click="questions.deleteQuestion()" data-toggle="modal" type="submit" class="login loginmodal-submit deleteButton" value="Delete">
 
       </form>
 
