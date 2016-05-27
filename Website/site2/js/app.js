@@ -535,8 +535,8 @@
   }); // End of commentcontroller
 
   app.controller ( "filterdistrictController", function( $routeParams, $http, $scope, $location, toastr ){
-    var filterDistrict = this;
 
+    
 
   }); // End of filterdistrictController
 

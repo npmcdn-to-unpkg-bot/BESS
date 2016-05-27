@@ -1,25 +1,21 @@
-<div class="container" ng-controller="projectoverzichtController as projects">
+<div class="container" ng-controller="projectoverzichtController as projects" ng-init="projects.get()">
   <div class="row section1">
     <div class="col-sm-1">
+
     </div>
-    <div class="col-sm-2">
-      <h2 class="aTitle">test</h2>
+    <div class="col-sm-5">
+      <h2 class="aTitle">Zoek op district</h2>
     </div>
-    <div class="col-sm-3">
+    <div class="col-sm-5">
       <form id="selectDistrict">
         <select ng-model="districtchoice" name="districtchoice" form="selectDistrict">
           <option value="" disabled selected>-- Kies een district --</option>
-          <div ng-repeat="project in projects.all">
-            <option value="{{project.location}}">{{project.location}}</option>
-          </div>
+          <option ng-repeat="project in projects.all" value="{{project.location}}">{{project.location}}</option>
         </select>
       </form>
     </div>
-    <div class="col-sm-6">
-      <div ng-init="projects.get()">
-        <div ng-repeat="project in projects.all">
-        </div>
-      </div>
+    <div class="col-sm-1">
+
     </div>
   </div>
 </div>
