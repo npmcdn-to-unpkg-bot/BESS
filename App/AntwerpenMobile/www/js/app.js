@@ -177,7 +177,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   });
 })
 
-.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory, $ionicNavBarDelegate) {
+.controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory, $ionicNavBarDelegate, $ionicLoading) {
   var projectId = $stateParams.projectId;
   $scope.projectId = projectId;
 
@@ -188,11 +188,19 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $ionicHistory.goBack();
     $ionicNavBarDelegate.title("Projecten");
   }
+
+  //Loading
+  $ionicLoading.show({
+    template: 'Loading...'
+  });
+
   HttpService.getProjectDetail(projectId)
   .then(function(response) {
     $scope.projectDetail = response.project;
-    console.log($scope.projectDetail);
+    $ionicLoading.hide();
   });
+
+
 
 
 

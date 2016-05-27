@@ -4,7 +4,7 @@
         Projecten
     </ion-nav-title>
 </ion-nav-bar>
-  <ion-content ng-controller="ImageCtrl as images" class="has-header">
+  <ion-content ng-controller="ImageCtrl as images" class="has-header main-content">
     <div class="projectCard" ng-repeat="project in projects">
     <a class="projectCard" href="#/main/project/{{project.id}}">
     <div class="list card projectCard" >
@@ -25,10 +25,10 @@
 
           <div class="row">
             <div class="col">
-              <h4>Locatie: {{project.location}}</h4>
+              <h4><span class="sun-bold-font">Locatie:</span> {{project.location}}</h4>
             </div>
             <div class="col">
-              <h4>Categorie: {{project.category}}</h4>
+              <h4><span class="sun-bold-font">Categorie:</span> {{project.category}}</h4>
             </div>
           </div>
           <p>
