@@ -1003,7 +1003,22 @@ select {
   .slick-list.draggable {
     height: 200px;
   }
+  .einddatum,
+  .locatie {
+    float:right;
+  }
 }
+
+/*@media (max-width: 768px) {
+  .slick-list.draggable {
+    height: 200px;
+  }
+  .einddatum,
+  .locatie {
+    float:right;
+  }
+}*/
+
 @media (min-width: 520px) {
   .slick-list.draggable {
     height: 300px;
