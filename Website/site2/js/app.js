@@ -176,6 +176,13 @@
       });
 
     }
+    user.getLeaderboard = function() {
+      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/leaderboards")
+      .then(function(response) {
+        console.log(response.data);
+        user.leaderboards = response.data;
+      });
+    }
   });
 
   app.controller("timelineController", function($routeParams, $http, $scope, $route, toastr){
