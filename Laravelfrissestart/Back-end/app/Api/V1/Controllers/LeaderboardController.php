@@ -12,10 +12,17 @@ use App\Http\Controllers\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LeaderboardController extends Controller
-{
+{   use Helpers;
+  public function index()
+  {
+      $leaderboard = Leaderboard::orderBy('score', 'DESC')
+      ->get()
+      ->toArray();
+      return $leaderboard;
+  }
     public function updateLeaderboard()
     {
-      $leaderboard = Leaderboard::firstOrCreate('user_id' => $this->currentUser()["id"]);
+      $leaderboard = Leaderboard::firstOrCreate(['user_id' => $this->currentUser()["id"]]);
       $leaderboard->score = $this->currentUser()["questiontotal"] * 10;
       $leaderboard->username = $this->currentUser()["firstname"]." ".$this->currentUser()["name"];
       if($this->currentUser()->leaderboards()->save($leaderboard))

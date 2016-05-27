@@ -88,6 +88,9 @@ $api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
 				$api->post('comments', 'App\Api\V1\Controllers\CommentController@store');
 				$api->get('comments', 'App\Api\V1\Controllers\CommentController@index');
 				$api->get('comments/project/{id}', 'App\Api\V1\Controllers\CommentController@showperproject');
+
+				//leaderboards routing without auth
+				$api->get('leaderboards', 'App\Api\V1\Controllers\LeaderboardController@index');
 		});
 
 });
