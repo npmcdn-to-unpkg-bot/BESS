@@ -452,6 +452,10 @@ td-card img {
 
 
 }
+
+.login-page .form {
+  top: -100px;
+}
 .loginBackground {
   background-color: white;
   height: 100%;
@@ -477,7 +481,7 @@ td-card img {
   display: block;
   position: relative;
   margin-left: 18%;
-  top: -75px;
+  top: -90px;
 }
 
 .login-page {
@@ -555,24 +559,22 @@ td-card img {
 }
 
 /* VALIDATION */
-.login-failed {
+.login-failed, .register-failed {
   width: 100%;
   background-color: rgba(255, 102, 102, 0.88);
   color:white;
   border-radius: 5px;
   padding: 5px;
   opacity: 1;
-
-
 }
 
- .login-failed.ng-hide-remove {
+ .login-failed.ng-hide-remove, .register-failed.ng-hide-remove {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
-.login-failed.ng-hide{
+.login-failed.ng-hide, .register-failed.ng-hide{
   opacity: 0;
 }
 

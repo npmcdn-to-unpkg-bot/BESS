@@ -87,6 +87,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     });
   }
 
+  $scope.registerFailed = false;
   user.register = function(firstName, lastName, email, password){
 
     $http({
@@ -99,11 +100,12 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
         password: password,
       }
     }).then(function mySucces(response) {
-      console.log("registratie succesvol token=" + response.data.token);
+      $scope.registerFailed = true;
       localStorage.setItem("token", response.data.token);
       user.getData();
       $state.go('intro');
     }, function myError(response) {
+      $scope.registerFailed = true;
       console.log("register failed");
     });
   };
