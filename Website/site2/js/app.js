@@ -511,7 +511,7 @@
               questiontotal: totalAnswers,
             }
           }).then(function mySucces(response) {
-            toastr.success('score geupdate =' + totalAnswers);
+            
 
           }, function myError(response) {
             toastr.error('Er is iets misgelopen, uw score is niet geupdate.', 'Mislukt!');
