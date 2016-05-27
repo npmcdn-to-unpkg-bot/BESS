@@ -422,8 +422,12 @@ button {
   float: right;
 }
 
-
-
+.deleteButton {
+  background-color: rgb(216, 29, 28) !important;
+}
+.deleteButton:hover {
+  background-color: rgb(222, 73, 58) !important;
+}
 /******  MODALS ******/
 
 
