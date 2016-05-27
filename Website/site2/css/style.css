@@ -100,7 +100,7 @@ menu {
   font-family: AntwerpenFontRegular;
   position: absolute;
   left: 50%;
-  margin-left: -80px !important;  /* 50% of your logo width */
+  margin-left: -74px !important;  /* 50% of your logo width */
   display: block;
 }
 
@@ -205,9 +205,6 @@ h2 {
 }
 .container.homepage {
   width: 100%;
-}
-.row.section1 {
-  margin-right: 0px;
 }
 .divider-new {
   display: flex;
