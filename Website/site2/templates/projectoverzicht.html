@@ -1,7 +1,21 @@
 
-<div class="container">
+<div class="container" ng-controller="projectoverzichtController as projects" ng-init="projects.get()">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="aBigTitle">Alle projecten</h2>
+    </div>
+    <div class="col-sm-6">
+      <form id="selectDistrict">
+        <select ng-model="districtchoice" name="districtchoice" form="selectDistrict" class="select">
+          <option value="" disabled selected>-- Zoek op district --</option>
+          <option ng-repeat="project in projects.all | unique: 'location'" value="{{project.location}}">{{project.location}}</option>
+        </select>
+      </form>
+    </div>
+  </div>
+
   <div class="row" ng-controller="imageController as images">
-    <div ng-repeat="project in projects.all">
+    <div ng-repeat="project in projects.all  | filter: districtchoice">
       <div ng-if="$index % 3 == 0" class="clearfix"></div>
       <div class="col-sm-4">
         <div class="wrapper">

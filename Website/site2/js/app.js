@@ -559,10 +559,4 @@
 
   }); // End of commentcontroller
 
-  app.controller ( "filterdistrictController", function( $routeParams, $http, $scope, $location, toastr ){
-
-
-
-  }); // End of filterdistrictController
-
 })();

@@ -31,14 +31,6 @@
 
     })
 
-    // route for the filterdistrict page
-    .when('/filterdistrict', {
-      templateUrl : 'templates/filterdistrict.html',
-      controller  : 'filterdistrictController',
-      controllerAs: "filterdistrict"
-
-    })
-
     // route for the map page
     .when('/map', {
       templateUrl : 'templates/maps.html',

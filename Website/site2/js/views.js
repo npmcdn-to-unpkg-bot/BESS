@@ -106,15 +106,6 @@
       };
     });
 
-  app.directive("filterdistrict", function(){
-    return {
-      restrict: 'E',
-      templateUrl: "templates/filterdistrict.html",
-      controller  : 'filterdistrictController',
-      controllerAs: 'filterdistrict'
-    };
-  });
-
   app.directive("timeline", function() {
     return {
       restrict: 'E',

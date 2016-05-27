@@ -235,7 +235,10 @@ h2 {
 .aTitle {
   font-family: AntwerpenFontRegular;
 }
-
+.aBigTitle {
+  font-family: AntwerpenFontRegular;
+  padding-left: 15px;
+}
 .homeimage {
   width: 10%;
 }
