@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'firstname', 'residence', 'email', 'password', 'isAdmin',
+        'name', 'firstname', 'residence', 'email', 'password', 'isAdmin', 'questiontotal'
     ];
 
     /**
@@ -41,8 +41,9 @@ public function answers()
 {
     return $this->hasMany('App\Answer');
 }
-public function comments()
+public function leaderboards()
 {
-    return $this->hasMany('App\Comment');
+    return $this->hasOne('App\Leaderboard');
 }
+
 }

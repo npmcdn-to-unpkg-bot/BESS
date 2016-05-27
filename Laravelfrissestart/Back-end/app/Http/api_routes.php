@@ -29,6 +29,7 @@ $api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
 		$api->post('user/changename', 'App\Api\V1\Controllers\UserController@changeName');
 		$api->post('user/changeresidence', 'App\Api\V1\Controllers\UserController@changeResidence');
 		$api->post('user/changeemail', 'App\Api\V1\Controllers\UserController@changeEmail');
+		$api->post('user/changescore', 'App\Api\V1\Controllers\UserController@changeScore');
 		// projects routing api with auth
 		$api->get('projects/user', 'App\Api\V1\Controllers\ProjectController@indexuser');
 		$api->get('projects/user/{id}', 'App\Api\V1\Controllers\ProjectController@showuser');
