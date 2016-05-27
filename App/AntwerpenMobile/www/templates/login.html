@@ -12,10 +12,10 @@
       <div class="form">
         <h1>INSPRAAK</h1>
         <form class="register-form">
-          <input name="voornaam" ng-model="firstName" class="inputName" type="text" placeholder="voornaam" required/>
-          <input name="achternaam" ng-model="lastName" class="inputName" type="text" placeholder="achternaam" required/>
+          <input name="voornaam" ng-model="firstName" class="inputName" type="text" placeholder="voornaam" ng-pattern="/^[a-zA-Z]*$/" required/>
+          <input name="achternaam" ng-model="lastName" class="inputName" type="text" placeholder="achternaam" ng-pattern="/^[a-zA-Z]*$/" required/>
           <input name="password" ng-model="password" type="password" placeholder="paswoord"/>
-          <input name="email" ng-model="email" type="text" placeholder="email"/>
+          <input name="email" ng-model="email" type="email" placeholder="email"/>
 
           <button ng-click="user.register(firstname,lastname, email, password)">REGISTREER</button>
           <p class="message">Al geregistreerd? <a href="#" ng-click="formToggle()">Log in</a></p>
