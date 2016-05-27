@@ -723,7 +723,11 @@ select {
 
 .footer-right a {
   margin: 10px;
-
+  color: black;
+}
+.footer-right a:hover {
+  
+  color: #008C95;
 }
 
 /*footer end*/
