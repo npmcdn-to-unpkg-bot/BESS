@@ -632,8 +632,24 @@ input:-webkit-autofill {
 }
 
 .descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col{
-  font-size: 15px;
+  font-size: 16px;
+}
 
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span{
+
+}
+body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div > div.item.item-body > div > div  h4 > span {
+ display: block;
+ font-size: 16px;
+}
+body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div > div.item.item-body > div > div > h4 > span {
+ display: block;
+ 
+}
+
+
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span:first-child{
+  margin-bottom: 10px;
 }
 
 .row.title {
