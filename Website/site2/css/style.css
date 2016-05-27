@@ -1019,7 +1019,7 @@ table th, td {
   margin-top: 20px;
   padding: 20px 0 10px 0;
   background: #fff;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .profile-userpic i {
@@ -1091,7 +1091,7 @@ table th, td {
 }
 
 .profile-content {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /*box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   padding: 0;
 }
 /***** Profile Content *****/
