@@ -1,8 +1,14 @@
 
 (function($){
+
+
+
   var app = angular.module('maps-logic-module', []);
 
   app.controller("mapsController", function($routeParams, $http, $scope, $location, $route){
+    // automatic map loading in project overview page
+    setTimeout(function(){$("#clickSPMap").trigger("click");}, 2000);
+
     var icon = {
       url: '/img/A-logo.png', // url
       scaledSize: new google.maps.Size(50, 50), // scaled size

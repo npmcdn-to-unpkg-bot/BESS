@@ -4,7 +4,7 @@
   </div>
   <div class="col-sm-8">
     <div ng-show="spproject.longitude" class="map" id="spmap" style="height: 200px" ng-init="showmap = false">
-      <a style=" margin-top:50px; position: absolute; left: 50%; margin-left: -44px !important; display: block;" ng-hide="showmap" href="" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude); showmap = true;">Map laden</a>
+      <a style=" margin-top:50px; position: absolute; left: 50%; margin-left: -44px !important; display: block;" ng-hide="showmap" href="" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude); showmap = true;" id="clickSPMap">Map laden</a>
     </div>
   </div>
   <div class="col-sm-2">
