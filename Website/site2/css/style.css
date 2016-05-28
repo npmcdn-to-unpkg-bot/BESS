@@ -729,7 +729,7 @@ select {
   color: black;
 }
 .footer-right a:hover {
-  
+
   color: #008C95;
 }
 
@@ -1016,7 +1016,7 @@ select {
   }
 }
 
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
   .slick-list.draggable {
     height: 200px;
   }
@@ -1024,7 +1024,7 @@ select {
   .locatie {
     float:right;
   }
-}*/
+}
 
 @media (min-width: 520px) {
   .slick-list.draggable {
