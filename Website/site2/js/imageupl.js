@@ -41,135 +41,143 @@ function activateslick() {
     dots: true,
     infinite: true,
     slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true,
+    autoplay: true,
     responsive: [{
-
-      breakpoint: 768,
+      breakpoint: 990,
       settings: {
 
-        arrows: false,
-      }
+        adaptiveHeight: true
+      }},
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          adaptiveHeight: true,
+          autoplay: false,
+        }
+      }]
+    });
 
-    }]
-  });
+  }
 
-}
+  (function($){
 
-(function($){
+    var app = angular.module('image-upload-module', []);
 
-  var app = angular.module('image-upload-module', []);
+    app.controller("imageController", function($routeParams, $http, $scope, $location, $route){
+      var images = this;
+      var projectId = $scope.projectId = $routeParams.projectId;
 
-  app.controller("imageController", function($routeParams, $http, $scope, $location, $route){
-    var images = this;
-    var projectId = $scope.projectId = $routeParams.projectId;
+      images.upload = function(){
+        console.log("click");
+        console.log(imageToUpload);
+        console.log("projectId = " + projectId);
 
-    images.upload = function(){
-      console.log("click");
-      console.log(imageToUpload);
-      console.log("projectId = " + projectId);
+        var form = new FormData();
+        form.append("image", imageToUpload);
 
-      var form = new FormData();
-      form.append("image", imageToUpload);
-
-      var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/" + projectId + "?token="+localStorage.token,
-        "method": "POST",
-        "headers": {
-          "cache-control": "no-cache",
-          "postman-token": "3f85b7cf-a66b-f68b-1f82-59b0b24b36e6"
-        },
-        "processData": false,
-        "contentType": false,
-        "mimeType": "multipart/form-data",
-        "data": form
-      }
-
-      $.ajax(settings).then(function mySucces(response) {
-        console.log("foto uploaden succesvol");
-        removeUpload();
-        //$('#imageupload-modal').modal('hide');
-        location.reload();
-      }, function myError(response) {
-        console.log("foto uploaden failed");
-      });
-
-      // $http({
-      //   async: true,
-      //   crossDomain: true,
-      //   method : "POST",
-      //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/"+ projectId +"?token=" + localStorage.token,
-      //   processData: false,
-      //   contentType: false,
-      //   mimeType: 'multipart/form-data',
-      //   headers: {
-      //     'cache-control': "no-cache",
-      //   },
-      //   data: {
-      //     image: imageToUpload
-      //   }
-      // }).then(function mySucces(response) {
-      //   console.log("foto uploaden succesvol");
-      //   $('#imageupload-modal').modal('hide');
-      //   $location.path('/projecten/' + projectId);
-      // }, function myError(response) {
-      //   console.log("foto uploaden failed");
-      // });
-    };
-
-    images.get = function() {
-
-      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ projectId)
-      .then(function mySucces(response) {
-        activateslick();
-        console.log(response.data.images);
-        images.all = response.data.images;
-        images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
-        for (var i = 0; i < response.data.images.length; i++) {
-          $('.slickimages').slick('slickAdd','<img src="http://edwardvereertbrugghen.multimediatechnology.be/uploads/'+response.data.images[i].filename+'" alt="image" class="border-tlr-radius projectimage"/>');
-          $(window).trigger('resize');
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/" + projectId + "?token="+localStorage.token,
+          "method": "POST",
+          "headers": {
+            "cache-control": "no-cache",
+            "postman-token": "3f85b7cf-a66b-f68b-1f82-59b0b24b36e6"
+          },
+          "processData": false,
+          "contentType": false,
+          "mimeType": "multipart/form-data",
+          "data": form
         }
 
-      }, function myError(response) {
-        console.log("image fetch failed probably because image does not exist yet.");
-        images.all = null;
-        images.firstone = null;
+        $.ajax(settings).then(function mySucces(response) {
+          console.log("foto uploaden succesvol");
+          removeUpload();
+          //$('#imageupload-modal').modal('hide');
+          location.reload();
+        }, function myError(response) {
+          console.log("foto uploaden failed");
+        });
 
-      });
-      // .then(function(response) {
-      //   console.log(response.data.images);
-      //   images.all = response.data.images;
-      //   images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
-      // });
-    };
+        // $http({
+        //   async: true,
+        //   crossDomain: true,
+        //   method : "POST",
+        //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/"+ projectId +"?token=" + localStorage.token,
+        //   processData: false,
+        //   contentType: false,
+        //   mimeType: 'multipart/form-data',
+        //   headers: {
+        //     'cache-control': "no-cache",
+        //   },
+        //   data: {
+        //     image: imageToUpload
+        //   }
+        // }).then(function mySucces(response) {
+        //   console.log("foto uploaden succesvol");
+        //   $('#imageupload-modal').modal('hide');
+        //   $location.path('/projecten/' + projectId);
+        // }, function myError(response) {
+        //   console.log("foto uploaden failed");
+        // });
+      };
 
-    images.getfirstbyid = function(gid) {
-      images.firstonebyid = [];
-      $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
-      .then(function mySucces(response) {
+      images.get = function() {
 
-        if (response.data.images) {
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ projectId)
+        .then(function mySucces(response) {
+          activateslick();
+          console.log(response.data.images);
+          images.all = response.data.images;
+          images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
+          for (var i = 0; i < response.data.images.length; i++) {
+            $('.slickimages').slick('slickAdd','<img src="http://edwardvereertbrugghen.multimediatechnology.be/uploads/'+response.data.images[i].filename+'" alt="image"/>');
+            $(window).trigger('resize');
+          }
 
-          images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
-          console.log("gid adres image = "+ images.getfirstbyid[gid]);
-        }
-        else {
+        }, function myError(response) {
           console.log("image fetch failed probably because image does not exist yet.");
+          images.all = null;
+          images.firstone = null;
+
+        });
+        // .then(function(response) {
+        //   console.log(response.data.images);
+        //   images.all = response.data.images;
+        //   images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
+        // });
+      };
+
+      images.getfirstbyid = function(gid) {
+        images.firstonebyid = [];
+        $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
+        .then(function mySucces(response) {
+
+          if (response.data.images) {
+
+            images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
+            console.log("gid adres image = "+ images.getfirstbyid[gid]);
+          }
+          else {
+            console.log("image fetch failed probably because image does not exist yet.");
+            images.firstonebyid[gid] = null;
+          }
+
+        }, function myError(response) {
+          console.log("sever error.");
           images.firstonebyid[gid] = null;
-        }
-
-      }, function myError(response) {
-        console.log("sever error.");
-        images.firstonebyid[gid] = null;
-      });
+        });
 
 
-    };
+      };
 
 
 
-  });
+    });
 
 
 
-})(jQuery);
+  })(jQuery);
