@@ -36,6 +36,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
   }
+  @media only screen and (max-width: 479px) and (min-width: 0px) {
+  body { background-image: none !important; background-color:#fefefe; }
+  .mobile-hide{ display: none !important; }
+}
+
 
   .container {
     background-color: #f9f9f9;
