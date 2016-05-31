@@ -1,11 +1,20 @@
 <div class="row informatie">
+
   <div class="col-sm-2">
-    <!-- Linkse witruimte container -->
+    <!-- left whitespace container -->
   </div>
+
+
   <div class="col-sm-8">
+
+    <!-- add button - only admin -->
+
     <div class="addItem"  ng-show="user.isAdmin == '1'">
       <button data-toggle="modal" data-target="#addquestionmodal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
     </div>
+
+    <!-- questions -->
+
     <form class="" action="index.html" method="post">
 
       <div ng-repeat="question in questions.all">
@@ -21,10 +30,15 @@
       </div>
     </form>
   </div>
+
   <div class="col-sm-2">
-    <!-- Rechtse witruimte container -->
+    <!-- right whitespace container -->
   </div>
 
 </div>
+
+
+<!-- modals -->
+
 <addquestion></addquestion>
 <editquestion></editquestion>
