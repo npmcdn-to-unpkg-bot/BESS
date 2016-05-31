@@ -86,7 +86,7 @@ body {
 #logo img {
   width:250px; /* you can use % */
   height: auto;
-  margin: 30px 0px;
+  margin: 0px 0px;
 }
 
 #list {
@@ -286,7 +286,7 @@ body {
 div.projectCard > div:nth-child(2) > div.row  div.col  {
   text-align: center !important;
   position: relative;
-  left: -10px;
+  left: 0px;
 }
 
 .projectCard-button {
