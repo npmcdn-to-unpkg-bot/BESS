@@ -1,153 +1,148 @@
-<div class="row" ng-controller="mapsController as mapslogic">
-  <div class="col-sm-2">
-
-  </div>
-  <div class="col-sm-8">
-    <div ng-show="spproject.longitude" class="map" id="spmap" style="height: 200px" ng-init="showmap = false">
-      <a style=" margin-top:50px; position: absolute; left: 50%; margin-left: -44px !important; display: block;" ng-hide="showmap" href="" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude); showmap = true;" id="clickSPMap">Map laden</a>
-    </div>
-  </div>
-  <div class="col-sm-2">
-
-  </div>
-</div>
-
-
-
-<div class="row information" >
-  <div class="col-sm-2">
-    <!-- Linkse witruimte container -->
-  </div>
-
-  <div class="col-sm-8">
-    <div class="col-sm-2">
-
-    </div>
+<!-- google maps location -->
+  <div class="row" ng-controller="mapsController as mapslogic">
 
     <div class="col-sm-2">
-      <div class="begindatum">
-        <p>
-          <b>Begindatum:</b>
-        </br>
-        {{spproject.startdate | date:'dd-MM-yyyy'}}
-        </p>
+      <!-- left whitespace container -->
+    </div>
+
+    <div class="col-sm-8">
+      <div ng-show="spproject.longitude" class="map" id="spmap" style="height: 200px" ng-init="showmap = false">
+        <a style=" margin-top:50px; position: absolute; left: 50%; margin-left: -44px !important; display: block;" ng-hide="showmap" href="" ng-click="mapslogic.getMapSinglePage(spproject.latitude, spproject.longitude); showmap = true;" id="clickSPMap">Map laden</a>
       </div>
     </div>
-    <div class="col-sm-4">
-
-    </div>
 
     <div class="col-sm-2">
-      <div class="einddatum">
-        <p>
-          <b>Einddatum:</b>
-        </br>
-        {{spproject.enddate | date:'dd-MM-yyyy'}}
-        </p>
+      <!-- right whitespace container -->
+    </div>
+
+  </div>
+
+
+<!-- first information row -->
+  <div class="row information" >
+
+    <div class="col-sm-2">
+      <!-- left whitespace container -->
+    </div>
+
+    <div class="col-sm-8">
+      <div class="col-sm-2">
+        <!-- left whitespace  -->
       </div>
-    </div>
-    <div class="col-sm-2">
 
-    </div>
-
-
-  </div>
-
-  <div class="col-sm-2">
-    <!-- Rechtse witruimte container -->
-  </div>
-</div>
-
-
-
-
-<div class="row information">
-  <div class="col-sm-2">
-    <!-- Linkse witruimte container -->
-  </div>
-
-  <div class="col-sm-8">
-    <div class="col-sm-2">
-
-    </div>
-
-    <div class="col-sm-2">
-      <div class="categorie">
-        <p>
-          <b>Categorie:</b>
-        </br>
-        {{spproject.category}}
-        </p>
+      <div class="col-sm-2">
+        <div class="begindatum">
+          <p>
+            <b>Begindatum:</b>
+          </br>
+          {{spproject.startdate | date:'dd-MM-yyyy'}}
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-4">
 
-    </div>
-
-
-    <div class="col-sm-2">
-      <div class="locatie">
-        <p>
-          <b>Locatie:</b>
-        </br>
-        {{spproject.location}}
-        </p>
+      <div class="col-sm-4">
+        <!-- middle whitespace container -->
       </div>
+
+      <div class="col-sm-2">
+        <div class="einddatum">
+          <p>
+            <b>Einddatum:</b>
+          </br>
+          {{spproject.enddate | date:'dd-MM-yyyy'}}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <!-- right whitespace container -->
+      </div>
+
+
     </div>
+
     <div class="col-sm-2">
-
+      <!-- right whitespace container -->
     </div>
 
 
   </div>
 
-  <div class="col-sm-1">
-    <!-- Rechtse witruimte container -->
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-
-  </div>
-  <div class="col-sm-8">
-    <div class="col-sm-4">
-
-      <!-- <h3 class="aTitle">Beschrijving</h3> -->
-
-    </div>
-    <div class="col-sm-4">
-
-    </div>
-    <div class="col-sm-4">
-
-    </div>
-  </div>
-  <div class="col-sm-2">
-
-  </div>
-</div>
-
-<div class="row description">
-  <div class="col-sm-2">
-
-  </div>
-  <div class="col-sm-8">
-    <hr style="border-color:#008C95; border-style:solid;">
-    <div class="col-sm-12">
-      <p>
-        {{spproject.description}}
 
 
-      </p>
-      <a href="" data-toggle="modal" data-target="#edit-modal"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true" ng-show="user.isAdmin == '1'" style="margin-top:15px;"></i></a>
+<!-- second information row -->
+  <div class="row information">
 
+    <div class="col-sm-2">
+      <!-- left whitespace container -->
     </div>
 
+    <div class="col-sm-8">
+      <div class="col-sm-2">
+        <!-- left whitespace  -->
+      </div>
+
+      <div class="col-sm-2">
+        <div class="categorie">
+          <p>
+            <b>Categorie:</b>
+          </br>
+          {{spproject.category}}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <!-- middle whitespace  -->
+      </div>
+
+
+      <div class="col-sm-2">
+        <div class="locatie">
+          <p>
+            <b>Locatie:</b>
+          </br>
+          {{spproject.location}}
+          </p>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <!-- right whitespace  -->
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-1">
+      <!-- right whitespace container -->
+    </div>
+
   </div>
 
-  <div class="col-sm-2">
+<!-- description box -->
+  <div class="row description">
+
+    <div class="col-sm-2">
+      <!-- left whitespace container -->
+    </div>
+
+    <div class="col-sm-8">
+
+      <hr style="border-color:#008C95; border-style:solid;">
+
+      <div class="col-sm-12">
+        <p>
+          {{spproject.description}}
+        </p>
+        <a href="" data-toggle="modal" data-target="#edit-modal"><i class="fa fa-pencil-square-o fa-3x" aria-hidden="true" ng-show="user.isAdmin == '1'" style="margin-top:15px;"></i></a>
+
+      </div>
+
+    </div>
+
+    <div class="col-sm-2">
+      <!-- right whitespace container -->
+    </div>
 
   </div>
-
-</div>
