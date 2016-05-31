@@ -1,62 +1,65 @@
 <div class="row section1 mobile-hide">
-  <div class="verticalcenter">
-    <h1 class="text-center white-text aTitle">Antwerpen</h3>
+  <div class="center-wrap">
+    <div class="ghostbutton">
+      <a href="#/projecten">Bekijk alle projecten <span class="shift">›</span></a>
+      <div class="mask"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container homepage">
+
+  <div class="row section12">
+    <div class="col-xs-12 divider-new aTitle">
+      Uw mening is belangrijk!
     </div>
   </div>
 
-  <div class="container homepage">
-
-    <div class="row section12">
-      <div class="col-xs-12 divider-new aTitle">
-        Uw mening is belangrijk!
-      </div>
+  <div class="row section2">
+    <div class="col-sm-2">
     </div>
-
-    <div class="row section2">
-      <div class="col-sm-2">
-      </div>
-      <div class="col-sm-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis atque dolores aperiam ea ducimus, consequuntur, nisi impedit veritatis facere voluptatibus recusandae doloremque optio rerum error nemo velit, rem natus expedita.
-      </div>
-      <div class="col-sm-2">
-      </div>
+    <div class="col-sm-8">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis atque dolores aperiam ea ducimus, consequuntur, nisi impedit veritatis facere voluptatibus recusandae doloremque optio rerum error nemo velit, rem natus expedita.
     </div>
-
-    <div class="row section12">
-      <div class="col-xs-12 divider-new aTitle">
-        Laatste nieuwe projecten
-      </div>
+    <div class="col-sm-2">
     </div>
+  </div>
 
-    <div class="row" ng-controller="imageController as images">
-      <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
-        <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
+  <div class="row section12">
+    <div class="col-xs-12 divider-new aTitle">
+      Laatste nieuwe projecten
+    </div>
+  </div>
 
-          <div class="card radius shadowDepth1 hoverable">
-            <div class="card__image border-tlr-radius">
-              <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
-                <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
-              </div>
-              <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius"/></a>
+  <div class="row section3" ng-controller="imageController as images">
+    <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
+      <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
+
+        <div class="card radius shadowDepth1 hoverable">
+          <div class="card__image border-tlr-radius">
+            <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
+              <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
             </div>
+            <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius"/></a>
+          </div>
 
-            <div class="card__content card__padding">
+          <div class="card__content card__padding">
 
-              <article class="card__article">
-                <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 27: '...': true}}</a></h4>
+            <article class="card__article">
+              <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 27: '...': true}}</a></h4>
 
-                <p>{{project.description | truncate: 100: '...': true}}</p>
-              </article>
+              <p>{{project.description | truncate: 100: '...': true}}</p>
+            </article>
 
-              <div class="ReadMore">
-                <a href="/#/project/{{project.id}}">Lees meer...</a>
-              </div>
+            <div class="ReadMore">
+              <a href="/#/project/{{project.id}}">Lees meer...</a>
             </div>
-
           </div>
 
         </div>
-      </div>
 
+      </div>
     </div>
+
   </div>
+</div>
