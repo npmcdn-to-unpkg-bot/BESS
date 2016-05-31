@@ -51,19 +51,19 @@
     };
   });
 
-  app.directive("vragenlijst", function() {
+  app.directive("questionlist", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/vragenlijst.html"
+      templateUrl: "templates/questionlist.html"
     };
   });
 
 
 
-  app.directive("informatie", function() {
+  app.directive("information", function() {
     return {
       restrict: 'E',
-      templateUrl: "templates/informatie.html"
+      templateUrl: "templates/information.html"
     };
   });
 

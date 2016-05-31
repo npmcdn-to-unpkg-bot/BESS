@@ -37,9 +37,9 @@ body {
     background-size: cover;
   }
   @media only screen and (max-width: 479px) and (min-width: 0px) {
-  body { background-image: none !important; background-color:#fefefe; }
-  .mobile-hide{ display: none !important; }
-}
+    body { background-image: none !important; background-color:#fefefe; }
+    .mobile-hide{ display: none !important; }
+  }
 
 
   .container {
@@ -54,30 +54,30 @@ body {
   }
 
 
-  /***** navigatie - begin *****/
+  /***** navigation - start *****/
 
 
+#menulogo {
+  max-height: 2.5em;
+  margin-top: -10px;
+}
 
-  #menulogo {
-    max-height: 2.5em;
-    margin-top: -10px;
-  }
+#bs-example-navbar-collapse-1 {
+  background-color: #f9f9f9 !important;
+}
 
-  #bs-example-navbar-collapse-1 {
-    background-color: #f9f9f9 !important;
-  }
-
-  #nav-menu {
-    width: 1.7em;
-
-
-  }
-  .navButtons {
-    font-size: 1em;
-
-  }
+.navButtons {
+  font-size: 1em;
+}
 
 }
+
+menu {
+  margin: 0px;
+  padding: 0px;
+  height: 54px;
+}
+
 menu {
   margin: 0px;
   padding: 0px;
@@ -88,24 +88,14 @@ menu {
 .navbar-nav {
   margin-top: 3px;
 }
-.navbar-default {
-  color: #fff;
-  border: none;
-  width: 100%;
-  box-shadow: none !important;
-}
+
 
 .navbar-title {
-  /*position: absolute;
-  width: 100%;
-  left: 0;
-  text-align: center;
-  margin:0 auto;*/
   color: black;
   font-family: AntwerpenFontRegular;
   position: absolute;
   left: 50%;
-  margin-left: -74px !important;  /* 50% of your logo width */
+  margin-left: -74px !important;  /* 50% of logo width */
   display: block;
 }
 
@@ -113,12 +103,7 @@ menu {
   text-decoration: none;
   color: black;
 }
-menu {
-  margin: 0px;
-  padding: 0px;
-  height: 54px;
-  background-color: #f9f9f9 !important;
-}
+
 
 .navbar-default {
   background-color: #f9f9f9;
@@ -145,11 +130,11 @@ body > menu > nav .container-fluid {
   background-color: #f9f9f9;
 }
 
-/***** navigatie - einde *****/
+/***** navigation - end *****/
 
 
 
-/***** homepage - begin *****/
+/***** homepage - start *****/
 
 a {
   text-decoration: none;
@@ -249,10 +234,13 @@ h2 {
 }
 
 
-/***** homepage - einde *****/
+/***** homepage - end *****/
 
 
-/***** Card styles begin *****/
+
+/***** project overview - start *****/
+
+    /** Card styles begin **/
 
 
 .card {
@@ -286,14 +274,9 @@ h2 {
   min-height: 70px;
 }
 
-/***** card meta *****/
-.card__meta time {
-  font-size: 1.5em;
-  color: #bbb;
-  margin-left: 0.8em;
-}
+    /** card article **/
 
-/***** card article *****/
+
 .card__article a {
   text-decoration: none;
   color: #444;
@@ -319,12 +302,6 @@ h2 {
   border-top-right-radius: 4px;
 }
 
-.text-center { text-align: center; }
-
-.radius { border-radius: 4px; }
-
-.padding-tb { padding-top: 1.6em; padding-bottom: 1.6em;}
-
 .shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
 
 .shadowDepth1 {
@@ -334,9 +311,14 @@ h2 {
 
 
 
-/***** Card styles einde *****/
+    /** Card styles end **/
 
-/***** single_page begin */
+/***** project overview end *****/
+
+
+
+
+/***** single_page start *****/
 
 .headerImg {
   margin-top: 4%;
@@ -347,12 +329,12 @@ h2 {
   margin-top: 6%;
 }
 
-.informatie {
+.information {
   font-size: 1.3em;
   margin-top: 25px;
 }
 
-.beschrijving {
+.description {
   margin-top: 30px;
   padding-bottom: 20px;
 }
@@ -440,14 +422,16 @@ button {
 .deleteButton:hover {
   background-color: rgb(222, 73, 58) !important;
 }
+
+
 /******  MODALS ******/
 
 .ng-invalid.ng-dirty {
- border-color: #FA787E;
+  border-color: #FA787E;
 }
 
 .ng-valid.ng-dirty {
- border-color: #78FA89;
+  border-color: #78FA89;
 }
 
 .loginmodal-container, .registermodal-container, .createmodal-container {
@@ -1198,5 +1182,5 @@ table th, td {
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
