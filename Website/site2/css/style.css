@@ -1257,8 +1257,4 @@ textarea {
 	-webkit-transform: translate3d(120%,-100px,0) rotate3d(0,0,1,90deg);
 	transform: translate3d(120%,-100px,0) rotate3d(0,0,1,90deg);
 }
-
-.ghostbutton:hover .shift {
-	padding-left: 5px;
-}
 /* End of ghost button */
