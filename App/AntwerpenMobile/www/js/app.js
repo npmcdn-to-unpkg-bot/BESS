@@ -160,7 +160,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 })
 
 .controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
-
+  $scope.dateLimit = 10;
 
   $scope.toIntro = function(){
     $state.go('intro');

@@ -14,7 +14,7 @@
 
           <h2>{{project.name}}</h2>
 
-          <p>{{project.created_at}}</p>
+          <p>{{project.created_at | limitTo:dateLimit}}</p>
 
       </div>
 
@@ -25,10 +25,10 @@
 
           <div class="row">
             <div class="col">
-              <h4><span class="sun-bold-font">Locatie:</span> <span>{{project.location}}</span></h4>
+              <h4><span class="card-icon"><i class="ion-location"></i></span> <span>{{project.location}}</span></h4>
             </div>
             <div class="col">
-              <h4><span class="sun-bold-font">Categorie:</span> <span>{{project.category}}</span></h4>
+              <h4><span class="card-icon"><i class="ion-clipboard"></i></span> <span>{{project.category}}</span></h4>
             </div>
           </div>
           <p>
