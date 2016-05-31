@@ -1,9 +1,13 @@
 
 <div class="container" ng-controller="projectoverzichtController as projects" ng-init="projects.get()">
+
+<!-- filter section -->
   <div class="row">
+
     <div class="col-sm-6">
       <h2 class="aBigTitle">Alle projecten</h2>
     </div>
+
     <div class="col-sm-6">
       <form id="selectDistrict">
         <select ng-model="districtchoice" name="districtchoice" form="selectDistrict" class="select">
@@ -12,8 +16,10 @@
         </select>
       </form>
     </div>
+
   </div>
 
+  <!-- project overview -->
   <div class="row" ng-controller="imageController as images">
     <div ng-repeat="project in projects.all  | filter: districtchoice">
       <div ng-if="$index % 3 == 0" class="clearfix"></div>
@@ -39,6 +45,7 @@
               <div class="ReadMore">
                 <a href="/#/project/{{project.id}}">Lees meer...</a>
               </div>
+              
             </div>
 
           </div>

@@ -310,6 +310,8 @@ h2 {
 
     /** Card styles end **/
 
+
+
 /***** project overview end *****/
 
 
@@ -372,13 +374,9 @@ body .btn-bg.bg-2 .btn-2 button {
   padding-right: 10%;
 }
 
-body .btn-bg.bg-2 .btn-2 button:hover {
-  background: #008C95;
-  color: #fff;
-  border-radius: 4px;
-}
 
-body .btn-bg.bg-2 .btn-2 button.active {
+body .btn-bg.bg-2 .btn-2 button.active,
+body .btn-bg.bg-2 .btn-2 button:hover {
   background: #008C95;
   color: #fff;
   border-radius: 4px;
@@ -403,11 +401,6 @@ button {
   font-size: 1em;
 }
 
-.commentsection b,
-.commentsection p,
-.commentsection cite {
-  font-size: 0.9em;
-}
 
 .commentsection input[type=submit] {
   float: right;
@@ -421,7 +414,18 @@ button {
 }
 
 
-/******  MODALS ******/
+/***** commentsection *****/
+
+.commentsection b,
+.commentsection p,
+.commentsection cite {
+  font-size: 0.9em;
+}
+
+/***** single page end *****/
+
+
+/******  modals begin ******/
 
 .ng-invalid.ng-dirty {
   border-color: #FA787E;
@@ -431,7 +435,9 @@ button {
   border-color: #78FA89;
 }
 
-.loginmodal-container, .registermodal-container, .createmodal-container {
+.loginmodal-container,
+.registermodal-container,
+.createmodal-container {
   padding: 30px;
   max-width: 350px;
   width: 100% !important;
@@ -449,7 +455,9 @@ button {
   max-width: 550px !important;
 }
 
-.loginmodal-container h1, .registermodal-container h1, .createmodal-container h1 {
+.loginmodal-container h1,
+.registermodal-container h1,
+.createmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: SunAntwerpen_500;
@@ -463,7 +471,8 @@ button {
   margin-right: 0 !important;
 }
 
-.registermodal-container input[type=submit], .createmodal-container input[type=submit] {
+.registermodal-container input[type=submit],
+.createmodal-container input[type=submit] {
   width: 100%;
   display: block;
   margin-bottom: 10px;
@@ -523,10 +532,6 @@ button {
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-  /* border-radius: 3px; */
-  /* -webkit-user-select: none;
-  user-select: none; */
-}
 
 .modalCheckbox {
   margin-top: 15px;
@@ -537,8 +542,8 @@ button {
   font-weight: normal;
 }
 
-.loginmodal-submit, .registermodal-submit {
-  /* border: 1px solid #3079ed; */
+.loginmodal-submit,
+.registermodal-submit {
   border: 0px;
   border-radius: 4px;
   color: #fff;
@@ -548,26 +553,25 @@ button {
   font-family: SunAntwerpen_500;;
   font-size: 18px;
   margin-top: 15px;
-
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
-.loginmodal-container p, .registermodal-container p {
+.loginmodal-container p,
+.registermodal-container p {
   width: 45%;
   float: right;
   margin-top:25px;
 
 }
 
-.loginmodal-submit:hover, .registermodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
+.loginmodal-submit:hover,
+.registermodal-submit:hover {
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   background-color: #6ca6ac;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
-.loginmodal-container a, .registermodal-container a{
+.loginmodal-container a,
+.registermodal-container a{
   text-decoration: none;
   color: #7fc1c8;
   font-weight: 400;
@@ -576,6 +580,7 @@ button {
   opacity: 0.6;
   transition: opacity ease 0.5s;
 }
+
 
 textarea.form-control {
   border-radius: 0px;
@@ -592,9 +597,6 @@ select {
   width: 100%;
   border-radius: 0px;
 }
-/******** add project modal begin ********/
-
-
 
 .file-upload {
   background-color: #F7F7F7;
@@ -692,13 +694,9 @@ select {
 }
 
 
-
-
-/******** add project modal end ********/
-
 /******** modals end ********/
 
-/*footer begin*/
+/***** footer begin *****/
 
 .footer {
   width: 100%;
@@ -719,10 +717,10 @@ select {
   color: #008C95;
 }
 
-/*footer end*/
+/***** footer end *****/
 
 
-/*timeline begin*/
+/***** timeline begin *****/
 
 #timeline .timeline-item:after, #timeline .timeline-item:before {
   content: '';
@@ -1154,7 +1152,8 @@ table th, td {
 #overviewTab,
 #emailpreferencesTab,
 #leaderboardTab,
-#helpTab {
+#helpTab,
+#dashboardTab {
   padding: 20px;
   background: #fff;
   min-height: 460px;

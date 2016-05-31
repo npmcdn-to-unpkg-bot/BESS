@@ -7,7 +7,6 @@
         <tr>
           <th><h4>#</h4></th>
           <th><h4 class="textAlignLeft">Gebruikersnaam</h4></th>
-          <!-- <th><h4>Punten laatste 30 dagen</h4></th> -->
           <th><h4>Punten totaal</h4></th>
         </tr>
       </thead>
@@ -15,12 +14,14 @@
         <tr ng-repeat="leaderboard in user.leaderboards">
           <th scope="row">{{$index + 1}}</th>
           <td class="textAlignLeft">{{leaderboard.username}}</td>
-          <!-- <td>345</td> -->
           <td>{{leaderboard.score}}</td>
         </tr>
 
       </tbody>
     </table>
+
+
+<!-- pagination -->
 
     <ul class="pagination pagination-sm">
       <li><a href="">&laquo;</a></li>

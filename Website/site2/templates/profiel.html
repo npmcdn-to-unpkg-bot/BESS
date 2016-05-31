@@ -2,12 +2,12 @@
   <div class="row profile">
     <div class="col-md-3">
       <div class="profile-sidebar radius shadowDepth0">
-        <!-- SIDEBAR USERPIC -->
+        <!-- sidebar userpic-->
         <div class="profile-userpic">
           <i class="fa fa-user fa-5x" aria-hidden="true"></i>
         </div>
-        <!-- END SIDEBAR USERPIC -->
-        <!-- SIDEBAR USER TITLE -->
+
+        <!-- sidebar user title -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
             {{user.firstname}} {{user.lastname}}
@@ -16,44 +16,51 @@
             Admin
           </div>
         </div>
-        <!-- END SIDEBAR USER TITLE -->
 
-        <!-- SIDEBAR MENU -->
+
+        <!-- sidebar menu -->
         <div class="profile-usermenu">
           <ul class="nav" id="tab-content">
             <li class="active">
               <a data-target="#overviewTab" data-toggle="tab">
                 <i class="glyphicon glyphicon-home"></i>
                 Overzicht </a>
-              </li>
-              <li>
-                <a data-target="#emailpreferencesTab" data-toggle="tab">
-                  <i class="fa fa-envelope"></i>
+            </li>
+            <li>
+              <a data-target="#emailpreferencesTab" data-toggle="tab">
+                <i class="fa fa-envelope"></i>
                   Emailvoorkeuren </a>
-                </li>
-                <li>
-                  <a data-target="#leaderboardTab" data-toggle="tab">
-                    <i class="fa fa-trophy"></i>
-                    Leaderboard </a>
-                  </li>
-                  <li>
-                    <a data-target="#helpTab" data-toggle="tab">
-                      <i class="fa fa-exchange"></i>
-                      A-punten </a>
-                    </li>
-                  </ul>
-                </div>
+            </li>
+            <li>
+              <a data-target="#leaderboardTab" data-toggle="tab">
+                <i class="fa fa-trophy"></i>
+                  Leaderboard </a>
+            </li>
+            <li>
+              <a data-target="#helpTab" data-toggle="tab">
+                <i class="fa fa-exchange"></i>
+                  A-punten </a>
+            </li>
+            <li>
+              <a data-target="#dashboardTab" data-toggle="tab">
+                  <i class="fa fa-tachometer"></i>
+                    Dashboard </a>
+            </li>
+          </ul>
+        </div>
                 <!-- END MENU -->
-              </div>
-            </div>
+
+                
+      </div>
+    </div>
+
 
 
 
 
             <div class="col-md-9 tab-content profile-content radius shadowDepth0">
 
-
-
+              <!-- content field overview-->
 
               <div class="tab-pane active" id="overviewTab">
                 <div class="table-responsive">
@@ -87,6 +94,7 @@
               </div>
 
 
+              <!-- content field emailpreferences-->
 
               <div class="tab-pane" id="emailpreferencesTab">
                 <div class="preferences">
@@ -97,8 +105,8 @@
                     <div class="reminder-email">
                       <div class="checkbox">
                         <label><input type="checkbox" value=""> <b>Niewe projecten e-mails</b> </br>
-                        Blijf op de hoogte van de laatste nieuwe projecten
-                      </label>
+                          Blijf op de hoogte van de laatste nieuwe projecten
+                        </label>
 
                       </div>
                     </div>
@@ -106,8 +114,8 @@
                     <div class="reminder-email">
                       <div class="checkbox">
                         <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                        Blijf op de hoogte van dingen die je misschien gemist hebt
-                      </label>
+                          Blijf op de hoogte van dingen die je misschien gemist hebt
+                        </label>
 
                       </div>
                     </div>
@@ -115,8 +123,8 @@
                     <div class="reminder-email">
                       <div class="checkbox">
                         <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                        Blijf op de hoogte van dingen die je misschien gemist hebt
-                      </label>
+                          Blijf op de hoogte van dingen die je misschien gemist hebt
+                        </label>
 
                       </div>
                     </div>
@@ -124,8 +132,8 @@
                     <div class="reminder-email">
                       <div class="checkbox">
                         <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                        Blijf op de hoogte van dingen die je misschien gemist hebt
-                      </label>
+                          Blijf op de hoogte van dingen die je misschien gemist hebt
+                        </label>
 
                       </div>
                     </div>
@@ -136,13 +144,20 @@
                 </div>
               </div>
 
+              <!-- content field leaderboard-->
+
               <div class="tab-pane" id="leaderboardTab">
                 <leaderboard></leaderboard>
               </div>
 
+              <!-- content field help-->
               <div class="tab-pane" id="helpTab">
                 Wissel hier je a-punten in.
               </div>
+
+              <!-- <div class="tab-pane" id="dashboardTab">
+                Overzicht van de antwoorden op de vragen
+              </div> -->
 
             </div>
 
