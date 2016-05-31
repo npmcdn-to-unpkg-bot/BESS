@@ -83,7 +83,9 @@ body {
   font-weight: 300;
 }
 
-#logo {
+#logo img {
+  width:250px; /* you can use % */
+  height: auto;
   margin: 30px 0px;
 }
 
@@ -475,8 +477,8 @@ td-card img {
 .loginBackground {
   background-color: white;
   height: 100%;
-  background-color: #000;
-    background-image: url(/img/Antwerpen_MAS_m.jpg);
+
+    background-image: url(../img/Antwerpen_MAS_m.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -493,10 +495,11 @@ td-card img {
 }
 
 .loginLogo img {
-
+  width:250px; /* you can use % */
+  height: auto;
   display: block;
   position: relative;
-  margin-left: 18%;
+  margin-left: 14%;
   top: -90px;
 }
 
