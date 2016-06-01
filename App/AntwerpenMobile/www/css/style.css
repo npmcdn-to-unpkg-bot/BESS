@@ -17,7 +17,7 @@
   font-style: normal;
 }
 
-
+/* FONT AWESOME */
 @font-face {
     font-family: 'FontAwesome';
     src:url('../lib/ionic/fonts/fontawesome-webfont.eot');
@@ -30,7 +30,7 @@
 }
 
 
-
+/* GLOBAL */
 
 .title {
     font-family: "Antwerpen" !important;
@@ -53,7 +53,10 @@ h3 {
 body {
     font-family: "Arial" !important;
     line-height: 150%;
+    cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
+
+/* START OF INTRO */
 
 .slider-pager-page {
   color: grey !important;
@@ -67,9 +70,6 @@ body {
 }
 
 
-body {
-  cursor: url('http://ionicframework.com/img/finger.png'), auto;
-}
 .slider {
   height: 100%;
 }
@@ -84,7 +84,7 @@ body {
 }
 
 #logo img {
-  width:250px; /* you can use % */
+  width:250px;
   height: auto;
   margin: 0px 0px;
 }
@@ -114,7 +114,7 @@ body {
 
 
 
-/* SLIDERS INTRO */
+
 
 .slider-slide p {
  margin-left: 10px;
@@ -227,6 +227,10 @@ body {
    top: -40px;
 }
 
+/*  END OF INTRO */
+
+
+/* START OF TUTORIAL MODAL */
 
 
 .button-in-footer {
@@ -471,10 +475,6 @@ td-card img {
 
 /*LOGIN */
 
-.blur {
-
-
-}
 
 .login-page .form {
   top: -100px;
@@ -500,7 +500,7 @@ td-card img {
 }
 
 .loginLogo img {
-  width:250px; /* you can use % */
+  width:250px;
   height: auto;
   display: block;
   position: relative;
@@ -515,6 +515,9 @@ td-card img {
   z-index: 5;
 
 }
+
+/* FORM STYLING on login.html */
+
 .form h1 {
   font-family: "Antwerpen", sans-serif;
   margin-bottom: 20px;
@@ -614,6 +617,21 @@ input:-webkit-autofill {
 .card-icon {
   font-size: 2em !important;
   color: #008C95;
+}
+
+/*FORM VALIDATION */
+input.ng-dirty.ng-invalid {
+  border-color: #e9322d;
+  background:rgba(242, 139, 135, 0.47)
+}
+
+input.ng-dirty {
+  background: #f2f2f2;
+}
+
+.full-image{
+  max-height: 250px !important;
+  object-fit: cover;
 }
 
 /*PROJECT DETAIL */
@@ -724,19 +742,4 @@ body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div 
     margin-right: auto;
     margin-bottom: 20%;
     border-radius: 4em 4em 4em / 4em 4em;
-}
-
-/*FORM VALIDATION */
-input.ng-dirty.ng-invalid {
-  border-color: #e9322d;
-  background:rgba(242, 139, 135, 0.47)
-}
-
-input.ng-dirty {
-  background: #f2f2f2;
-}
-
-.full-image{
-  max-height: 250px !important;
-  object-fit: cover;
 }
