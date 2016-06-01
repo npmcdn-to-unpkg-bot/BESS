@@ -497,7 +497,7 @@
         questions.updatescore();
       }, function myError(response) {
         console.log("Antwoord toevoegen failed!");
-        toastr.error('Er is iets misgelopen, uw antwoord is niet toegevoegd.', 'Mislukt!');
+        toastr.warning('Je moet inloggen om de vragenlijst te beantwoorden.', 'Oei!');
       });
     };
 
@@ -511,7 +511,7 @@
               questiontotal: totalAnswers,
             }
           }).then(function mySucces(response) {
-            
+
 
           }, function myError(response) {
             toastr.error('Er is iets misgelopen, uw score is niet geupdate.', 'Mislukt!');
