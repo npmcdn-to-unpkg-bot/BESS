@@ -1,3 +1,4 @@
+//everything to do with images is in this javascript file / angular module
 var imageToUpload;
 
 function readURL(input) {
@@ -12,7 +13,7 @@ function readURL(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
-        console.log(input.files);
+        // console.log(input.files);
         imageToUpload = input.files[0];
 
     } else {
@@ -31,9 +32,9 @@ $('.image-upload-wrap').bind('dragover', function() {
 $('.image-upload-wrap').bind('dragleave', function() {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
-
+// activate slick carrousel
 function activateslick() {
-    console.log("slick");
+    // console.log("slick");
     $('.slickimages').slick({
         dots: true,
         infinite: true,
@@ -41,10 +42,10 @@ function activateslick() {
         centerMode: true,
         variableWidth: true,
         autoplay: true,
-        responsive: [{
+        responsive:
+        [{
             breakpoint: 990,
             settings: {
-
                 adaptiveHeight: true
             }
         }, {
@@ -65,16 +66,18 @@ function activateslick() {
 
     app.controller("imageController", function($routeParams, $http, $scope, $location, $route) {
         var images = this;
+        //get projectid from url
         var projectId = $scope.projectId = $routeParams.projectId;
 
+        //with this function you can upload an image for a project
         images.upload = function() {
-            console.log("click");
-            console.log(imageToUpload);
-            console.log("projectId = " + projectId);
+
+            // console.log("click");
+            // console.log(imageToUpload);
+            // console.log("projectId = " + projectId);
 
             var form = new FormData();
             form.append("image", imageToUpload);
-
             var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -90,90 +93,57 @@ function activateslick() {
                 "data": form
             }
 
+            //using jquery ajax call for image upload because angular ajax call gave errors
             $.ajax(settings).then(function mySucces(response) {
-                console.log("foto uploaden succesvol");
+                //console.log("foto uploaden succesvol");
                 removeUpload();
                 //$('#imageupload-modal').modal('hide');
                 location.reload();
             }, function myError(response) {
-                console.log("foto uploaden failed");
+                //console.log("foto uploaden failed");
             });
-
-            // $http({
-            //   async: true,
-            //   crossDomain: true,
-            //   method : "POST",
-            //   url : "http://edwardvereertbrugghen.multimediatechnology.be/api/image/add/"+ projectId +"?token=" + localStorage.token,
-            //   processData: false,
-            //   contentType: false,
-            //   mimeType: 'multipart/form-data',
-            //   headers: {
-            //     'cache-control': "no-cache",
-            //   },
-            //   data: {
-            //     image: imageToUpload
-            //   }
-            // }).then(function mySucces(response) {
-            //   console.log("foto uploaden succesvol");
-            //   $('#imageupload-modal').modal('hide');
-            //   $location.path('/projecten/' + projectId);
-            // }, function myError(response) {
-            //   console.log("foto uploaden failed");
-            // });
         };
 
+        //get images per project
         images.get = function() {
-
             $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/" + projectId)
                 .then(function mySucces(response) {
+                    //activate slick carrousel
                     activateslick();
-                    console.log(response.data.images);
+                    // console.log(response.data.images);
                     images.all = response.data.images;
                     images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
                     for (var i = 0; i < response.data.images.length; i++) {
+                        //add images to slick carrousel
                         $('.slickimages').slick('slickAdd', '<img src="http://edwardvereertbrugghen.multimediatechnology.be/uploads/' + response.data.images[i].filename + '" alt="image"/>');
                         $(window).trigger('resize');
                     }
 
                 }, function myError(response) {
-                    console.log("image fetch failed probably because image does not exist yet.");
+                    // console.log("image fetch failed probably because image does not exist yet.");
                     images.all = null;
                     images.firstone = null;
 
                 });
-            // .then(function(response) {
-            //   console.log(response.data.images);
-            //   images.all = response.data.images;
-            //   images.firstone = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[0].filename;
-            // });
         };
 
+        //get one image for projects overview cards
         images.getfirstbyid = function(gid) {
             images.firstonebyid = [];
             $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/" + gid)
                 .then(function mySucces(response) {
 
                     if (response.data.images) {
-
                         images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
-                        console.log("gid adres image = " + images.getfirstbyid[gid]);
+                        // console.log("gid adres image = " + images.getfirstbyid[gid]);
                     } else {
-                        console.log("image fetch failed probably because image does not exist yet.");
+                        // console.log("image fetch failed probably because image does not exist yet.");
                         images.firstonebyid[gid] = null;
                     }
-
                 }, function myError(response) {
-                    console.log("sever error.");
+                    // console.log("sever error.");
                     images.firstonebyid[gid] = null;
                 });
-
-
         };
-
-
-
     });
-
-
-
 })(jQuery);
