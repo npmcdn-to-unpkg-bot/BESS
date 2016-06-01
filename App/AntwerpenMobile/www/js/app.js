@@ -1,7 +1,7 @@
 angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.filter', 'ngAnimate'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-
+//V
   $stateProvider
   .state('login', {
     url: '/login',
@@ -30,10 +30,14 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     controller: 'ProjectDetailTinderCtrl'
   });
 
+  //On startup or unknown state always route to /login
   $urlRouterProvider.otherwise("/login");
 
-  //Conformiteiten rond IOS vs Android
+  //Conformities Android and IOS
+  //In case of tabs, move them to the bottom on Android and IOS
   $ionicConfigProvider.tabs.position('bottom');
+
+  //Always center title in navbar to center on Android and IOS
   $ionicConfigProvider.navBar.alignTitle('center');
   $ionicConfigProvider.backButton.previousTitleText(true).text('').icon('ion-android-arrow-back');
 
@@ -41,6 +45,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
 })
 
+//Directive to use on ion-view when scrolling is not allowed
 .directive('noScroll', function() {
   return {
     restrict: 'A',
@@ -52,13 +57,14 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   }
 })
 
-
+// START of LoginCtrl (view: login.html)
 .controller('LoginCtrl', function($scope, $state, $http, $ionicHistory) {
 
   // Called to navigate to the main app
   $scope.login = function() {
     $state.go('intro');
   };
+  // Called to toggle between registerform and loginform
   $scope.formToggle = function() {
     $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
   }
@@ -69,6 +75,8 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
   var user = this;
   $scope.loginFailed = false;
+
+  // HTTP Post function to log in a user
   user.login = function(email, password){
     $http({
       method : "POST",
@@ -88,6 +96,8 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   }
 
   $scope.registerFailed = false;
+
+  // HTTP Post function to register a user
   user.register = function(firstName, lastName, email, password){
 
     $http({
@@ -111,7 +121,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   };
 
 
-
+  // HTTP Request to get all loggin in user details
   user.getData = function(){
     if (localStorage.token) {
       $http({
@@ -133,16 +143,17 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
       });
     }
   };
-
-
 })
+// END of LoginCtrl
+
+
+// START of IntroCtrl (view: intro.html)
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate) {
 
   // Called to navigate to the main app
   $scope.startApp = function() {
     $state.go('main');
-
   };
   $scope.next = function() {
     $ionicSlideBoxDelegate.next();
@@ -155,32 +166,39 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   $scope.slideChanged = function(index) {
     $scope.slideIndex = index;
   };
-
-
 })
 
+// END of IntroCtrl
+
+// START of MainCtrl (view: main.html)
+
 .controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
+
+  // Variable for showing the date in projectCard
   $scope.dateLimit = 10;
 
   $scope.toIntro = function(){
     $state.go('intro');
   }
 
-
-
-
-  //Loading
+  // Show loading stuff while HTTP-service is being processed.
   $ionicLoading.show({
     template: 'Loading...'
   });
-  //API Call voor alle projecten
+
+  // API Call to get all projects
   HttpService.getProjects()
   .then(function(response) {
     $scope.projects = response;
+
+    // Remove loading plate when HTTP-service is completed
     $ionicLoading.hide();
   });
 })
 
+// END of MainCtrl
+
+// START of ProjectDetailCtrl (view: project-detail.html)
 .controller('ProjectDetailCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory, $ionicNavBarDelegate, $ionicLoading) {
   var projectId = $stateParams.projectId;
   $scope.projectId = projectId;
@@ -193,7 +211,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $ionicNavBarDelegate.title("Projecten");
   }
 
-  //Loading
+  // Show loading stuff while HTTP-service is being processed.
   $ionicLoading.show({
     template: 'Loading...'
   });
@@ -201,15 +219,15 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   HttpService.getProjectDetail(projectId)
   .then(function(response) {
     $scope.projectDetail = response.project;
+
+    // Remove loading plate when HTTP-service is completed
     $ionicLoading.hide();
   });
-
-
-
-
-
 })
 
+// END of ProjectDetaitCtrl
+
+// START of ProjectDetailTinderCtrl (view: project-detail-tinder.html)
 
 .controller('ProjectDetailTinderCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $ionicHistory) {
   var projectId = $stateParams.projectId;
@@ -218,23 +236,26 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $ionicHistory.goBack();
   }
 
-
-
   HttpService.getProjectDetail(projectId)
   .then(function(response) {
     $scope.projectDetail = response.project;
     console.log($scope.projectDetail);
   });
 
+
   HttpService.getQuestionsByProject(projectId)
   .then(function(response) {
     $scope.questions = response.questions;
+
+    // All questions from a project being added into Cardtypes
     var cardTypes = $scope.questions;
+
+    // Boolean to check if there are questions unanswered or not
     $scope.remainingQuestions = false;
 
     $scope.cards = [];
 
-
+    // Questions being added to array with only yes/no answers
     $scope.addCard = function(i) {
 
       if (cardTypes[i].kind ==='yesno') {
@@ -245,7 +266,6 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
       } else {
 
       }
-
     }
 
     for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
@@ -273,7 +293,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $scope.remainingQuestions = true;
   });
 
-
+  // Modal when clicked on the button in bottom of view (tutorial)
   $ionicModal.fromTemplateUrl('templates/modal-tinder.html', {
     scope: $scope
   }).then(function(modal) {
@@ -284,12 +304,9 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     $scope.modal.show();
   };
 
+  // END of ProjectDetailTinderCtrl
+
   /* CARD-SECTION*/
-
-
-
-
-
 })
 
 .controller('ImageCtrl', function($scope, $state, $stateParams, HttpService, $ionicModal, $http) {
@@ -319,7 +336,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 })
 
 
-
+// HTTP SERVICES FOR API CALLS
 .service('HttpService', function($http) {
   return {
     getProjects: function() {
