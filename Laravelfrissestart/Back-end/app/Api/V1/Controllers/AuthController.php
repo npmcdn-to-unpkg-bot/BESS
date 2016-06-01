@@ -17,66 +17,67 @@ use Dingo\Api\Exception\ValidationHttpException;
 class AuthController extends Controller
 {
     use Helpers;
-
+    //login only email and password is needed rest of request parameters will be ignored
     public function login(Request $request)
     {
         $credentials = $request->only(['email', 'password']);
-
+        //use validator function to check if credentials match a user else return error
         $validator = Validator::make($credentials, [
             'email' => 'required',
             'password' => 'required',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             throw new ValidationHttpException($validator->errors()->all());
         }
 
         try {
-            if (! $token = JWTAuth::attempt($credentials)) {
+            if (!$token = JWTAuth::attempt($credentials)) {
                 return $this->response->errorUnauthorized();
             }
         } catch (JWTException $e) {
             return $this->response->error('could_not_create_token', 500);
         }
-
+        //the JWT token will be returned if email and password are correct
         return response()->json(compact('token'));
     }
 
     public function signup(Request $request)
-    {
+    {   //signupfields are written in boilerplate config file
         $signupFields = Config::get('boilerplate.signup_fields');
+        //if this is true in boilerplate config after signup JWT token will be released so user is immediately logged in.
+        // can easily be changed in boilerplate config
         $hasToReleaseToken = Config::get('boilerplate.signup_token_release');
 
         $userData = $request->only($signupFields);
 
         $validator = Validator::make($userData, Config::get('boilerplate.signup_fields_rules'));
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             throw new ValidationHttpException($validator->errors()->all());
         }
-
+        //create user in user table
         User::unguard();
         $user = User::create($userData);
         User::reguard();
 
-        if(!$user->id) {
+        if (!$user->id) {
             return $this->response->error('could_not_create_user', 500);
         }
 
-        if($hasToReleaseToken) {
+        if ($hasToReleaseToken) {
             return $this->login($request);
         }
-        
         return $this->response->created();
     }
-
+    //recovery will be sent with mailserver, no mailserver to test with at the moment
     public function recovery(Request $request)
     {
         $validator = Validator::make($request->only('email'), [
-            'email' => 'required'
+            'email' => 'required',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             throw new ValidationHttpException($validator->errors()->all());
         }
 
@@ -91,7 +92,7 @@ class AuthController extends Controller
                 return $this->response->errorNotFound();
         }
     }
-
+    //reset function also needs a mailserver so could not be tested
     public function reset(Request $request)
     {
         $credentials = $request->only(
@@ -104,10 +105,10 @@ class AuthController extends Controller
             'password' => 'required|confirmed|min:6',
         ]);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             throw new ValidationHttpException($validator->errors()->all());
         }
-        
+
         $response = Password::reset($credentials, function ($user, $password) {
             $user->password = $password;
             $user->save();
@@ -115,9 +116,10 @@ class AuthController extends Controller
 
         switch ($response) {
             case Password::PASSWORD_RESET:
-                if(Config::get('boilerplate.reset_token_release')) {
+                if (Config::get('boilerplate.reset_token_release')) {
                     return $this->login($request);
                 }
+
                 return $this->response->noContent();
 
             default:
