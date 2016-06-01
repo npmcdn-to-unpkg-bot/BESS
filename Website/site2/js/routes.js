@@ -51,7 +51,7 @@
         var spproject = this;
         // get project id from url
         var projectid = $scope.projectId = $routeParams.projectId;
-        console.log("id= ", projectid);
+        // console.log("id= ", projectid);
         $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/projects/" + projectid)
             .then(function(response) {
                 //console.log(response.data.project);
@@ -84,7 +84,7 @@
         var projects = this;
         $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/projects")
             .then(function(response) {
-                console.log(response.data);
+                // console.log(response.data);
                 projects.all = response.data;
             });
     });

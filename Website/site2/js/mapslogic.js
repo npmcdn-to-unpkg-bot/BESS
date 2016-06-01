@@ -21,10 +21,10 @@
     mapslogic.getMapCreate = function() {
       if (mapcreate) {
         mapcreate.refresh;
-        console.log("mapcreate bestaat al");
+        // console.log("mapcreate bestaat al");
         $(window).trigger('resize');
       } else {
-        console.log("mapcreate word gemaakt");
+        // console.log("mapcreate word gemaakt");
         mapcreate = new GMaps({
           el: '#mapcreate',
           lat: 51.2194475,
@@ -89,7 +89,7 @@
           },
         });
       } else {
-        console.log("nog geen locatie ingesteld");
+        // console.log("nog geen locatie ingesteld");
       }
 
     };
@@ -116,10 +116,10 @@
     mapslogic.getMapUpdate = function() {
       if (mapupdate) {
         mapupdate.refresh;
-        console.log("mapupdate bestaat al");
+        // console.log("mapupdate bestaat al");
         $(window).trigger('resize');
       } else {
-        console.log("mapupdate word gemaakt");
+        // console.log("mapupdate word gemaakt");
         mapupdate = new GMaps({
           el: '#mapupdate',
           lat: 51.2194475,
@@ -131,8 +131,8 @@
           click: function(e) {
             mapslogic.latupdate = e.latLng.lat();
             mapslogic.lngupdate = e.latLng.lng();
-            console.log("lng = " + mapslogic.latupdate);
-            console.log("lng = " + mapslogic.lngupdate);
+            // console.log("lng = " + mapslogic.latupdate);
+            // console.log("lng = " + mapslogic.lngupdate);
             mapupdate.removeMarkers();
             mapupdate.addMarker({
               lat: e.latLng.lat(),
