@@ -22,7 +22,25 @@
         <div class="col-sm-2">
         </div>
         <div class="col-sm-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis atque dolores aperiam ea ducimus, consequuntur, nisi impedit veritatis facere voluptatibus recusandae doloremque optio rerum error nemo velit, rem natus expedita.
+
+            <div class="col-sm-6">
+
+            </div>
+
+            <div class="col-sm-6">
+              <h2>Welkom bij <span style="color: #008C95">IN</span>SPRAAK</h2>
+                Jaarlijks worden er in de stad Antwerpen tientallen projecten opgestart, die het dagelijk leven erin aangenamer horen te maken. Om nog meer te slagen in dit opzet lanceerden we INSPRAAK.
+                </br>
+                </br>
+                Met dit nieuwe initiatief tracht de stad Antwerpen nóg beter met zijn inwoners te communiceren en de inspraak rond concrete projecten te organiseren. </br>
+                Op deze site vind u alle projecten die gestart zijn of gestart zullen worden in de nabije toekomst.
+                Hierbij is er telkens de mogelijkheid u mening te geven door vragen in te vullen over bepaalde aspecten ervan en vindt u er een tijdlijn die de belangrijkste mijlpalen in het proces van dit project weergeeft.
+              </br>
+              </br>
+                Terugkerende gebruikers worden beloond. Voor elke vraag die u invuldt krijgt u punten, deze kunnen dan gewisseld worden voor A-punten waarmee u in de stad Antwerpen van allerlei voordelen kunt profiteren.
+            </div>
+
+
         </div>
         <div class="col-sm-2">
         </div>
@@ -44,7 +62,7 @@
         <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
             <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
 
-              <!-- project photo, if no photo found => 'Antwerpen' -->
+                <!-- project photo, if no photo found => 'Antwerpen' -->
                 <div class="card radius shadowDepth1 hoverable">
                     <div class="card__image border-tlr-radius">
                         <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">

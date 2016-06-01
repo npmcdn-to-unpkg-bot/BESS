@@ -151,7 +151,7 @@ h2 {
 }
 .section2 {
     height: 50vh;
-    text-align: center;
+    /*text-align: center;*/
 }
 .section3 {
     min-height: 50vh;
