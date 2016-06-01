@@ -1,47 +1,47 @@
 <ion-view hide-back-button="true" view-title="Projecten">
   <ion-nav-bar>
     <ion-nav-title>
-        Projecten
+      Projecten
     </ion-nav-title>
-</ion-nav-bar>
+  </ion-nav-bar>
   <ion-content ng-controller="ImageCtrl as images" class="has-header main-content">
     <div class="projectCard" ng-repeat="project in projects">
-    <a class="projectCard" href="#/main/project/{{project.id}}">
-    <div class="list card projectCard" >
-      <div class="item item-avatar">
+      <a class="projectCard" href="#/main/project/{{project.id}}">
+        <div class="list card projectCard">
+          <div class="item item-avatar">
 
-          <img src="./css/images/A-logo.png" href="#/main/project/{{project.id}}">
+            <img src="./css/images/A-logo.png" href="#/main/project/{{project.id}}">
 
-          <h2>{{project.name}}</h2>
+            <h2>{{project.name}}</h2>
 
-          <p>{{project.created_at | limitTo:dateLimit}}</p>
+            <p>{{project.created_at | limitTo:dateLimit}}</p>
 
-      </div>
-
-      <div class="item item-body" ng-init="images.getfirstbyid(project.id)">
-
-          <img ng-hide="images.firstonebyid[project.id]" class="full-image" src="http://placehold.it/500x500">
-          <img ng-show="images.firstonebyid[project.id]" class="full-image" src="{{images.firstonebyid[project.id]}}">
-
-          <div class="row">
-            <div class="col">
-              <h4><span class="card-icon"><i class="ion-location"></i></span> <span>{{project.location}}</span></h4>
-            </div>
-            <div class="col">
-              <h4><span class="card-icon"><i class="ion-clipboard"></i></span> <span>{{project.category}}</span></h4>
-            </div>
           </div>
-          <p>
+
+          <div class="item item-body" ng-init="images.getfirstbyid(project.id)">
+
+            <img ng-hide="images.firstonebyid[project.id]" class="full-image" src="http://placehold.it/500x500">
+            <img ng-show="images.firstonebyid[project.id]" class="full-image" src="{{images.firstonebyid[project.id]}}">
+
+            <div class="row">
+              <div class="col">
+                <h4><span class="card-icon"><i class="ion-location"></i></span> <span>{{project.location}}</span></h4>
+              </div>
+              <div class="col">
+                <h4><span class="card-icon"><i class="ion-clipboard"></i></span> <span>{{project.category}}</span></h4>
+              </div>
+            </div>
+            <p>
 
 
 
 
-          </p>
+            </p>
 
-      </div>
+          </div>
+        </div>
     </div>
-  </div>
-      <!--
+    <!--
       <div class="item projectCard-button">
         <a href="#/main/project/{{project.id}}">
         <button class="button button-block button-positive button-antwerpen">

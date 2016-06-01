@@ -1,12 +1,12 @@
 <ion-view>
   <ion-nav-title>
-      Project: {{projectDetail.id}}
+    Project: {{projectDetail.id}}
   </ion-nav-title>
   <ion-nav-buttons side="left">
-        <button class="button-clear navbuttonarrow" ng-click="toMain()">
-          <i class="icon ion-ios-arrow-back"></i>
-        </button>
-    </ion-nav-buttons>
+    <button class="button-clear navbuttonarrow" ng-click="toMain()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
 
   <ion-content ng-controller="ImageCtrl as images">
     <div ng-init="images.getfirstbyid(projectId)">
@@ -19,21 +19,21 @@
         <div class="row">
 
         </div>
-      <div class="row">
-        <div class="col">{{projectDetail.description}}</div>
+        <div class="row">
+          <div class="col">{{projectDetail.description}}</div>
+        </div>
+        <div class="row title">
+          <div class="col AntwerpenFont"><i class="ion-location"></i></div>
+          <div class="col AntwerpenFont"><i class="ion-clipboard"></i></div>
+        </div>
+        <div class="row">
+          <div class="col">{{projectDetail.location}}</div>
+          <div class="col">{{projectDetail.category}}</div>
+        </div>
       </div>
-      <div class="row title">
-        <div class="col AntwerpenFont"><i class="ion-location"></i></div>
-        <div class="col AntwerpenFont"><i class="ion-clipboard"></i></div>
-      </div>
-      <div class="row">
-        <div class="col">{{projectDetail.location}}</div>
-        <div class="col">{{projectDetail.category}}</div>
-      </div>
-    </div>
-    <a href="#/main/project/tinder/{{projectId}}">
-    <button  type="button" name="button">STEMMEN</button>
-    </a>
+      <a href="#/main/project/tinder/{{projectId}}">
+        <button type="button" name="button">STEMMEN</button>
+      </a>
     </div>
 
 

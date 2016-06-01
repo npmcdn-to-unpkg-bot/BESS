@@ -1,34 +1,34 @@
 angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.filter', 'ngAnimate'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
-//V
+  //V
   $stateProvider
-  .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'user'
-  })
-  .state('intro', {
-    url: '/',
-    templateUrl: 'templates/intro.html',
-    controller: 'IntroCtrl'
-  })
-  .state('main', {
-    url: '/main',
-    templateUrl: 'templates/main.html',
-    controller: 'MainCtrl'
-  })
-  .state('project-detail', {
-    url: '/main/project/:projectId',
-    templateUrl: 'templates/project-detail.html',
-    controller: 'ProjectDetailCtrl'
-  })
-  .state('project-detail-tinder', {
-    url: '/main/project/tinder/:projectId',
-    templateUrl: 'templates/project-detail-tinder.html',
-    controller: 'ProjectDetailTinderCtrl'
-  });
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'user'
+    })
+    .state('intro', {
+      url: '/',
+      templateUrl: 'templates/intro.html',
+      controller: 'IntroCtrl'
+    })
+    .state('main', {
+      url: '/main',
+      templateUrl: 'templates/main.html',
+      controller: 'MainCtrl'
+    })
+    .state('project-detail', {
+      url: '/main/project/:projectId',
+      templateUrl: 'templates/project-detail.html',
+      controller: 'ProjectDetailCtrl'
+    })
+    .state('project-detail-tinder', {
+      url: '/main/project/tinder/:projectId',
+      templateUrl: 'templates/project-detail-tinder.html',
+      controller: 'ProjectDetailTinderCtrl'
+    });
 
   //On startup or unknown state always route to /login
   $urlRouterProvider.otherwise("/login");
@@ -60,91 +60,94 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 // START of LoginCtrl (view: login.html)
 .controller('LoginCtrl', function($scope, $state, $http, $ionicHistory) {
 
-  // Called to navigate to the main app
-  $scope.login = function() {
-    $state.go('intro');
-  };
-  // Called to toggle between registerform and loginform
-  $scope.formToggle = function() {
-    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-  }
-  //Disable back button after login $state.go
-  $ionicHistory.nextViewOptions({
-    disableBack: true
-  });
-
-  var user = this;
-  $scope.loginFailed = false;
-
-  // HTTP Post function to log in a user
-  user.login = function(email, password){
-    $http({
-      method : "POST",
-      url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/login",
-      data: {
-        email: email,
-        password: password,
-      }
-    }).then(function mySucces(response) {
-      $scope.loginFailed = false;
+    // Called to navigate to the main app
+    $scope.login = function() {
       $state.go('intro');
-      localStorage.setItem("token", response.data.token);
-      user.getData();
-    }, function myError(response) {
-      $scope.loginFailed = true;
-    });
-  }
-
-  $scope.registerFailed = false;
-
-  // HTTP Post function to register a user
-  user.register = function(firstName, lastName, email, password){
-
-    $http({
-      method : "POST",
-      url : "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/signup",
-      data: {
-        firstname: firstName,
-        name: lastName,
-        email: email,
-        password: password,
+    };
+    // Called to toggle between registerform and loginform
+    $scope.formToggle = function() {
+        $('form').animate({
+          height: "toggle",
+          opacity: "toggle"
+        }, "slow");
       }
-    }).then(function mySucces(response) {
-      $scope.registerFailed = true;
-      localStorage.setItem("token", response.data.token);
-      user.getData();
-      $state.go('intro');
-    }, function myError(response) {
-      $scope.registerFailed = true;
-      console.log("register failed");
+      //Disable back button after login $state.go
+    $ionicHistory.nextViewOptions({
+      disableBack: true
     });
-  };
 
+    var user = this;
+    $scope.loginFailed = false;
 
-  // HTTP Request to get all loggin in user details
-  user.getData = function(){
-    if (localStorage.token) {
+    // HTTP Post function to log in a user
+    user.login = function(email, password) {
       $http({
-        method: "GET",
-        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user?token=" + localStorage.token
+        method: "POST",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/login",
+        data: {
+          email: email,
+          password: password,
+        }
       }).then(function mySucces(response) {
-        user.loggedin = true;
-        localStorage.setItem("firstname", response.data.user.firstname);
-        localStorage.setItem("lastname", response.data.user.name);
-        localStorage.setItem("email", response.data.user.email);
-        localStorage.setItem("isAdmin", response.data.user.isAdmin);
-        localStorage.setItem("residence", response.data.user.residence);
-        user.firstname = localStorage.firstname;
-        user.isAdmin = localStorage.isAdmin;
-        console.log(user.firstname);
+        $scope.loginFailed = false;
+        $state.go('intro');
+        localStorage.setItem("token", response.data.token);
+        user.getData();
       }, function myError(response) {
-        console.log("User ophalen failed");
-        user.logout();
+        $scope.loginFailed = true;
       });
     }
-  };
-})
-// END of LoginCtrl
+
+    $scope.registerFailed = false;
+
+    // HTTP Post function to register a user
+    user.register = function(firstName, lastName, email, password) {
+
+      $http({
+        method: "POST",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/auth/signup",
+        data: {
+          firstname: firstName,
+          name: lastName,
+          email: email,
+          password: password,
+        }
+      }).then(function mySucces(response) {
+        $scope.registerFailed = true;
+        localStorage.setItem("token", response.data.token);
+        user.getData();
+        $state.go('intro');
+      }, function myError(response) {
+        $scope.registerFailed = true;
+        console.log("register failed");
+      });
+    };
+
+
+    // HTTP Request to get all loggin in user details
+    user.getData = function() {
+      if (localStorage.token) {
+        $http({
+          method: "GET",
+          url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user?token=" + localStorage.token
+        }).then(function mySucces(response) {
+          user.loggedin = true;
+          localStorage.setItem("firstname", response.data.user.firstname);
+          localStorage.setItem("lastname", response.data.user.name);
+          localStorage.setItem("email", response.data.user.email);
+          localStorage.setItem("isAdmin", response.data.user.isAdmin);
+          localStorage.setItem("residence", response.data.user.residence);
+          user.firstname = localStorage.firstname;
+          user.isAdmin = localStorage.isAdmin;
+          console.log(user.firstname);
+        }, function myError(response) {
+          console.log("User ophalen failed");
+          user.logout();
+        });
+      }
+    };
+  })
+  // END of LoginCtrl
 
 
 // START of IntroCtrl (view: intro.html)
@@ -177,7 +180,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   // Variable for showing the date in projectCard
   $scope.dateLimit = 10;
 
-  $scope.toIntro = function(){
+  $scope.toIntro = function() {
     $state.go('intro');
   }
 
@@ -188,12 +191,12 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
   // API Call to get all projects
   HttpService.getProjects()
-  .then(function(response) {
-    $scope.projects = response;
+    .then(function(response) {
+      $scope.projects = response;
 
-    // Remove loading plate when HTTP-service is completed
-    $ionicLoading.hide();
-  });
+      // Remove loading plate when HTTP-service is completed
+      $ionicLoading.hide();
+    });
 })
 
 // END of MainCtrl
@@ -217,12 +220,12 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   });
 
   HttpService.getProjectDetail(projectId)
-  .then(function(response) {
-    $scope.projectDetail = response.project;
+    .then(function(response) {
+      $scope.projectDetail = response.project;
 
-    // Remove loading plate when HTTP-service is completed
-    $ionicLoading.hide();
-  });
+      // Remove loading plate when HTTP-service is completed
+      $ionicLoading.hide();
+    });
 })
 
 // END of ProjectDetaitCtrl
@@ -237,61 +240,61 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   }
 
   HttpService.getProjectDetail(projectId)
-  .then(function(response) {
-    $scope.projectDetail = response.project;
-    console.log($scope.projectDetail);
-  });
+    .then(function(response) {
+      $scope.projectDetail = response.project;
+      console.log($scope.projectDetail);
+    });
 
 
   HttpService.getQuestionsByProject(projectId)
-  .then(function(response) {
-    $scope.questions = response.questions;
+    .then(function(response) {
+      $scope.questions = response.questions;
 
-    // All questions from a project being added into Cardtypes
-    var cardTypes = $scope.questions;
+      // All questions from a project being added into Cardtypes
+      var cardTypes = $scope.questions;
 
-    // Boolean to check if there are questions unanswered or not
-    $scope.remainingQuestions = false;
+      // Boolean to check if there are questions unanswered or not
+      $scope.remainingQuestions = false;
 
-    $scope.cards = [];
+      $scope.cards = [];
 
-    // Questions being added to array with only yes/no answers
-    $scope.addCard = function(i) {
+      // Questions being added to array with only yes/no answers
+      $scope.addCard = function(i) {
 
-      if (cardTypes[i].kind ==='yesno') {
-        var newCard = cardTypes[i];
-        //newCard.id = i;
-        //newCard.qId = cardTypes[i].id;
-        $scope.cards.push(angular.extend({}, newCard));
-      } else {
+        if (cardTypes[i].kind === 'yesno') {
+          var newCard = cardTypes[i];
+          //newCard.id = i;
+          //newCard.qId = cardTypes[i].id;
+          $scope.cards.push(angular.extend({}, newCard));
+        } else {
 
+        }
       }
-    }
 
-    for(var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
+      for (var i = 0; i < cardTypes.length; i++) $scope.addCard(i);
 
-    $scope.cardSwipedLeft = function(index, projectid, questionid) {
-      HttpService.answerNo(index, projectid, questionid);
-      console.log('Left swipe');
-      console.log('project id = ' +projectid +" question id= "+questionid);
-    }
-
-    $scope.cardSwipedRight = function(index, projectid, questionid) {
-      HttpService.answerYes(index, projectid, questionid);
-      console.log('Right swipe');
-      console.log('project id = ' +projectid +" question id= "+questionid);
-    }
-
-    $scope.cardDestroyed = function(index) {
-      $scope.cards.splice(index, 1);
-      if ($scope.cards.length == 0) {
-        $scope.remainingQuestions = true;
+      $scope.cardSwipedLeft = function(index, projectid, questionid) {
+        HttpService.answerNo(index, projectid, questionid);
+        console.log('Left swipe');
+        console.log('project id = ' + projectid + " question id= " + questionid);
       }
-      console.log('Card removed');
-    }
-  }, function myError(response) {
-    $scope.remainingQuestions = true;
-  });
+
+      $scope.cardSwipedRight = function(index, projectid, questionid) {
+        HttpService.answerYes(index, projectid, questionid);
+        console.log('Right swipe');
+        console.log('project id = ' + projectid + " question id= " + questionid);
+      }
+
+      $scope.cardDestroyed = function(index) {
+        $scope.cards.splice(index, 1);
+        if ($scope.cards.length == 0) {
+          $scope.remainingQuestions = true;
+        }
+        console.log('Card removed');
+      }
+    }, function myError(response) {
+      $scope.remainingQuestions = true;
+    });
 
   // Modal when clicked on the button in bottom of view (tutorial)
   $ionicModal.fromTemplateUrl('templates/modal-tinder.html', {
@@ -315,23 +318,22 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
   images.getfirstbyid = function(gid) {
     images.firstonebyid = [];
-    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/"+ gid)
-    .then(function mySucces(response) {
+    $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/image/project/" + gid)
+      .then(function mySucces(response) {
 
-      if (response.data.images) {
+        if (response.data.images) {
 
-        images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
-        console.log("gid adres image = "+ images.getfirstbyid[gid]);
-      }
-      else {
-        console.log("image fetch failed probably because image does not exist yet.");
+          images.firstonebyid[gid] = "http://edwardvereertbrugghen.multimediatechnology.be/uploads/" + response.data.images[response.data.images.length - 1].filename;
+          console.log("gid adres image = " + images.getfirstbyid[gid]);
+        } else {
+          console.log("image fetch failed probably because image does not exist yet.");
+          images.firstonebyid[gid] = null;
+        }
+
+      }, function myError(response) {
+        console.log("sever error.");
         images.firstonebyid[gid] = null;
-      }
-
-    }, function myError(response) {
-      console.log("sever error.");
-      images.firstonebyid[gid] = null;
-    });
+      });
   };
 })
 
@@ -341,34 +343,34 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   return {
     getProjects: function() {
       return $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/projects")
-      .then(function (response) {
-        console.log('Get projects', response);
-        return response.data;
-      });
+        .then(function(response) {
+          console.log('Get projects', response);
+          return response.data;
+        });
     },
     getProjectDetail: function(id) {
       // $http returns a promise, which has a then function, which also returns a promise.
       return $http.get('http://edwardvereertbrugghen.multimediatechnology.be/api/projects/' + id)
-      .then(function(response) {
-        // In the response, resp.data contains the result. Check the console to see all of the data returned.
-        console.log('Get Project detail', response);
-        return response.data;
-      });
+        .then(function(response) {
+          // In the response, resp.data contains the result. Check the console to see all of the data returned.
+          console.log('Get Project detail', response);
+          return response.data;
+        });
     },
     getQuestionsByProject: function(id) {
       // $http returns a promise, which has a then function, which also returns a promise.
       return $http.get(' http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/' + id)
-      .then(function(response) {
-        // In the response, resp.data contains the result. Check the console to see all of the data returned.
-        console.log('Get questions by project', response);
-        return response.data;
-      });
+        .then(function(response) {
+          // In the response, resp.data contains the result. Check the console to see all of the data returned.
+          console.log('Get questions by project', response);
+          return response.data;
+        });
     },
     answerYes: function(index, projectId, questionId) {
 
       $http({
-        method : "POST",
-        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
+        method: "POST",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
         data: {
           answer: "Ja",
           question_id: questionId,
@@ -383,8 +385,8 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
     answerNo: function(index, projectId, questionId) {
 
       $http({
-        method : "POST",
-        url : "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
+        method: "POST",
+        url: "http://edwardvereertbrugghen.multimediatechnology.be/api/answers?token=" + localStorage.token,
         data: {
           answer: " Nee",
           question_id: questionId,

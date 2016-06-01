@@ -1,5 +1,8 @@
 /* zachter zwart color: #244549; */
+
+
 /* Antwerpen Regular - HOOFDTITELS */
+
 @font-face {
   font-family: "Antwerpen";
   src: url("../lib/ionic/fonts/Antwerpen-Regular.eot?v=2.0.1");
@@ -9,6 +12,7 @@
 }
 
 /* Antwerpen SUN - INFORMATIE */
+
 @font-face {
   font-family: "SunAntwerpen Regular";
   src: url("../lib/ionic/fonts/SunAntwerpen_500.eot?v=2.0.1");
@@ -18,42 +22,39 @@
 }
 
 /* FONT AWESOME */
-@font-face {
-    font-family: 'FontAwesome';
-    src:url('../lib/ionic/fonts/fontawesome-webfont.eot');
-    src:url('../lib/ionic/fonts/fontawesome-webfont.eot') format('embedded-opentype'),
-        url('../lib/ionic/fonts/fontawesome-webfont.woff') format('woff'),
-        url('../lib/ionic/fonts/fontawesome-webfont.ttf') format('truetype'),
-        url('../lib/ionic/fonts/fontawesome-webfont.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../lib/ionic/fonts/fontawesome-webfont.eot');
+  src: url('../lib/ionic/fonts/fontawesome-webfont.eot') format('embedded-opentype'), url('../lib/ionic/fonts/fontawesome-webfont.woff') format('woff'), url('../lib/ionic/fonts/fontawesome-webfont.ttf') format('truetype'), url('../lib/ionic/fonts/fontawesome-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* GLOBAL */
 
 .title {
-    font-family: "Antwerpen" !important;
-    text-transform: uppercase;
+  font-family: "Antwerpen" !important;
+  text-transform: uppercase;
 }
 .navbuttons {
-    font-family: "SunAntwerpen Regular" !important;
-    text-transform: uppercase;
+  font-family: "SunAntwerpen Regular" !important;
+  text-transform: uppercase;
 }
-.navbuttons i, .navbuttons{
-    color: #008C95;
+.navbuttons i, .navbuttons {
+  color: #008C95;
 }
 h2 {
-    font-family: "SunAntwerpen Regular" !important;
+  font-family: "SunAntwerpen Regular" !important;
 }
 h3 {
-    font-family: "SunAntwerpen Regular" !important;
-    font-size: 2.5em !important;
+  font-family: "SunAntwerpen Regular" !important;
+  font-size: 2.5em !important;
 }
 body {
-    font-family: "Arial" !important;
-    line-height: 150%;
-    cursor: url('http://ionicframework.com/img/finger.png'), auto;
+  font-family: "Arial" !important;
+  line-height: 150%;
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
 }
 
 /* START OF INTRO */
@@ -62,14 +63,11 @@ body {
   color: grey !important;
 }
 .slider-pager-page.active {
-  color:  #008C95 !important;
+  color: #008C95 !important;
 }
-
 .title-center {
-    color:  #008C95 !important;
+  color: #008C95 !important;
 }
-
-
 .slider {
   height: 100%;
 }
@@ -78,17 +76,14 @@ body {
   color: #000;
   background-color: #fff;
   text-align: center;
-
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
-
 #logo img {
-  width:250px;
+  width: 250px;
   height: auto;
   margin: 0px 0px;
 }
-
 #list {
   width: 170px;
   margin: 30px auto;
@@ -96,8 +91,6 @@ body {
   font-size: 16px;
   position: relative;
   left: -40px;
-
-
 }
 #list ol {
   margin-top: 30px;
@@ -107,65 +100,51 @@ body {
   list-style: decimal;
   margin: 30px 0px;
 }
-
-.button.ng-hide{
-  display:none;
+.button.ng-hide {
+  display: none;
 }
-
-
 #list > h4 {
   position: relative;
   left: 40px;
 }
-
-
 .slider-slide p {
- margin-left: 10px;
- margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
 .intro-tip {
- font-size: 0.8em;
- margin-top: 60px;
- background-color: #008C95;
- padding-top: 0px;
- color: #FFF !important;
+  font-size: 0.8em;
+  margin-top: 60px;
+  background-color: #008C95;
+  padding-top: 0px;
+  color: #FFF !important;
 }
-
 .row.introButtons {
   padding-left: 30px;
   padding-right: 30px;
 }
-
-
 .positive-intro-button {
- margin-top: 30px;
- padding-top: 20px !important;
- padding-bottom: 20px !important;
- background-color: #31ce74;
- margin-right: 5px;
- color: #244549;
- font-family: "SunAntwerpen Regular" !important;
- font-size: 1.5em;
+  margin-top: 30px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: #31ce74;
+  margin-right: 5px;
+  color: #244549;
+  font-family: "SunAntwerpen Regular" !important;
+  font-size: 1.5em;
 }
-
 .negative-intro-button {
- margin-top: 30px;
- padding-top: 20px !important;
- padding-bottom: 20px !important;
- background-color: #e94043;
- margin-left: 5px;
- color: #244549;
- font-family: "SunAntwerpen Regular" !important;
- font-size: 1.5em;
+  margin-top: 30px;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: #e94043;
+  margin-left: 5px;
+  color: #244549;
+  font-family: "SunAntwerpen Regular" !important;
+  font-size: 1.5em;
 }
-
 .below-buttons {
- margin-top: 60px;
-
+  margin-top: 60px;
 }
-
-
 #pentagon {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -174,21 +153,18 @@ body {
   position: relative;
   top: 100px;
   left: 150px;
-  border: 36px solid rgba(0,0,0,0);
+  border: 36px solid rgba(0, 0, 0, 0);
   border-top: 100px solid #008C95;
   border-bottom: 0 solid #008C95;
   font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   -o-text-overflow: clip;
   text-overflow: clip;
   z-index: -5;
-
-
   /*-ms-transform: rotate(15deg); /* IE 9 */
   /*-webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
   /*transform: rotate(15deg);*/
 }
-
 #pentagon::before {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -199,35 +175,33 @@ body {
   content: "";
   bottom: 100px;
   left: -36px;
-  border: 90px solid rgba(0,0,0,0);
+  border: 90px solid rgba(0, 0, 0, 0);
   border-bottom: 70px solid #008C95;
   font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
+  color: rgba(0, 0, 0, 1);
   -o-text-overflow: clip;
   text-overflow: clip;
   text-shadow: none;
 }
-
 .pentalink {
-   text-decoration: none;
-   color: #fff;
-   font-family: "SunAntwerpen Regular";
-   position: relative;
-   top: 115px;
-   left: 85px;
-   font-size: 1.8em;
-
+  text-decoration: none;
+  color: #fff;
+  font-family: "SunAntwerpen Regular";
+  position: relative;
+  top: 115px;
+  left: 85px;
+  font-size: 1.8em;
 }
-
 .rotate {
- ms-transform: rotate(15deg); /* IE 9 */
-   webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-   transform: rotate(15deg);
+  ms-transform: rotate(15deg);
+  /* IE 9 */
+  webkit-transform: rotate(15deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(15deg);
 }
-
 #pentagondiv {
-    position: relative;
-   top: -40px;
+  position: relative;
+  top: -40px;
 }
 
 /*  END OF INTRO */
@@ -235,193 +209,147 @@ body {
 
 /* START OF TUTORIAL MODAL */
 
-
 .button-in-footer {
-
   margin-top: 0px !important;
   margon-bottom: 0px !important;
   background-color: #008C95 !important;
-
 }
-
 .bar-antwerpen, .button-antwerpen {
-    background-color:#008C95 !important;
-    border-color: #008C95 !important;
-    background-image: none !important;
+  background-color: #008C95 !important;
+  border-color: #008C95 !important;
+  background-image: none !important;
 }
-
 .button.button-antwerpen.active, .button.button-antwerpen.activated {
-  background-color: #03737a  !important;
+  background-color: #03737a !important;
 }
-
 .main-content {
   background-color: #f2f2f2;
 }
-
-
-
 .swipeTutorialGrid {
   text-align: center;
 }
-
 .swipeTutorialGrid i {
   font-size: 6em;
   color: #008C95;
 }
-
 .swipeTutorialGrid p {
   font-family: "SunAntwerpen Regular";
   font-size: 1.5em;
   line-height: 40px;
   color: #008C95;
 }
-
 .fixed-button-bottom {
   position: absolute;
   bottom: 0px;
   width: 95%;
   left: 2.5%;
 }
-
-.fixed-button-bottom button {
-
-}
-
+.fixed-button-bottom button {}
 .list:last-child.card {
   margin-bottom: 15px !important;
 }
-
 .projectCard {
   padding-bottom: 10px !important;
 }
-
-div.projectCard > div:nth-child(2) > div.row  div.col  {
+div.projectCard > div:nth-child(2) > div.row div.col {
   text-align: center !important;
   position: relative;
   left: 0px;
 }
-
 .projectCard-button {
   font-family: 'Antwerpen';
   text-transform: uppercase;
 }
-
 .projectCard h4 {
   font-size: 1em !important;
   font-family: 'SunAntwerpen Regular';
 }
-
 .projectCard h2 {
   font-family: 'Antwerpen' !important;
 }
-
 a.projectCard, .projectCard-button a {
-
   text-decoration: none;
 }
-
 .a-bar {
   background-color: black !important;
 }
-
 .loginCard {
   overflow: hidden !important;
   margin: 20px 0px !important;
   border-radius: 2px !important;
   background-color: #fff !important;
-
   padding-top: 1px !important;
   padding-bottom: 1px !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-
 }
-
 
 /* Card styling */
 
 td-cards {
-    display: block;
+  display: block;
 }
-
 td-card {
-    position: absolute;
-    left: 50%;
-    margin: 80px 0 40px -150px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #999;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 6px;
-    background-color: #f2f2f2;
-
+  position: absolute;
+  left: 50%;
+  margin: 80px 0 40px -150px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #999;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  background-color: #f2f2f2;
 }
-
-.cardContent {
-
-}
-
+.cardContent {}
 .noQuestions {
   font-size: 19em;
   position: absolute;
   top: 80px;
   line-height: 100px;
-
   padding-left: 10px;
   padding-right: 10px;
   left: 21%;
   color: rgba(212, 212, 212, 0.87);
 }
-
 .projectDetailTitle {
-    position: absolute;
-    margin: auto;
-    top: 475px;
-    left: 20%;
+  position: absolute;
+  margin: auto;
+  top: 475px;
+  left: 20%;
 }
-
 .projectDetailTitle h1 {
   font-family: 'Antwerpen';
   font-size: 3.5em;
 }
-
 body > ion-nav-view > ion-view:nth-child(4) > ion-content > div.scroll > div.padding-10px.projectDetail-info > div > div:nth-child(4) {
   text-align: center;
   font-family: 'SunAntwerpen-Regular', sans-serif !important;
 }
-
 span.a-color {
   color: #008C95;
 }
-
-
 .td-card .title {
-    height: 40px;
-    font-size: 20px;
-    padding: 15px;
-    text-align: center;
-
-
+  height: 40px;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
 }
-
 td-card .image {
-    position: absolute;
-    top: 40px;
-    width: 100%;
+  position: absolute;
+  top: 40px;
+  width: 100%;
 }
-
 td-card img {
-    height: 280px;
-    width: 100%;
-    border-radius: 6px;
+  height: 280px;
+  width: 100%;
+  border-radius: 6px;
 }
-
 .cardQuestion {
   padding-left: 30px;
   padding-right: 30px;
   top: 50px;
   position: relative;
   font-family: 'SunAntwerpen Regular';
-  font-size:1.5em;
+  font-size: 1.5em;
   line-height: 50px;
   text-align: center;
 }
@@ -429,55 +357,46 @@ td-card img {
 /* Overlay styling*/
 
 .overlayBox {
-    position: absolute;
-    left: 50%;
-    height: 100%;
-    width: 100%;
-    top: -80px;
-    opacity: 0;
-    margin: 80px 0 0 -149px;
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  top: -80px;
+  opacity: 0;
+  margin: 80px 0 0 -149px;
 }
-
 .boxed {
-    height: 50px;
-    width: 100px;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 30px;
+  height: 50px;
+  width: 100px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 30px;
 }
-
 .yes-text {
-    background-color: rgba(0,256,0,0.2);
+  background-color: rgba(0, 256, 0, 0.2);
 }
-
 .yesBox {
-    margin: 10% 60% 0% 10%;
-    border: 2px solid #4CAF50;
-    color: #4CAF50;
-    -webkit-transform: rotate(-25deg);
+  margin: 10% 60% 0% 10%;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  -webkit-transform: rotate(-25deg);
 }
-
 .no-text {
-    background-color: rgba(256,0,0,0.2);
+  background-color: rgba(256, 0, 0, 0.2);
 }
-
 .noBox {
-    margin: 10% 10% 0% 60%;
-    border: 2px solid #F44336;
-    color: #F44336;
-    -webkit-transform: rotate(25deg);
+  margin: 10% 10% 0% 60%;
+  border: 2px solid #F44336;
+  color: #F44336;
+  -webkit-transform: rotate(25deg);
 }
-
 .fade {
-    -webkit-transition: 0.2s opacity linear;
-    transition: 0.2s opacity linear;
-    opacity: 0;
+  -webkit-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  opacity: 0;
 }
-
-
 
 /*LOGIN */
-
 
 .login-page .form {
   top: -100px;
@@ -485,38 +404,33 @@ td-card img {
 .loginBackground {
   background-color: white;
   height: 100%;
-
-    background-image: url(../img/Antwerpen_MAS_m.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+  background-image: url(../img/Antwerpen_MAS_m.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: fixed;
   left: 0;
   right: 0;
-  top:0;
+  top: 0;
   z-index: 0;
 }
-
 .loginLogo img {
-  width:200px;
+  width: 200px;
   height: auto;
   display: block;
   position: relative;
   margin: auto;
   top: -90px;
 }
-
 .login-page {
   width: 340px;
   padding: 20% 0 0;
   margin: auto;
   z-index: 5;
-
 }
 
 /* FORM STYLING on login.html */
@@ -526,7 +440,6 @@ td-card img {
   margin-bottom: 20px;
   color: #008C95;
 }
-
 .form {
   top: -75px;
   position: relative;
@@ -538,7 +451,6 @@ td-card img {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
 .form input.inputName {
   width: 49% !important;
   display: inline-block;
@@ -558,9 +470,8 @@ td-card img {
   box-sizing: border-box;
   font-size: 18px !important;
 }
-
 input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px #f2f2f2 inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #f2f2f2 inset !important;
 }
 .form button {
   font-family: "Antwerpen", sans-serif;
@@ -576,7 +487,7 @@ input:-webkit-autofill {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus {
+.form button:hover, .form button:active, .form button:focus {
   background: #00a2ad;
 }
 .form .message {
@@ -593,128 +504,101 @@ input:-webkit-autofill {
 }
 
 /* VALIDATION */
+
 .login-failed, .register-failed {
   width: 100%;
   background-color: rgba(255, 102, 102, 0.88);
-  color:white;
+  color: white;
   border-radius: 5px;
   padding: 5px;
   opacity: 1;
 }
-
- .login-failed.ng-hide-remove, .register-failed.ng-hide-remove {
+.login-failed.ng-hide-remove, .register-failed.ng-hide-remove {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-
-.login-failed.ng-hide, .register-failed.ng-hide{
+.login-failed.ng-hide, .register-failed.ng-hide {
   opacity: 0;
 }
-
 .AntwerpenFont {
   font-family: "Antwerpen" !important;
   color: #008C95;
 }
-
 .card-icon {
   font-size: 2em !important;
   color: #008C95;
 }
 
 /*FORM VALIDATION */
+
 input.ng-dirty.ng-invalid {
   border-color: #e9322d;
-  background:rgba(242, 139, 135, 0.47)
+  background: rgba(242, 139, 135, 0.47)
 }
-
 input.ng-dirty {
   background: #f2f2f2;
 }
-
-.full-image{
+.full-image {
   max-height: 250px !important;
   object-fit: cover;
 }
 
 /*PROJECT DETAIL */
+
 .navbuttonarrow {
   color: #008C95 !important;
 }
-
-.text-white{
-  color:#fff;
+.text-white {
+  color: #fff;
 }
-
 .projectDetail-info {
   font-size: 18px;
-
 }
 .descriptioncard .row {
   padding: 0px !important;
 }
-
 .projectDetail-info .col {
-
   margin-left: 10px;
 }
-
-
-
 .projectDetail-info .col:first-child {
   margin-left: 0px;
 }
-
 .padding-10px {
   padding: 10px;
 }
-
-.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col{
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col {
   font-size: 16px;
 }
-
-.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span{
-
-}
-body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div > div.item.item-body > div > div  h4 > span {
- display: block;
- font-size: 16px;
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span {}
+body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div > div.item.item-body > div > div h4 > span {
+  display: block;
+  font-size: 16px;
 }
 body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div > div.item.item-body > div > div > h4 > span {
- display: block;
-
+  display: block;
 }
-
-
-.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span:first-child{
+.descriptioncard .row:nth-child(2), .descriptioncard .row:nth-child(3), .row .col span:first-child {
   margin-bottom: 10px;
 }
-
 .row.title {
-
-
   padding-top: 20px !important;
   padding-bottom: 5px !important;
   text-align: center;
   margin-bottom: 10px !important;
   margin-top: 10px !important;
-
   font-size: 15px !important;
 }
- div.row.title i {
-   font-size: 3em !important;
- }
-
-
-.projectDetail-info h4{
+div.row.title i {
+  font-size: 3em !important;
+}
+.projectDetail-info h4 {
   font-size: 1.2em;
   font-family: "Antwerpen", sans-serif !important;
   color: #008C95;
   text-align: center;
   padding-bottom: 20px;
-
 }
-
 .projectDetail-info button {
   font-family: "Antwerpen", sans-serif;
   text-transform: uppercase;
@@ -730,19 +614,16 @@ body > ion-nav-view > div > ion-view > ion-content > div.scroll > div > a > div 
   cursor: pointer;
   margin-top: 35px;
 }
-.projectDetail-info button:hover,.projectDetail-info button:active,.projectDetail-info button:focus {
+.projectDetail-info button:hover, .projectDetail-info button:active, .projectDetail-info button:focus {
   background: #00a2ad;
 }
-
-
-
 .profile-pic {
-    width: 30%;
-    height: auto;
-    display: block;
-    margin-top: -50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20%;
-    border-radius: 4em 4em 4em / 4em 4em;
+  width: 30%;
+  height: auto;
+  display: block;
+  margin-top: -50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20%;
+  border-radius: 4em 4em 4em / 4em 4em;
 }

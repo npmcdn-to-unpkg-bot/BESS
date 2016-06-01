@@ -1,32 +1,32 @@
-<ion-view  hide-nav-bar="true">
+<ion-view hide-nav-bar="true">
   <ion-content class="padding" scroll="false">
     <div class="loginBackground">
 
-    <div class="login-page">
-      <div class="loginLogo">
-        <img src="./css/images/A-logo-trans.png" class="blur">
-      </div>
+      <div class="login-page">
+        <div class="loginLogo">
+          <img src="./css/images/A-logo-trans.png" class="blur">
+        </div>
 
-      <div class="form">
-        <h1>INSPRAAK</h1>
-        <form class="register-form" autocomplete="off">
-          <input name="voornaam" ng-model="firstName" class="inputName" type="text" placeholder="voornaam" ng-pattern="/^[a-zA-Z]*$/"  required/>
-          <input name="achternaam" ng-model="lastName" class="inputName" type="text" placeholder="achternaam" ng-pattern="/^[a-zA-Z]*$/"  required/>
-          <input name="password" ng-model="password" type="password" placeholder="paswoord"  required/>
-          <input name="email" ng-model="email" type="email" placeholder="email"  required/>
-          <p class="register-failed" ng-hide="!registerFailed">Registreren mislukt.</p>
-          <button ng-click="user.register(firstname,lastname, email, password)">REGISTREER</button>
-          <p class="message">Al geregistreerd? <a href="#" ng-click="formToggle()">Log in</a></p>
-        </form>
-        <form class="login-form">
-          <input name="email" ng-model="email" type="email" placeholder="e-mail" required/>
-          <input name="password" ng-model="password" type="password" placeholder="paswoord" required/>
-          <p class="login-failed" ng-hide="!loginFailed">Email of paswoord was fout.</p>
-      <button ng-click='user.login(email, password);'>login</button>
-      <p class="message" >Geen account? <a href="#" ng-click="formToggle()">Registreer nu</a></p>
-    </form>
-  </div>
-  </div>
-</div>
+        <div class="form">
+          <h1>INSPRAAK</h1>
+          <form class="register-form" autocomplete="off">
+            <input name="voornaam" ng-model="firstName" class="inputName" type="text" placeholder="voornaam" ng-pattern="/^[a-zA-Z]*$/" required/>
+            <input name="achternaam" ng-model="lastName" class="inputName" type="text" placeholder="achternaam" ng-pattern="/^[a-zA-Z]*$/" required/>
+            <input name="password" ng-model="password" type="password" placeholder="paswoord" required/>
+            <input name="email" ng-model="email" type="email" placeholder="email" required/>
+            <p class="register-failed" ng-hide="!registerFailed">Registreren mislukt.</p>
+            <button ng-click="user.register(firstname,lastname, email, password)">REGISTREER</button>
+            <p class="message">Al geregistreerd? <a href="#" ng-click="formToggle()">Log in</a></p>
+          </form>
+          <form class="login-form">
+            <input name="email" ng-model="email" type="email" placeholder="e-mail" required/>
+            <input name="password" ng-model="password" type="password" placeholder="paswoord" required/>
+            <p class="login-failed" ng-hide="!loginFailed">Email of paswoord was fout.</p>
+            <button ng-click='user.login(email, password);'>login</button>
+            <p class="message">Geen account? <a href="#" ng-click="formToggle()">Registreer nu</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
   </ion-content>
-  </ion-view>
+</ion-view>
