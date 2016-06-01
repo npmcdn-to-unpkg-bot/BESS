@@ -136,6 +136,11 @@ h2 {
     padding-right: 1em;
     display: inline-block;
 }
+
+.welktitle {
+  text-align: center;
+}
+
 .homepagelogo {
     padding: 50px 0px;
     object-fit: cover;
