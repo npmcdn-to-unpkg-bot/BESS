@@ -1,165 +1,164 @@
 <div class="container">
-  <div class="row profile">
-    <div class="col-md-3">
-      <div class="profile-sidebar radius shadowDepth0">
-        <!-- sidebar userpic-->
-        <div class="profile-userpic">
-          <i class="fa fa-user fa-5x" aria-hidden="true"></i>
-        </div>
+    <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar radius shadowDepth0">
+                <!-- sidebar userpic-->
+                <div class="profile-userpic">
+                    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                </div>
 
-        <!-- sidebar user title -->
-        <div class="profile-usertitle">
-          <div class="profile-usertitle-name">
-            {{user.firstname}} {{user.lastname}}
-          </div>
-          <div class="profile-usertitle-job" ng-show="user.isAdmin == '1'">
-            Admin
-          </div>
-        </div>
+                <!-- sidebar user title -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{user.firstname}} {{user.lastname}}
+                    </div>
+                    <div class="profile-usertitle-job" ng-show="user.isAdmin == '1'">
+                        Admin
+                    </div>
+                </div>
 
 
-        <!-- sidebar menu -->
-        <div class="profile-usermenu">
-          <ul class="nav" id="tab-content">
-            <li class="active">
-              <a data-target="#overviewTab" data-toggle="tab">
-                <i class="glyphicon glyphicon-home"></i>
-                Overzicht </a>
-            </li>
-            <li>
-              <a data-target="#emailpreferencesTab" data-toggle="tab">
-                <i class="fa fa-envelope"></i>
-                  Emailvoorkeuren </a>
-            </li>
-            <li>
-              <a data-target="#leaderboardTab" data-toggle="tab">
-                <i class="fa fa-trophy"></i>
-                  Leaderboard </a>
-            </li>
-            <li>
-              <a data-target="#helpTab" data-toggle="tab">
-                <i class="fa fa-exchange"></i>
-                  A-punten </a>
-            </li>
-            <li>
-              <a data-target="#dashboardTab" data-toggle="tab">
-                  <i class="fa fa-tachometer"></i>
-                    Dashboard </a>
-            </li>
-          </ul>
-        </div>
+                <!-- sidebar menu -->
+                <div class="profile-usermenu">
+                    <ul class="nav" id="tab-content">
+                        <li class="active">
+                            <a data-target="#overviewTab" data-toggle="tab">
+                                <i class="glyphicon glyphicon-home"></i> Overzicht </a>
+                        </li>
+                        <li>
+                            <a data-target="#emailpreferencesTab" data-toggle="tab">
+                                <i class="fa fa-envelope"></i> Emailvoorkeuren </a>
+                        </li>
+                        <li>
+                            <a data-target="#leaderboardTab" data-toggle="tab">
+                                <i class="fa fa-trophy"></i> Leaderboard </a>
+                        </li>
+                        <li>
+                            <a data-target="#helpTab" data-toggle="tab">
+                                <i class="fa fa-exchange"></i> A-punten </a>
+                        </li>
+                        <li>
+                            <a data-target="#dashboardTab" data-toggle="tab">
+                                <i class="fa fa-tachometer"></i> Dashboard </a>
+                        </li>
+                    </ul>
+                </div>
                 <!-- END MENU -->
 
-                
-      </div>
-    </div>
+
+            </div>
+        </div>
 
 
 
 
 
-            <div class="col-md-9 tab-content profile-content radius shadowDepth0">
+        <div class="col-md-9 tab-content profile-content radius shadowDepth0">
 
-              <!-- content field overview-->
+            <!-- content field overview-->
 
-              <div class="tab-pane active" id="overviewTab">
+            <div class="tab-pane active" id="overviewTab">
                 <div class="table-responsive">
-                  <table class="table table-hover tableOverview">
+                    <table class="table table-hover tableOverview">
 
-                    <tbody>
-                      <tr>
-                        <th scope="row">Naam</th>
-                        <td><span editable-text="user.firstname" buttons="no" onaftersave="user.changename(user.firstname, user.lastname)">{{user.firstname}}</span> <span editable-text="user.lastname" buttons="no" onaftersave="user.changename(user.firstname, user.lastname)">{{user.lastname}}</span></td>
-                        <!-- <td><a href="">edit</a></td> -->
-                      </tr>
-                      <tr>
-                        <th scope="row">Email</th>
-                        <td><span editable-text="user.email" buttons="no" onaftersave="user.changeemail(user.email)">{{user.email}}</span></td>
-                        <!-- <td><a href="#">edit</a></td> -->
-                      </tr>
-                      <tr>
-                        <th scope="row">Wachtwoord</th>
-                        <td>*********</td>
-                        <!-- <td><a href="#">edit</a></td> -->
-                      </tr>
-                      <tr>
-                        <th scope="row">Woonplaats</th>
-                        <td><span editable-text="user.residence" buttons="no" onaftersave="user.changeresidence(user.residence)">{{user.residence}}</span></td>
-                        <!-- <td><a href="#">edit</a></td> -->
-                      </tr>
-                    </tbody>
-                  </table>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Naam</th>
+                                <td><span editable-text="user.firstname" buttons="no" onaftersave="user.changename(user.firstname, user.lastname)">{{user.firstname}}</span> <span editable-text="user.lastname" buttons="no" onaftersave="user.changename(user.firstname, user.lastname)">{{user.lastname}}</span></td>
+                                <!-- <td><a href="">edit</a></td> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td><span editable-text="user.email" buttons="no" onaftersave="user.changeemail(user.email)">{{user.email}}</span></td>
+                                <!-- <td><a href="#">edit</a></td> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">Wachtwoord</th>
+                                <td>*********</td>
+                                <!-- <td><a href="#">edit</a></td> -->
+                            </tr>
+                            <tr>
+                                <th scope="row">Woonplaats</th>
+                                <td><span editable-text="user.residence" buttons="no" onaftersave="user.changeresidence(user.residence)">{{user.residence}}</span></td>
+                                <!-- <td><a href="#">edit</a></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
-              </div>
+            </div>
 
 
-              <!-- content field emailpreferences-->
+            <!-- content field emailpreferences-->
 
-              <div class="tab-pane" id="emailpreferencesTab">
+            <div class="tab-pane" id="emailpreferencesTab">
                 <div class="preferences">
 
-                  <h3>Abonneren op:</h3>
+                    <h3>Abonneren op:</h3>
 
-                  <div class="checkboxes">
-                    <div class="reminder-email">
-                      <div class="checkbox">
-                        <label><input type="checkbox" value=""> <b>Niewe projecten e-mails</b> </br>
-                          Blijf op de hoogte van de laatste nieuwe projecten
-                        </label>
+                    <div class="checkboxes">
+                        <div class="reminder-email">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value=""> <b>Niewe projecten e-mails</b> </br>
+                                    Blijf op de hoogte van de laatste nieuwe projecten
+                                </label>
 
-                      </div>
+                            </div>
+                        </div>
+
+                        <div class="reminder-email">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
+                                    Blijf op de hoogte van dingen die je misschien gemist hebt
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div class="reminder-email">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
+                                    Blijf op de hoogte van dingen die je misschien gemist hebt
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div class="reminder-email">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
+                                    Blijf op de hoogte van dingen die je misschien gemist hebt
+                                </label>
+
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="reminder-email">
-                      <div class="checkbox">
-                        <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                          Blijf op de hoogte van dingen die je misschien gemist hebt
-                        </label>
-
-                      </div>
-                    </div>
-
-                    <div class="reminder-email">
-                      <div class="checkbox">
-                        <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                          Blijf op de hoogte van dingen die je misschien gemist hebt
-                        </label>
-
-                      </div>
-                    </div>
-
-                    <div class="reminder-email">
-                      <div class="checkbox">
-                        <label><input type="checkbox" value=""> <b>Herinneringse-mails</b> </br>
-                          Blijf op de hoogte van dingen die je misschien gemist hebt
-                        </label>
-
-                      </div>
-                    </div>
-                  </div>
 
 
 
                 </div>
-              </div>
+            </div>
 
-              <!-- content field leaderboard-->
+            <!-- content field leaderboard-->
 
-              <div class="tab-pane" id="leaderboardTab">
+            <div class="tab-pane" id="leaderboardTab">
                 <leaderboard></leaderboard>
-              </div>
+            </div>
 
-              <!-- content field help-->
-              <div class="tab-pane" id="helpTab">
+            <!-- content field help-->
+            <div class="tab-pane" id="helpTab">
                 Wissel hier je a-punten in.
-              </div>
+            </div>
 
-              <!-- <div class="tab-pane" id="dashboardTab">
+            <!-- <div class="tab-pane" id="dashboardTab">
                 Overzicht van de antwoorden op de vragen
               </div> -->
 
-            </div>
-
-          </div>
         </div>
+
+    </div>
+</div>

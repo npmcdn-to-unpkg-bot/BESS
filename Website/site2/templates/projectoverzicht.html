@@ -1,58 +1,57 @@
-
 <div class="container" ng-controller="projectoverzichtController as projects" ng-init="projects.get()">
 
-<!-- filter section -->
-  <div class="row">
+    <!-- filter section -->
+    <div class="row">
 
-    <div class="col-sm-6">
-      <h2 class="aBigTitle">Alle projecten</h2>
-    </div>
-
-    <div class="col-sm-6">
-      <form id="selectDistrict">
-        <select ng-model="districtchoice" name="districtchoice" form="selectDistrict" class="select">
-          <option value="" disabled selected>-- Zoek op district --</option>
-          <option ng-repeat="project in projects.all | unique: 'location'" value="{{project.location}}">{{project.location}}</option>
-        </select>
-      </form>
-    </div>
-
-  </div>
-
-  <!-- project overview -->
-  <div class="row" ng-controller="imageController as images">
-    <div ng-repeat="project in projects.all  | filter: districtchoice">
-      <div ng-if="$index % 3 == 0" class="clearfix"></div>
-      <div class="col-sm-4">
-        <div class="wrapper">
-
-          <div class="card radius shadowDepth1 hoverable">
-            <div class="card__image border-tlr-radius" ng-init="images.getfirstbyid(project.id)">
-              <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
-                <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
-              </div>
-              <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius"/></a>
-            </div>
-
-            <div class="card__content card__padding">
-
-              <article class="card__article">
-                <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 25: '...'}}</a></h4>
-
-                <p>{{project.description | truncate: 100: '...'}}</p>
-              </article>
-
-              <div class="ReadMore">
-                <a href="/#/project/{{project.id}}">Lees meer...</a>
-              </div>
-              
-            </div>
-
-          </div>
-
+        <div class="col-sm-6">
+            <h2 class="aBigTitle">Alle projecten</h2>
         </div>
-      </div>
+
+        <div class="col-sm-6">
+            <form id="selectDistrict">
+                <select ng-model="districtchoice" name="districtchoice" form="selectDistrict" class="select">
+                    <option value="" disabled selected>-- Zoek op district --</option>
+                    <option ng-repeat="project in projects.all | unique: 'location'" value="{{project.location}}">{{project.location}}</option>
+                </select>
+            </form>
+        </div>
+
     </div>
 
-  </div>
+    <!-- project overview -->
+    <div class="row" ng-controller="imageController as images">
+        <div ng-repeat="project in projects.all  | filter: districtchoice">
+            <div ng-if="$index % 3 == 0" class="clearfix"></div>
+            <div class="col-sm-4">
+                <div class="wrapper">
+
+                    <div class="card radius shadowDepth1 hoverable">
+                        <div class="card__image border-tlr-radius" ng-init="images.getfirstbyid(project.id)">
+                            <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
+                                <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
+                            </div>
+                            <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius" /></a>
+                        </div>
+
+                        <div class="card__content card__padding">
+
+                            <article class="card__article">
+                                <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 25: '...'}}</a></h4>
+
+                                <p>{{project.description | truncate: 100: '...'}}</p>
+                            </article>
+
+                            <div class="ReadMore">
+                                <a href="/#/project/{{project.id}}">Lees meer...</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>

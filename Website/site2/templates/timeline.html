@@ -1,37 +1,36 @@
 <div class="timelinecontainer" ng-init="timelines.getAll()">
-  <div id="timeline" class="timeline" >
+    <div id="timeline" class="timeline">
 
-<!-- add button - admin only -->
-    <div class="addItem" ng-show="user.isAdmin == '1'">
-      <button data-toggle="modal" data-target="#addtimelineitem-modal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+        <!-- add button - admin only -->
+        <div class="addItem" ng-show="user.isAdmin == '1'">
+            <button data-toggle="modal" data-target="#addtimelineitem-modal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+        </div>
+
+        <div class="timeline-item" ng-repeat="timeline in timelines.all">
+
+            <div class="timeline-icon">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve"></svg>
+            </div>
+
+
+            <!-- timeline-content -->
+
+            <div class="timeline-content" id="{{timeline.id}}" ng-class-even="'right'">
+
+                <h3>{{timeline.title}}</h3>
+                <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="timelines.getTimelineId(timeline.id)"></i></a>
+                <p>
+                    {{timeline.description}}
+                </p>
+                <p class="date">
+                    {{timeline.date.substr(0,11)}}
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="timeline-item" ng-repeat="timeline in timelines.all">
-
-      <div class="timeline-icon">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve"></svg>
-      </div>
-
-
-<!-- timeline-content -->
-
-      <div class="timeline-content" id="{{timeline.id}}" ng-class-even="'right'">
-
-        <h3>{{timeline.title}}</h3>
-        <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="timelines.getTimelineId(timeline.id)"></i></a>
-        <p>
-          {{timeline.description}}
-        </p>
-        <p class="date">
-          {{timeline.date.substr(0,11)}}
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </div>
 

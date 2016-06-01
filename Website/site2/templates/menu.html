@@ -1,65 +1,65 @@
 <nav class="navbar navbar-default navbar-static-top" ng-init="user.getData()">
-  <div class="container-fluid">
+    <div class="container-fluid">
 
 
-<!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#/">
-        <img id="menulogo" alt="Logo stad Antwerpen" src="img/A-logo.png">
-      </a>
-      <a class="navbar-title" href="#/"><h2 style="margin-top: 10px;"><span style="color: #008e9c">IN</span>SPRAAK</h2></a>
-    </div>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">
+                <img id="menulogo" alt="Logo stad Antwerpen" src="img/A-logo.png">
+            </a>
+            <a class="navbar-title" href="#/"><h2 style="margin-top: 10px;"><span style="color: #008e9c">IN</span>SPRAAK</h2></a>
+        </div>
 
-<!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle navButtons" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle navButtons" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </a>
 
-<!-- hamburger menu -->
-          <ul class="dropdown-menu">
-            <li class="menu-item"><a href="#/">Home</a></li>
-            <li class="menu-item"><a href="#/projecten">Projecten</a></li>
-            <li role="separator" class="divider" ng-show="user.isAdmin == '1'"></li>
-            <li class="menu-item"><a href="" data-toggle="modal" data-target="#create-modal" ng-show="user.isAdmin == '1'">Maak een nieuw project aan</a></li>
-            <li role="separator" class="divider"></li>
-            <li class="menu-item"><a href="#/map">Toon projecten op map</a></li>
-          </ul>
-        </li>
-      </ul>
-
-
-<!-- login - register - logged in as buttons -->
-
-      <ul class="nav navbar-nav navbar-right navButtons">
-        <li><a href="" data-toggle="modal" data-target="#login-modal" ng-hide="user.loggedin">Login</a></li>
-        <li><a href="" data-toggle="modal" data-target="#register-modal" ng-hide="user.loggedin">Registreer</a></li>
-
-
-
-        <ul class="nav navbar-nav" ng-show="user.loggedin">
-          <li class="dropdown">
-            <a class="dropdown-toggle navButtons" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Ingelogd als {{user.firstname}} <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li class="menu-item"><a href="#/profiel">Profiel</a></li>
-              <li role="separator" class="divider"></li>
-              <li class="menu-item"><a href="" data-toggle="modal" ng-show="user.loggedin" ng-click="user.logout()">Logout</a></li>
+                    <!-- hamburger menu -->
+                    <ul class="dropdown-menu">
+                        <li class="menu-item"><a href="#/">Home</a></li>
+                        <li class="menu-item"><a href="#/projecten">Projecten</a></li>
+                        <li role="separator" class="divider" ng-show="user.isAdmin == '1'"></li>
+                        <li class="menu-item"><a href="" data-toggle="modal" data-target="#create-modal" ng-show="user.isAdmin == '1'">Maak een nieuw project aan</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="menu-item"><a href="#/map">Toon projecten op map</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
-      </ul>
+
+
+            <!-- login - register - logged in as buttons -->
+
+            <ul class="nav navbar-nav navbar-right navButtons">
+                <li><a href="" data-toggle="modal" data-target="#login-modal" ng-hide="user.loggedin">Login</a></li>
+                <li><a href="" data-toggle="modal" data-target="#register-modal" ng-hide="user.loggedin">Registreer</a></li>
+
+
+
+                <ul class="nav navbar-nav" ng-show="user.loggedin">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle navButtons" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ingelogd als {{user.firstname}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="menu-item"><a href="#/profiel">Profiel</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="menu-item"><a href="" data-toggle="modal" ng-show="user.loggedin" ng-click="user.logout()">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
 
 
 
 
+        </div>
     </div>
-  </div>
 </nav>

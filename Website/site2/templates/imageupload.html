@@ -1,31 +1,38 @@
 <div class="modal fade" id="imageupload-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container createmodal-container">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>Afbeelding toevoegen</h1><br>
-      <form>
-        <div class="file-upload">
+    <div class="modal-dialog">
+        <div class="loginmodal-container createmodal-container">
 
-          <div class="image-upload-wrap">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-              <h3>Sleep je afbeelding naar hier of klik.</h3>
-            </div>
-          </div>
+          <!-- heading -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1>Afbeelding toevoegen</h1>
+            <br>
+            <form>
+                <div class="file-upload">
 
-          <div class="file-upload-content">
-            <img class="file-upload-image" src="#" alt="your image" />
-            <div class="image-title-wrap">
-              <button type="button" onclick="removeUpload()" class="remove-image">Verwijder Afbeelding</button>
-            </div>
-          </div>
+                  <!-- upload image area -->
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Sleep je afbeelding naar hier of klik.</h3>
+                        </div>
+                    </div>
+
+                  <!-- delete uploaded image -->
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Verwijder Afbeelding</button>
+                        </div>
+                    </div>
+                </div>
+
+
+              <!-- confirm -->
+                <input ng-click='images.upload();' data-toggle="modal" type="submit" class="login loginmodal-submit" value="Afbeelding uploaden">
+
+
+            </form>
+
         </div>
-
-        <input ng-click='images.upload();' data-toggle="modal" type="submit" class="login loginmodal-submit" value="Afbeelding uploaden">
-
-
-      </form>
-
     </div>
-  </div>
 </div>

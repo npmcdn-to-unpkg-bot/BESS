@@ -1,39 +1,40 @@
 <div class="row informatie">
 
-  <div class="col-sm-2">
-    <!-- left whitespace container -->
-  </div>
-
-
-  <div class="col-sm-8">
-
-    <!-- add button - only admin -->
-
-    <div class="addItem"  ng-show="user.isAdmin == '1'">
-      <button data-toggle="modal" data-target="#addquestionmodal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+    <div class="col-sm-2">
+        <!-- left whitespace container -->
     </div>
 
-    <!-- questions -->
 
-    <form class="" action="index.html" method="post">
+    <div class="col-sm-8">
 
-      <div ng-repeat="question in questions.all">
-        <fieldset>
-          <label for="r{{$index}}" class="question">{{$index + 1}}. {{question.title}}</label>
+        <!-- add button - only admin -->
 
-          <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="questions.getQuestionId(question.id)"></i></a><br>
-          <div ng-repeat="answer in questions.possibleanswers[question.id]" class="answer">
-            <input type="radio" ng-model="questions.temp[question.id]" id="i{{$index}}q{{question.id}}" value="{{answer}}" ng-change="questions.getAnswer(questions.temp[question.id], question.id);">
-            <label for="i{{$index}}q{{question.id}}">{{answer}}</label>
-          </div>
-        </fieldset>
-      </div>
-    </form>
-  </div>
+        <div class="addItem" ng-show="user.isAdmin == '1'">
+            <button data-toggle="modal" data-target="#addquestionmodal" type="button" class="btn btn-circle btn-lg card"><img src="img/plus.png" width="30" height="30" /></button>
+        </div>
 
-  <div class="col-sm-2">
-    <!-- right whitespace container -->
-  </div>
+        <!-- questions -->
+
+        <form class="" action="index.html" method="post">
+
+            <div ng-repeat="question in questions.all">
+                <fieldset>
+                    <label for="r{{$index}}" class="question">{{$index + 1}}. {{question.title}}</label>
+
+                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true" ng-show="user.isAdmin == '1'" ng-click="questions.getQuestionId(question.id)"></i></a>
+                    <br>
+                    <div ng-repeat="answer in questions.possibleanswers[question.id]" class="answer">
+                        <input type="radio" ng-model="questions.temp[question.id]" id="i{{$index}}q{{question.id}}" value="{{answer}}" ng-change="questions.getAnswer(questions.temp[question.id], question.id);">
+                        <label for="i{{$index}}q{{question.id}}">{{answer}}</label>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-sm-2">
+        <!-- right whitespace container -->
+    </div>
 
 </div>
 

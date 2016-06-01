@@ -1,14 +1,19 @@
 <div class="modal fade" id="edittimelinemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
+
+    <!-- heading -->
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       <h1>Bewerk deze mijlpaal</h1><br>
       <form>
+
+      <!-- timelinitem information -->
         <input ng-model="milestonetitle" type="text" name="milestonetitle" placeholder="Titel">
         <label for="dateedit">Datum</label>
         <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="milestonedate" type="text" name="begindatum" placeholder="Datum" id="dateedit" style="margin-bottom: 15px"></div>
         <textarea ng-model="milestonedescription" class="form-control" rows="4" type="text" name="milestonedescription" placeholder="Beschrijving"></textarea>
 
+        <!-- confirm / delete timelinitem -->
         <input  ng-click="timelines.edittimelineitem(milestonetitle, milestonedate, milestonedescription);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Edit">
         <input  ng-click="timelines.deletetimelineitem();" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit deleteButton" value="Delete">
 

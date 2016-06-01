@@ -1,27 +1,28 @@
 <div>
-  <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-      <div class="registermodal-container">
+    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="registermodal-container">
 
-      <!-- heading -->
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h1>Maak een profiel aan</h1><br>
+                <!-- heading -->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1>Maak een profiel aan</h1>
+                <br>
 
-      <!-- form -->
-        <form  ng-submit="user.register(voornaam, achternaam, remail, rpassword);"  role="form" data-toggle="validator" >
-          <input ng-model="voornaam" type="text" name="voornaam" placeholder="Voornaam" class="ng-pristine ng-invalid" required>
-          <input ng-model="achternaam" type="text" name="achternaam" placeholder="Achternaam" required>
+                <!-- form -->
+                <form ng-submit="user.register(voornaam, achternaam, remail, rpassword);" role="form" data-toggle="validator">
+                    <input ng-model="voornaam" type="text" name="voornaam" placeholder="Voornaam" class="ng-pristine ng-invalid" required>
+                    <input ng-model="achternaam" type="text" name="achternaam" placeholder="Achternaam" required>
 
-          <input ng-model="remail" type="email" name="user" placeholder="E-mail" class="form-control"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
-          <input ng-model="rpassword" type="password" name="pass" placeholder="Wachtwoord" data-minlength="6" class="form-control" required>
+                    <input ng-model="remail" type="email" name="user" placeholder="E-mail" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                    <input ng-model="rpassword" type="password" name="pass" placeholder="Wachtwoord" data-minlength="6" class="form-control" required>
+
+                    <!-- confirm -->
+                    <input data-toggle="modal" type="submit" class="register registermodal-submit" value="Registreer mij">
 
 
-          <input  data-toggle="modal" type="submit" class="register registermodal-submit" value="Registreer mij">
+                </form>
 
-
-        </form>
-
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
