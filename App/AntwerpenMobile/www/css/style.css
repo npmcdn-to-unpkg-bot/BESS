@@ -113,7 +113,10 @@ body {
 }
 
 
-
+#list > h4 {
+  position: relative;
+  left: 40px;
+}
 
 
 .slider-slide p {
