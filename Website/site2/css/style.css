@@ -763,6 +763,11 @@ select {
     border-top: 1px solid #c0c0c0 !important;
 }
 
+.fa-pencil-square-o{
+  color: #008C95;
+
+}
+
 /* vragenlijst einde */
 
 /*loading bar start*/
