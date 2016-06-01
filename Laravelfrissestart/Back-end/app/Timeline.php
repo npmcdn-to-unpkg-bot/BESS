@@ -8,6 +8,4 @@ class Timeline extends Model
 {
     //
     protected $fillable = ['title', 'description', 'date', 'project_id'];
-
-
 }

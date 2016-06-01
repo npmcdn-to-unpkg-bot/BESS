@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'firstname', 'residence', 'email', 'password', 'isAdmin', 'questiontotal'
+        'name', 'firstname', 'residence', 'email', 'password', 'isAdmin', 'questiontotal',
     ];
 
     /**
@@ -34,16 +34,15 @@ class User extends Authenticatable
         $this->attributes['password'] = \Hash::make($value);
     }
     public function projects()
-{
-    return $this->hasMany('App\Project');
-}
-public function answers()
-{
-    return $this->hasMany('App\Answer');
-}
-public function leaderboards()
-{
-    return $this->hasOne('App\Leaderboard');
-}
-
+    {
+        return $this->hasMany('App\Project');
+    }
+    public function answers()
+    {
+        return $this->hasMany('App\Answer');
+    }
+    public function leaderboards()
+    {
+        return $this->hasOne('App\Leaderboard');
+    }
 }
