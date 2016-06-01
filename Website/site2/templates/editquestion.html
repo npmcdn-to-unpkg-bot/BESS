@@ -1,25 +1,28 @@
 <div class="modal fade" id="editquestionmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="loginmodal-container">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>Pas deze vraag aan</h1><br>
-      <form id="editquestion">
-        <input ng-model="questionTitle" type="text" name="questionTitle" placeholder="Voeg hier uw vraag in">
-        <label for="sortofquestion">Wat voor soort vraag is het?</label>
-        <select ng-model="sortofquestion" name="sortofquestion" form="addnewquestion">
-          <option value="" disabled selected>-- Kies een optie --</option>
-          <option value="yesno">Ja/Nee vraag</option>
-          <option value="multiplechoice">Meerkeuzevraag</option>
-        </select>
-        <br>
-        <label ng-show="sortofquestion=='multiplechoice'" for="questionAnswers">Scheidt de antwoorden mbv een komma.</label>
-        <input ng-show="sortofquestion=='multiplechoice'" ng-model="questionAnswers" type="text" name="questionAnswers" placeholder="Wat zijn de mogelijke antwoorden?">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
 
-        <input ng-click="questions.editQuestion(questionTitle, sortofquestion, questionAnswers);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
-        <input ng-click="questions.deleteQuestion()" data-toggle="modal" type="submit" class="login loginmodal-submit deleteButton" value="Delete">
+          <!-- heading -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1>Pas deze vraag aan</h1>
+            <br>
+            <form id="editquestion">
+                <input ng-model="questionTitle" type="text" name="questionTitle" placeholder="Voeg hier uw vraag in">
+                <label for="sortofquestion">Wat voor soort vraag is het?</label>
+                <select ng-model="sortofquestion" name="sortofquestion" form="addnewquestion">
+                    <option value="" disabled selected>-- Kies een optie --</option>
+                    <option value="yesno">Ja/Nee vraag</option>
+                    <option value="multiplechoice">Meerkeuzevraag</option>
+                </select>
+                <br>
+                <label ng-show="sortofquestion=='multiplechoice'" for="questionAnswers">Scheidt de antwoorden mbv een komma.</label>
+                <input ng-show="sortofquestion=='multiplechoice'" ng-model="questionAnswers" type="text" name="questionAnswers" placeholder="Wat zijn de mogelijke antwoorden?">
 
-      </form>
+                <input ng-click="questions.editQuestion(questionTitle, sortofquestion, questionAnswers);" data-toggle="modal" type="submit" class="login loginmodal-submit addsubmit" value="Bevestig">
+                <input ng-click="questions.deleteQuestion()" data-toggle="modal" type="submit" class="login loginmodal-submit deleteButton" value="Delete">
 
+            </form>
+
+        </div>
     </div>
-  </div>
 </div>

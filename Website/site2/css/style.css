@@ -532,6 +532,7 @@ button {
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
+}
 
 .modalCheckbox {
   margin-top: 15px;
@@ -550,7 +551,7 @@ button {
   text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #008C95;
   padding: 10px 20px;
-  font-family: SunAntwerpen_500;;
+  font-family: SunAntwerpen_500;
   font-size: 18px;
   margin-top: 15px;
 }

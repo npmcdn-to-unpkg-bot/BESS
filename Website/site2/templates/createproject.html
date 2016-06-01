@@ -1,56 +1,58 @@
+<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="createmodal-container">
 
-<div class="modal fade" id="create-modal" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="createmodal-container">
+          <!-- heading -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1>Maak een project aan</h1>
+            <br>
 
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>Maak een project aan</h1><br>
+            <form class="" ng-controller="mapsController as mapslogic">
+                <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
 
-      <form class="" ng-controller="mapsController as mapslogic">
-        <input ng-model="projectname" type="text" name="projectname" placeholder="Projectnaam">
+                <!-- tabs heading -->
+                <ul class="nav nav-tabs" id="tabContent">
+                    <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
+                    <li><a data-target="#dateTab" data-toggle="tab">Datums</a></li>
+                    <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Map</a></li>
+                </ul>
 
-      <!-- tabs -->
-        <ul class="nav nav-tabs" id="tabContent">
-          <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
-          <li><a data-target="#dateTab" data-toggle="tab">Datums</a></li>
-          <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Map</a></li>
-        </ul>
+                <!-- tab content -->
+                <div class="tab-content">
 
-      <!-- tab content -->
-        <div class="tab-content">
-
-          <div class="tab-pane active" id="informatieTab">
-            <div class="infoShort">
-
-
-              <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
-              <input ng-model="projectlocation" type="text" name="locatie" placeholder="District">
-            </div>
-
-            <textarea ng-model="projectdescription" class="form-control" rows="6" type="text" name="beschrijving" placeholder="Beschrijving"></textarea>
-
-          </div>
+                  <!-- information tab -->
+                    <div class="tab-pane active" id="informatieTab">
+                        <div class="infoShort">
 
 
-          <div class="tab-pane" id="dateTab">
-            <label for="begindatecreate">Begindatum</label>
-            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" max-date="projectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
-            <label for="enddatecreate">Einddatum</label>
-            <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" min-date="projectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
+                            <input ng-model="projectcategory" type="text" name="categorie" placeholder="Categorie">
+                            <input ng-model="projectlocation" type="text" name="locatie" placeholder="District">
+                        </div>
 
-          </div>
+                        <textarea ng-model="projectdescription" class="form-control" rows="6" type="text" name="beschrijving" placeholder="Beschrijving"></textarea>
+
+                    </div>
+
+                  <!-- date tab -->
+                    <div class="tab-pane" id="dateTab">
+                        <label for="begindatecreate">Begindatum</label>
+                        <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectstartdate" max-date="projectenddate" type="text" name="begindatum" placeholder="Begindatum" id="begindatecreate" style="margin-bottom: 15px"></div>
+                        <label for="enddatecreate">Einddatum</label>
+                        <div pickadate format="yyyy-mm-dd" week-starts-on="1" ng-model="projectenddate" min-date="projectstartdate" type="text" name="einddatum" placeholder="Einddatum" id="enddatecreate" style="margin-bottom: 15px"></div>
+
+                    </div>
+
+                  <!-- google maps tab -->
+                    <div class="tab-pane" id="mapTab">
+                        <div class="map" id="mapcreate"></div>
+                    </div>
+                </div>
 
 
-          <div class="tab-pane" id="mapTab">
-            <div class="map" id="mapcreate"></div>
-          </div>
+              <!-- confirm  -->
+                <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation, mapslogic.lat, mapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
+            </form>
+
         </div>
-
-
-
-        <input ng-click="project.create(projectname, projectdescription, projectstartdate, projectenddate, projectcategory, projectlocation, mapslogic.lat, mapslogic.lng);" data-toggle="modal" type="submit" class="login loginmodal-submit" value="Bevestig">
-      </form>
-
     </div>
-  </div>
 </div>

@@ -1,18 +1,24 @@
 <div class="modal fade" id="addtimelineitem-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="registermodal-container">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>Voeg een mijlpaal toe</h1><br>
-      <form class="addTimelineItemForm">
-        <input ng-model="mijlpaaltitel" type="text" name="mijlpaaltitel" placeholder="Titel">
-        <label for="datenew">Datum</label>
-        <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="milestonedate" type="text" name="date" placeholder="Datum" id="datenew" style="margin-bottom: 15px"></div>
-        <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="Beschrijving"></textarea>
+    <div class="modal-dialog">
+        <div class="registermodal-container">
 
-        <input  ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, milestonedate);" data-toggle="modal" type="submit" class="register registermodal-submit" value="Bevestig">
+          <!-- heading -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h1>Voeg een mijlpaal toe</h1>
+            <br>
+            <form class="addTimelineItemForm">
 
-      </form>
+              <!-- timelinitem information -->
+                <input ng-model="mijlpaaltitel" type="text" name="mijlpaaltitel" placeholder="Titel">
+                <label for="datenew">Datum</label>
+                <div pickadate format="yyyy-mm-dd" week-starts-on="1" no-extra-rows ng-model="milestonedate" type="text" name="date" placeholder="Datum" id="datenew" style="margin-bottom: 15px"></div>
+                <textarea ng-model="mijlpaalbeschrijving" class="form-control" rows="4" type="text" name="mijlpaalbeschrijving" placeholder="Beschrijving"></textarea>
 
+              <!-- confirm timelinitem -->
+                <input ng-click="timeline.addtimelineitem(mijlpaaltitel, mijlpaalbeschrijving, milestonedate);" data-toggle="modal" type="submit" class="register registermodal-submit" value="Bevestig">
+
+            </form>
+
+        </div>
     </div>
-  </div>
 </div>

@@ -1,125 +1,123 @@
-
 <div class="container">
-  <div class="clearfix"></div>
+    <div class="clearfix"></div>
 
-  <!-- header-title start -->
+    <!-- header-title start -->
 
     <div class="row headerTitle">
 
-      <div class="col-sm-2">
-        <!-- left whitespace container -->
-      </div>
-
-        <div class="col-sm-8">
-          <h1>{{spproject.name}}</h1>
+        <div class="col-sm-2">
+            <!-- left whitespace container -->
         </div>
 
-      <div class="col-sm-2">
-        <!-- right whitespace container -->
-      </div>
+        <div class="col-sm-8">
+            <h1>{{spproject.name}}</h1>
+        </div>
+
+        <div class="col-sm-2">
+            <!-- right whitespace container -->
+        </div>
 
     </div>
 
 
-  <!-- header image start -->
+    <!-- header image start -->
 
     <div class="row headerImg" ng-controller="imageController as images">
 
-      <div class="col-sm-2">
-        <!-- left whitespace container -->
-      </div>
+        <div class="col-sm-2">
+            <!-- left whitespace container -->
+        </div>
 
         <div class="col-sm-8" ng-init="images.get();">
 
-          <div class="slickimages" ng-show="images.all;"></div>
+            <div class="slickimages" ng-show="images.all;"></div>
 
-          <a href="" data-toggle="modal" data-target="#imageupload-modal" ng-show="user.isAdmin == '1'">
-            <i class="fa fa-picture-o" aria-hidden="true"></i>
-            Afbeelding uploaden
-          </a>
+            <a href="" data-toggle="modal" data-target="#imageupload-modal" ng-show="user.isAdmin == '1'">
+                <i class="fa fa-picture-o" aria-hidden="true"></i> Afbeelding uploaden
+            </a>
 
         </div>
 
-      <div class="col-sm-2">
-        <!-- right whitespace container -->
-      </div>
+        <div class="col-sm-2">
+            <!-- right whitespace container -->
+        </div>
 
     </div>
 
 
-  <!-- content - tabs start -->
+    <!-- content - tabs start -->
 
     <div ng-controller="PanelController as panel">
 
-      <!-- tab buttons -->
+        <!-- tab buttons -->
         <div class="row">
 
-          <div class="col-xs-2">
-            <!-- left whitespace container -->
-          </div>
+            <div class="col-xs-2">
+                <!-- left whitespace container -->
+            </div>
 
 
             <div class="col-xs-8">
 
-              <div class="col-sm-4 aTitle">
-                <div class="btn-bg bg-2">
-                  <div class="btn btn-2">
-                    <button data-target="#" ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1)}">Informatie</button>
-                  </div>
+                <div class="col-sm-4 aTitle">
+                    <div class="btn-bg bg-2">
+                        <div class="btn btn-2">
+                            <button data-target="#" ng-click="panel.selectTab(1)" ng-class="{active: panel.isSelected(1)}">Informatie</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-sm-4 aTitle">
-                <div class="btn-bg bg-2">
-                  <div class="btn btn-2">
-                    <button data-target="#" ng-click="panel.selectTab(2)" ng-class="{active:panel.isSelected(2)}">Vragenlijst</button>
-                  </div>
+                <div class="col-sm-4 aTitle">
+                    <div class="btn-bg bg-2">
+                        <div class="btn btn-2">
+                            <button data-target="#" ng-click="panel.selectTab(2)" ng-class="{active:panel.isSelected(2)}">Vragenlijst</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
-              <div class="col-sm-4 aTitle">
-                <div class="btn-bg bg-2">
-                  <div class="btn btn-2">
-                    <button data-target="#" ng-click="panel.selectTab(3)" ng-class="{active:panel.isSelected(3)}">Tijdlijn</button>
-                  </div>
+                <div class="col-sm-4 aTitle">
+                    <div class="btn-bg bg-2">
+                        <div class="btn btn-2">
+                            <button data-target="#" ng-click="panel.selectTab(3)" ng-class="{active:panel.isSelected(3)}">Tijdlijn</button>
+                        </div>
+                    </div>
                 </div>
-              </div>
 
             </div>
 
-          <div class="col-xs-2">
-            <!-- right whitespace container -->
-          </div>
+            <div class="col-xs-2">
+                <!-- right whitespace container -->
+            </div>
 
         </div>
 
-  <!-- information panel -->
+        <!-- information panel -->
 
         <div class="panelTab" ng-show="panel.isSelected(1)">
-          <information></information>
+            <information></information>
         </div>
 
-  <!-- question panel -->
+        <!-- question panel -->
 
         <div class="panelTab" ng-show="panel.isSelected(2)">
-          <questionlist></questionlist>
+            <questionlist></questionlist>
         </div>
 
-  <!-- timeline panel -->
+        <!-- timeline panel -->
 
         <div class="panelTab" ng-show="panel.isSelected(3)">
-          <timeline></timeline>
+            <timeline></timeline>
         </div>
 
-      </div>
+    </div>
 
-  <!-- content - tabs end -->
+    <!-- content - tabs end -->
 
-  <!-- footer -->
-  <commentsection></commentsection>
+    <!-- footer -->
+    <commentsection></commentsection>
 
-  <!-- modals -->
+    <!-- modals -->
 
-  <imageupload></imageupload>
-  <editproject></editproject>
+    <imageupload></imageupload>
+    <editproject></editproject>
 </div>
