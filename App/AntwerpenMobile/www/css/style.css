@@ -503,11 +503,11 @@ td-card img {
 }
 
 .loginLogo img {
-  width:250px;
+  width:200px;
   height: auto;
   display: block;
   position: relative;
-  margin-left: 14%;
+  margin: auto;
   top: -90px;
 }
 
