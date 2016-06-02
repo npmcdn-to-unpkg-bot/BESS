@@ -48,7 +48,7 @@ body {
 /***** navigation - start *****/
 
 #menulogo {
-    max-height: 2.5em;
+    max-height: 2.9em;
     margin-top: -10px;
 }
 #bs-example-navbar-collapse-1 {
@@ -58,7 +58,10 @@ body {
     font-size: 1em;
 }
 
+.dropdown i {
+    font-size: 1.3em;
 }
+
 menu {
     margin: 0px;
     padding: 0px;
