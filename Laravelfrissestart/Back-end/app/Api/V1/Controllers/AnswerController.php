@@ -62,6 +62,21 @@ class AnswerController extends Controller
             return $this->response->error('could_not_get_answers_per_project_only_admin', 500);
         }
     }
+
+        //Get answer per project only admin
+        public function showperquestion($question_id)
+        {
+            if ($this->currentUser()['isAdmin']) {
+                $answers = Answer::where('question_id', '=', $question_id)
+                ->get();
+                if (!$answers) {
+                    throw new NotFoundHttpException();
+                }
+                return $answers;
+            } else {
+                return $this->response->error('could_not_get_answers_per_project_only_admin', 500);
+            }
+        }
     //Get answers per answer id for logged in user
     public function showuser($id)
     {

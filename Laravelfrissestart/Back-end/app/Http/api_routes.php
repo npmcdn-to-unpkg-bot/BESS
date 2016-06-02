@@ -53,6 +53,7 @@ $api->version('v1', function ($api) {
         // Answers routing api with auth
         $api->get('answers', 'App\Api\V1\Controllers\AnswerController@index');
         $api->get('answers/{id}', 'App\Api\V1\Controllers\AnswerController@showperproject');
+        $api->get('answers/question/{id}', 'App\Api\V1\Controllers\AnswerController@showperquestion');
 
         //image routing with auth
         $api->post('image/add/{id}', 'App\Api\V1\Controllers\ImageController@add');
@@ -62,7 +63,7 @@ $api->version('v1', function ($api) {
     });
 
         $api->group(['middleware' => ['cors']], function ($api) {
-					
+
             // projects routing api without auth
             $api->get('projects', 'App\Api\V1\Controllers\ProjectController@index');
             $api->get('projects/{id}', 'App\Api\V1\Controllers\ProjectController@show');

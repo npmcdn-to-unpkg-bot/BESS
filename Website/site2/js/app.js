@@ -359,6 +359,7 @@
         questions.possibleanswers = [];
         questions.answers = [];
         questions.temp = [];
+        questions.AllCount = [];
 
         $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/questions/project/" + projectId)
             .then(function(response) {
@@ -390,6 +391,19 @@
                     }
                 });
         }
+
+        questions.getAllAnswersCount = function(){
+              if (localStorage.token) {
+                  $http.get("http://edwardvereertbrugghen.multimediatechnology.be/api/answers/"+projectId+"?token=" + localStorage.token)
+                      .then(function(response) {
+                          questions.allAnswersFromServer = response.data.answers;
+                              console.log(questions.allAnswersFromServer);
+
+                              console.log(questions.allAnswersFromServer);
+
+                      });
+              }
+        };
 
         questions.addQuestion = function(title, kindofQuestion, answers) {
             if (kindofQuestion == 'multiplechoice' && answers == undefined) {
