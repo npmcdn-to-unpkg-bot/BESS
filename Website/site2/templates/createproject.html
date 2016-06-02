@@ -14,7 +14,7 @@
                 <ul class="nav nav-tabs" id="tabContent">
                     <li class="active"><a data-target="#informatieTab" data-toggle="tab">Informatie</a></li>
                     <li><a data-target="#dateTab" data-toggle="tab">Datums</a></li>
-                    <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.getMapCreate();">Map</a></li>
+                    <li><a data-target="#mapTab" data-toggle="tab" ng-click="mapslogic.clickMapCreate()">Map</a></li>
                 </ul>
 
                 <!-- tab content -->
@@ -44,8 +44,12 @@
 
                   <!-- google maps tab -->
                     <div class="tab-pane" id="mapTab">
-                        <div class="map" id="mapcreate"></div>
+                      <div class="map" id="mapcreate" ng-init="showmapcreate = false">
+                          <a ng-hide="showmapcreate" href="" ng-click="mapslogic.getMapCreate(); showmapcreate = true;" id="clickMapCreate">Map laden...</a>
+                      </div>
+                        <!-- <div class="map" id="mapcreate"></div> -->
                     </div>
+
                 </div>
 
 
