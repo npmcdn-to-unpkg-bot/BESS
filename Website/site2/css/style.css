@@ -776,6 +776,14 @@ select {
 
 }
 
+.showAnswers {
+  float: right;
+}
+
+.showAnswers:hover {
+  cursor: pointer;
+}
+
 /* vragenlijst einde */
 
 /*loading bar start*/
