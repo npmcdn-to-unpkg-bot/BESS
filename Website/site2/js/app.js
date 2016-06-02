@@ -40,7 +40,7 @@
         };
     });
 
-    app.controller("userController", function($http, toastr) {
+    app.controller("userController", function($http, toastr, $location) {
         var user = this;
         user.login = function(gusername, gpassword) {
             $http({
@@ -123,7 +123,7 @@
             localStorage.removeItem("email");
             localStorage.removeItem("isAdmin");
             localStorage.removeItem("residence");
-            location.reload();
+            $location.path('/');
 
         };
 
@@ -140,6 +140,28 @@
             }, function myError(response) {
                 toastr.error('Naam veranderen mislukt', 'Error');
             });
+        }
+
+        user.changepassword = function(gpassword1, gpassword2) {
+
+            if (gpassword1 === gpassword2){
+              console.log(gpassword1, gpassword2);
+
+
+              $http({
+                  method: "POST",
+                  url: "http://edwardvereertbrugghen.multimediatechnology.be/api/user/changepassword?token=" + localStorage.token,
+                  data: {
+                      newpassword: gpassword1,
+                  }
+              }).then(function mySucces(response) {
+                  toastr.success('Wachtwoord gewijzigd');
+                  $('#changepassword-modal').modal('hide');
+              }, function myError(response) {
+                  toastr.error('Wachtwoord wijzigen mislukt', 'Error');
+              });
+
+            };
         }
 
         user.changeresidence = function(gresidence) {

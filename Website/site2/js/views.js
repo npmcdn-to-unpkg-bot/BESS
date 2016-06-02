@@ -174,9 +174,7 @@
     app.directive("changepassword", function() {
         return {
             restrict: 'E',
-            templateUrl: "templates/changepassword.html",
-            controller: 'changepasswordController',
-            controllerAs: 'changepassword'
+            templateUrl: "templates/changepassword.html"
         };
     });
 
