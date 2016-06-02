@@ -377,9 +377,11 @@ button {
     font-size: 14px;
     color: #666;
 }
+
 .createmodal-container {
     max-width: 550px !important;
 }
+
 .loginmodal-container h1, .registermodal-container h1, .createmodal-container h1 {
     text-align: center;
     font-size: 1.8em;
@@ -784,6 +786,10 @@ select {
   cursor: pointer;
 }
 
+
+#bar-results {
+  padding: 30px;
+}
 /* vragenlijst einde */
 
 /*loading bar start*/

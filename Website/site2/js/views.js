@@ -183,9 +183,7 @@
     app.directive("showresults", function() {
         return {
             restrict: 'E',
-            templateUrl: "templates/showresults.html",
-            controller: 'showresultsController',
-            controllerAs: 'showresults'
+            templateUrl: "templates/showresults.html"
         };
     });
 
