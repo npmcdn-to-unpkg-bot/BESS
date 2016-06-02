@@ -1,30 +1,24 @@
 <div class="modal fade" id="showresults-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
-        <div class="createmodal-container" ng-init="">
+        <div class="createmodal-container">
 
             <!-- heading -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <h1>Zie hier u modal</h1>
-            <br>
-            <ul>
-                <ul>
-                    <li ng-repeat="(key, question) in questions.allAnswersFromServer | groupBy: 'question_id'">
-                        vraag:
-                        {{ key }}
-                        <ul>
-                            <li ng-repeat="(answer, value) in question | countBy: 'answer'">
-                                {{ answer}} -> {{ value }}
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-        </ul>
-
-        plaats je brol hier maar in jongen
-
+            <h1>Overzicht antwoorden</h1>
+            <ul class="fa-ul">
+                <li ng-repeat="(key, question) in questions.allAnswersFromServer | groupBy: 'question.title'">
+                    <i class="fa-li fa fa-angle-right"></i>
+                    {{ key }}
+                    <ul class="fa-ul">
+                        <li ng-repeat="(answer, value) in question | countBy: 'answer'">
+                          <i class="fa-li fa fa-angle-double-right"></i>
+                            {{answer}} ({{value}})
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 </div>

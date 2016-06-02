@@ -53,7 +53,9 @@ class AnswerController extends Controller
     public function showperproject($project_id)
     {
         if ($this->currentUser()['isAdmin']) {
-            $answers = Answer::where('project_id', '=', $project_id)->get();
+            $answers = Answer::where('project_id', '=', $project_id)
+            ->with('question')
+            ->get();
             if (!$answers) {
                 throw new NotFoundHttpException();
             }
@@ -68,6 +70,7 @@ class AnswerController extends Controller
         {
             if ($this->currentUser()['isAdmin']) {
                 $answers = Answer::where('question_id', '=', $question_id)
+                ->with('question')
                 ->get();
                 if (!$answers) {
                     throw new NotFoundHttpException();
