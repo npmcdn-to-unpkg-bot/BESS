@@ -33,6 +33,11 @@
 
     })
 
+    // route for the leaderboard page
+    .when('/leaderboard', {
+      templateUrl: 'templates/leaderboardseparate.html',
+    })
+
     // route for the map page
     .when('/map', {
       templateUrl: 'templates/maps.html',
