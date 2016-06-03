@@ -424,13 +424,17 @@ td-card img {
   display: block;
   position: relative;
   margin: auto;
-  top: -90px;
+  top: -10px;
 }
+
+
 .login-page {
   width: 340px;
-  padding: 20% 0 0;
+  padding: 5% 0 0;
   margin: auto;
   z-index: 5;
+  position: relative;
+  top: 120px;
 }
 
 /* FORM STYLING on login.html */
@@ -438,6 +442,7 @@ td-card img {
 .form h1 {
   font-family: "Antwerpen", sans-serif;
   margin-bottom: 20px;
+  margin-top: 0px;
   color: #008C95;
 }
 .form {
@@ -447,9 +452,15 @@ td-card img {
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
+  padding-top: 0px !important;
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form, h1 {
+  position: relative;
+  top: -10px;
 }
 .form input.inputName {
   width: 49% !important;
