@@ -3,24 +3,38 @@
     <!-- filter section -->
     <div class="row">
 
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <h2 class="aBigTitle">Alle projecten</h2>
         </div>
 
-        <div class="col-sm-6">
-            <form id="selectDistrict">
+        <div class="col-sm-3">
+            <form id="selectDistrict" class="selectitem">
                 <select ng-model="districtchoice" name="districtchoice" form="selectDistrict" class="select">
                     <option value="" disabled selected>-- Zoek op district --</option>
                     <option ng-repeat="project in projects.all | unique: 'location'" value="{{project.location}}">{{project.location}}</option>
                 </select>
             </form>
         </div>
-
+        <div class="col-sm-3">
+            <form id="selectTheme" class="selectitem">
+                <select ng-model="themechoice" name="themechoice" form="selectTheme" class="select">
+                    <option value="" disabled selected>-- Zoek op thema --</option>
+                    <option ng-repeat="project in projects.all | unique: 'category'" value="{{project.category}}">{{project.category}}</option>
+                </select>
+            </form>
+        </div>
+        <div class="col-sm-2 aTitle">
+            <div class="btn-bg bg-2 resetButton">
+                <div class="btn btn-2">
+                    <button ng-click="resetfilter()">Reset filters</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- project overview -->
     <div class="row" ng-controller="imageController as images">
-        <div ng-repeat="project in projects.all  | filter: districtchoice">
+        <div ng-repeat="project in projects.all  | filter: districtchoice | filter: themechoice">
             <div ng-if="$index % 3 == 0" class="clearfix"></div>
             <div class="col-sm-4">
                 <div class="wrapper">

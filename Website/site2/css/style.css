@@ -338,6 +338,13 @@ button {
     text-transform: uppercase;
     font-size: 1em;
 }
+.resetButton{
+  margin-top:17px !important;
+}
+.resetButton button {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
 .commentsection input[type=submit] {
     float: right;
 }
@@ -483,7 +490,7 @@ textarea.form-control {
     border: 1px solid #d9d9d9 !important;
     border-top: 1px solid #c0c0c0 !important;
 }
-#selectDistrict select {
+.selectitem select {
     margin-top: 30px;
 }
 select {
