@@ -1,117 +1,121 @@
 <!-- ghost button -->
 <div class="row section1 mobile-hide">
-    <div class="center-wrap">
-        <div class="ghostbutton">
-            <a href="#/projecten">Bekijk alle projecten <span class="shift">›</span></a>
-            <div class="mask"></div>
-        </div>
-    </div>
+  <div class="center-wrap">
+    <a href="#/projecten">
+      <div class="ghostbutton">
+        <p>
+          Bekijk alle projecten <span class="shift">›</span>
+        </p>
+        <div class="mask"></div>
+      </div>
+    </a>
+  </div>
 </div>
 
 <div class="container homepage">
 
-    <!-- explanation site title -->
-    <div class="row section12">
-        <div class="col-xs-12 divider-new aTitle">
-            Uw mening is belangrijk!
-        </div>
+  <!-- explanation site title -->
+  <div class="row section12">
+    <div class="col-xs-12 divider-new aTitle">
+      Uw mening is belangrijk!
     </div>
+  </div>
 
-    <!-- explanation site content -->
+  <!-- explanation site content -->
+  <div class="row">
     <div class="row">
-      <div class="row">
-        <div class="col-sm-2">
+      <div class="col-sm-2">
 
+      </div>
+      <div class="col-sm-8">
+
+        <div class="col-sm-6">
+          <h2 class="drag-text"> <span style="color: #008C95">IN</span>SPRAAK</h2>
+          Jaarlijks worden er in de stad Antwerpen tientallen projecten opgestart, die het dagelijkse leven erin aangenamer horen te maken. Om nog meer te slagen in dit opzet lanceerden we INSPRAAK.
+        </br>
+      </br>
+      Met dit nieuwe initiatief tracht de stad Antwerpen nóg beter met zijn inwoners te communiceren en de inspraak rond concrete projecten te organiseren. </br>
+      Op deze site vindt u alle projecten die gestart zijn of gestart zullen worden in de nabije toekomst.
+      Hierbij is er telkens de mogelijkheid uw mening te geven door vragen in te vullen over bepaalde aspecten ervan en vindt u er een tijdlijn die de belangrijkste mijlpalen in het proces van dit project weergeeft.
+    </br>
+  </br>
+  Terugkerende gebruikers worden beloond. Voor elke vraag die u invult krijgt u punten dewelke ingewisseld kunnen worden in A-punten waarmee u in de stad Antwerpen van allerlei voordelen kunt profiteren.
+
+</div>
+
+<div class="col-sm-6">
+  <h2 class="drag-text">Spelregels</h2>
+  Enkele zaken die de nauwkeurigheid en werking van deze site ten goede zullen komen:
+</br>
+</br>
+Vooraleer u vragenlijsten kan invullen en op deze manier kan bijdragen aan de optimalisering van elk project vragen we u een account aan te maken. Hier wordt simpelweg uw e-mailadres en een wachtwoord gevraagd.
+</br>
+</br>
+<ul>
+  <li>Respecteer elkaar. U bent welkom om uw mening te geven, maar houd het beleefd.</li>
+  <li>Let op uw taalgebruik. Grof, kwetsend of aanstootgevend taalgebruik is niet toegestaan.</li>
+  <li>Schrijf duidelijk en gebruik schrijf- en leestekens. Dan begrijpen we elkaar beter.</li>
+  <li>Reclame is niet toegestaan.</li>
+</ul>
+
+</div>
+
+
+</div>
+<div class="col-sm-2">
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<!-- last three projects -->
+
+<div class="row section12">
+  <div class="col-xs-12 divider-new aTitle">
+    Laatste nieuwe projecten
+  </div>
+</div>
+
+<div class="row section3" ng-controller="imageController as images">
+  <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
+    <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
+
+      <!-- project photo, if no photo found => 'Antwerpen' -->
+      <div class="card radius shadowDepth1 hoverable">
+        <div class="card__image border-tlr-radius">
+          <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
+            <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
+          </div>
+          <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius" /></a>
         </div>
-        <div class="col-sm-8">
 
-            <div class="col-sm-6">
-              <h2 class="drag-text"> <span style="color: #008C95">IN</span>SPRAAK</h2>
-                Jaarlijks worden er in de stad Antwerpen tientallen projecten opgestart, die het dagelijkse leven erin aangenamer horen te maken. Om nog meer te slagen in dit opzet lanceerden we INSPRAAK.
-                </br>
-                </br>
-                Met dit nieuwe initiatief tracht de stad Antwerpen nóg beter met zijn inwoners te communiceren en de inspraak rond concrete projecten te organiseren. </br>
-                Op deze site vindt u alle projecten die gestart zijn of gestart zullen worden in de nabije toekomst.
-                Hierbij is er telkens de mogelijkheid uw mening te geven door vragen in te vullen over bepaalde aspecten ervan en vindt u er een tijdlijn die de belangrijkste mijlpalen in het proces van dit project weergeeft.
-              </br>
-              </br>
-                Terugkerende gebruikers worden beloond. Voor elke vraag die u invult krijgt u punten dewelke ingewisseld kunnen worden in A-punten waarmee u in de stad Antwerpen van allerlei voordelen kunt profiteren.
+        <!-- card content -->
+        <div class="card__content card__padding">
 
-            </div>
+          <article class="card__article">
+            <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 27: '...': true}}</a></h4>
 
-            <div class="col-sm-6">
-              <h2 class="drag-text">Spelregels</h2>
-                Enkele zaken die de nauwkeurigheid en werking van deze site ten goede zullen komen:
-                </br>
-                </br>
-                Vooraleer u vragenlijsten kan invullen en op deze manier kan bijdragen aan de optimalisering van elk project vragen we u een account aan te maken. Hier wordt simpelweg uw e-mailadres en een wachtwoord gevraagd.
-                </br>
-                </br>
-                <ul>
-                  <li>Respecteer elkaar. U bent welkom om uw mening te geven, maar houd het beleefd.</li>
-                  <li>Let op uw taalgebruik. Grof, kwetsend of aanstootgevend taalgebruik is niet toegestaan.</li>
-                  <li>Schrijf duidelijk en gebruik schrijf- en leestekens. Dan begrijpen we elkaar beter.</li>
-                  <li>Reclame is niet toegestaan.</li>
-                </ul>
+            <p>{{project.description | truncate: 100: '...': true}}</p>
+          </article>
 
-            </div>
-
-
+          <div class="ReadMore">
+            <a href="/#/project/{{project.id}}">Lees meer...</a>
+          </div>
         </div>
-        <div class="col-sm-2">
-        </div>
+
       </div>
 
     </div>
+  </div>
 
-
-
-
-
-    <!-- last three projects -->
-
-    <div class="row section12">
-        <div class="col-xs-12 divider-new aTitle">
-            Laatste nieuwe projecten
-        </div>
-    </div>
-
-    <div class="row section3" ng-controller="imageController as images">
-        <div class="col-sm-4" ng-repeat="project in homepage.all | limitTo: 3">
-            <div class="wrapper" ng-init="images.getfirstbyid(project.id)">
-
-                <!-- project photo, if no photo found => 'Antwerpen' -->
-                <div class="card radius shadowDepth1 hoverable">
-                    <div class="card__image border-tlr-radius">
-                        <div ng-hide="images.firstonebyid[project.id];" class="border-tlr-radius">
-                            <a href="/#/project/{{project.id}}"><h2 class="navbar-title">Antwerpen</h2></a>
-                        </div>
-                        <a href="/#/project/{{project.id}}"><img ng-show="images.firstonebyid[project.id];" src="{{images.firstonebyid[project.id]}}" alt="image" class="border-tlr-radius" /></a>
-                    </div>
-
-                    <!-- card content -->
-                    <div class="card__content card__padding">
-
-                        <article class="card__article">
-                            <h4><a href="/#/project/{{project.id}}">{{project.name | truncate: 27: '...': true}}</a></h4>
-
-                            <p>{{project.description | truncate: 100: '...': true}}</p>
-                        </article>
-
-                        <div class="ReadMore">
-                            <a href="/#/project/{{project.id}}">Lees meer...</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-    <div style="float: right; margin-right:50px;">
-      <a href="#/projecten"><i>Bekijk alle projecten <span class="shift">›</span></i></a>
-    </div>
+</div>
+<div style="float: right; margin-right:50px;">
+  <a href="#/projecten"><i>Bekijk alle projecten <span class="shift">›</span></i></a>
+</div>
 
 
 </div>
