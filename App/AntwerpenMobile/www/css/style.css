@@ -441,8 +441,8 @@ td-card img {
 
 .form h1 {
   font-family: "Antwerpen", sans-serif;
-  margin-bottom: 20px;
-  margin-top: 0px;
+  margin-bottom: 15px;
+  margin-top: -20px;
   color: #008C95;
 }
 .form {
