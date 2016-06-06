@@ -5,6 +5,7 @@
     </ion-nav-title>
   </ion-nav-bar>
   <ion-content ng-controller="ImageCtrl as images" class="has-header main-content">
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="projectCard" ng-repeat="project in projects">
       <a class="projectCard" href="#/main/project/{{project.id}}">
         <div class="list card projectCard">

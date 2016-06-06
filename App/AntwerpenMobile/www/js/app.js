@@ -175,7 +175,7 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
 
 // START of MainCtrl (view: main.html)
 
-.controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading) {
+.controller('MainCtrl', function($scope, $state, HttpService, $ionicLoading, $timeout) {
 
   // Variable for showing the date in projectCard
   $scope.dateLimit = 10;
@@ -193,10 +193,19 @@ angular.module('ionicApp', ['ionic', 'ionic.contrib.ui.tinderCards', 'angular.fi
   HttpService.getProjects()
     .then(function(response) {
       $scope.projects = response;
-
       // Remove loading plate when HTTP-service is completed
       $ionicLoading.hide();
     });
+
+  $scope.doRefresh = function() {
+    HttpService.getProjects()
+      .then(function(projects) {
+        // Array.concat to add the two arrays together
+        $scope.projects = projects;
+        //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+      });
+  }
 })
 
 // END of MainCtrl
